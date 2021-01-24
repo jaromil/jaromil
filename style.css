@@ -37,3 +37,7 @@ object,
 audio,
 video {
   max-width: 100%; }
+
+summary {
+	font-size: .8em;
+}
