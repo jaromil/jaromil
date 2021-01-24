@@ -30,3 +30,10 @@ body {
      font-size: 1em; /* 2 */
  }
  ul { list-style-type: '' }
+
+img,
+embed,
+object,
+audio,
+video {
+  max-width: 100%; }
