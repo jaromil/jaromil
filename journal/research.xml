@@ -1,0 +1,1238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Jaromil's Research 2010</title>
+    <link>http://jaromil.dyne.org/journal/research_2010.html</link>
+    <description>A diary noting down FOSS and tech related research, day by day findings and curiosities, collecting future and past thoughts.</description>
+    <language>en-us</language>
+    <generator>Emacs Muse</generator>
+
+Here is the research journal for 2010.
+
+If you like to support me writing more on this
+journal: please donate money (you can also be mentioned in our final
+book publication). BTW, you can also flattr me thanks! :^) 
+
+Research 2010 wasn't public until October, mostly because of lack of
+time while I'm personally busy surviving through an age of rapid decay
+for Europe, our hi-tech continent becoming a Kafkian panoptykon.
+
+
+However, I took notes of many events for this year, some of them are
+published here, some not yet; I'm doing my best, thanks for all your
+support.
+
+
+
+
+<item>
+<title>ClubHACK Indian magazine</title>
+<link>http://jaromil.dyne.org/journal/research_2010.html#ClubHACK%20Indian%20magazine</link>
+<description><![CDATA[This year was born and grew very well, it is a new hacking magazine:
+CHMag - and this time is made in India (and written in english)
+
+Ladies & Gentleman, Hackers & Geeks, Nerds & Newbies.
+
+In India we were waiting to see any 'hacking' magazine to happen and
+the wait was getting little longer. So finally ClubHack decided to
+come out with its own 1st Indian "Hacking" Magazine.
+
+All issues free to download online.
+
+After a quick look i can tell this mag goes for some real stuff, it
+definitely interesting for a worldwide audience and finally unleashes
+all the potential of the vast and highly skilled hacker communities
+growing in Asia since years. Just check out their recent article on
+reverse engineering Android apps
+
+Namaste'!
+
+(and thanks to naif for the pointer on the hackmeeting ml)
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Tue, 21 Dec 2010 00:00:00 CET</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2010.html#ClubHACK%20Indian%20magazine</guid>
+
+</item>
+
+<item>
+<title>San Miguel penitentiary on fire</title>
+<link>http://jaromil.dyne.org/journal/research_2010.html#San%20Miguel%20penitentiary%20on%20fire</link>
+<description><![CDATA[Yesterday a fire in the San Miguel penitentiary in Santiago de Chile
+killed over 80 inmates and severely wounded dozens. Among the dead,
+Bastián Arriagada, 22 years old, was in jail for 61 days for an
+infraction to the Intelectual Property Law.
+
+Bastián had been detained for selling pirated CDs.
+
+"No tenía trabajo y por eso se dedicó a vender CDs en la calle, lo
+hizo para no caer en la delincuencia y mire lo que le pasó… En este
+país no hay justicia para los pobres", declaró la tía del fallecido
+al diario La Nación. Otro familiar declaró a EMOL: "Bastián vendía
+discos pirata de amigos para mantener a su familia y poder ahorrar,
+porque quería retomar sus estudios de educación media, que había
+dejado hace unos años atrás. Bastián no era un criminal".
+
+El incendio de la cárcel de San Miguel dejó 83 muertos, entre ellos
+muchos que no estaban por delitos violentos.
+
+
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Fri, 10 Dec 2010 00:00:00 CET</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2010.html#San%20Miguel%20penitentiary%20on%20fire</guid>
+
+</item>
+
+<item>
+<title>4th Amendement underwear</title>
+<link>http://jaromil.dyne.org/journal/research_2010.html#4th%20Amendement%20underwear</link>
+<description><![CDATA[4TH AMENDMENT UNDERCLOTHES provides a way to protest those intrusive
+TSA X-ray scanners without saying a word.
+
+
+
+Metallic ink-printed undershirts and underwear. Kewl.
+
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Fri, 26 Nov 2010 00:00:00 CET</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2010.html#4th%20Amendement%20underwear</guid>
+
+</item>
+
+<item>
+<title>A Demoscene documentary</title>
+<link>http://jaromil.dyne.org/journal/research_2010.html#A%20Demoscene%20documentary</link>
+<description><![CDATA[If you don't know what is the demoscene then this is a good chance to
+have a complete retrospective: the Finnish Broadcasting Company (YLE)
+has produced a documentary about the Finnish demoscene.
+
+The biggest part of the demoscene has always been flourishing in
+northern Europe and especially in Scandinavia, where massive demoparty
+gatherings were held - nothing compared to our TIG97 or TIG98 in
+Italy, but hey at least we tried :D - so the fact this documentary is
+made in Finland now makes it extremely interesting.
+
+The demoscene documentary episodes are online with english subtitles,
+the first one is titled "Early 1990 era - Moving from cracking to
+demos" and says a lot about the good old days
+
+.
+
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Thu, 25 Nov 2010 00:00:00 CET</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2010.html#A%20Demoscene%20documentary</guid>
+
+</item>
+
+<item>
+<title>Why the Aut/Inv server was raided in Norway?</title>
+<link>http://jaromil.dyne.org/journal/research_2010.html#Why%20the%20Aut%2FInv%20server%20was%20raided%20in%20Norway%3F</link>
+<description><![CDATA[Now finally its seems the Aut/Inv collective got to know the reason
+why one of their servers was raided on the 5th of November in Norway,
+an act performed by the Norwegian police on behalf of an international
+mandate of investigation from Italy, which disrupted the private email
+and web publishing services for thousands of users, also potentially
+endangering their privacy.
+
+Here below I'm quoting their communicate published today on noblogs:
+
+
+A/I’s Norwegian crackdown in a nutshell
+
+The Autistici/Inventati collective and the Investici Association,
+which represents the collective in legal and bureaucratic matters,
+are a group of people who mantain and develop electronic
+communication services for individuals, associations, informal
+groups and movements and, among their particular aims, defend the
+freedom of expression and privacy.
+
+The story we are going to tell started in Avezzano, Italy, between
+the 9th December 2008 and the 30th March 2009. A lawsuit gave rise
+to an investigation where it is mantained that Gianluca Jannone,
+leader of the neo-fascist group “Casa Pound”, and Ercole Marchionni,
+founder of “casa pound Avezzano”, suffered threats and slander. In
+particular, there are charges concerning a message painted on a
+wall, some red paint on a door bell and some texts published on
+abruzzo.indymedia.org and orsa.noblogs.org, claiming that no public
+space should be given to declared neo-fascist groups.
+
+After this lawsuit, public prosecutor Stefano Gallo activated
+together with the Avezzano police office, and the case reached the
+postal police in Milan. In August 2009 the Investici Association
+(and therefore the Autistici/Inventati collective) was called to
+witness, and formally declared in front of police agents that no log
+files linked with the orsa @ canaglie . net mailbox were kept in its
+servers, nor did the association have any personal data regarding
+the subscriber of the mailbox.
+
+The Avezzano police office sent a rogatory letter (with charges of
+threats!!!) to Norway, Holland and Switzerland, asking the local
+authorities to contact the providers where Autistici/Inventati keeps
+its servers and obtain the data that our legal representative had
+not given them – not with reticence, but because that information is
+clearly unavailable.
+
+In November 2010 the Norwegian postal police performed their duty
+towards their Italian colleagues: they turned up at our provider’s
+webfarm and asked to copy all the disks in the server, whose
+contents are mostly encrypted.
+
+About two hours after the seizure, we re-activated the services in
+different servers. After approximately 24 hours, our whole
+infrastructure was running exactly as before. In this case the R*
+Plan worked nicely as an anti-censorship system.
+
+Some considerations
+
+We think that what happened can be read at several levels,
+reflecting different facets of the Italian society.
+
+First of all, the relationships between Neo-Fascism and
+institutions. Recently the process related to the Piazza della
+Loggia bombing ended with a series of acquittals. In two different
+phases of the Italian history, Neo-Fascism and some state
+organizations where closely connected. Historically, several
+elements link the Piazza della Loggia bombing with neo-fascist
+groups, and in this case there have been clear cover-ups, attempts
+to pigeon-hole the case, and silences which have obscured many
+details until today. Thirty years after that attack, it is
+impossible to obtain some kind of truth about what happened. The
+protection mechanism that was started in the 70s worked perfectly
+well.
+
+This kind of attitude is endemic, and can be found in more recent
+incidents that may be minor but are nonetheless painful.
+
+The men who confessed to have killed the antifascist activist Dax
+have been sentenced to ridiculous punishments, if compared for
+instance to the four-year imprisonment sentence given to four
+Milanese anti-fascists who had “robbed” a nazi-skin by taking his
+jacket.
+
+These days, when all over Italy the police is complaining about
+reduced funds, we find it unexplainable that a private lawsuit filed
+at the Avezzano police office regarding minor events can unleash an
+international rogatory frenzy aimed at acquiring data that are
+inexistent and would be irrelevant to any investigation.
+
+We can explain this only if we assume that “Casa Pound” has a
+certain influence in some sectors of the Italian police.
+
+Since we were asked to witness and bound to answer, we have clearly
+declared that we did not have the requested information. The
+subsequent seizure means that they did not believe us.
+
+We don’t understand what legal motivation can justify a damage to
+2,000 people’s privacy just to obtain an evidence that the data
+regarding one unknown individual do not exist. This investigation
+regards a single mailbox, and what was requested in November 2010
+was some logs dating back to late 2008, which we did not have even
+back then.
+
+Some answers can be perhaps found in the text of the rogatory
+letter, and a passage from that brilliant English translation must
+be quoted:
+
+“to obtain the file of log, and IP-access, for consultation,
+registration, change of password and updating relative to the
+mailbox ORSA @ CANAGLIE . NET (SHE-BEAR @ SCOUNDREL . NET) in the
+time span 2008–12-09 to 2009–12-09.”
+
+The Public prosecutor’s office ordered the seizure, but did not
+realize that translating a user name and a mail domain is as
+ridiculous as it is useless. To be honest, we don’t think that this
+office is able to produce any technical assessments regarding an IT
+case.
+
+To sum up: this action appears as a small political intimidatory
+retaliation against Autistici/Inventati, who have been considered
+reticent in denying a piece of information we have never had and
+never will have in the future.
+
+But this small retaliation implies a major privacy problem for the
+2,000 users who had a space in that server. Likewise, the facts that
+gave rise to this investigation have been seemingly
+overrated. Starting from an irrelevant political skirmish,
+overstated charges were used to send three rogatory letters abroad.
+
+Along this line, any argument among neighbors could be turned into
+an international plot.  This makes no sense, but in the end, nothing
+makes much sense in this whole story.
+
+
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Wed, 24 Nov 2010 00:00:00 CET</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2010.html#Why%20the%20Aut%2FInv%20server%20was%20raided%20in%20Norway%3F</guid>
+
+</item>
+
+<item>
+<title>DYNDY is out!</title>
+<link>http://jaromil.dyne.org/journal/research_2010.html#DYNDY%20is%20out%21</link>
+<description><![CDATA[This project took a year to be conceptualized. Before its release has
+been known to a few subjects under the codename: "O' SISTEMONE".
+
+Visit the DYNDY website and
+read about our launch in De Balie, Amsterdam.
+
+
+
+
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Thu, 11 Nov 2010 00:00:00 CET</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2010.html#Shell%27s%20media%20tactics%20on%20Saro%20Wiwa</guid>
+
+</item>
+
+<item>
+<title>Server raid in Norway</title>
+<link>http://jaromil.dyne.org/journal/research_2010.html#Server%20raid%20in%20Norway</link>
+<description><![CDATA[One server of the autistici/inventati R* network (distributed and
+highly resilient host architecture for Italian activists)
+has been raided by the Norwegian police today, apparently on the
+mandate of Italian authorities running an investigation.
+
+Here a report in German while below follows the communicate of the
+Aut/Inv collective:
+
+
+It happens, since notoriously police doesn't know how to aim properly:
+shoot in the crowd, you might eventually hit your target. Exactly as
+when they run round-ups, bringing havoc to whole streets as they look
+for something that might not even exist. The Italian postal police has
+a bad habit of rummaging in hundreds or even thousands of people's
+personal data just to fine one particular message. It has happened
+again with the server the A/I collective keeps in Norway: its disks
+have been entirely cloned for an investigation we still cannot know
+anything about. It is likely that A/I is not directly implied in this
+supposed enquiry, but whatever may be happening, our users' data
+(which were mostly encrypted) have been acquired by someone who could
+at most show a warrant for one specific search. It is the principle of
+hitting hundreds of people to pinpoint one of them: and while they're
+at it, seizing all data is too much of a temptation; after all if you
+won't find what you are looking for, you'll have a prize at least to
+show your police friends. When such things happen in China or in Iran,
+crowds of privacy champions pour into the streets to protest against
+the "regime" spying on its citizens. But if it happens in front of
+them, they are distracted, perhaps due to the media hype on the petty
+scandals that haunt this petty country.
+Such occurrences require us, all of us, to react quickly, learning to
+protect our privacy as well as protesting against electronic
+surveillance, which, clumsy as its claims may be, is in any case
+unjustified and repressive.
+It is also interesting to note that there was no need for this
+operation: every time we have been asked for logs or information, we
+have always answeredit is not our fault, if the data they need do
+not exist or if they find them useless. Actually, we find this is one
+of our merits. And we think it is also a merit that the R* Plan has
+allowed us to restore the services that were hit by this raid in no
+more than 24 hours: for 5 years now we have been telling our users
+that our aim is avoiding the destruction of our services, while in the
+meantime we have also realized and tried to tell everybody that each
+single user is responsible for her own privacy, which depends on your
+intelligence when you write and read and on your accuracy in never
+entrusting this fundamental aspect of your life to someone else. Apart
+from the mailing lists archives, our disks were encrypted, but now
+they have been copied, and with time no encryption system is
+unbreakable. So don't delude yourselves in a false sense of safety.
+Support the battle that we will launch as we did after the first
+crackdown on our server: spread the news we will publish, fight
+against any restriction to your freedom of communication. Unlike the
+police, we want to educate hundreds to hit onethe genius at the
+postal police who thought that copying 2000 people's data could be a
+good idea to find nothing at all.
+
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Fri, 05 Nov 2010 00:00:00 CET</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2010.html#Server%20raid%20in%20Norway</guid>
+
+</item>
+
+<item>
+<title>Plug in walls</title>
+<link>http://jaromil.dyne.org/journal/research_2010.html#Plug%20in%20walls</link>
+<description><![CDATA[
+
+Aram Bartholl's new artwork Dead Drops builds an anonymous exchange
+network simply made with usb storage plugs embedded in walls.
+
+More than ever, this project offers an inspiring metaphor of the gap
+between digital and analog: the time when the access to digital
+information networks hits the street level has come the walls are
+whispering data.
+
+However for the long term I'd suggest using female plugs.
+
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Sun, 31 Oct 2010 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2010.html#Plug%20in%20walls</guid>
+
+</item>
+
+<item>
+<title>Between the bars</title>
+<link>http://jaromil.dyne.org/journal/research_2010.html#Between%20the%20bars</link>
+<description><![CDATA[Just met Mako in Barcelona, he show me this amazing project:
+Between the bars blogging letters from incarcerated people.
+
+
+
+
+Between the Bars is a weblog platform for prisoners, through
+which the 1% of America which is behind bars can tell their
+stories. Since prisoners are routinely denied access to the
+Internet, we enable them to blog by scanning letters. We aim to
+provide a positive outlet for creativity, a tool to assist in the
+maintenance of social safety nets, an opportunity to forge
+connections between prisoners and non-prisoners, and a means to
+promote non-criminal identities and personal expression. We hope to
+improve prisoner's lives, and help to reduce recidivism.
+
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Fri, 29 Oct 2010 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2010.html#Between%20the%20bars</guid>
+
+</item>
+
+<item>
+<title>The Netherlands stops commemorating the Schipol Fire</title>
+<link>http://jaromil.dyne.org/journal/research_2010.html#The%20Netherlands%20stops%20commemorating%20the%20Schipol%20Fire</link>
+<description><![CDATA[Today on Radio Netherlands Worldwide they said:
+
+
+Some 40 people attended a commemoration ceremony at Amsterdam's
+Schiphol Airport on Tuesday evening for the 11 people who died in
+what's known as the Schiphol Fire. As public interest in the memorial
+is diminishing, it has been decided that this year's ceremony will be
+the last official one to commemorate the victims.
+
+
+
+This is a tragic mistake. Dutch authorities are so myopic they don't
+recognize the progressive loss of trust between them and the
+communities of migrants (and workers) still aloud to exist in the
+country, especially following the outcome of the court case on the
+Schiphol Fire held in Amsterdam, which held no authority responsible.
+
+Here below the direct response given by some survivors of the fire:
+
+
+Brothers and sisters
+some people today made a commemoration of the Schiphol Fire. They did
+it in the town hall of Hoofddorp.
+They say it is is the last official commemoration of the fire.
+We want to let you know that we don’t do official commemorations.
+We don’t want to do this together with the authorities who can do no
+better than build a new prison for undocumented migrants. They say
+this one will be more humane.
+We don’t think that a prison for undocumented migrants can ever be humane.
+Migrants are normal and want more freedom
+Papa Sakho, Jo van der Spek and Ben Duivenvoorden
+Migrant to Migrant
+Amsterdam, 26 oktober 2010
+
+
+More info on the Schipol Fire is now found on the Schipholwakes.nl
+website.
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Tue, 26 Oct 2010 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2010.html#The%20Netherlands%20stops%20commemorating%20the%20Schipol%20Fire</guid>
+
+</item>
+
+<item>
+<title>UN warns EU</title>
+<link>http://jaromil.dyne.org/journal/research_2010.html#UN%20warns%20EU</link>
+<description><![CDATA[Recently in Strasbourg, United Nations Secretary General Ban Ki Moon
+warned:
+
+A dangerous trend is emerging, a new politics of polarization. Some
+play on people's fears, they accuse immigrants of violating European
+values.
+
+Yet too often it is the accusers who subvert these values and thus
+the very idea of what it means to be a citizen of the European
+Union.
+
+Europe's darkest chapters have been written in language such as
+this. Today the primary targets are immigrants of the Muslim faith,
+Europe cannot afford stereotyping that closes minds and breeds
+hatred, and the world cannot afford a Europe that does this.
+
+In the meanwhile: chancellor Angela Merkel recently stated that the
+concept of multiculturalism had "absolutely failed" in Germany, while
+the government coalition in the Netherlands now include, besides the
+Christians and the terror-strategy party VVD, also Geert Wilders' PVV
+most famous for his anti-Islam hate campaigns.
+
+Oi vEuropa!
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Tue, 19 Oct 2010 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2010.html#UN%20warns%20EU</guid>
+
+</item>
+
+<item>
+<title>RIP Benoît Mandelbrot</title>
+<link>http://jaromil.dyne.org/journal/research_2010.html#RIP%20Benoît%20Mandelbrot</link>
+<description></description>
+<author>jaromil</author>
+<pubDate>Thu, 14 Oct 2010 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2010.html#RIP%20Benoît%20Mandelbrot</guid>
+
+</item>
+
+<item>
+<title>Google's &quot;ethical dilemma&quot; over taxes</title>
+<link>http://jaromil.dyne.org/journal/research_2010.html#Google%27s%20%22ethical%20dilemma%22%20over%20taxes</link>
+<description><![CDATA[As many other companies, Google is also hopping countries to bypass
+legal taxation systems.. anyone has heard of the /dutch sandwich/
+before? while the tea party is advocating the legalization of tax
+evasion, that is already legalized in practice, at the price of
+corporate consulting.
+
+
+
+Even if the tax avoidance structures are legal, not everyone
+considers them ethical. Google is "flying a banner of doing no evil,
+and then they're perpetrating evil under our noses," says Abraham
+J. Briloff, a professor emeritus of accounting at Baruch College who
+has examined Google's tax disclosures.
+
+
+Google is called to loose ground on well settled financial crime
+practices that everyone else survives with  Here is an informative
+business week article mentioning how the World goes until we change
+it - but then let me argue this change must be for everyone, ASAP.
+
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Thu, 30 Sep 2010 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2010.html#Google%27s%20%22ethical%20dilemma%22%20over%20taxes</guid>
+
+</item>
+
+<item>
+<title>Web 2.0 multiplying flaws</title>
+<link>http://jaromil.dyne.org/journal/research_2010.html#Web%202%2E0%20multiplying%20flaws</link>
+<description><![CDATA[What the Web 2.0 buzzword is really about: using a browser as if it
+would be the desktop of an operating system. My views on this are
+mostly unprintable, I'll just limit myself to list some recent
+security flaws threatening the vast audience of Web2.0:
+
+XSSER javascript injection
+Evercookie cookie poisoning
+CSShack history knocker
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Wed, 22 Sep 2010 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2010.html#Web%202%2E0%20multiplying%20flaws</guid>
+
+</item>
+
+<item>
+<title>Artists make more money in File-Sharing Age</title>
+<link>http://jaromil.dyne.org/journal/research_2010.html#Artists%20make%20more%20money%20in%20File%2DSharing%20Age</link>
+<description><![CDATA[A recent article on torrentfreak recites:
+
+
+Artists Make More Money in File-Sharing Age Than Before It
+
+
+An extensive study into the effect of digitalization on the music
+industry in Norway has shed an interesting light on the position of
+artists today, compared to 1999. While the music industry often
+talks about artists being on the brink of bankruptcy due to illicit
+file-sharing, the study found that the number of artists as well as
+their average income has seen a major increase in the last decade.
+
+Every other month a new study addressing the link between music
+piracy and music revenues surfaces, but only a few really stand
+out. One of the most elaborate and complete studies conducted in
+recent times is the
+master thesis of Norwegian School of Management students Anders Sørbo and Richard Bjerkøe.
+
+In their thesis, the students take a detailed look at the different
+revenue streams of the music industry between 1999 and 2009. By
+doing so, they aim to answer the question of how the digitization of
+music – and the most common side-effect, piracy – have changed the
+economic position of the Norwegian music industry and Norwegian
+artists. The results are striking.
+
+After crunching the music industry’s numbers the researchers found
+that total industry revenue grew from 1.4 billion Norwegian kronor
+in 1999 to 1.9 billion in 2009. After adjusting this figure for
+inflation this comes down to a 4% increase in revenues for the music
+industry in this time period.  Admittedly, this is not much of a
+growth, but things get more interesting when the research zooms in
+on artist revenue.
+
+In the same period when the overall revenues of the industry grew by
+only 4%, the revenue for artists alone more than doubled with an
+increase of 114%. After an inflation adjustment, artist revenue went
+up from 255 million in 1999 to 545 million kronor in 2009.
+
+Some of the growth can be attributed to the fact that the number of
+artists increased by 28% in the same time period. However, per
+artist the yearly income still saw a 66% increase from 80,000 to
+133,000 kronor between 1999 and 2009. In conclusion, one could say
+that artists are far better off now than they were before the
+digitization of music started.
+
+(Written by Ernesto)
+
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Wed, 15 Sep 2010 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2010.html#Artists%20make%20more%20money%20in%20File%2DSharing%20Age</guid>
+
+</item>
+
+<item>
+<title>Quantum proof Crypto</title>
+<link>http://jaromil.dyne.org/journal/research_2010.html#Quantum%20proof%20Crypto</link>
+<description><![CDATA[KentuckyFC writes on slashdot:
+
+
+"In 1978, the CalTech mathematician Robert McEliece developed a
+cryptosystem based on the (then) new idea of using asymmetric
+mathematical functions to create different keys for encrypting and
+decrypting information. The security of these systems relies on
+mathematical steps that are easy to make in one direction but hard
+to do in the other. Today, popular encryption systems such as the
+RSA algorithm use exactly this idea. But in 1994, the mathematician
+Peter Shor dreamt up a quantum algorithm that could factorise much
+faster than any classical counterpart and so can break these codes.
+As soon as the first decent-sized quantum computer is switched on,
+these codes will become breakable.  Since then, cryptographers have
+been hunting for encryption systems that will be safe in the post
+quantum world. Now a group of mathematicians have shown that the
+McEliece encryption system is safe against attack by Shor's
+algorithm and all other known quantum algorithms.  That's because it
+does not depend on factorisation but gets its security from another
+asymmetric conundrum known as the hidden subgroup problem which they
+show is immune to all known quantum attacks."
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Thu, 19 Aug 2010 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2010.html#Quantum%20proof%20Crypto</guid>
+
+</item>
+
+<item>
+<title>dot.com &amp; totalitarian govs</title>
+<link>http://jaromil.dyne.org/journal/research_2010.html#dot%2Ecom%20%26%20totalitarian%20govs</link>
+<description><![CDATA[BWO Felix Stalder:
+
+What happened to the great showdown between freedom-loving
+tech-companieswho were supposed to depend on earning their
+users's trust by protecting their privacyand authoritarian
+governments bent on all-around surveillance and censorship?
+
+While initially there has been a lot of press about Google
+challenging the Chinese government, the reports have slowed to a
+trickle recently.  From what I understand, China has renewed Google
+commercial license for another year or two, though it remains
+unclear under which conditions. This seems to indicate that the
+government got enough of what it wanted, or, that it doesn't see
+Internet-freedom as so threatening, after all. see http://www.theregister.co.uk/2010/08/09/rim_saudi_arabia/
+[2] see http://www.wired.com/epicenter/2010/07/google-china-fiction/
+
+And then there is RIM decision to cooperate fully with Saudi
+Arabia's authorities to prevent their email services to be banned in
+the country. Instead of protecting their users's privacy, RIM (the
+company that makes the Blackberry devices) agreed to "to locate
+three servers within Saudi Arabia, putting them under the
+jurisdiction of local security forces and thus removing the
+necessity of the planned ban." [2]
+
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Tue, 17 Aug 2010 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2010.html#dot%2Ecom%20%26%20totalitarian%20govs</guid>
+
+</item>
+
+<item>
+<title>Surprising Europe</title>
+<link>http://jaromil.dyne.org/journal/research_2010.html#Surprising%20Europe</link>
+<description><![CDATA[What awaits an African when he tries to make a better life in Europe?
+Ssuuna Golooba, journalist from Uganda, was in Amsterdam when the
+Schiphol Fire happened (26th of October 2005). How could this happen?
+How was this possible? It took him four years to finish his film.
+
+Today (Thursday 12) at 11.20 p.m. you can see Ssuuna Golooba's
+documentary film Surprising Europe on Nederland 2
+
+More on the Surprising Europe website.
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Thu, 12 Aug 2010 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2010.html#Surprising%20Europe</guid>
+
+</item>
+
+<item>
+<title>Benjamin's briefcase</title>
+<link>http://jaromil.dyne.org/journal/research_2010.html#Benjamin%27s%20briefcase</link>
+<description><![CDATA[My friend Tiziano Bonini together with a team of passionate walking
+poets have realized the Benjamin Briefcase project, an on-line and
+on-site intervention to commemorate the death of Walter Benjamin 70
+years after his death, they hiked the mountain path from Spain to
+France that him and many other people clandestinely crossed during the
+war.
+
+
+Un progetto on site/on line per ricordare Walter Benjamin, a 70
+ anni dalla sua morte, e tutti quelli che, come lui, hanno
+attraversato e attraversano i confini nazionali da clandestini.
+Il progetto ha due dimensioni:
+Riscoprire il sentiero usato da Benjamin e da centinaia di
+clandestini per scappare dalla Francia, riscoprirne la storia e il
+territorio in cui è immerso.
+Ricordare Benjamin attraverso un’installazione invisibile: una
+valigia nella terra e un blog nella rete.
+Abbiamo camminato la Ruta Lister da Port Vendres a Port Bou,
+ritrovato il luogo dove Walter Benjamin passò la notte il 24
+settembre del 1940, dormito sotto il cielo e sotterrato la nostra
+valigia.
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Sat, 24 Jul 2010 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2010.html#Benjamin%27s%20briefcase</guid>
+
+</item>
+
+<item>
+<title>The cake is served</title>
+<link>http://jaromil.dyne.org/journal/research_2010.html#The%20cake%20is%20served</link>
+<description><![CDATA[
+
+Graffiti artist Blu strikes a chord in his home country with a new
+giant mural in Grottaglie, Italy, famous for its olive trees, ancient
+ceramic tradition and new, ever-expanding waste dumps. As the artist’s
+contribution to FAME Fest, a yearly event inviting top urban artists
+to create street and gallery works, Blu chose to highlight the town’s
+growing problem with his work É Pronta la Torta (The Cake is Ready).
+
+More on the artthreat article.
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Fri, 16 Jul 2010 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2010.html#The%20cake%20is%20served</guid>
+
+</item>
+
+<item>
+<title>Economy and equality</title>
+<link>http://jaromil.dyne.org/journal/research_2010.html#Economy%20and%20equality</link>
+<description><![CDATA[The Insight Center for Community Economic Development in Oakland,
+California, has temporarily released a document named
+/LiftingAsWeClimb-InsightCenter-Spring2010.pdf/ (which went off the
+net shortly after its release) reporting that in USA the net average
+income of a white woman between 36 and 49 years old is $42.600 while
+that of a colored woman of the same age is $5.
+
+Obviously that is even worse in Europe.
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Wed, 07 Jul 2010 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2010.html#Economy%20and%20equality</guid>
+
+</item>
+
+<item>
+<title>The Artvertiser open sources</title>
+<link>http://jaromil.dyne.org/journal/research_2010.html#The%20Artvertiser%20open%20sources</link>
+<description><![CDATA[The Artvertiser source code is now available, licensed under the
+GPLv3.
+
+
+Introduction
+The Artvertiser is an Improved Reality platform, designed for the live
+substitution of advertisements in a video stream with alternative 2D
+content.
+The code was initially developed by Julian Oliver before being
+significantly improved by Damian Stewart.
+A typical application of The Artvertiser at work might be the Product
+Replacement of street billboards with 2D art using a laptop with
+webcam or camera-enabled mobile device. You might also want to have
+your own personal exhibition in the Louvre, substituting well known
+paintings with your own creations and inviting others to enjoy the
+show.
+Counter-propaganda operations are also well suited to the platform,
+like changing the imagery of a disliked political campaigner before
+uploading the recorded result for all to see. Alternatively, it can be
+used to product replace planar images in archival video, like a
+HollyWood movie or TV advert, using popular films as an 'exhibition
+surface'.
+You can see a couple of examples of The Artvertiser at work using our
+own specially crafted digital binoculars, The Billboard Interception
+Unit, on the project website:
+http://theartvertiser.com
+The Code
+The entire project tree exists as a git repository, cloned like so on
+your local system:
+
+
+git clone git://repo.or.cz/The-Artvertiser.git
+
+The code should currently build on any modern Linux-based OS with the
+addition of a couple of dependencies and - thanks to Damian - should
+also compile on OS X with the correct prior tweaks in place. See the
+README file in the top-level directory for more information.
+A special 'mob' user has been set up allowing complete Read/Write
+access for anyone at all. Once you've cloned the repository as above,
+just:
+
+
+git checkout mob
+
+.. to move to the mob branch. It's all yours!
+We look forward to your improvements, forks, derivations and vandalisms.
+Happy (urban) hacking!
+Julian and Damian
+
+
+
+
+
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Tue, 22 Jun 2010 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2010.html#The%20Artvertiser%20open%20sources</guid>
+
+</item>
+
+<item>
+<title>How the Warlords took over EU in 2012</title>
+<link>http://jaromil.dyne.org/journal/research_2010.html#How%20the%20Warlords%20took%20over%20EU%20in%202012</link>
+<description><![CDATA[BWO John Thackara:
+
+
+I found a chart in Aviation Week which is almost a trade magazine of
+the military industrial complex, that included these numbers for per
+capita military spending:
+
+U.S.: $545.3 billion, that's roughly $45,500 per head of the population.
+- U.K.: $63.2 billion, or $34,800 per head.
+- France: $60.3 billion, or $32,100 per head.
+- Germany: $41.8 billion, or $33,800 per head.
+Then I found a study that concludes that the United States spent
+$1,780 per head on education in 2001 (France, The Netherlands and
+Canada each spent more than $1,200 per capita). Hmmm.
+Turning to culture and the arts, the best I could find is a perplexing
+web database that appears to show that cultural expenditure per capita
+in Spain is euro 135, compared to Germany which, in 2007, spent 99
+euros per capita.
+In round numbers, then, Germany appears to spend 25,000 euros per person on
+defence, versus about 100 euros per head on culture. I have to assume that
+the gap in the US and UK, were the numbers to be available, would be a good
+deal wider.
+As I said: insane numbers.
+I distract you (and myself) with these numbers mainly because, in the years
+ahead, spending on the things that we do care about - education, culture,
+sustainability - looks certain to plummet.
+In the UK, for example, commentators are talking gravely about public
+spending cuts of 10, 15, or 20 percent. Insiders tell me that cuts will be
+40 percent or more, in real terms, over the coming few years.
+Large cultural and educational institutions will suck in what little public
+funding is available. Government funding for small, grassroots activities
+will dry up almost completely.
+
+
+Full article online here.
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Mon, 21 Jun 2010 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2010.html#How%20the%20Warlords%20took%20over%20EU%20in%202012</guid>
+
+</item>
+
+<item>
+<title>Dutch Gov Troika</title>
+<link>http://jaromil.dyne.org/journal/research_2010.html#Dutch%20Gov%20Troika</link>
+<description><![CDATA[BWO Tjebbe van Tijen
+
+
+DUTCH GOVERNMENT TROIKA 1 + 1 = 3 – the non-mathematical logic of democracy
+
+This is the coalition government most seriously studied in the coming
+days: two big winners trying to persuade one big loser to combine
+forces.  Compared to the elections of 2006 VVD grew from 22 to 31
+seats, PVV from 9 to 24 and CDA lost 20 seats and now has 21
+representatives in parliament.  Historically speaking the actual
+argument – supported by almost all parties – that governmental
+participation of the PVV party should be taken most serious as they
+have seen the biggest growth in votes, shows how party politics is
+based on short memory. The oscillating favours of Dutch voters in the
+last two decades resulted in the national elections of the year 2003
+in sudden growth of votes for the Socialist Party (SP). They grew from
+9 to 25 seats which is one seat more of sudden growth than the now
+triumphant PVV party of Geert Wilders. In 2003 the bright red horse of
+the SP was maneuvered out of government within days.  Nobody taking
+their victory serious. Where the PVV has grown in 2010 elections with
+15 seats to a total of 24, the SP had grown in 2003 with 16 seats to a
+total of 25 (of which they have lost now 10 seats). These are the
+vicissitudes of the parliamentary system in which the act of counting
+and the value of numbers is most peculiar and has its own
+non-mathematical logic.  As ‘a majority’ in our actual democratic
+system = 1/2 the numbers total number of seats +1, the ‘ars
+combinatoria’ of selecting party horses that will pull the ‘wagon of
+state’ will at one moment in history not value an electoral success,
+while at another moment prize a defeat.
+Most parties in the scattered landscape of Dutch party politics enter
+the election process with blind faith and false hope that they will
+gain enough votes to form a government with one or two friends. Most
+of the party leaders refuse to tell the voters on forehand who their
+friends are or will be. The most heard argument has been that is “you
+voters who decide.”  After the elections democracy ends up with a
+decision process of wheeling and dealing directed by a hereditary
+monarch and a lackey appointed by her for this occasion. “De kiezer
+heeft gesproken” (the voter has spoken) is the expression of the day,
+while on the basis of marginal differences in actual votes,
+unpredictable government coalitions are wrought which have measures
+and policies in stall that will go against that what the majority of
+the voters have tried to express at the one brief moment in time that
+they could mark their ballot-paper.  After one month of staged
+political debates on television and party leaders feigning ‘direct
+democracy’ on twitter, it is back to ‘back-room policies’.
+
+
+version with image and explanatory link on Dutch party system can be
+found on The Limping Messenger blog.
+
+
+
+
+
+
+
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Fri, 18 Jun 2010 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2010.html#Dutch%20Gov%20Troika</guid>
+
+</item>
+
+<item>
+<title>Digital prohibitionists</title>
+<link>http://jaromil.dyne.org/journal/research_2010.html#Digital%20prohibitionists</link>
+<description><![CDATA[Same old censorship arguments since ages now, but with a better
+website it seems: smile29.eu is setup by the prohibitionist cast at
+the EU parliament asking a "low latency" mechanism that would "signal
+child pornography" semi-automatically
+
+Yet another field of analysis for the false-positive theory?
+
+Oh yea, machines analysis will go faster and save our children!
+
+Meh.
+
+
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Thu, 03 Jun 2010 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2010.html#Digital%20prohibitionists</guid>
+
+</item>
+
+<item>
+<title>Machines predicting humans</title>
+<link>http://jaromil.dyne.org/journal/research_2010.html#Machines%20predicting%20humans</link>
+<description><![CDATA[Klaus Walher, portavoce della compagnia aerea Lufthansa, ? un uomo che
+crede nella scienza. Eppure, osservando il cielo europeo desolato e
+sgombro, lamenta la mancanza d'intuizione e di buon senso. Walher
+vuole solo volare. La sua opposizione al blocco aereo ? un passo
+importante nella storia della "critica della tecnologia", una pietra
+miliare nella storia della societ? moderna che si priva del potere dei
+modelli matematici da essa stessa creati.
+
+Le compagnie aeree, naturalmente, difendono prima di tutto i loro
+interessi. Per? Walher non ? uno che sacrifica la sicurezza
+sull'altare del profitto. Anche chi non ha confidenza con i voli
+aerei, in questi giorni, ha la sensazione che la nube invisibile che
+paralizza il traffico non sia fatta di cenere e polvere, ma da un
+mucchio infinito di dati. Le conseguenze scaturite oggi da
+un'esplosione vulcanica domani potrebbero innescarsi per qualsiasi
+altro imprevisto, geologico, economico o sociale che sia. Una
+simulazione informatica paralizza la circolazione aerea, con perdite
+di centinaia di milioni di euro al giorno. Cosa potr? accadere domani?
+Quale sar? il prezzo da pagare?
+
+http://www.presseurop.eu/it/content/article/234591-nelle-mani-del-computer
+
+
+
+Important to be clear that this is not neighborhood predictions, like
+Crimespotting, which have problems of their own, but predictions about
+whether a person will commit a crime.
+
+(
+http://gizmodo.com/5517231/crime-prediction-software-is-here-and-its-a-very-bad-idea
+)
+
+http://finance.yahoo.com/news/Florida-Department-of-bw-1587995596.html?x=3D0&.v=3D1
+
+CHICAGO(BUSINESS WIRE)SPSS, an IBM (NYSE: IBM) Company, today
+announced that the Florida State Department of Juvenile Justice
+selected IBM predictive analytics software to reduce recidivism by
+determining which juveniles are likely to reoffend. Identified at-risk
+youth can then be placed in programs specific to the best course of
+treatment to ensure offenders do not re-enter the juvenile justice
+system. 
+
+IBM recently also announced that the Ministry of Justice in the
+United Kingdom uses predictive analytics to assess the likelihood
+of prisoners reoffending upon their release to help improve public
+safety. With predictive technology from IBM, the Ministry of Justice
+is analyzing hidden trends and patterns within the data. IBM SPSS
+predictive analytics has helped identify whether offenders with
+specific problems such as drug and alcohol misuse are more likely to
+reoffend than other prisoners.
+
+
+
+Deepak Advani, vice president of predictive analytics at IBM, said:
+
+Predictive  analytics  gives  government  organizations  worldwide  a
+highly-sophisticated   and  intelligent   source   to  create   safer
+communities by identifying,  predicting, responding to and preventing
+criminal  activities.   It  gives  the criminal  justice  system  the
+ability to draw upon the wealth of data available to detect patterns,
+make  reliable projections and  then take  the appropriate  action in
+real time to combat crime and protect citizens.
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Thu, 22 Apr 2010 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2010.html#Machines%20predicting%20humans</guid>
+
+</item>
+
+<item>
+<title>Poortgebouw wins courtcase</title>
+<link>http://jaromil.dyne.org/journal/research_2010.html#Poortgebouw%20wins%20courtcase</link>
+<description><![CDATA[http://indymedia.nl/nl/2010/04/66526.shtml
+
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Fri, 16 Apr 2010 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2010.html#Poortgebouw%20wins%20courtcase</guid>
+
+</item>
+
+<item>
+<title>Sorting contributions</title>
+<link>http://jaromil.dyne.org/journal/research_2010.html#Sorting%20contributions</link>
+<description><![CDATA[http://lwn.net/Articles/222773/
+sorting contributions is not a simple topic
+# as pointed out in this article http://lwn.net/Articles/222773/
+
+git logpretty="format:%an %ae" $1 \Style does not support tables.
+
+
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Mon, 12 Apr 2010 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2010.html#Sorting%20contributions</guid>
+
+</item>
+
+<item>
+<title>Online normative observatory</title>
+<link>http://jaromil.dyne.org/journal/research_2010.html#Online%20normative%20observatory</link>
+<description><![CDATA[http://www.normattiva.it/static/index.html
+
+Normattiva  è un  nuovo servizio  che  lo Stato  italiano fornisce  ai
+cittadini.  Si  tratta  di  una  banca dati,  accessibile  a  tutti  e
+consultabile gratuitamente,  che contiene i testi  delle leggi statali
+vigenti aggiornate in tempo reale
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Mon, 22 Mar 2010 00:00:00 CET</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2010.html#Online%20normative%20observatory</guid>
+
+</item>
+
+<item>
+<title>Crypto SMS</title>
+<link>http://jaromil.dyne.org/journal/research_2010.html#Crypto%20SMS</link>
+<description><![CDATA[https://cryptosms.org/
+
+
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Fri, 19 Mar 2010 00:00:00 CET</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2010.html#Crypto%20SMS</guid>
+
+</item>
+
+<item>
+<title>Symbian lies on open source?</title>
+<link>http://jaromil.dyne.org/journal/research_2010.html#Symbian%20lies%20on%20open%20source%3F</link>
+<description><![CDATA[Symbian is Open Soruce - Really? via Harald Welte's blog on 2/4/10
+
+In  recent  news, the  Symbian  Foundation  announced  that "All  108
+packages containing the  source code of the Symbian  platform can now
+be downloaded from Symbian's developer web site". This is great news!
+
+This morning  I tried to  look at the  parts most interesting  to me:
+phonesrv (implementing  call engine,  cell broadcast and  SIM toolkit
+APIs) and poc (implementing push-to-talk). Their pages don't have the
+usual "source code" tab at  the bottom right which links to mercurial
+and tarball download pages!
+
+Either I'm  too stupid, or  I am unable  to find any source  code for
+those  two components. I'm  quite sure  something essential  like the
+API's  for making  phone calls  are  considered part  of the  Symbian
+platform. So how does that match with the statement that all packages
+containing the Symbian platform can now be downloaded?
+
+
+
+
+
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Sat, 06 Feb 2010 00:00:00 CET</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2010.html#Symbian%20lies%20on%20open%20source%3F</guid>
+
+</item>
+
+<item>
+<title>The last days of Jack Sheppard</title>
+<link>http://jaromil.dyne.org/journal/research_2010.html#The%20last%20days%20of%20Jack%20Sheppard</link>
+<description><![CDATA[A new worthwhile film is out, concerned with the historical moment and
+relation  of  finance and  class  violence:  "The  last days  of  Jack
+Sheppard"  by Anja  Kirschner and  David Panos,  also  taking critical
+inspiration from  historical accounts found in  Peter Linebaugh's book
+"The London Hanged".
+
+On the  Mute magazine was  published an interesting response  by prof.
+Linebaugh,  outing   some  criticism  juggled  between   him  and  the
+film-makers, which  regardless of  polemical tones ends  up discussing
+some  very   interesting  aspects  of  history  and   the  process  of
+subjectivation taking  place among populations oppressed  at the times
+of   the  slave   trade,   industrial  revolution   and  more   recent
+anti-capitalist movements.
+
+It is  a perfect commentary for  facts often neglected  and truly well
+related to  the contemporary financial crisis  and consequent bail-out
+solutions adopted. Making  our mouths wet for watching  the film, here
+below the incipit of prof.Linebaugh's article:
+
+In August 1971  Richard Nixon devalued the dollar  and suspended its
+convertibility  to gold.  The  gold  standard had  been  one of  the
+pillars  of the  capitalist  order according  to  Karl Polanyi,  the
+others being  the balance of power, the  self-regulating market, and
+the liberal  state. A  few days later  George Jackson, who  had been
+imprisoned 11 years earlier for stealing $70 from a gas station, was
+assassinated in San Quentin prison,  a cold blooded murder which led
+directly  to the  seizure by  the  inmates of  the maximum  security
+penitentiary  in  Attica,  New  York.  Notoriously,  Governor  David
+Rockefeller suppressed  the uprising  with the worst  massacre since
+the Indian  wars of the 19th  century. 39 prisoners  and four guards
+were killed making  a total of 43 mortalities.  (William Calley, the
+perpetrator of  My Lai massacre of  1968 which killed  20 people was
+pardoned by Nixon  earlier in the year.) Clearly,  the liberal state
+was going the way of gold.
+
+While there is not a direct causal relation between the rebellion of
+the  incarcerated  and  the   abandonment  of  gold,  this  kind  of
+relationship was not unprecedented. The conjuncture between monetary
+disruption by the  ruling class and defiance of  the legal apparatus
+by the other class had  parallels at the birth of finance capitalism
+in the period 1690-1725. By  comparing the two situations perhaps we
+can learn something, and a movie may help us do this.
+
+The gallows and money went together by a logic that is considered in
+a film  by Anja Kirschner  and David Panos  called The Last  Days of
+Jack Sheppard. The film is sponsored by the Arts Council of England,
+the  Scottish   Arts  Council,  the  Henry   Moore  Foundation,  and
+commissioned by the Chisenhale Gallery  in London and the Centre for
+Contemporary Art  in Glasgow. As we shall  see it is an  art film in
+other senses than its sponsorship. Jack Sheppard was a carpenter and
+thief who frequently and famously escaped prison until he was hanged
+at the  Tyburn gallows in London  in November 1724. He  was also the
+subject of the first chapter in my book, The London Hanged.
+
+You can  go read  the whole debacle,  full of historical  accounts and
+observations about the role of  the ruling class and its imposed sense
+of un/justice online on MetaMute.
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Fri, 01 Jan 2010 00:00:00 CET</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2010.html#Pimping%20mutt</guid>
+
+</item>
+
+  </channel>
+</rss>

@@ -1,0 +1,11 @@
+% dynebolic_nomadic_system.top
+\unprotect
+\setupsystem[\c!n=1,\c!m=1]
+\def\MPOSTformatswitch{-progname=metafun -mem=}
+\setupsystem[\c!method=2]
+\setupsystem[\c!type=linux]
+\setupoutput[pdftex]
+\setupsystem[\c!random=44]
+\setupsystem[inputfile=dynebolic_nomadic_system.tex]
+\protect
+\endinput

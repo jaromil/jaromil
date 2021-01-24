@@ -1,0 +1,425 @@
+% Created 2010-07-19 Mon 12:03
+\documentclass{beamer}
+\usetheme{AnnArbor}
+\usecolortheme{crane}
+\useinnertheme[shadow]{rounded}
+\usefonttheme{structuresmallcapsserif}
+\institute[2010]{dyne.org / NIMk}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{soul}
+\usepackage{t1enc}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\tolerance=1000
+\providecommand{\alert}[1]{\textbf{#1}}
+
+\title{Crowdsourcing: il precariato digitale}
+\author{Denis Roio (aka Jaromil)}
+\date{Collegio di Milano, 27 Maggio 2010}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}
+\frametitle{Outline}
+\setcounter{tocdepth}{3}
+\tableofcontents
+\end{frame}
+
+
+
+
+
+
+\begin{frame}
+\frametitle{Introduzione e scuse}
+\label{sec-1}
+
+
+Questa e' una pubblicazione prematura, seppur incoraggiata dal mio
+supervisore Antonio Caronia, della mia ricerca di dottorato presso il
+
+\textbf{Planetary Collegium (Universita' di Plymouth) M-Node}
+
+La ricerca che sto svolgendo viene documentata in inglese, mi scuso
+per la fretta, ma queste slides non sono ancora tradotte in italiano.
+\end{frame}
+\begin{frame}
+\frametitle{Crowdsourcing}
+\label{sec-2}
+
+
+Il termine crowdsourcing\footnote{citazione da Wikipedia Italia } (da crowd, gente comune, e
+outsourcing, esternalizzare una parte delle proprie attività\footnote{Marialuisa Pezzali, Crowdsourcing: quando la rete\ldots{} trova la
+soluzione. «Il Sole 24 ORE», 2009. }) è
+un neologismo che definisce un modello di business nel quale
+un’azienda o un’istituzione richiede lo sviluppo di un progetto, di un
+servizio o di un prodotto ad un insieme distribuito di persone non già
+organizzate in un team.
+
+Questo processo e' virtualizzato, avviene attraverso degli strumenti
+web o comunque dei portali su internet.
+\end{frame}
+\section{Gratuitous and totally unaware crowdsourcing}
+\label{sec-3}
+\begin{frame}
+\frametitle{Gratuitous crowdsourcing}
+\label{sec-3_1}
+
+\begin{itemize}
+\item Gratis
+\item Unaware
+\item Working class
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{Free ESP Games}
+\label{sec-3_2}
+
+
+Use the computational power of humans to perform a task that computers
+cannot yet do by packaging the task as a ``game''.
+
+  ``5000 people playing simultaneously an ESP game on image recognition
+   can  label all images  on google  in 30  days. Individual  games in
+   Yahoo!  and  MSN average over 5000  players at a  time.''\footnote{von Ahn, 2006 }
+
+\includegraphics[width=10em]{images/esp_game.jpg}
+\end{frame}
+\begin{frame}
+\frametitle{Massive Multiplayer Online RPG}
+\label{sec-3_3}
+\begin{itemize}
+
+\item MMORPG\\
+\label{sec-3_3_1}%
+\includegraphics[width=10em]{images/wow_noob.jpg}
+
+\begin{itemize}
+\item World of Warcraft
+\item Second Life
+\item OpenSIM
+\item etc.
+\end{itemize}
+
+
+
+
+\item Virtual reality architecture\\
+\label{sec-3_3_2}%
+\item Virtual miners\\
+\label{sec-3_3_3}%
+\end{itemize} % ends low level
+\end{frame}
+\begin{frame}
+\frametitle{Electronic  Design  Automation  (EDA)}
+\label{sec-3_4}
+
+
+
+Complex problems are broke up into modules where the I/O of logic
+circuits is tested against combinations computed by humans.
+
+Problems can be solved by humans who are not even aware of how their
+problem solving skills are then grouped and capitalised, while they
+are assigned points that, once again, are worth nothing (see ESP
+games).
+
+\begin{itemize}
+\item players unawareness
+\item aleatory value
+\item occult farming possible on SN (XSS and clustering on JS)
+\end{itemize}
+\end{frame}
+\section{Mechanical Turks}
+\label{sec-4}
+\begin{frame}
+\frametitle{Historical digression}
+\label{sec-4_1}
+\begin{itemize}
+
+\item Mechanical Turks
+\label{sec-4_1_1}%
+\begin{itemize}
+\item von Kempelen
+\item Maelzel
+\end{itemize}
+
+
+\end{itemize} % ends low level
+\end{frame}
+\begin{frame}
+\frametitle{von Kempelen's mechanical turk}
+\label{sec-4_2}
+
+
+  \includegraphics[width=10em]{images/turk1.jpg}
+
+  On an autumn day in 1769, a Hungarian nobleman, Wolfgang von
+  Kempelen, was summoned to witness a conjuring show at the imperial
+  court of Maria Theresa, empress of Austria-Hungary. So unimpressed
+  was Kempelen by what he saw that he impetuously declared that he
+  could do better himself.  The following year Kempelen presented a
+  mechanic man sitting behing a table: fashioned from wood, powered by
+  clockwork, and dressed in a Turkish costume, it was capable of
+  playing chess.
+\end{frame}
+\begin{frame}
+\frametitle{Maelzel's chess player}
+\label{sec-4_3}
+
+
+  \includegraphics[width=10em]{images/mechanical_turk.jpg}
+
+  ``Yet the question of its modus operandi is still
+  undetermined. Nothing has been written on this topic which can be
+  considered as decisive — and accordingly we find every where men of
+  mechanical genius, of great general acuteness, and discriminative
+  understanding, who make no scruple in pronouncing the Automaton a
+  pure machine, unconnected with human agency in its movements, and
+  consequently, beyond all comparison, the most astonishing of the
+  inventions of mankind.''\footnote{Poe, E. A. (1836) Maelzel's Chess-Player }
+\end{frame}
+\section{Cheap, partially aware crowdsourcing}
+\label{sec-5}
+\begin{frame}
+\frametitle{Mechanical turks}
+\label{sec-5_1}
+
+
+ \includegraphics[width=10em]{images/mturk.jpg}
+
+\begin{itemize}
+\item artificial artificial life
+\item repetitive tasks that will be automated in future
+\item humans are behind pseudo-automation
+\item serialised silly  tasks
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{Mompreneur}
+\label{sec-5_2}
+
+
+  \includegraphics[width=10em]{images/liveOps.jpg}
+
+\begin{itemize}
+\item Employees are contractors passing uniform tests
+\item Menu to choose where to go and act with your headset
+\item Menu option starts expanding as their success is proven
+\end{itemize}
+
+ 
+\begin{itemize}
+
+\item Problems\\
+\label{sec-5_2_1}%
+\begin{itemize}
+\item Problematic applications are hidden
+\item Increasing false positive cases
+\item Fatal errors
+\end{itemize}
+
+
+\end{itemize} % ends low level
+\end{frame}
+\begin{frame}
+\frametitle{"Rehabilitation" / Brain scooping}
+\label{sec-5_3}
+
+
+ \includegraphics[width=10em]{images/samasource.jpg}
+
+\begin{itemize}
+\item \href{http://www.samasource.org}{Samasource} provides work  for people  in ``refugee camps''
+\item Work that can be done on existing infrastructure
+\item Look in a screen and push buttons for 1 penny
+\end{itemize}
+\begin{itemize}
+
+\item Problems
+\label{sec-5_3_1}%
+\begin{itemize}
+\item peripheral fordism exploitation
+\item human alienation
+\end{itemize}
+
+
+\end{itemize} % ends low level
+\end{frame}
+\begin{frame}
+\frametitle{Art with MTURKS}
+\label{sec-5_4}
+
+
+\begin{itemize}
+\item The Sheep Market
+
+\begin{itemize}
+\item 10.000 sheeps created by online workers
+\item \href{http://www.thesheepmarket.com/}{http://www.thesheepmarket.com/}
+\end{itemize}
+
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{The faces of Turks}
+\label{sec-5_5}
+
+
+\includegraphics[width=10em]{images/turk_faces.jpg}
+\end{frame}
+\section{Expensive, providence based crowdsourcing}
+\label{sec-6}
+\begin{frame}
+\frametitle{Prize based}
+\label{sec-6_1}
+
+
+\begin{itemize}
+\item Expensive
+\item Top down
+\item Centralized
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{Internal Prize}
+\label{sec-6_2}
+
+
+  \includegraphics[width=10em]{images/innocentive.png}
+
+\begin{itemize}
+\item Best wins selection
+\item Project to be produced by the company giving the prize
+\item No risk for winning participants
+\item smaller prizes
+\end{itemize}
+\begin{itemize}
+
+\item Problems
+\label{sec-6_2_1}%
+\begin{itemize}
+\item Deregulated appropriation
+\item Enclosure
+\end{itemize}
+
+
+
+\end{itemize} % ends low level
+\end{frame}
+\begin{frame}
+\frametitle{External Prize}
+\label{sec-6_3}
+
+
+  \includegraphics[width=10em]{images/XPrize.png}
+
+\begin{itemize}
+\item Declared as philantropic
+\item Investement to win results cost only  partially
+\item Future revenue comes from independent distribution of product
+\end{itemize}
+\begin{itemize}
+
+\item Problems
+\label{sec-6_3_1}%
+\begin{itemize}
+\item High cost failure
+\end{itemize}
+
+
+
+\end{itemize} % ends low level
+\end{frame}
+\section{Difference from Free and Open Source Software}
+\label{sec-7}
+\begin{frame}
+\frametitle{This is not Free and Open Source Software}
+\label{sec-7_1}
+
+
+The dynamics of Free and Open Source Software\footnote{as defined by the \href{http://gnu.org}{GNU Project} and the \href{http://fsf.org}{Free Software Foundation} } are
+fundamentally different, since they apply logics of collaboration to
+\textbf{sharable goals and products} that can be adapted and redistributed
+infinitely in different contexts, in a \textbf{decentralized fashion}.
+
+\begin{itemize}
+\item Free cooperation vs. proprietary competition
+\end{itemize}
+
+
+The coalitions of those humans that are investing labour and the
+groups connected to them are aimed primarily at the quality of their
+\textbf{cooperative efforts} and the peer review of those who are adopting
+them.
+
+The redistribution of the (digitally reproducible) artifacts is left
+uncontrolled, creations can spawn recursively and muliply their
+virtue.
+\end{frame}
+\section{Conclusion}
+\label{sec-8}
+\begin{frame}
+\frametitle{References}
+\label{sec-8_1}
+
+
+There isn't much literature yet around the issue of labour politics in
+the digital environment, an exploration is offered by this book:
+
+\begin{itemize}
+\item Zittrain, J. (2009) The Future of the Internet, Yale Press
+\end{itemize}
+
+
+The \href{http://planet.dyne.org}{dyne.org network} and the research publication \href{http://www.thenextlayer.org/}{The Next Layer} offer
+good insights to understand the condition of \textbf{digital natives} in
+these and more scenarios.
+\end{frame}
+\begin{frame}
+\frametitle{Future scenarios}
+\label{sec-8_2}
+
+
+\begin{itemize}
+\item Global dimension of labour, i.e. \href{http://userlabor.org}{User Labor} markup (ULML)
+\item Exasperated import/export labour regulations
+\item Human exploitation in virtual environments
+\item Financial factors hit global labour markets
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{Salaam/Shalom/Shanthi/Dorood/Peace}
+\label{sec-8_3}
+
+
+Jaromil's musings on \href{http://jaromil.dyne.org/journal}{http://jaromil.dyne.org}
+
+\begin{itemize}
+\item email: jaromil@dyne.org
+\item IM: xmpp:jaromil@hinezumi.im
+\item \href{http://freaknet.org}{Freaknet} Medialab / \href{http://dyne.org}{dyne.org} network
+\item \href{http://nimk.nl}{Netherlands Media Art Institute} / R \& D
+\item \href{http://www.planetary-collegium.net/}{Planetary Collegium} / \href{http://www.planetary-collegium.net/}{M-Node} / PhD candidate
+\end{itemize}
+
+
+Brainstorming thanks to \#core, z4nn4, tomak, crash, merijn, /dev/mat,
+nightolo, acme, tati, acracia, asbesto `n ze otehrs
+
+\includegraphics[width=10em]{images/dyne-big.png}
+\end{frame}
+
+\end{document}

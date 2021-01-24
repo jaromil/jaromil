@@ -1,0 +1,14 @@
+c \thisissectionseparator{-}
+c \thisisutilityversion{2006.09.21}
+c \thisisbytesequence{À}
+f b {kunst_akademie_2009}
+c \usedmapfile{=}{original-base}
+c \usedmapfile{=}{original-ams-base}
+c \usedmapfile{=}{original-public-lm}
+c \usedmapfile{=}{lm-ec}
+c \usedmapfile{=}{lm-math}
+c \usedmapfile{=}{lm-rm}
+c \usedmapfile{=}{8r-base}
+c \usedmapfile{=}{ec-base}
+c \usedmapfile{=}{t5-base}
+c \usedmapfile{=}{original-ams-euler}

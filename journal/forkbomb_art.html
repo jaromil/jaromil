@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+    <title>ASCII Shell Forkbomb</title>
+  <link rel="alternate" type="application/rss+xml"
+        title="RSS 2.0" href="http://feeds.feedburner.com/jaromil_research" />
+  <link rel="author" href="http://jaromil.dyne.org" />
+  <link rel="home" href="http://jaromil.dyne.org/journal" />
+  <link rel="shortcut icon" href="http://dyne.org/dyne.ico" />
+  <link rel="stylesheet" type="text/css" charset="utf-8" media="all"
+          href="css/common.css" />
+    <link rel="stylesheet" type="text/css" charset="utf-8" media="screen"
+          href="css/screen.css" />
+    <link rel="stylesheet" type="text/css" charset="utf-8" media="print"
+          href="css/print.css" />
+  <meta name="description" content="You just have to type these 13 characters :(){ :|:& };: in a console terminal to crash any computer running a Unix-like operating system." />
+  <meta name="keywords" content="gypsy,travel,journal,free,software,open,source" />
+  <meta name="generator" content="Emacs Muse" />
+  <meta name="MSSmartTagsPreventParsing" content="TRUE" />
+    <!-- see http://www.glassdog.com/smarttags/index.html -->
+
+  <meta http-equiv="Content-Type"
+	content="text/html; charset=utf-8" />
+
+<!-- flattr -->
+<script type="text/javascript">
+/* <![CDATA[ */
+    (function() {
+        var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+        
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = 'http://api.flattr.com/js/0.5.0/load.js?mode=auto';
+        
+        t.parentNode.insertBefore(s, t);
+    })();
+/* ]]> */
+</script>
+
+  </head>
+
+    <body bgcolor="#ffeedd" link="#AA6600" vlink="#884400">
+      
+      <span class="headermenu">
+	<center>
+	    - -(
+	    <b><a href="http://dyne.org">dyne</a></b>
+	      // <b><a href="http://dyne.org/software.php">software</a>
+	      </b> :: <b><a href="http://dyne.org/perform.php">culture</a>
+	      </b> :: <b><a href="http://dyne.org/timezones">events</a>
+	      </b> :: <b><a href="http://tazebao.dyne.org">tazebao</a>
+	      </b> :: <b><a href="http://lists.dyne.org">discussion</a>
+	      </b> \\
+	    <b><a href="http://freaknet.org">freaknet</a>
+	    </b> )- -
+	    </center>
+      </span>
+      
+      <hr />
+
+<!-- Page published by Emacs Muse begins here -->
+<div class="menu">
+<div class="menutitle">
+<a href="http://jaromil.dyne.org/journal">
+<img src="images/jaromil_by_sameer.png"
+ title="jaromil's portrait by Sameer" alt="logo"></a>
+<br />
+Jaromil's Musings
+<br />
+<img src="images/graffa.gif"  alt="---">
+</div>
+
+
+	      
+	    <div class="menuitem">
+	      <a title="Philisophical writings and poetical ideas"
+		 href="inspirations.html">Inspirations</a>
+	    </div>
+	    <div class="menuitem">
+	      <a title="Publications and lectures"
+		 href="expirations.html">Expirations</a>
+	    </div>
+
+	    <div class="menuitem">
+	      <a title="Miscellaneous things I am active with"
+		 href="aspirations.html">Aspirations</a>
+	    </div>
+
+	    <!-- Conspirations? these are secret right ;) -->
+
+	    <hr />
+
+	    <div class="menuitem">
+	      <a title="Journey diaries"
+		 href="diaries.html">Diaries</a>
+	    </div>
+	    
+	    <div class="menuitem">
+	      <a title="Achievements and discoveries along the way"
+		 href="articles.html">Articles</a>
+	    </div>
+
+	    <div class="menuitem">
+	      <a title="Artistic creations and exhibitions"
+		 href="artworks.html">Artworks</a>
+	    </div>
+
+	    <div class="menuitem">
+	      <a title="Musical compositions and performances"
+	      href="music.html">Music</a>
+	    </div>
+
+	    <div class="menuitem">
+	      <a title="Fictional literature in Italian"
+	      href="novels.html">Novels</a>
+	    </div>
+
+	    <hr />
+
+	    <div class="menuitem">
+	      <a title="Classes tutored in schools"
+		  href="classes.html">Classes</a>
+	    </div>
+
+	    <div class="menuitem">
+	      <a title="Slides presented in lectures"
+		  href="slides.html">Slides</a>
+	    </div>
+
+	    <hr />
+
+	    <div class="menuitem">
+	      <a title="About this journal"
+		 href="about.html">About</a>
+	    </div>
+
+	    <div class="menuitem">
+	      <a title="Contact me and my friends"
+		 href="http://dyne.org/hackers_contact.php">Contact</a>
+	    </div>
+
+	    <div class="menuitem">
+	      <a title="Invite me for a beer!"
+		 href="donate.html">Support</a>
+	    </div>
+
+	    <div class="menuitem">
+	      <a class="FlattrButton" style="display:none;" rev="flattr;button:compact;"
+		 href="http://jaromil.dyne.org/journal"></a>
+	    </div>
+
+	    <hr />
+	    
+	    <div class="menuitem">
+	      <a title="A page linking all documents in this website"
+		 href="sitemap.html">Sitemap</a>
+	    </div>
+
+	    <div class="search-form">
+	      <form action="http://dyne.org/search" id="cse-search-box">
+		<div>
+		  <input type="hidden" name="cx" value="partner-pub-8713919100005636:ft3izybzqm3" />
+		  <input type="hidden" name="cof" value="FORID:10" />
+		  <input type="hidden" name="ie" value="UTF-8" />
+		  <input type="text" name="q" size="6" />
+		  <input type="submit" name="sa" value=">" />
+		</div>
+	      </form>
+	      <script type="text/javascript" src="http://www.google.com/cse/brand?form=cse-search-box&amp;lang=en"></script>
+	    </div>
+
+	    <hr />
+
+
+<center>
+
+  <img src="images/geeknet-logo.png" alt="geeknet" title="Geeknet">
+  
+  <p>
+    <font size="-1"><a href="http://slashdot.org/~jaromil">
+	<img alt="poster" src="images/slashdot.ico" align="absmiddle" hspace="8" vspace="8"> on Slashdot
+    </a></font>
+  </p>
+  
+  <p>
+    <font size="-1"><a href="http://freshmeat.net/~jaromil">
+	<img alt="publisher" src="images/freshmeat.ico" align="absmiddle"> on Freshmeat
+    </a></font>
+  </p>
+  
+  <p>
+    <font size="-1">
+      <a href='https://www.ohloh.net/accounts/20804?ref=Rank'>
+	<img alt='Coder' border='2' height='24'
+	     src='https://www.ohloh.net/accounts/20804/widgets/account_rank.gif'
+	     width='32' align="absmiddle" /> on Ohloh
+    </a></font>
+  </p>
+  
+
+	    <hr />
+  
+<!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_default_style">
+<a href="http://www.addthis.com/bookmark.php?v=250&amp;username=jaromil" class="addthis_button_compact">Share</a>
+<span class="addthis_separator">|</span>
+<a class="addthis_button_facebook"></a>
+<a class="addthis_button_google"></a>
+<a class="addthis_button_twitter"></a>
+</div>
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=jaromil"></script>
+<!-- AddThis Button END -->
+
+
+    <a href="#disqus_thread">
+      <img src="images/disqus-logo.png"><br />
+      <font size="-1">leave your comments</font>
+    </a>
+    
+    <br />
+<!--    
+    <a href='http://www.pledgie.com/campaigns/9570'>
+      <img alt='make a donation'
+	   src='http://www.pledgie.com/campaigns/9570.png?skin_name=chrome' border='0' /></a>
+    <br />
+-->
+
+	    <hr />
+
+
+    
+    </center>
+
+<!-- Page published by Emacs Muse begins here -->
+
+
+<hr />
+<span class="footdate">
+<a href="forkbomb_art.pdf">
+<img src="images/print.gif" alt="print" align="absmiddle"
+ title="download this page in printable form" hspace="3"></a>
+printable page
+
+	      </span>
+	      
+	    </div><!-- menu ends here -->
+
+<h1>ASCII Shell Forkbomb</h1>    
+<h2>Introduction</h2>
+
+<p class="image"><img src="images/forkbomb.png" alt=""></p>
+
+<blockquote>
+<p class="quoted">The code  <strong>:(){ :|:&amp;  };:</strong> provides arguably  one of the  most elegant
+examples of  a fork bomb.</p>
+</blockquote>
+
+<blockquote>
+<p class="quoted">It was presented as a free and open source piece of net:art in 2002,
+along with a text titled <a href="forkbomb.html">la bohème digitale</a>.</p>
+</blockquote>
+
+<p>From the Wikipedia article <a href="http://en.wikipedia.org/wiki/Fork_bomb">Fork_bomb</a></p>
+
+<blockquote>
+<p class="quoted">In  computing, the  fork bomb,  a form  of  denial-of-service attack
+against  a  computer  system,  implements  the  fork  operation  (or
+equivalent  functionality)  whereby  a  running process  can  create
+another running process. Fork bombs count as wabbits: they typically
+do not  spread as  worms or viruses.  To incapacitate a  system they
+rely on  the assumption  that the number  of programs  and processes
+which may execute simultaneously on a computer has a limit.</p>
+</blockquote>
+
+<blockquote>
+<p class="quoted">A  fork bomb  works by  creating a  large number  of  processes very
+quickly  in order to  saturate the  available space  in the  list of
+processes kept  by the computer's  operating system. If  the process
+table  becomes saturated, no  new programs  may start  until another
+process terminates.  Even if that happens,  it is not  likely that a
+useful  program may  be  started  since the  instances  of the  bomb
+program  will   each  attempt  to  take   any  newly-available  slot
+themselves.</p>
+</blockquote>
+
+<blockquote>
+<p class="quoted">Not only  do fork bombs use  space in the process  table: each child
+process uses further processor-time and memory. As a result of this,
+the  system and  existing programs  slow down  and become  much more
+unresponsive and difficult or even impossible to use.</p>
+</blockquote>
+
+<blockquote>
+<p class="quoted">As well  as being  specifically malicious, fork  bombs can  occur by
+accident in  the normal development of software.  The development of
+an  application that listens  on a  network socket  and acts  as the
+server in a  Client-server system may well use  an infinite loop and
+fork operation in a manner  similar to one of the programs presented
+below. A trivial bug in the source of this kind of application could
+cause a fork bomb during testing.</p>
+</blockquote>
+
+<h3>net:art</h3>
+
+<p class="first">Within  the first  5  years  of circulation,  this  net:art piece  has
+propagated on computer screens, t-shirts and most impressively for its
+own author: <strong>tattoos</strong>.</p>
+
+<p>Also featured on the <a href="http://www.geekytattoos.com/fork-bomb-tattoo/">geekytattoos</a> website, among the pioneers carrying
+a logic bomb everywhere are <a href="http://silveiraneto.net/2009/10/22/the-fork-bomb-tattoo/">Silveira</a>, <a href="http://www.c0le.org/2010/01/first-tattoo_134.html">C0le</a> and V.</p>
+
+<p class="image"><img src="fotos/forkbomb/4033340711_543ef81df0.jpg" alt="">
+<img src="fotos/forkbomb/fb-2-500x375.png" alt="">
+<img src="fotos/forkbomb/e06842-sm.jpg" alt=""></p>
+
+
+
+
+<h2>Group Exhibitions</h2>
+
+<ul>
+<li><a href="http://www.digitalcraft.org/iloveyou/">I LOVE YOU</a> - curated by Franziska Nori
+
+<ul>
+<li>(2002) Museum of Applied Arts, Frankfurt</li>
+<li>(2003) Transmediale, Haus der Kulturen der Welt, Berlin</li>
+<li>(2004) Brown University - Watson Institute for International Studies, Providence</li>
+<li>(2006) Museum of Contemporary Art, Novi Sad</li>
+<li>(2006) Museum of Contemporary Art, Belgrade</li>
+</ul></li>
+<li><a href="http://www.runme.org/">RunMe software art</a> - Helsinky, curated by Alexei Shulgin and Olga Goriunova
+
+<ul>
+<li>(2003) Helsinky</li>
+</ul></li>
+<li><a href="http://www.p0es1s.net/">p0es1s digitale poesie</a> - curated by Friedrich W. Block and Benjamin Meyer-Krahmer
+
+<ul>
+<li>(2004) Kulturforum Potsdamer Platz, Berlin</li>
+</ul></li>
+</ul>
+
+
+<h2>Critics, essays, publications</h2>
+
+<h3>Curatorial statement p0es1s exhibition</h3>
+
+<blockquote>
+<p class="quoted">This forkbomb is a kind  of poetic virus. If its visually attractive
+line of only thirteen characters is entered into the command line of
+a  Unix system  and the  enter key  is pressed,  within  seconds the
+computer will  crash because the devious little  program commands it
+to make multiple copies of  itself, setting off a chain reaction and
+thus  quickly  exhausting  the  system’s resources.   Jaromil:  &quot;In
+considering a source  code as literature, I am  depicting viruses as
+poésie maudite, giambi against those  selling the Net as a safe area
+for a  bourgeois society. The  relations, forces and  laws governing
+the digital  domain differ from  those in the natural.   The digital
+domain  produces  a form  of  chaos—sometimes uncomfortable  because
+unusual, although  fertile—to surf thru:  in that chaos  viruses are
+spontaneous  compositions,  lyrical   in  causing  imperfections  in
+machines  made to  serve and  in representing  the rebellion  of our
+digital serfs.&quot;</p>
+</blockquote>
+
+
+<h3>Lecture/Essay by Florian Cramer &quot;Entering the Machine and Leaving It Again: Poetics of Software in Contemporary Art&quot;, Milano 2006</h3>
+
+<blockquote>
+<p class="quoted">This  energy  is  also  embbedded  into  the  twelve  characters  of
+jaromil's forkbomb:</p>
+</blockquote>
+
+<p><strong>:(){ :|:&amp; };:</strong></p>
+
+<blockquote>
+<p class="quoted">Most computer operating  systems can be crashed or  at least brought
+to  a  grinding  halt  when  users,  even  those  without  superuser
+privileges, launch an abundant  ever-growing amount of programs that
+eat up all memory and CPU time. The easiest way to achieve this is a
+&quot;forkbomb&quot;, a  little program which  does nothing but launch  two or
+more copies of itself upon  startup.  Since these copies do the same
+in  turn, this  sets  off  a chain  reaction  with an  exponentially
+growing   number   of  processes.   Forkbombs   have  been   popular
+entertainment among  hackers since about the  mid-1990s, but jaromil
+manages to  condense them to  a most terse, poetic  syntax, arguably
+the most elegant forkbomb ever written.</p>
+</blockquote>
+
+<blockquote>
+<p class="quoted">In  other words,  if you  have access  to the  terminal prompt  of a
+Unix-like  OS, these twelve  characters -  which look  like Internet
+smilies  - can  bring  it down.   It  has become  a  secret code  of
+recognition  among the initiated,  like the  stuffed trumpet  of the
+Tristero  underground  postal  network  in  Thomas  Pynchon's  novel
+&quot;Crying of Lot 49&quot;.</p>
+</blockquote>
+
+<blockquote>
+<p class="quoted">This example also reveals a  problematic issue of the term &quot;software
+art&quot;:   That   it   is   often  misunderstood   as   high   programm
+craftsmanship. In fact, this understanding has its roots in computer
+science  itself.   Donald Knuth's  textbooks  &quot;The  Art of  Computer
+Programming&quot; or Paul Graham's recent book &quot;Hackers and Painters&quot; are
+founded  on a  post-classicist  notion  of art  as  beauty and  high
+craftsmanship, for example in the elegance of an algorithm.</p>
+</blockquote>
+
+
+<h3>Josephine Bosma &quot;Media Spaces&quot; essay on Medien Kunst Netz</h3>
+
+<blockquote>
+<p class="quoted">Jaromil’s  Forkbomb is  a form  of  public rebellion  (he makes  no
+secret  of his  identity  or  of his  intentions),  which serves  as
+reminder of  a free  space in digital  media that has  become almost
+invisible  to the general  audience.  It  is in  this sense  also an
+invitation,  like many  other  projects, especially  some new  media
+performances, to start fooling around oneself.</p>
+</blockquote>
+
+
+<h3>Tato, techie and blogger at everything2.com</h3>
+
+<blockquote>
+<p class="quoted">In the  Digital Craft exhibit  of Frankfurt's Museum  fur Angewandte
+Kunst,  you will  find  this  brilliant piece  of  code poetry.  The
+characters  are  silkscreened  in  black  onto  a  meter  square  of
+translucent plastic, the whole resting on a simple white surface, in
+a display case behind glass.</p>
+</blockquote>
+
+<blockquote>
+<p class="quoted">Attributed to  a writer identified  only by the name  &quot;Jaromil&quot;, the
+exhibit text says that when it is run in a unix shell like zsh, this
+letterless code replicates  itself like a virus until  the memory of
+the system is full and causes a segmentation fault.</p>
+</blockquote>
+
+<blockquote>
+<p class="quoted">Pseudocode translation of :(){:|:&amp;};:</p>
+</blockquote>
+
+<p class="verse">
+&nbsp;&nbsp;&nbsp;&nbsp;:() = Define a function named : (A colon is a legal function name, it would seem.)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{:|:&amp;}; = When this function is called, run a copy of itself<br>
+&nbsp;&nbsp;&nbsp;&nbsp;: = Execute the function named :, now.<br>
+</p>
+
+<blockquote>
+<p class="quoted">I'm neither a  h4x0r nor a virologist, but I  wouldn't consider it a
+true virus since it can only  replicate when run in a shell executed
+by  its  user.  Plus  its  effects  are  negligible.  But  for  it's
+typographic  mystique, elegance,  and  efficiency, it  is more  than
+code. Like  a little  joke between  the coder and  the OS  about how
+simple and mysterious self destruction can be.</p>
+</blockquote>
+
+
+
+<h3>Internet Society Nederland (ISOC) to guests of the 2009 year reception</h3>
+
+<blockquote>
+<p class="quoted">WHAT  DOES THAT  T-SHIRT  I GOT  MEAN?   Hopefully you  picked up  a
+T-shirt in the  patio where we had about 400  of these cool T-shirts
+to  give away  in all  sizes. The  back of  the shirt  contained the
+oldest drawing known of the ARPANET,  drawn 40 years ago on a napkin
+this  september. It  shows the  first two  nodes of  this historical
+precursor to  the internet. The  graphic on the front  side contains
+two elements: the first  is the 'universally applicable fingerprint'
+of German  minister of the interior Wolfgang  Schauble, as published
+by the German hackers from Chaos  Computer Club last year as part of
+the  societal  debate  on   including  biometric  data  in  identity
+documents. The  second is the  famous 'fork bomb' poem  by Amsterdam
+based  writer, programmer  and activist  Jaromil.  In  just thirteen
+attractive characters  of shell code you will  find enough recursive
+power to bring any UNIX-based system to a halt - and it looks pretty
+too. You work out what that means, if anything.</p>
+</blockquote>
+
+
+<h3>More books quoting the Forkbomb artwork</h3>
+
+<blockquote>
+<p class="quoted">(2008) Another Language, page 98 - by Kornelia Freitag, Katharina
+Vester (genre: Literary Criticism)</p>
+</blockquote>
+
+<blockquote>
+<p class="quoted">(2007) The Exploit: A Theory of Networks, page 176 - by Alexander
+R. Galloway, Eugene Thacker (genre: Technology &amp; Engineering)</p>
+</blockquote>
+
+<blockquote>
+<p class="quoted">(2005) Media Art net 2: Topical Highlights‎, page 307 - by Dieter Daniels,
+Rudolf Frieling (genre: Architecture)</p>
+</blockquote>
+
+<blockquote>
+<p class="quoted">(2004) P0es1s: Ästhetik digitaler Poesie the Aesthetics of digital
+Poetry‎, page 17 - by Friedrich W. Block, Christiane Heibach, Karin
+Wenz (genre: Art)</p>
+</blockquote>
+
+
+
+<!-- Page published by Emacs Muse ends here -->
+
+<!--
+This sourcecode is Copyright (C) 2000-2009 dyne.org autoproduzioni
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1
+or any later version published by the Free Software Foundation;
+with the Invariant Sections being AUTHORS when present and this copyright
+notice.
+A copy of the license is included in the section entitled "GNU Free
+Documentation License" at http://fsf.org/licenses/licenses.html
+
+
+
+    <div class="navfoot">
+    </div>
+
+-->    
+
+    <hr />
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_developer=1;
+</script>
+<script type="text/javascript" src="http://disqus.com/forums/jarojournal/embed.js"></script>
+<noscript>
+<a href="http://disqus.com/forums/jarojournal/?url=ref">View the discussion thread.</a><br />
+</noscript>
+
+    <hr />
+
+    <table width="100%"><tr>
+	
+	<td>
+	  
+	  <a href="http://www.gnu.org">
+	    <img border="0" src="images/gnu.png" alt="GNU/Linux"
+		 height="65" width="75">
+	  </a>
+	  
+	</td><td align="center">
+
+	  <img title="Page viewable with any browser"
+	       alt="Use any browser"
+	       src="images/content_enhanced.png" />
+
+	  <br>
+
+	  <a href="http://www.mwolson.org/projects/EmacsMuse.html">
+            <img alt="Emacs Muse" src="images/muse-made-with.png" />
+	  </a>
+	    
+
+	</td><td align="center">
+
+	  <a href="http://w2.eff.org/br/">
+	    <img src="images/eff_blue_ribbon.gif" alt="blue ribbon campaign"
+		 title="Informations want to be free!">
+	  </a>
+
+	  <br>
+
+	  <a href="http://www.nosoftwarepatents.com">
+	    <img src="images/nswpat.gif" alt="no software patents"
+		 title="freedom of creation!">
+	  </a>
+	  
+	  <br>
+
+	  <a href="http://www.fsf.org/resources/formats/playogg">
+	    <img src="images/play_ogg.png" alt="Play Ogg"
+		 title="Free and Open Source Audio/Video Format" />
+	  </a>
+
+	  <br>
+	  
+	  <a href="http://www.defectivebydesign.org/join/button">
+	    <img src="images/nodrm.gif"
+		 alt="say no to DRM" title="Digital rights now!">
+	  </a>
+
+
+	</td><td>
+
+	  <span class="footnote">
+	    <a       rel="license"       href="http://gplv3.fsf.org/">
+	       <img   title="GNU   GPLv3"   alt="(C)   GNU   GPL   v3"
+	       style="border-width:0"            src="images/gplv3.png"
+	       align="absmiddle"  />  copyleft  2000  -  2009</a>  dyne.org
+	       foundation  and respective  authors.   Verbatim copying
+	       and distribution  is permitted in  any medium, provided
+	       this notice is preserved.
+	    <a href="http://dyne.org/hackers_contact.php">
+	      Send inquiries &amp; questions to dyne.org's hackers</a>.
+	  </span>
+	  
+	</td><td>
+	  
+	  <a href="http://dyne.org">
+	    <img src="images/dyne-sm.png" title="dyne.org free software foundry"
+		 hspace="5" align="right" border="0" alt="dyne.org">
+	  </a>
+	  
+	</td>
+    </tr></table>
+    
+    
+</body>
+
+<!-- disqus account jarojournal.disqus.com 
+     comment count code -->
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+	var links = document.getElementsByTagName('a');
+	var query = '?';
+	for(var i = 0; i < links.length; i++) {
+	if(links[i].href.indexOf('#disqus_thread') >= 0) {
+		query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+	}
+	}
+	document.write('<script charset="utf-8" type="text/javascript"
+ src="http://disqus.com/forums/jarojournal/get_num_replies.js' + query + '"></' + 'script>');
+})();
+//]]>
+</script>
+
+<!-- google analytics -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17244540-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</html>

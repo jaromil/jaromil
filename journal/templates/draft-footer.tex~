@@ -1,0 +1,11 @@
+
+\vspace{.5cm}\hrule\vspace{.5cm}
+
+This   document   is  confidential,   <lisp>(muse-publishing-directive
+"destination")</lisp>   received   it   as   a  draft   proposal   for
+consideration  and/or contribution, by  reading it  you accept  to not
+circulate  it  without prior  permission  from  all authors  involved.
+Please       direct       inquiries       and       questions       to
+<lisp>(muse-publishing-directive "author")</lisp>.
+
+\end{document}

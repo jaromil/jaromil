@@ -1,0 +1,77 @@
+/* Michael Olson's tweaked Muse stylesheet
+
+   Elements for most of my web site.
+
+   License: Modification and propagation of this document is
+            permitted.  Attribution of credit to me is optional.
+*/
+
+/* Footnote */
+
+.navfoot hr {
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.navfoot table {
+  border-spacing: 0;
+  border-width: 0;
+  clear: right;
+  margin: 0;
+  padding: 0;
+}
+
+.navfoot td {
+  border-spacing: 0;
+  border-width: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Planner */
+
+.taskA { color: red }
+
+.taskB { color: green }
+
+.taskC { color: navy }
+
+.taskX {
+  color: #696969;               /* dim gray */
+  text-decoration: line-through;
+}
+
+/* Source coloring */
+
+.builtin {
+  /* font-lock-builtin-face */
+  color: #9370db;
+}
+
+.comment {
+  /* font-lock-comment-face */
+  color: #b22222;
+}
+
+.constant {
+  /* font-lock-constant-face */
+  color: #b8860b;
+}
+
+.doc {
+}
+
+.function-name {
+  /* font-lock-function-name-face */
+  color: #0000ff;
+}
+
+.keyword {
+  /* font-lock-keyword-face */
+  color: #a020f0;
+}
+  
+.string {
+  /* font-lock-string-face */
+  color: #228b22;
+}

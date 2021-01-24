@@ -1,0 +1,320 @@
+
+<!-- dyne.org smarty web configuration -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+	<title>dyne.org/timezones</title>
+	<link>http://dyne.org/</link>
+	<description>updated coordinates of dyne happenings</description>
+	<language>en</language>
+<!--GAP-->
+
+
+
+<item>
+  <guid isPermaLink="false">FLOSSman-mediakunst.nl-07</guid>
+  <title>FLOSSman @ mediakunst.nl in AMSTERDAM (NL)</title>
+  <link>http://mediakunst.nl</link>
+  <!--
+  <pubDate>Fri,19 Oct 2007 00:00:00 GMT</pubDate>
+  -->
+  <category>NL</category>
+  <category>AMSTERDAM</category>
+  <description><![CDATA[
+  FLOSS Manuals Launch Party! 18:00CET at Montevideo.nl ]]></description>
+</item>
+
+
+
+<item>
+  <guid isPermaLink="false">black market-steirischer herbst-07</guid>
+  <title>black market @ steirischer herbst in GRAZ (AT)</title>
+  <link>http://www.steirischerherbst.at/2007/english/</link>
+  <!--
+  <pubDate>Sun,30 Sep 2007 00:00:00 GMT</pubDate>
+  -->
+  <category>AT</category>
+  <category>GRAZ</category>
+  <description><![CDATA[
+  jaromil is one of the 100 experts invited to exchange knowledge on the black market]]></description>
+</item>
+
+
+
+<item>
+  <guid isPermaLink="false">hackmeeting-TAZ-07</guid>
+  <title>hackmeeting @ TAZ in PISA (IT)</title>
+  <link>http://www.hackmeeting.org</link>
+  <!--
+  <pubDate>Fri,28 Sep 2007 00:00:00 GMT</pubDate>
+  -->
+  <category>IT</category>
+  <category>PISA</category>
+  <description><![CDATA[
+  the 10th edition of the italian hackmeeting]]></description>
+</item>
+
+
+
+<item>
+  <guid isPermaLink="false">goodbye privacy-ARS2007-07</guid>
+  <title>goodbye privacy @ ARS2007 in LINZ (AT)</title>
+  <link>http://www.aec.at/en/festival2007/</link>
+  <!--
+  <pubDate>Wed, 5 Sep 2007 00:00:00 GMT</pubDate>
+  -->
+  <category>AT</category>
+  <category>LINZ</category>
+  <description><![CDATA[
+  for the goobye privacy symposium, jaromil's speech will be about piracy, privacy and thought control]]></description>
+</item>
+
+
+
+<item>
+  <guid isPermaLink="false">hackers-CCC2007-07</guid>
+  <title>hackers @ CCC2007 in BERLIN (DE)</title>
+  <link>http://events.ccc.de/camp/2007/Intro/</link>
+  <!--
+  <pubDate>Wed, 8 Aug 2007 00:00:00 GMT</pubDate>
+  -->
+  <category>DE</category>
+  <category>BERLIN</category>
+  <description><![CDATA[
+  several hackers gather every 4 years in this huge event organized by the Chaos Computer Club]]></description>
+</item>
+
+
+
+<item>
+  <guid isPermaLink="false">camping-zappanale-07</guid>
+  <title>camping @ zappanale in BAD DOBERAN (DE)</title>
+  <link>http://www.zappanale.de/</link>
+  <!--
+  <pubDate>Fri, 3 Aug 2007 00:00:00 GMT</pubDate>
+  -->
+  <category>DE</category>
+  <category>BAD DOBERAN</category>
+  <description><![CDATA[
+  we'll spend a friendly holyday together listening to good music]]></description>
+</item>
+
+
+
+<item>
+  <guid isPermaLink="false">rastasoft-streamfest-07</guid>
+  <title>rastasoft @ streamfest in LECCE (IT)</title>
+  <link>http://streamfest.it</link>
+  <!--
+  <pubDate>Thu,26 Jul 2007 00:00:00 GMT</pubDate>
+  -->
+  <category>IT</category>
+  <category>LECCE</category>
+  <description><![CDATA[
+  hascii roots installation and streamtime conference with jaromil and cecile]]></description>
+</item>
+
+
+
+<item>
+  <guid isPermaLink="false">spavian-i...ludiamoci07-07</guid>
+  <title>spavian @ i...ludiamoci07 in PESCARA (IT)</title>
+  <link>http://www.illudiamoci.net</link>
+  <!--
+  <pubDate>Wed, 4 Jul 2007 00:00:00 GMT</pubDate>
+  -->
+  <category>IT</category>
+  <category>PESCARA</category>
+  <description><![CDATA[
+  festival of role playing games and comics organized by the chaos league]]></description>
+</item>
+
+
+
+<item>
+  <guid isPermaLink="false">dyne-kozavisual-07</guid>
+  <title>dyne @ kozavisual in ANKARA (TR)</title>
+  <link>http://www.kozavisual.org</link>
+  <!--
+  <pubDate>Fri,22 Jun 2007 00:00:00 GMT</pubDate>
+  -->
+  <category>TR</category>
+  <category>ANKARA</category>
+  <description><![CDATA[
+  dyne:bolic media production workshop]]></description>
+</item>
+
+
+
+<item>
+  <guid isPermaLink="false">bricolabs-HOSC-07</guid>
+  <title>bricolabs @ HOSC in AMSTERDAM (NL)</title>
+  <link>http://www.hosc.nl/index.jsp?nr=6823</link>
+  <!--
+  <pubDate>Mon,11 Jun 2007 00:00:00 GMT</pubDate>
+  -->
+  <category>NL</category>
+  <category>AMSTERDAM</category>
+  <description><![CDATA[
+  distributed generation of tools]]></description>
+</item>
+
+
+
+<item>
+  <guid isPermaLink="false">dyne:workshop-Tesla-07</guid>
+  <title>dyne:workshop @ Tesla in BERLIN (DE)</title>
+  <link>http://www.tesla-berlin.de</link>
+  <!--
+  <pubDate>Fri, 1 Jun 2007 00:00:00 GMT</pubDate>
+  -->
+  <category>DE</category>
+  <category>BERLIN</category>
+  <description><![CDATA[
+  a workshop on recycling tech for creative uses and media production]]></description>
+</item>
+
+
+
+<item>
+  <guid isPermaLink="false">HACKmit-MACHmit museum-07</guid>
+  <title>HACKmit @ MACHmit museum in BERLIN (DE)</title>
+  <link>http://www.machmitmuseum.de/</link>
+  <!--
+  <pubDate>Sat,28 Apr 2007 00:00:00 GMT</pubDate>
+  -->
+  <category>DE</category>
+  <category>BERLIN</category>
+  <description><![CDATA[
+  Installations by Asbesto and Alfa]]></description>
+</item>
+
+
+
+<item>
+  <guid isPermaLink="false">BricoLabs-enter_unknown-07</guid>
+  <title>BricoLabs @ enter_unknown in CAMBRIDGE (UK)</title>
+  <link>http://www.enternet.org.uk/enternet/unknownterritories/</link>
+  <!--
+  <pubDate>Wed,25 Apr 2007 00:00:00 GMT</pubDate>
+  -->
+  <category>UK</category>
+  <category>CAMBRIDGE</category>
+  <description><![CDATA[
+  presentation and workshop with Jaromil and the bricolabs crew]]></description>
+</item>
+
+
+
+<item>
+  <guid isPermaLink="false">BricoLabs-Mal au Pixel-07</guid>
+  <title>BricoLabs @ Mal au Pixel in PARIS (FR)</title>
+  <link>http://www.pixelache.ac/2007/democracy-diy</link>
+  <!--
+  <pubDate>Sat,21 Apr 2007 00:00:00 GMT</pubDate>
+  -->
+  <category>FR</category>
+  <category>PARIS</category>
+  <description><![CDATA[
+  short presentations and workshop]]></description>
+</item>
+
+
+
+<item>
+  <guid isPermaLink="false">The Ball In The Hole-La Cueva-07</guid>
+  <title>The Ball In The Hole @ La Cueva in MILAN (IT)</title>
+  <link>http://topolin.it</link>
+  <!--
+  <pubDate>Wed,21 Mar 2007 00:00:00 GMT</pubDate>
+  -->
+  <category>IT</category>
+  <category>MILAN</category>
+  <description><![CDATA[
+  Enlarge yourself with freesoftware]]></description>
+</item>
+
+
+
+<item>
+  <guid isPermaLink="false">Italian Networking Art-Transmediale07-07</guid>
+  <title>Italian Networking Art @ Transmediale07 in BERLIN (DE)</title>
+  <link>http://www.transmediale.de</link>
+  <!--
+  <pubDate>Sun, 4 Feb 2007 00:00:00 GMT</pubDate>
+  -->
+  <category>DE</category>
+  <category>BERLIN</category>
+  <description><![CDATA[
+  book presentation panel with T-Bazz, Jaromil, Diana McCarty and Gaia]]></description>
+</item>
+
+
+
+<item>
+  <guid isPermaLink="false">The ball in the hole-Piksel-06</guid>
+  <title>The ball in the hole @ Piksel in Bergen (NO)</title>
+  <link>http://www.piksel.no/piksel06/about.html</link>
+  <!--
+  <pubDate>Thu,12 Oct 2006 00:00:00 GMT</pubDate>
+  -->
+  <category>NO</category>
+  <category>Bergen</category>
+  <description><![CDATA[
+  First time of -The ball in the hole- project in a techno freaky event]]></description>
+</item>
+
+
+
+<item>
+  <guid isPermaLink="false">dyne:workshop-Folly-06</guid>
+  <title>dyne:workshop @ Folly in BARROW (UK)</title>
+  <link>http://www.folly.co.uk/?q=node/143</link>
+  <!--
+  <pubDate>Sat, 9 Sep 2006 00:00:00 GMT</pubDate>
+  -->
+  <category>UK</category>
+  <category>BARROW</category>
+  <description><![CDATA[
+  Grow Your Own Medialab worskhop, in collaboration with goto10.org and pawfal.org]]></description>
+</item>
+
+
+
+<item>
+  <guid isPermaLink="false">ETC-H.arta-06</guid>
+  <title>ETC @ H.arta in TIMISOARA (RO)</title>
+  <link>http://www.eclectictechcarnival.org/</link>
+  <!--
+  <pubDate>Mon, 4 Sep 2006 00:00:00 GMT</pubDate>
+  -->
+  <category>RO</category>
+  <category>TIMISOARA</category>
+  <description><![CDATA[
+  The Eclectic Tech Carnival (/etc) is an annual nomadic event organised by an international collective of women hackers]]></description>
+</item>
+
+
+
+<item>
+  <guid isPermaLink="false">hackmeeting-2006-06</guid>
+  <title>hackmeeting @ 2006 in PARMA (IT)</title>
+  <link>http://www.hackmeeting.org/index.php?act=faq#faq_3</link>
+  <!--
+  <pubDate>Fri, 1 Sep 2006 00:00:00 GMT</pubDate>
+  -->
+  <category>IT</category>
+  <category>PARMA</category>
+  <description><![CDATA[
+  the italian hackmeeting gathering in a squatted place]]></description>
+</item>
+
+
+
+
+
+
+
+  </channel>
+</rss>

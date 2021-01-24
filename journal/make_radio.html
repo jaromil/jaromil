@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+    <title>Make Radio</title>
+  <link rel="alternate" type="application/rss+xml"
+        title="RSS 2.0" href="http://feeds.feedburner.com/jaromil_research" />
+  <link rel="author" href="http://jaromil.dyne.org" />
+  <link rel="home" href="http://jaromil.dyne.org/journal" />
+  <link rel="shortcut icon" href="http://dyne.org/dyne.ico" />
+  <link rel="stylesheet" type="text/css" charset="utf-8" media="all"
+          href="css/common.css" />
+    <link rel="stylesheet" type="text/css" charset="utf-8" media="screen"
+          href="css/screen.css" />
+    <link rel="stylesheet" type="text/css" charset="utf-8" media="print"
+          href="css/print.css" />
+  <meta name="description" content="This workshop  includes an hands-on experience  employing GNU/Linux for digital  radio  making  and   a  short  theoretical  overview  on  the significance of this media." />
+  <meta name="keywords" content="gypsy,travel,journal,free,software,open,source" />
+  <meta name="generator" content="Emacs Muse" />
+  <meta name="MSSmartTagsPreventParsing" content="TRUE" />
+    <!-- see http://www.glassdog.com/smarttags/index.html -->
+
+  <meta http-equiv="Content-Type"
+	content="text/html; charset=utf-8" />
+
+<!-- flattr -->
+<script type="text/javascript">
+/* <![CDATA[ */
+    (function() {
+        var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+        
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = 'http://api.flattr.com/js/0.5.0/load.js?mode=auto';
+        
+        t.parentNode.insertBefore(s, t);
+    })();
+/* ]]> */
+</script>
+
+  </head>
+
+    <body bgcolor="#ffeedd" link="#AA6600" vlink="#884400">
+      
+      <span class="headermenu">
+	<center>
+	    - -(
+	    <b><a href="http://dyne.org">dyne</a></b>
+	      // <b><a href="http://dyne.org/software.php">software</a>
+	      </b> :: <b><a href="http://dyne.org/perform.php">culture</a>
+	      </b> :: <b><a href="http://dyne.org/timezones">events</a>
+	      </b> :: <b><a href="http://tazebao.dyne.org">tazebao</a>
+	      </b> :: <b><a href="http://lists.dyne.org">discussion</a>
+	      </b> \\
+	    <b><a href="http://freaknet.org">freaknet</a>
+	    </b> )- -
+	    </center>
+      </span>
+      
+      <hr />
+
+<!-- Page published by Emacs Muse begins here -->
+<div class="menu">
+<div class="menutitle">
+<a href="http://jaromil.dyne.org/journal">
+<img src="images/jaromil_by_sameer.png"
+ title="jaromil's portrait by Sameer" alt="logo"></a>
+<br />
+Jaromil's Musings
+<br />
+<img src="images/graffa.gif"  alt="---">
+</div>
+
+
+	      
+	    <div class="menuitem">
+	      <a title="Philisophical writings and poetical ideas"
+		 href="inspirations.html">Inspirations</a>
+	    </div>
+	    <div class="menuitem">
+	      <a title="Publications and lectures"
+		 href="expirations.html">Expirations</a>
+	    </div>
+
+	    <div class="menuitem">
+	      <a title="Miscellaneous things I am active with"
+		 href="aspirations.html">Aspirations</a>
+	    </div>
+
+	    <!-- Conspirations? these are secret right ;) -->
+
+	    <hr />
+
+	    <div class="menuitem">
+	      <a title="Journey diaries"
+		 href="diaries.html">Diaries</a>
+	    </div>
+	    
+	    <div class="menuitem">
+	      <a title="Achievements and discoveries along the way"
+		 href="articles.html">Articles</a>
+	    </div>
+
+	    <div class="menuitem">
+	      <a title="Artistic creations and exhibitions"
+		 href="artworks.html">Artworks</a>
+	    </div>
+
+	    <div class="menuitem">
+	      <a title="Musical compositions and performances"
+	      href="music.html">Music</a>
+	    </div>
+
+	    <div class="menuitem">
+	      <a title="Fictional literature in Italian"
+	      href="novels.html">Novels</a>
+	    </div>
+
+	    <hr />
+
+	    <div class="menuitem">
+	      <a title="Classes tutored in schools"
+		  href="classes.html">Classes</a>
+	    </div>
+
+	    <div class="menuitem">
+	      <a title="Slides presented in lectures"
+		  href="slides.html">Slides</a>
+	    </div>
+
+	    <hr />
+
+	    <div class="menuitem">
+	      <a title="About this journal"
+		 href="about.html">About</a>
+	    </div>
+
+	    <div class="menuitem">
+	      <a title="Contact me and my friends"
+		 href="http://dyne.org/hackers_contact.php">Contact</a>
+	    </div>
+
+	    <div class="menuitem">
+	      <a title="Invite me for a beer!"
+		 href="donate.html">Support</a>
+	    </div>
+
+	    <div class="menuitem">
+	      <a class="FlattrButton" style="display:none;" rev="flattr;button:compact;"
+		 href="http://jaromil.dyne.org/journal"></a>
+	    </div>
+
+	    <hr />
+	    
+	    <div class="menuitem">
+	      <a title="A page linking all documents in this website"
+		 href="sitemap.html">Sitemap</a>
+	    </div>
+
+	    <div class="search-form">
+	      <form action="http://dyne.org/search" id="cse-search-box">
+		<div>
+		  <input type="hidden" name="cx" value="partner-pub-8713919100005636:ft3izybzqm3" />
+		  <input type="hidden" name="cof" value="FORID:10" />
+		  <input type="hidden" name="ie" value="UTF-8" />
+		  <input type="text" name="q" size="6" />
+		  <input type="submit" name="sa" value=">" />
+		</div>
+	      </form>
+	      <script type="text/javascript" src="http://www.google.com/cse/brand?form=cse-search-box&amp;lang=en"></script>
+	    </div>
+
+	    <hr />
+
+
+<center>
+
+  <img src="images/geeknet-logo.png" alt="geeknet" title="Geeknet">
+  
+  <p>
+    <font size="-1"><a href="http://slashdot.org/~jaromil">
+	<img alt="poster" src="images/slashdot.ico" align="absmiddle" hspace="8" vspace="8"> on Slashdot
+    </a></font>
+  </p>
+  
+  <p>
+    <font size="-1"><a href="http://freshmeat.net/~jaromil">
+	<img alt="publisher" src="images/freshmeat.ico" align="absmiddle"> on Freshmeat
+    </a></font>
+  </p>
+  
+  <p>
+    <font size="-1">
+      <a href='https://www.ohloh.net/accounts/20804?ref=Rank'>
+	<img alt='Coder' border='2' height='24'
+	     src='https://www.ohloh.net/accounts/20804/widgets/account_rank.gif'
+	     width='32' align="absmiddle" /> on Ohloh
+    </a></font>
+  </p>
+  
+
+	    <hr />
+  
+<!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_default_style">
+<a href="http://www.addthis.com/bookmark.php?v=250&amp;username=jaromil" class="addthis_button_compact">Share</a>
+<span class="addthis_separator">|</span>
+<a class="addthis_button_facebook"></a>
+<a class="addthis_button_google"></a>
+<a class="addthis_button_twitter"></a>
+</div>
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=jaromil"></script>
+<!-- AddThis Button END -->
+
+
+    <a href="#disqus_thread">
+      <img src="images/disqus-logo.png"><br />
+      <font size="-1">leave your comments</font>
+    </a>
+    
+    <br />
+<!--    
+    <a href='http://www.pledgie.com/campaigns/9570'>
+      <img alt='make a donation'
+	   src='http://www.pledgie.com/campaigns/9570.png?skin_name=chrome' border='0' /></a>
+    <br />
+-->
+
+	    <hr />
+
+
+    
+    </center>
+
+<!-- Page published by Emacs Muse begins here -->
+
+
+<hr />
+<span class="footdate">
+<a href="make_radio.pdf">
+<img src="images/print.gif" alt="print" align="absmiddle"
+ title="download this page in printable form" hspace="3"></a>
+printable page
+
+	      </span>
+	      
+	    </div><!-- menu ends here -->
+
+<h1>Make Radio</h1>    
+<p>- <a href="#dutch">Dutch translation</a>
+- <a href="#english">English translation</a></p>
+
+<h2><a name="english" id="english"></a>Introduction</h2>
+
+<p class="first">The workshop  includes an hands-on experience  employing GNU/Linux for
+digital  radio  making  and   a  short  theoretical  overview  on  the
+significance of this media: from Orson Welles' radio-transmission &quot;War
+of  the Worlds&quot; (1938)  to contemporary  Tetsuo Kogawa's  &quot;Micro Radio
+Manifesto&quot; for the distributed media of the new millennium.</p>
+
+<p>The workshop is held by <a href="http://lacile.wordpress.com">Cecile Landman</a> and <a href="http://jaromil.dyne.org">Jaromil Rojo</a> for classes of
+10-20 people, the language of the workshop can be English, Italian and
+Dutch.</p>
+
+
+<h2>Software</h2>
+
+<p class="first">We run free software workshops to introduce participants to the use of
+a  100%  free GNU/Linux  operating  system  for  media production  and
+artistic creativity.</p>
+
+<p>Each participant receives a dyne:bolic CD with all necessary software,
+free  to be  used and  redistributed  (GNU GPL  license). The  notions
+acquired will  not make it  necessary to buy any  commercial software,
+the  students  will  be  free  to produce  and  distribute  their  own
+creations without any third-party dependence.</p>
+
+<p><a href="http://audacity.sourceforge.net/">Audacity</a>  is free,  open  source software  for  recording and  editing
+sounds. It is available for various operating systems.</p>
+
+<p><a href="http://muse.dyne.org">MuSE</a> provides  the free  software community with  a user  friendly but
+powerful  tool for  network audio  streaming, making  life  easier for
+independent free speech online radios.</p>
+
+<p><a href="http://icecast.org">Icecast</a> is free server software for streaming multimedia.</p>
+
+<p><a href="http://dynebolic.org">dyne:bolic</a> GNU/Linux is an operating system for multimedia production:
+you can  manipulate and broadcast both  sound and video  with tools to
+record, edit, encode and stream.</p>
+
+
+<h2>Manuals</h2>
+
+<p><a href="http://en.flossmanuals.net/">FLOSS Manuals</a> is a collection  of manuals that explains how to install
+and use  a range  of free  and open source  software. The  manuals are
+friendly  and simple,  and they  are intended  to encourage  people to
+explore the wide range of  free, open source alternatives to expensive
+and restrictively licensed software.</p>
+
+<p><a href="http://nl.flossmanuals.net">FLOSS  Manuals</a>  biedt  handleidingen  voor open  source  software,  en
+probeert daarnaast het delen  van informatie over software makkelijker
+te maken.</p>
+
+<ul>
+<li><a href="http://en.flossmanuals.net/audacity/">Audacity</a> audio editor</li>
+<li><a href="http://en.flossmanuals.net/muse">MuSE</a> streaming source</li>
+<li><a href="http://en.flossmanuals.net/icecast">Icecast</a> online broadcast</li>
+<li><a href="http://www.nongnu.org/streamtuner/">Streamtuner</a> listener</li>
+</ul>
+
+
+<h2>Radio in Amsterdam</h2>
+
+<ul>
+<li><a href="http://www.desk.nl/~radio100/">Radio 100</a> Amsterdam</li>
+<li><a href="http://www.radio-razo.nl/">Radio Razo</a> Media Amsterdam Zuidoost</li>
+<li><a href="http://dfm.nu/">DFM RTV INT</a> Artist-run Live Radio Community</li>
+<li><a href="http://www.salto.nl/">Salto</a> locale Omroep Amsterdam</li>
+<li><a href="http://freeteam.nl/patapoe/">Patapoe</a> pirate radio</li>
+<li><a href="http://m2m.streamtime.org">M2M Radio</a> migrant 2 migrant</li>
+</ul>
+
+
+<h2>Web Links</h2>
+
+<ul>
+<li><a href="http://www.fsf.org/">Free Software Foundation</a></li>
+<li><a href="http://radio.dyne.org">Dyne.org</a> software ideas for the arts</li>
+<li><a href="http://dir.xiph.org/">Xiph.org</a> Internet radio directory</li>
+<li><a href="http://www.gnu.org/software/gnuradio/">GNU Radio</a> The GNU Software Radio</li>
+<li>More <a href="http://ross.sourceforge.net/">Free Software for doing Radio</a> (AM / FM)</li>
+<li>A <a href="http://www.translocal.jp/radio/micro/">Micro Radio Manifesto</a></li>
+</ul>
+
+
+<p># dutch</p>
+
+
+<h2>Introductie</h2>
+
+<p class="first">De workshop behelst een 'hands-on' ervaring in het gebruik van GNU/Linux
+voor het maken van digitale radio, en een kort theoretisch overzicht van
+de betekenis van dit massacommunicatiemiddel: van Orson Welles'
+radio-uitzending 'War of the Worlds' (1938) tot het hedendaagse Tetsuo
+Kogawa's 'Micro Radio Manifesto' voor de diverse media van het nieuwe
+millennium.</p>
+
+<p>De  workshop   voor  klassen  van  10-20  mensen   wordt  geleid  door
+<a href="http://lacile.wordpress.com">Cecile Landman</a> en <a href="http://jaromil.dyne.org">Jaromil Rojo</a>.</p>
+
+<p>Mogelijke voertalen: Nederlands, Engels en Italiaans.</p>
+
+
+<h2>Software</h2>
+
+<p class="first">De vrije software workshops beogen deelnemers een introductie te geven
+in het gebruik  van een 100% vrij GNU/Linux  operationeel systeem voor
+media productie en artistieke creativiteit.</p>
+
+<p>Iedere deelnemer ontvangt een  dyne:bolic CD met alle nodige software,
+vrij voor  gebruik naar eigen inzicht en  verdere distributie (GNU/GPL
+license).  Het is niet nodig  enige commerciële software te kopen.  De
+studenten  zijn   vrij  om  hun   eigen  creaties  te   produceren  en
+distribueren zonder afhankelijkheid van een derde partij.</p>
+
+<p><a href="http://audacity.sourceforge.net/">Audacity</a>  is vrije,  open software  voor het  opnemen en  monteren van
+geluid.  Het is verkrijgbaar voor diverse operationele systemen.</p>
+
+<p><a href="http://muse.dyne.org">MuSE</a>    voorziet    de   vrije    software    gemeenschap   met    een
+gebruikersvriendelijk maar krachtig speeltje voor het netwerk streamen
+van audio, en maakt  het leven gemakkelijker voor onafhankelijke 'free
+speech' online radioos.</p>
+
+<p><a href="http://icecast.org">Icecast</a> is vrije server software voor online programma's uitzenden</p>
+
+<p><a href="http://dynebolic.org">dyne:bolic</a>   GNU/Linux  is   operationele  software   voor  multimedia
+productie: het is mogelijk zowel audio als video te manipuleren en uit
+te  zenden met  gereedschap  voor het  opnemen,  monteren, coderen  en
+streamen.</p>
+
+
+<h2>Handleidingen</h2>
+
+<p><a href="http://en.flossmanuals.net/">FLOSS Manuals</a>  is een verzameling  van handleidingen die  uitleg geeft
+hoe een  serie open  source software te  installeren en  gebruiken. De
+handleidingen  zijn vriendelijk en  eenvoudig, en  zijn er  op gericht
+mensen aan te moedigen het brede scala van bestaande vrije open source
+alternatieven   voor  dure,  met   restricties  omgeven   software  te
+verkennen.</p>
+
+<ul>
+<li><a href="http://en.flossmanuals.net/audacity/">Audacity</a> audio montage set</li>
+<li><a href="http://en.flossmanuals.net/muse">MuSE</a> streaming source</li>
+<li><a href="http://en.flossmanuals.net/icecast">Icecast</a> online programma's uitzenden</li>
+<li><a href="http://www.nongnu.org/streamtuner/">Streamtuner</a> luisteraar</li>
+</ul>
+
+
+<h2>Radio in Amsterdam</h2>
+
+<ul>
+<li><a href="http://www.desk.nl/~radio100/">Radio 100</a> Amsterdam</li>
+<li><a href="http://www.radio-razo.nl/">Radio Razo</a> Media Amsterdam Zuidoost</li>
+<li><a href="http://dfm.nu/">DFM RTV INT</a> Radiogemeenschap van artiesten</li>
+<li><a href="http://www.salto.nl/">Salto</a> locale Omroep Amsterdam</li>
+<li><a href="http://freeteam.nl/patapoe/">Patapoe</a> radiopiraat</li>
+<li><a href="http://m2m.streamtime.org">M2M Radio</a> Migrant 2 Migrant</li>
+</ul>
+
+
+<h2>Radio in de Wereld</h2>
+
+<p class="first">Het belang  van streamen en  mogelijke trucs om in  moeilijke gebieden
+toch radio te kunnen maken.</p>
+
+<ul>
+<li><a href="http://www.radiodarfur.nl/">Radio Darfur</a></li>
+<li><a href="http://geschiedenis.vpro.nl/artikelen/32706502/">Geschiedenis en Praktijk</a></li>
+<li><a href="http://www.wereldomroep.nl/audiosite/jubileum_documentaires/geschiedenis_wereldomroep">Geschiedenis van de Wereldomroep</a></li>
+</ul>
+
+
+<h2>Web Links</h2>
+
+<ul>
+<li><a href="http://www.fsf.org/">Free Software Foundation</a></li>
+<li><a href="http://radio.dyne.org">Dyne.org</a> software ideen voor de kunsten</li>
+<li><a href="http://dir.xiph.org/">Xiph.org</a> Internet radio lijst</li>
+<li><a href="http://www.gnu.org/software/gnuradio/">GNU Radio</a> The GNU Software Radio</li>
+<li>More <a href="http://ross.sourceforge.net/">Free Software for doing Radio</a> (AM / FM)</li>
+<li>A <a href="http://www.translocal.jp/radio/micro/">Micro Radio Manifesto</a></li>
+</ul>
+
+
+<!-- Page published by Emacs Muse ends here -->
+
+<!--
+This sourcecode is Copyright (C) 2000-2009 dyne.org autoproduzioni
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1
+or any later version published by the Free Software Foundation;
+with the Invariant Sections being AUTHORS when present and this copyright
+notice.
+A copy of the license is included in the section entitled "GNU Free
+Documentation License" at http://fsf.org/licenses/licenses.html
+
+
+
+    <div class="navfoot">
+    </div>
+
+-->    
+
+    <hr />
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_developer=1;
+</script>
+<script type="text/javascript" src="http://disqus.com/forums/jarojournal/embed.js"></script>
+<noscript>
+<a href="http://disqus.com/forums/jarojournal/?url=ref">View the discussion thread.</a><br />
+</noscript>
+
+    <hr />
+
+    <table width="100%"><tr>
+	
+	<td>
+	  
+	  <a href="http://www.gnu.org">
+	    <img border="0" src="images/gnu.png" alt="GNU/Linux"
+		 height="65" width="75">
+	  </a>
+	  
+	</td><td align="center">
+
+	  <img title="Page viewable with any browser"
+	       alt="Use any browser"
+	       src="images/content_enhanced.png" />
+
+	  <br>
+
+	  <a href="http://www.mwolson.org/projects/EmacsMuse.html">
+            <img alt="Emacs Muse" src="images/muse-made-with.png" />
+	  </a>
+	    
+
+	</td><td align="center">
+
+	  <a href="http://w2.eff.org/br/">
+	    <img src="images/eff_blue_ribbon.gif" alt="blue ribbon campaign"
+		 title="Informations want to be free!">
+	  </a>
+
+	  <br>
+
+	  <a href="http://www.nosoftwarepatents.com">
+	    <img src="images/nswpat.gif" alt="no software patents"
+		 title="freedom of creation!">
+	  </a>
+	  
+	  <br>
+
+	  <a href="http://www.fsf.org/resources/formats/playogg">
+	    <img src="images/play_ogg.png" alt="Play Ogg"
+		 title="Free and Open Source Audio/Video Format" />
+	  </a>
+
+	  <br>
+	  
+	  <a href="http://www.defectivebydesign.org/join/button">
+	    <img src="images/nodrm.gif"
+		 alt="say no to DRM" title="Digital rights now!">
+	  </a>
+
+
+	</td><td>
+
+	  <span class="footnote">
+	    <a       rel="license"       href="http://gplv3.fsf.org/">
+	       <img   title="GNU   GPLv3"   alt="(C)   GNU   GPL   v3"
+	       style="border-width:0"            src="images/gplv3.png"
+	       align="absmiddle"  />  copyleft  2000  -  2009</a>  dyne.org
+	       foundation  and respective  authors.   Verbatim copying
+	       and distribution  is permitted in  any medium, provided
+	       this notice is preserved.
+	    <a href="http://dyne.org/hackers_contact.php">
+	      Send inquiries &amp; questions to dyne.org's hackers</a>.
+	  </span>
+	  
+	</td><td>
+	  
+	  <a href="http://dyne.org">
+	    <img src="images/dyne-sm.png" title="dyne.org free software foundry"
+		 hspace="5" align="right" border="0" alt="dyne.org">
+	  </a>
+	  
+	</td>
+    </tr></table>
+    
+    
+</body>
+
+<!-- disqus account jarojournal.disqus.com 
+     comment count code -->
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+	var links = document.getElementsByTagName('a');
+	var query = '?';
+	for(var i = 0; i < links.length; i++) {
+	if(links[i].href.indexOf('#disqus_thread') >= 0) {
+		query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+	}
+	}
+	document.write('<script charset="utf-8" type="text/javascript"
+ src="http://disqus.com/forums/jarojournal/get_num_replies.js' + query + '"></' + 'script>');
+})();
+//]]>
+</script>
+
+<!-- google analytics -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17244540-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</html>

@@ -1,0 +1,64 @@
+
+	    <div class="menuitem">
+	      <a title="Journey diaries"
+		 href="diaries.html">Diaries</a>
+	    </div>
+	    
+	    <div class="menuitem">
+	      <a title="Achievements and discoveries along the way"
+		 href="articles.html">Articles</a>
+	    </div>
+
+	    <hr />
+	      
+	    <div class="menuitem">
+	      <a title="Philisophical writings and poetical ideas"
+		 href="inspirations.html">Inspirations</a>
+	    </div>
+	    <div class="menuitem">
+	      <a title="Publications and lectures"
+		 href="expirations.html">Expirations</a>
+	    </div>
+<!--
+	    <div class="menuitem">
+	      <a title="Network of peers with mutual esteem"
+		 href="conspirations.html">Conspirations</a>
+	    </div>
+-->    
+	    <div class="menuitem">
+	      <a title="Miscellaneous things I am active with"
+		 href="aspirations.html">Aspirations</a>
+	    </div>
+
+	    <hr />
+	    
+	    <div class="menuitem">
+	      <a title="About this journal"
+		 href="about.html">About</a>
+	    </div>
+
+	    <div class="menuitem">
+	      <a title="Contact me and my friends"
+		 href="http://dyne.org/hackers_contact.php">Contact</a>
+	    </div>
+
+	    
+	    <hr />
+
+	    <div class="menuitem">
+	      <a title="A page linking all documents in this website"
+		 href="sitemap.html">Sitemap</a>
+	    </div>
+
+	    <div class="search-form">
+	      <form method="get" action="/journal/search.cgi"
+		    enctype="application/x-www-form-urlencoded">
+		<input maxlength="200" value=" Search" name="query"
+		       type="text" size="13" />
+		<input value=">" name="submit" type="submit" />
+	      </form>
+	    </div>
+
+	    
+
+<!-- Page published by Emacs Muse ends here -->

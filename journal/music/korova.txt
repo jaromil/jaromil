@@ -1,0 +1,8 @@
+
+generatively composed MIDI
+'Korova', in memory of Jaco
+by jaromil (1999) - free (OAL)
+
+full .mid source score available
+.mp3 render with timidity and gus patches
+

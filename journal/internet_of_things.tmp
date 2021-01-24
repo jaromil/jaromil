@@ -1,0 +1,11 @@
+% internet_of_things.top
+\unprotect
+\setupsystem[\c!n=1,\c!m=1]
+\def\MPOSTformatswitch{-progname=metafun -mem=}
+\setupsystem[\c!method=2]
+\setupsystem[\c!type=linux]
+\setupoutput[pdftex]
+\setupsystem[\c!random=1143]
+\setupsystem[inputfile=internet_of_things.tex]
+\protect
+\endinput

@@ -1,0 +1,294 @@
+/*
+   Jaromil's Journal stylesheet
+
+   originally from Michael Olson's tweaked Muse stylesheet
+
+   License: Modification and propagation of this document is
+            permitted.  Attribution of credit to us is optional.
+*/
+
+/* Normal elements */
+
+a.nonexistent {
+  background-color: white;
+  color: red;
+  font-weight: bold;
+}
+
+a.nonexistent:visited {
+  background-color: white;
+  color: red;
+}
+
+a:link.top, a:visited.top {
+  color: #F5DEB3;               /* wheat */
+  line-height: 90%;
+  position: relative;
+  text-decoration: none;
+  top: -13px;
+}
+
+a:link:hover {
+    text-decoration: underline;
+}
+
+h1 a:link:hover, h1 a:visited:hover {
+  background-color: #708090;    /* slate gray */
+}
+
+a:visited {
+    color: #884400;
+    text-decoration: none;
+    border:0;
+}
+
+a:link {
+    font-weight: bold;
+    color: #AA6600;
+    text-decoration: none;
+    border:0;
+}
+
+blockquote {
+  border-left: 1px solid #EECC99;
+  padding: 5px;
+  font-style: italic;
+  margin: 5px 20px;
+}
+
+body {
+  font-family: Arial, Helvetica;
+  background: #ffeedd url(images/dyneheadbg.png) repeat-x;}
+  color: black;
+  text-align: justify;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-top: 1%;
+}
+
+code {
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+dt {
+  font-weight: bold;
+  margin-top: .5em;
+  padding: 3px;
+}
+
+em {
+  font-style: italic;
+}
+
+h1 {
+  background-color: #EECC99;    /* dark slate gray */
+  color: black;               /* wheat */
+  border: 1px solid black;
+  font-size: large;
+  overflow: hidden;             /* don't crowd the menu */
+  padding: 0;
+  white-space: nowrap;
+}
+
+h2 {
+  border-bottom: solid 2px #AA8855;
+  clear: left;
+  font-size: large;
+  margin-top: 2.5em;
+  margin-bottom: .5em;
+  overflow: hidden;             /* don't crowd the menu */
+  padding-right: 6px;
+}
+
+h3 {
+  border-bottom: dotted 3px #EECC99; /* slate gray */
+//  border-right: solid 1px #AA8855;  /* gainsboro */
+  font-size: medium;
+  margin-top: 2em;
+  margin-bottom: .5em;
+  overflow: hidden;             /* don't crowd the menu */
+  padding-right: 6px;
+}
+
+h4 {
+  border-bottom: dashed 1px #BEBEBE;    /* light gray */
+  border-right: solid 2px #DCDCDC;      /* gainsboro */
+  margin-top: 1.5em;
+  margin-bottom: .7em;
+  overflow: hidden;             /* don't crowd the menu */
+  padding-right: 6px;
+}
+
+hr {
+  clear: both;
+}
+
+img {
+  border: 0;
+}
+
+p.image {
+  text-align: center;
+}
+
+li {
+  line-height: 1.2em;
+  margin-top: .7em;
+}
+
+p.verse {
+  clear: left;
+  line-height: 2em;
+  margin-left: 3%;
+}
+
+p {
+  margin-left: 2%;
+  margin-right: 2%;
+  line-height: 1.2em;
+  text-align: justify;
+}
+
+p.intro {
+  margin-left: 2%;
+  margin-right: 2%;
+  line-height: 1.2em;
+  text-align: justify;
+  font-style: italic;
+}
+
+pre.example {
+  margin-left: 3%;
+  margin-top: 1.2em;
+  margin-bottom: 1.2em;
+  clear: right;
+}
+
+pre.src {
+  margin-left: 0%;
+  margin-top: 1.2em;
+  margin-bottom: 1.2em;
+  clear: right;  
+}
+
+pre.verse {
+  font-family: inherit;
+  line-height: 2em;
+  margin-left: 3%;
+}
+
+pre {
+  font-family: monospace;
+  margin-left: 3%;
+  white-space: pre;
+}
+
+span.footdate {
+  color: #AA8855;
+  font-weight: bold;
+  font-size: small;
+  margin-bottom: 1.5em;
+}
+
+span.footnote {
+  color: black;
+  font-size: 9px;
+  line-height: 0.8em;
+}
+
+span.headermenu {
+  font-size: small;
+  color: black;
+  align: center;
+}
+
+span.date {
+  float: right;
+  display: inline;
+  overflow: hidden;
+  margin-top: .2em;
+  margin-right: 10px;
+  padding-right: 6px;
+  border-bottom: dotted 2px #AA8855;
+  border-right: solid 10px #AA8855;
+}
+
+strong {
+  font-weight: bold;
+}
+
+
+table {
+  overflow: hidden;             /* don't crowd the menu */
+  border: 0;
+  margin: 0pt;
+  cell.padding: 60pt;
+}
+
+table.image {
+  clear: right;
+}
+
+
+ul {
+  list-style-type: disc;
+  margin-bottom: 1.5em;
+}
+
+/* Menu */
+
+.menu {
+  background-color: #EECC99;
+  border: 1px solid black;
+  display: inline;
+  float: right;
+  clear: both;
+  margin-left: 10px;
+  margin-bottom: 5px;
+  padding: 3px;
+}
+
+.menuitem {
+  font-size: medium;
+  font-family: Georgia, Arial, Helvetica, sans-serif;
+  background-color: #EECC99;    /* light gray */
+  margin: 0;
+  padding-top: 2px;
+  padding-bottom: 3px;
+  padding-left: 2px;
+  padding-right: 2px;
+  text-align: left;
+}
+
+.menuitem a:link, .menuitem a:visited {
+  font-size: 16px;
+  font-weight: italic;
+  font-family: Georgia, Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  color: #990000;
+  display: block;
+  margin: 0;
+  padding-top: 2px;
+  padding-bottom: 3px;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.menuitem a:link:hover, .menuitem a:visited:hover { 
+  background-color: #FFEEDD;
+}
+
+.menuother {
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+#tooltipbox {
+  float: right;
+  visibility: hidden;
+}
+
+#tooltip {
+  color: #006400;               /* dark green */
+}

@@ -1,0 +1,11 @@
+% creazione_dal_basso_e_p2p.top
+\unprotect
+\setupsystem[\c!n=1,\c!m=1]
+\def\MPOSTformatswitch{-progname=metafun -mem=}
+\setupsystem[\c!method=2]
+\setupsystem[\c!type=linux]
+\setupoutput[pdftex]
+\setupsystem[\c!random=1430]
+\setupsystem[inputfile=creazione_dal_basso_e_p2p.tex]
+\protect
+\endinput

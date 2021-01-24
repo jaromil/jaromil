@@ -1,0 +1,901 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+    <title>Fluxus documentation</title>
+  <link rel="author" href="http://jaromil.dyne.org" />
+  <link rel="home" href="http://jaromil.dyne.org/journal" />
+  <link rel="shortcut icon" href="http://dyne.org/dyne.ico" />
+  <link rel="stylesheet" type="text/css" charset="utf-8" media="all"
+          href="css/common.css" />
+    <link rel="stylesheet" type="text/css" charset="utf-8" media="screen"
+          href="css/screen.css" />
+    <link rel="stylesheet" type="text/css" charset="utf-8" media="print"
+          href="css/print.css" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="gypsy,travel,journal,free,software,open,source" />
+  <meta name="generator" content="Emacs Muse" />
+  <meta name="MSSmartTagsPreventParsing" content="TRUE">
+    <!-- see http://www.glassdog.com/smarttags/index.html -->
+
+  <meta http-equiv="Content-Type"
+	content="text/html; charset=utf-8" />
+  </head>
+
+    <body bgcolor="#ffeedd" link="#AA6600" vlink="#884400">
+      
+      <span class="headermenu">
+	<center>
+	    - -(
+	    <b><a href="http://dyne.org">dyne</a></b>
+	      // <b><a href="http://dyne.org/software.php">software</a>
+	      </b> :: <b><a href="http://dyne.org/perform.php">culture</a>
+	      </b> :: <b><a href="http://dyne.org/timezones">events</a>
+	      </b> :: <b><a href="http://tazebao.dyne.org">tazebao</a>
+	      </b> :: <b><a href="http://lists.dyne.org">discussion</a>
+	      </b> \\
+	    <b><a href="http://freaknet.org">freaknet</a>
+	    </b> )- -
+	    </center>
+      </span>
+      
+      <hr />
+    
+<div class="menu">
+&nbsp;<i>Jaromil's Musings</i>&nbsp;
+<hr />
+
+<span class="footdate">
+timestamp:<br />
+February  3, 2008
+</span>
+<hr />
+
+
+	    <div class="menuitem">
+	      <a title="Journey diaries"
+		 href="diaries.html">Diaries</a>
+	    </div>
+	    
+	    <div class="menuitem">
+	      <a title="Achievements and discoveries along the way"
+		 href="articles.html">Articles</a>
+	    </div>
+
+	    <hr />
+	      
+	    <div class="menuitem">
+	      <a title="Philisophical writings and ideas"
+		 href="inspirations.html">Inspirations</a>
+	    </div>
+	    <div class="menuitem">
+	      <a title="Press reviews, interviews and publications"
+		 href="expirations.html">Expirations</a>
+	    </div>
+<!--
+	    <div class="menuitem">
+	      <a title="Network of peers with mutual esteem"
+		 href="conspirations.html">Conspirations</a>
+	    </div>
+-->    
+	    <div class="menuitem">
+	      <a title="Miscellaneous things I am active with"
+		 href="aspirations.html">Aspirations</a>
+	    </div>
+	    
+	    <hr />
+
+	    <div class="search-form">
+	      <form method="get" action="/journal/search.cgi"
+		    enctype="application/x-www-form-urlencoded">
+		  <input maxlength="200" value=" Search" name="query" type="text" size="13" />
+		  <input value=">" name="submit" type="submit" /></font><br>
+	      </form>
+	    </div>
+
+	    <div class="menuitem">
+	      <a title="About this journal"
+		 href="about.html">About</a>
+	    </div>
+	    
+
+	    <hr />
+	    <span class="footdate">
+	      <a href="fluxus-tutorial.pdf">
+		<img src="images/postscript.png" alt="print" align="absmiddle"
+		     title="download this page in printable form" hspace="3">
+		  get printable</a>
+	      </span>
+	      
+	    </div><!-- menu ends here -->
+<div class="contents">
+<dl>
+<dt>
+<a href="#sec1">Fluxus Documentation 0.14</a>
+</dt>
+<dd>
+<dl>
+<dt>
+<a href="#sec2">by Dave Griffiths</a>
+</dt>
+</dl>
+</dd>
+<dt>
+<a href="#sec3">Introduction</a>
+</dt>
+<dd>
+<dl>
+<dt>
+<a href="#sec4">Quickstart</a>
+</dt>
+</dl>
+</dd>
+<dt>
+<a href="#sec5">UserGuide</a>
+</dt>
+<dt>
+<a href="#sec6">Scheme</a>
+</dt>
+<dd>
+<dl>
+<dt>
+<a href="#sec7">Scheme as calculator</a>
+</dt>
+<dt>
+<a href="#sec8">Naming values</a>
+</dt>
+<dt>
+<a href="#sec9">Naming procedures</a>
+</dt>
+<dt>
+<a href="#sec10">Making some shapes</a>
+</dt>
+<dt>
+<a href="#sec11">Transforms</a>
+</dt>
+<dt>
+<a href="#sec12">Recursion</a>
+</dt>
+<dt>
+<a href="#sec13">Animation</a>
+</dt>
+<dt>
+<a href="#sec14">More recursion</a>
+</dt>
+</dl>
+</dd>
+<dt>
+<a href="#sec15">State Machine</a>
+</dt>
+<dd>
+<dl>
+<dt>
+<a href="#sec16">The Scenegraph</a>
+</dt>
+</dl>
+</dd>
+</dl>
+</div>
+
+
+<h2><a name="sec1" id="sec1"></a>
+Fluxus Documentation 0.14</h2>
+
+<h3><a name="sec2" id="sec2"></a>
+by Dave Griffiths</h3>
+
+<p class="first">This is some detailed text  documentation about fluxus and the general
+concepts it uses. It's quite dense, so I recommend trying the examples
+and using  this as  reference as  you learn scheme  and work  your way
+through.</p>
+
+<p>The text is  taken from the pawfal wiki<sup><a class="footref" name="fnr.1" href="#fn.1">1</a></sup> look  there for the current
+version (which may not match this version of fluxus).</p>
+
+<p class="footnote"><a class="footnum" name="fn.1" href="#fnr.1">1.</a> <a href="http://www.pawfal.org/index.php?page=FluxusDocumentation">http://www.pawfal.org/index.php?page=FluxusDocumentation</a></p>
+
+
+
+
+
+<h2><a name="sec3" id="sec3"></a>
+Introduction</h2>
+
+<p class="first">A  graphical livecoding environment  for Scheme.  Builds for  Linux or
+OSX, and released under the GPL licence.</p>
+
+<p>Fluxus reads live audio or OSC network messages which can be used as a
+source    of   animation   data    for   realtime    performances   or
+installations. Keyboard  or mouse  input can also  be read  for simple
+games  development, and  a  physics engine  is  included for  realtime
+simulations of rigid body dynamics.</p>
+
+<p>The built  in scheme code  editor runs on  top of the  renderer, which
+means you  can edit  the scripts  while they are  running. As  well as
+making livecoding possible,  it's also gives you a  very fast feedback
+way of experimenting or learning about graphics and animation.</p>
+
+<p>Fluxus lends itself to procedural modelling and animation. There is an
+experimental   procedural  modelling  tool,   and  full   support  for
+texturing, basic material properties and hardware shading.</p>
+
+<p>Fluxus consists of an  application, which embeds a Scheme interpreter,
+called the fluxus scratchpad, and a set of Scheme modules which extend
+an interpreter with graphics commands.</p>
+
+<h3><a name="sec4" id="sec4"></a>
+Quickstart</h3>
+
+<p class="first">When you  start fluxus, you will see  the welcome text and  a prompt -
+this  is called  the repl,  or console.  Generally fluxus  scripts are
+written in  text buffers, which can  be switched to with  ctrl and the
+numbers  keys. Switch to  the first  one of  these by  pressing ctrl-1
+(ctrl-0 switched you back to the fluxus console).</p>
+
+<p>Now try entering the following command.</p>
+
+<pre class="src">
+     (build-cube)
+</pre>
+
+<p>Now press  <strong>F5 (or ctrl-e)</strong> - the  script will be executed,  and a white
+cube should appear  in the centre of the screen. Use  the mouse and to
+move around the  cube, pressing the buttons to  get different movement
+controls.</p>
+
+<p>To animate this cube, it will have to be called a little differently:</p>
+
+<pre class="src">
+     ; buffersize and samplerate need to match jack's
+         (start-audio <span style="color: #ffa07a;">"jack-port-to-read-sound-from"</span> 256 44100)
+
+     (define (render)
+         (colour (vector (gh 1) (gh 2) (gh 3)))
+                 (draw-cube))
+
+     (every-frame (render))
+</pre>
+
+<p>Briefly, the  (every-frame) function takes a function  which is called
+once per  frame by fluxus's internal  engine. In this case  it calls a
+function  that  sets  the  current  colour using  harmonics  from  the
+incoming sound  with the (gh) -  get harmonic - function;  and draws a
+cube. Note  that this  time we use  (draw-cube) not  (build-cube). The
+difference will be explained below.</p>
+
+<p>If everything  goes as planned, and  the audio is  connected with some
+input  - the  cube will  flash in  a colourful  manner along  with the
+sound.</p>
+
+<p>Now go and have a play with the examples. Load them by pressing ctrl-l
+or on the  commandline, by entering the examples  directory and typing
+fluxus followed by the script filename.</p>
+
+
+
+<h2><a name="sec5" id="sec5"></a>
+UserGuide</h2>
+
+<p class="first">When using the  fluxus scratchpad, the idea is that  you only need the
+one window to  build scripts, or play live. f5 (or  ctrl-e) is the key
+that runs  the script when you  are ready. Selecting  some text (using
+shift) and  pressing f5 will execute  the selected text  only. This is
+handy for reevaluating functions without running the whole script each
+time.</p>
+
+<p><span class="rightbox">
+<em>Camera control</em></p>
+
+<p>The  camera is  controlled  by  moving the  mouse  and pressing  mouse
+buttons.</p>
+
+<ul>
+<li>Left mouse button: Rotate</li>
+<li>Middle mouse button: Move</li>
+<li>Right mouse button: Zoom
+</span></li>
+</ul>
+
+<h4>Workspaces</h4>
+
+<p class="first">The script editor allows you to edit 9 scripts simultaneously by using
+workspaces. To switch workspaces, use ctrl+number key. Only one can be
+run  at once  though, hitting  f5  will execute  the currently  active
+workspace  script. Scripts  in different  workspaces can  be  saved to
+different files, press ctrl-s to save or ctrl-d to save-as and enter a
+new filename (the default filename is temp.scm).</p>
+
+
+<h4>The REPL</h4>
+
+<p class="first">If you press ctrl and  0, instead of getting another script workspace,
+you will be presented with  a Read Evaluate Print Loop interpreter, or
+repl for short. This is really just an interactive interpreter similar
+to  the commandline,  where you  can enter  scheme code  for immediate
+evaluation.  This code  is evaluated  in the  same interpreter  as the
+other scripts,  so you  can use  the repl to  debug or  inspect global
+variables and functions  they define. This window is  also where error
+reporting  is printed,  along  with the  terminal  window you  started
+fluxus from.</p>
+
+
+<h4>Keyboard commands</h4>
+
+<pre class="src">
+    - ctrl-f : Fullscreen mode.
+    - ctrl-w : Windowed mode.
+    - ctrl-h : Hide/show the editor.
+    - ctrl-l : Load a new script (navigate with cursors and return).
+    - ctrl-s : Save current script.
+    - ctrl-d : Save as - current script (opens a filename dialog).
+    - ctrl-1 to 9 : Switch to selected workspace.
+    - ctrl-0 : Switch to the REPL.
+    - F3 : Resets the camera.
+    - F5/ctrl-e : Execute the selected text, or all if none is selected.
+                  ctrl-e might be easier for mac users,
+                  as volume is usually bound to the f5 key.
+    - F9 : Randomise the text colour (aka the panic button)
+    - Escape : Editor panic button, resets the cursor if it gets stuck
+                   (let me know if you need to use this)
+</pre>
+
+
+
+<h2><a name="sec6" id="sec6"></a>
+Scheme</h2>
+
+<p class="first">Scheme is a programming language invented by Jerald J. Sussman and Guy
+L. Steel  Jr. in  1975. Scheme  is based on  another language  - Lisp,
+which dates  back to the fifties.  It is a high  level language, which
+means   it   is   biased    towards   human,   rather   than   machine
+understanding. The  fluxus scratchpad embeds a  Scheme interpreter (it
+can  run Scheme  programs) and  the fluxus  modules extend  the Scheme
+language with commands for 3D computer graphics.</p>
+
+<p>This chapter  gives a very  basic introduction to  Scheme programming,
+and a  fast path to  working with fluxus  - enough to get  you started
+without prior programming experience,  but I don't explain the details
+very  well. For  general  scheme learning,  I  heartily recommend  the
+following books (two of which have the complete text online):</p>
+
+<blockquote>
+<p class="quoted">The Little Schemer Daniel P. Friedman and Matthias Felleisen</p>
+</blockquote>
+
+<blockquote>
+<p class="quoted">How to  Design Programs An  Introduction to Computing  and Programming
+Matthias  Felleisen   Robert  Bruce  Findler   Matthew  Flatt  Shriram
+Krishnamurthi Online: <a href="http://www.htdp.org/2003-09-26/Book/">http://www.htdp.org/2003-09-26/Book/</a></p>
+</blockquote>
+
+<blockquote>
+<p class="quoted">Structure and Interpretation of Computer Programs
+Harold Abelson and Gerald Jay Sussman with Julie Sussman Online:
+<a href="http://mitpress.mit.edu/sicp/full-text/book/book.html">http://mitpress.mit.edu/sicp/full-text/book/book.html</a></p>
+</blockquote>
+
+<p>We'll start by  going through some language basics,  which are easiest
+done in the  fluxus scratchpad using the console  mode - launch fluxus
+and press ctrl 0 to switch to console mode.</p>
+
+<h3><a name="sec7" id="sec7"></a>
+Scheme as calculator</h3>
+
+<p class="first">Languages like Scheme  are composed of two things  - operators (things
+which do  things) and values  which operators operate  upon. Operators
+are always  specified first in Scheme,  so to add  1 and 2, we  do the
+following:</p>
+
+<pre class="src">
+     fluxus&gt; (+ 1 2)
+         3
+</pre>
+
+<p>This looks pretty  odd to begin with, and takes  some getting used to,
+but it means the language has less rules and makes things easier later
+on. It also has  some other benefits, in that to add  3 numbers we can
+simply do:</p>
+
+<pre class="src">
+     fluxus&gt; (+ 1 2 3)
+         6
+</pre>
+
+<p>It is common to &quot;nest&quot; the brackets inside one another, for example:</p>
+
+<pre class="src">
+     fluxus&gt; (+ 1 (* 2 3))
+         7
+</pre>
+
+
+<h3><a name="sec8" id="sec8"></a>
+Naming values</h3>
+
+<p class="first">If we want to specify values and give them names we can use the Scheme
+command &quot;define&quot;:</p>
+
+<pre class="src">
+     fluxus&gt; (define size 2)
+     fluxus&gt; size
+         2
+     fluxus&gt; (* size 2)
+         4
+</pre>
+
+<p>Naming is arguably the most  important part of programming, and is the
+simplest  form  of what  is  termed  &quot;abstraction&quot;  - which  means  to
+separate the details (e.g. the value  2) from the meaning - size. This
+is not important as far as  the machine is concerned, but it makes all
+the  difference  to  you  and  other  people  reading  code  you  have
+written. In  this example, we only  have to specify the  value of size
+once, after that all uses of it in  the code can refer to it by name -
+making the code much easier to understand and maintain.</p>
+
+
+<h3><a name="sec9" id="sec9"></a>
+Naming procedures</h3>
+
+<p class="first">Naming  values is very  useful, but  we can  also name  operations (or
+collections of them) to make the code simpler for us:</p>
+
+<pre class="src">
+     fluxus&gt; (define (square x) (* x x))
+     fluxus&gt; (square 10)
+         100
+     fluxus&gt; (square 2)
+         4
+</pre>
+
+<p>Look at  this definition carefully,  there are several things  to take
+into  account. Firstly  we can  describe the  procedure  definition in
+English as: To  (define (square of x) (multiply x  by itself)) The &quot;x&quot;
+is called an argument to the procedure, and like the size define above
+- it's name doesn't matter to the machine, so:</p>
+
+<pre class="src">
+     fluxus&gt; (define (square apple) (* apple apple))
+</pre>
+
+<p>Will perform  exactly the  same work. Again,  it is important  to name
+these arguments  so they actually  make some sort of  sense, otherwise
+you  end up  very  confused.  Now we  are  abstracting operations  (or
+behaviour), rather than values, and this  can be seen as adding to the
+vocabulary of the Scheme language with our own words, so we now have a
+square procedure, we can use it to make other procedures:</p>
+
+<pre class="src">
+     fluxus&gt; (define (sum-of-squares x y)
+                     (+ (square x) (square y)))
+     fluxus&gt; (sum-of-squares 10 2)
+         104
+</pre>
+
+<p>The newline and  whitespace tab after the define above  is just a text
+formatting convention,  and means that  you can visually  separate the
+description  and it's  argument from  the internals  (or body)  of the
+procedure. Scheme  doesn't care about  whitespace in it's  code, again
+it's all about making it readable to us.</p>
+
+
+<h3><a name="sec10" id="sec10"></a>
+Making some shapes</h3>
+
+<p class="first">Now we  know enough to  make some shapes  with fluxus. To  start with,
+leave the console by pressing ctrl-1 -  you can go back at any time by
+pressing ctrl-0. Fluxus is now in script editing mode. You can write a
+script,  execute  it  by  pressing  F5,  edit  it  further,  press  F5
+again... this is the normal way fluxus is used.</p>
+
+<p>Enter this script:</p>
+
+<pre class="src">
+(define (render)
+    (draw-cube))
+
+(every-frame (render))
+</pre>
+
+<p>Then press  F5, you should  see a cube  on the screen, drag  the mouse
+around the fluxus window, and you  should be able to move the camera -
+left mouse for rotate, middle for zoom, right for translate.</p>
+
+<p>This script defines a procedure that  draws a cube, and calls it every
+frame - resulting in a static cube.</p>
+
+<p>You can change the colour of the cube like so:</p>
+
+<pre class="src">
+(define (render)
+    (colour (vector 0 0.5 1))
+        (draw-cube))
+
+(every-frame (render))
+</pre>
+
+<p>The colour command sets the current colour, and takes a single input -
+a vector. Vectors are used a  lot in fluxus to represent positions and
+directions in 3D space, and colours - which are treated as triplets of
+red green and blue. So in this case, the cube should turn a light blue
+colour.</p>
+
+
+<h3><a name="sec11" id="sec11"></a>
+Transforms</h3>
+
+<p class="first">Add a scale command to your script:</p>
+
+<pre class="src">
+(define (render)
+    (scale (vector 0.5 0.5 0.5))
+        (colour (vector 0 0.5 1))
+        (draw-cube))
+
+(every-frame (render))
+</pre>
+
+<p>Now your cube should get smaller. This might be difficult to tell, as you
+don't have anything to compare it with, so we can add another cube like so:</p>
+
+<pre class="src">
+(define (render)
+    (colour (vector 1 0 0))
+        (draw-cube)
+        (translate (vector 2 0 0))
+        (scale (vector 0.5 0.5 0.5))
+        (colour (vector 0 0.5 1))
+        (draw-cube))
+
+(every-frame (render))
+</pre>
+
+<p>Now you should see  two cubes, a red one, then the  blue one, moved to
+one side (by  the translate procedure) and scaled to  half the size of
+the red one.</p>
+
+<pre class="src">
+(define (render)
+    (colour (vector 1 0 0))
+        (draw-cube)
+        (translate (vector 2 0 0))
+        (scale (vector 0.5 0.5 0.5))
+        (rotate (vector 0 45 0))
+        (colour (vector 0 0.5 1))
+    (draw-cube))
+
+(every-frame (render))
+</pre>
+
+<p>For completeness, I  added a rotate procedure, to  twist the blue cube
+45 degrees.</p>
+
+
+<h3><a name="sec12" id="sec12"></a>
+Recursion</h3>
+
+<p class="first">To do more interesting things, we will write a procedure to draw a row
+of  cubes. This  is  done by  recursion,  where a  procedure can  call
+itself, and  keep a record of  how many times it's  called itself, and
+end after so many iterations.</p>
+
+<p>In order to  stop calling our self  as a procedure, we need  to take a
+decision - we use cond for decisions.</p>
+
+<pre class="src">
+(define (draw-row count)
+    (cond
+        ((not (zero? count))
+            (draw-cube)
+                (translate (vector 1.1 0 0))
+                (draw-row (- count 1)))))
+
+(every-frame (draw-row 10))
+</pre>
+
+<p>Be careful  with the brackets -  the fluxus editor should  help you by
+highlighting the region each  bracket corresponds to.  Run this script
+and you should see  a row of 10 cubes. You can build  a lot out of the
+concepts in this script, so take some time over this bit.</p>
+
+<p><strong>cond</strong> is used to ask questions, and it can ask as many as you like - it
+checks them  in order and  does the first  one which is true.   In the
+script above, we  are only asking one question,  (not (zero? count)) -
+if this is true, if count is  anything other than zero, we will draw a
+cube, move a  bit and then call our self  again. Importantly, the next
+time we call draw-row, we do so  with one taken off count. If count is
+0, we  don't do anything  at all -  the procedure exits  without doing
+anything.</p>
+
+<p>So  to  put it  together,  <strong>draw-row</strong>  is called  with  count  as 10  by
+<strong>every-frame</strong>. We enter  the draw-row function, and ask  a question - is
+count 0?   No - so carry  on, draw a  cube, move a bit,  call draw-row
+again with count  as 9. Enter draw-row again, is count  0?  No, and so
+on. After a while we call  draw-row with count as 0, nothing happens -
+and all the other functions exit. We have drawn 10 cubes.</p>
+
+<p>Recursion  is a  very  powerful idea,  and  it's very  well suited  to
+visuals and concepts like self similarity. It is also nice for quickly
+making very  complex graphics with  scripts not very much  bigger than
+this one.</p>
+
+
+<h3><a name="sec13" id="sec13"></a>
+Animation</h3>
+
+<p class="first">Well, now you've got through that part, we can quite quickly take this
+script and make it move.</p>
+
+<pre class="src">
+(define (draw-row count)
+    (cond
+        ((not (zero? count))
+            (draw-cube)
+                (rotate (vector 0 0 (* 45 (sin (time)))))
+                (translate (vector 1.1 0 0))
+                (draw-row (- count 1)))))
+
+(every-frame (draw-row 10))
+</pre>
+
+<p><strong>time</strong> is  a procedure  which returns the  time in seconds  since fluxus
+started  running.   sin  converts   this  into  a  sinewave,  and  the
+multiplication is used to scale it up to rotate in the range of -45 to
++45 degrees (as  sin only returns values between -1  and +1). Your row
+of cubes  should be bending up  and down.  Try changing  the number of
+cubes from 10, and the range of movement by changing the 45.</p>
+
+
+<h3><a name="sec14" id="sec14"></a>
+More recursion</h3>
+
+<p class="first">To  give you something  more visually  interesting, this  script calls
+itself twice - which results in an animating tree shape.</p>
+
+<pre class="src">
+(define (draw-row count)
+    (cond
+        ((not (zero? count))
+            (translate (vector 2 0 0))
+                (draw-cube)
+                (rotate (vector (* 10 (sin (time))) 0 0))
+                (with-state
+                        (rotate (vector 0 25 0))
+                        (draw-row (- count 1)))
+            (with-state
+                        (rotate (vector 0 -25 0))
+                        (draw-row (- count 1))))))
+
+(every-frame (draw-row 10))
+</pre>
+For an explanation of with-state, see the next section.
+
+
+
+<h2><a name="sec15" id="sec15"></a>
+State Machine</h2>
+
+<p class="first">The state machine is the key to understanding how fluxus works, all it
+really means is  that you can call functions  which change the current
+context which  has an effect on  subsequent functions. This  is a very
+efficient way of describing things, and  is built on top of the OpenGl
+api, which works  in a similar way. For example,  in a function called
+every frame:</p>
+
+<pre class="src">
+     (colour (vector 1 0 0))
+         (draw-cube)
+         (colour (vector 0 1 0))
+         (draw-cube)
+</pre>
+
+<p>Will draw a red cube, then a green cube (in this case, you can think of the
+(colour) call as changing a pen colour before drawing something). States
+can also be stacked, for example:</p>
+
+<pre class="src">
+     (colour (vector 1 0 0))
+         (with-state
+          (colour (vector 0 1 0))
+          (draw-cube))
+     (draw-cube)
+</pre>
+
+<p>Will draw a green, then a  red cube. The (with-state) isolates a state
+and gives it a lifetime, indicated  by the brackets (so changes to the
+state inside are  applied to the build-cube inside,  but do not affect
+the build-cube afterwards). Its useful  to use the indentation to help
+you see what is happening.</p>
+
+<h3><a name="sec16" id="sec16"></a>
+The Scenegraph</h3>
+
+<p class="first">Both examples  so far have used  what is known as  immediate mode, you
+have one  state stack, the  top of which  is the current  context, and
+everything is drawn once per  frame. fluxus contains a structure known
+as a scenegraph for storing objects and their render states.</p>
+
+<p>Time for another example:</p>
+
+<pre class="src">
+     (colour (vector 1 0 0))
+         (build-cube)
+         (colour (vector 0 1 0))
+         (build-cube)
+</pre>
+
+<p>The only difference  between this and the first example  is the use of
+(build-cube)  instead of  (draw-cube).  the build  functions create  a
+primitive object, copy the current renderstate and add the information
+into the scenegraph in a container called a scenenode.</p>
+
+<p>The <strong>build-</strong> functions return  object ID's (just numbers really) which
+enable you to do things to the scene node after it's been created. you
+can now specify objects like this:</p>
+
+<pre class="src">
+     (define myob (build-cube))
+</pre>
+
+<p>The cube will now be persistent in the scene until destroyed with</p>
+
+<pre class="src">
+     (destroy myob)
+</pre>
+
+<p><strong>with-state</strong> returns the result of  it's last expression, so to make new
+primitives with state you set up, you can do this:</p>
+
+<pre class="src">
+(define my-object (with-state
+    (colour (vector 1 0 0))
+        (scale (vector 0.5 0.5 0.5))
+        (build-cube)))
+</pre>
+
+<p>If you  want to  modify a objects  renderstate after it's  been loaded
+into the  scenegraph, you  can use with-primitive  to set  the current
+context to that of the object.  This allows you to animate objects you
+have built, for instance:</p>
+
+<pre class="src">
+&lt;!-- build some cubes --&gt;
+
+     (colour (vector 1 1 1))
+         (define obj1 (build-cube))
+         (define obj2 (with-state
+                (translate (vector 2 0 0))
+                (build-cube))
+
+...
+
+&lt;!-- in a function called per frame --&gt;
+
+     (with-primitive obj1
+                (rotate (vector 0 1 0)))
+
+     (with-primitive obj2
+                (rotate (vector 0 0 1)))
+</pre>
+
+<p>The  scenegraph also  enables you  to parent  objects to  one another,
+using the renderstate's parent  setting. this is only effective before
+an object  is loaded  into the scenegraph,  setting it  afterwards via
+with-primitive will be ignored:</p>
+
+<pre class="src">
+     (colour (vector 1 1 1))
+         (define a (build-cube))
+
+     (define b (with-state
+                (parent a)
+                (translate (vector 0 2 0))
+                (build-cube)))
+
+     (define c (with-state
+                (parent b)
+                (translate (vector 0 2 0))
+                (build-cube)))
+</pre>
+
+<p>Creates three cubes, all attached to each other in a chain. Transforms
+for object  a will be  passed down  to b and  c, transforms on  b will
+effect c.</p>
+
+<p>Destroying a object in such a hierarchy will in turn destroy all child
+objects parented to it.</p>
+
+
+
+<!-- Page published by Emacs Muse ends here -->
+
+<!--
+This sourcecode is Copyright (C) 2000-2008 dyne.org autoproduzioni
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1
+or any later version published by the Free Software Foundation;
+with the Invariant Sections being AUTHORS when present and this copyright
+notice.
+A copy of the license is included in the section entitled "GNU Free
+Documentation License" at http://fsf.org/licenses/licenses.html
+
+
+
+    <div class="navfoot">
+    </div>
+
+-->    
+
+    <hr />
+
+    <table width="100%"><tr align="center">
+	
+	<td>
+	  
+	  <a href="http://www.gnu.org">
+	    <img border="0" src="images/gnu.png" alt="GNU/Linux"
+		 height="65" width="75">
+	  </a>
+	  
+	</td><td align="center">
+
+	  <a rel="license"
+	     href="http://creativecommons.org/licenses/by-nc-sa/3.0/nl/">
+	    <img alt="Creative Commons License"
+		 style="border-width:0" src="images/cc.png" /></a>
+
+	  <br>
+
+	    <a href="http://www.mwolson.org/projects/EmacsMuse.html">
+              <img alt="Emacs Muse" src="images/muse-made-with.png" />
+	    </a>
+	    
+
+	</td><td align="center">
+	  
+	  <a href="http://www.nosoftwarepatents.com">
+	    <img src="images/nswpat.gif" alt="no software patents"
+		 title="freedom of creation!">
+	  </a>
+	  
+	  <br>
+
+	  <a href="http://www.fsf.org/resources/formats/playogg">
+	    <img src="images/play_ogg.png" alt="Play Ogg" />
+	  </a>
+
+	  <br>
+	  
+	  <a href="http://www.defectivebydesign.org/join/button">
+	    <img src="images/nodrm.gif"
+		 alt="say no to DRM" title="digital rights now!">
+	  </a>
+
+
+	</td><td>
+
+	  <span class="footnote">
+	  <a rel="license"
+	     href="http://creativecommons.org/licenses/by-nc-sa/3.0/nl/">
+	    Copyleft  (C)  2000  -  2008</a> dyne.org  foundation  and
+	    respective  authors.  Verbatim copying  and non-commercial
+	    distribution  is permitted  in any  medium,  provided this
+	    notice is preserved.
+	    <a href="http://dyne.org/hackers_contact.php">
+	      Send inquiries &amp; questions to dyne.org's hackers</a>.
+	  </span>
+	  
+	</td><td>
+	  
+	  <a href="http://dyne.org">
+	    <img src="images/dyne-sm.png"
+		 hspace="5" align="right" border="0" alt="|">
+	  </a>
+	  
+	</td>
+    </tr></table>
+    
+    
+</body>
+</html>

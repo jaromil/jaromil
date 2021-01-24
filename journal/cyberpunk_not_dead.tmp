@@ -1,0 +1,11 @@
+% cyberpunk_not_dead.top
+\unprotect
+\setupsystem[\c!n=1,\c!m=1]
+\def\MPOSTformatswitch{-progname=metafun -mem=}
+\setupsystem[\c!method=2]
+\setupsystem[\c!type=linux]
+\setupoutput[pdftex]
+\setupsystem[\c!random=856]
+\setupsystem[inputfile=cyberpunk_not_dead.tex]
+\protect
+\endinput

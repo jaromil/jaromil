@@ -1,0 +1,24 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%BoundingBox: -30 -30 0 0 
+%%HiResBoundingBox: -29.09085 -29.09085 0 0 
+%%Creator: MetaPost 0.993
+%%CreationDate: 2009.08.04:0057
+%%Pages: 1
+%%BeginProlog
+/bd{bind def}bind def
+/hlw{0 dtransform exch truncate exch idtransform pop setlinewidth}bd
+/vlw{0 exch dtransform truncate idtransform setlinewidth pop}bd
+/l{lineto}bd/r{rlineto}bd/c{curveto}bd/m{moveto}bd/p{closepath}bd/n{newpath}bd
+/C{setcmykcolor}bd/G{setgray}bd/R{setrgbcolor}bd/lj{setlinejoin}bd/ml{setmiterlimit}bd
+/lc{setlinecap}bd/S{stroke}bd/F{fill}bd/q{gsave}bd/Q{grestore}bd/s{scale}bd/t{concat}bd
+/sd{setdash}bd/rd{[] 0 setdash}bd/P{showpage}bd/B{q F Q}bd/W{clip}bd
+%%EndProlog
+%%Page: 1 1
+%%HiResBoundingBox: -29.09085 -29.09085 0 0
+ 0.6 0.6 0.6 R
+n 0 0 m
+-29.09085 -14.54543 l
+0 -29.09085 l
+ p F
+P
+%%EOF

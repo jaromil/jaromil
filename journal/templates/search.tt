@@ -1,0 +1,69 @@
+[% WRAPPER search_layout %]
+
+
+
+    [% PROCESS form %]
+    <p>
+    [% IF result.shown %]
+        [% PROCESS results_header %]
+        [% PROCESS display_results %]
+        <p>
+        [% PROCESS next_links %]
+    [% END %]
+
+    [% IF result %]
+        [% IF result.message %]
+            <div class="message">[% result.message %]</div>
+        [% ELSIF ! result.hits %]
+            <div class="message">No Results Found</div>
+        [% END %]
+    [% END %]
+
+[% END %]
+
+[% BLOCK form %]
+<div class="search-form">
+    <form method="get" action="[% request.myself %]" enctype="application/x-www-form-urlencoded">
+        <input type="text" name="query" value="" size="40" maxlength="200" />
+        <input type="submit" name="submit" value="Search" /><br>
+        Limit search to:
+        <input type="radio" name="metaname" value="swishdefault" checked value="swishdefault"/>Body and Title
+        <input type="radio" name="metaname" value="swishtitle" />Just Title
+    </form>
+</div>
+[% END %]
+
+
+[% BLOCK results_header %]
+<div class="showing-header">
+    <h2>Search results for "[% request.query | html %]"</h2>
+
+    <h3>Showing page [% result.page %]
+    ([% result.start +1 %] - [% (result.start + result.shown) %] of [% result.hits %] hits)</h3>
+
+    [% USE myurl = url( request.myself, query=request.query, metaname=request.metaname, size=request.pagesize ) %]
+
+    [% PROCESS next_links %]
+
+</div>
+[% END %]
+
+[% BLOCK next_links %]
+
+    [% IF result.prev %]
+       <a href="[% myurl( page=result.prev ) %]">Previous</a>
+    [% END %]
+    [% IF result.next %]
+       <a href="[% myurl( page=result.next ) %]">Next</a> 
+    [% END %]
+[% END %]
+
+[% BLOCK display_results %]
+<menu>
+    [% FOREACH item = result.results %]
+<li>
+            <a href="http://jaromil.dyne.org/journal/[% item.Property('swishdocpath') | uri | html %]">
+                [%  item.Property('swishtitle') || 'missing' | highlight('swishtitle', item ) %]</a><br>
+    [% END %]
+</menu>
+[% END %]

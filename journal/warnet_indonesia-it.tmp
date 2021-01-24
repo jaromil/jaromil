@@ -1,0 +1,11 @@
+% warnet_indonesia-it.top
+\unprotect
+\setupsystem[\c!n=1,\c!m=1]
+\def\MPOSTformatswitch{-progname=metafun -mem=}
+\setupsystem[\c!method=2]
+\setupsystem[\c!type=linux]
+\setupoutput[pdftex]
+\setupsystem[\c!random=642]
+\setupsystem[inputfile=warnet_indonesia-it.tex]
+\protect
+\endinput

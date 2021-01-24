@@ -1,0 +1,3849 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Jaromil's Research 2009</title>
+    <link>http://jaromil.dyne.org/journal/research_2009.html</link>
+    <description>A diary noting down FOSS and tech related research, day by day findings and curiosities, collecting future and past thoughts.</description>
+    <language>en-us</language>
+    <generator>Emacs Muse</generator>
+
+Almost every  day I  dedicate 2 good  hours to research:  nothing in
+particular,   just   looking   around   for   inspirations,   tools,
+publications and what not.
+
+Thanks go to the NIMk employing me in research and development.
+
+This diary  is still  in fieri: some  links are scattered  and still
+lacking comments, while  it will grow complete over  time, you might
+be also interested to read the research diary 2008.
+
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Tue, 15 Dec 2009 00:00:00 CET</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#20091215</guid>
+
+</item>
+
+<item>
+<title>Deforestation satellite monitoring</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Deforestation%20satellite%20monitoring</link>
+<description><![CDATA[An interesting  concern raises up from  an entry posted  on the Google
+developer's blog:  monitoring deforestation is now  possible thanks to
+wide access  to satellite  imagery.
+
+This  pleasant  situation still  leaves  unanswered  questions on  the
+influence  of  popular  perception   on  corporate  governance  -  and
+massacres of  indigenous societies, coldly  put. But let's turn  for a
+moment our attention to something  else: what is exactly "pleasant" in
+this  situation?   what lies  behind  this  novel  enthusiasm for  the
+universally available monitoring of anti-social behaviours?
+
+Arguably the essence  of our enthusiasm lies in  the opportunity for a
+ubiquitous  feedback  on   issues  commonly  considered  of  universal
+importance - at the reach of everyone connected to the Internet.
+
+I really love it, not just related to forests, but to a new image of a
+world suddenly  becomes reachable, if not desirable,  when compared to
+modern architectures of centralised control.
+
+So why aren't we able to access the cameras in our streets? who should
+be  entitled to  watch our  cities? considering  that  satellites were
+available to a military elite  already since years and they never used
+them to monitor deforestation
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Sat, 12 Dec 2009 00:00:00 CET</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Deforestation%20satellite%20monitoring</guid>
+
+</item>
+
+<item>
+<title>English Shellcode</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#English%20Shellcode</link>
+<description><![CDATA[Thanks Shammash for pointing  out this witty paper: English Shellcode,
+an  effort to  interpret  code into  English  language which  suggests
+developments far  beyond its initial  focus on security  research.
+
+The abstract recites:
+
+History  indicates  that the  security  community  commonly takes  a
+divide-and-conquer  approach to  battling malware  threats: identify
+the essential and inalienable  components of an attack, then develop
+stack protection  and NOP  sled detection. It  comes as  no surprise
+then  that  we approach  shellcode  detection  and  prevention in  a
+similar  fashion.  However,  the  common belief  that components  of
+polymorphic shellcode (e.g., the  decoder) cannot reliably be hidden
+suggests a  more implicit and  broader assumption that  continues to
+drive  contemporary  research:   namely,  that  valid  and  complete
+representations   of  shellcode   are  fundamentally   different  in
+structure  than  benign payloads.  While  the  first  tenet of  this
+assumption is philosophically undeniable (i.e., a string of bytes is
+either shellcode  or it is not),  truth of the latter  claim is less
+obvious  if there  exist  encoding techniques  capable of  producing
+shellcode with features nearly indistinguishable from non-executable
+content.  In this paper,  we challenge the assumption that shellcode
+must  conform   to  superficial  and   discernible  representations.
+Specifically, we demonstrate a technique for automatically producing
+English   Shellcode,  transforming   arbitrary   shellcode  into   a
+representation that  is superficially similar to  English prose. The
+shellcode is completely self-contained (i.e., it does not require an
+external loader and  executes as valid IA32 code)  and can typically
+be generated  in under  an hour on  commodity hardware.  Our primary
+objective in this  paper is to promote discussion  and stimulate new
+ideas  for thinking  ahead  about preventive  measures for  tackling
+evolutions in code-injection attacks.
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Fri, 11 Dec 2009 00:00:00 CET</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#English%20Shellcode</guid>
+
+</item>
+
+<item>
+<title>Defective By Design update</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Defective%20By%20Design%20update</link>
+<description><![CDATA[A  mail-out  by the  FSF  today provided  a  nice  round-up about  the
+DRM-free campaign this year:
+
+2009  was the year  that music  DRM died.   But when  Apple's iTunes
+store  went DRM-free  on music,  we celebrated  the  victory without
+buying the hype:  Apple still uses DRM on  virtually everything else
+they sell (movies, TV shows, games, audiobooks, applications, and of
+course hardware) - itunes-drm-free
+
+Ebooks and ebook  readers took off this year, and  so did the threat
+of DRM on books.  When Amazon deleted copies of George Orwell's 1984
+from hundreds  of people's ebook readers, we  collected thousands of
+signatures   from  readers,   authors,   public  intellectuals   and
+librarians demanding an end to ebook DRM - amazon1984
+
+At the  same time, we praised  and promoted the work  of authors and
+publishers who  do the  right thing and  keep their  books DRM-free,
+like Harlequin's new publishing  house Carina Press, or the hundreds
+of publishers who tagged  their work "drmfree" - carina-drm-free and
+blog
+
+Through all this, Defective by Design  is proud to be the only voice
+saying  loud and clear  that there's  no such  thing as  "better" or
+"friendlier" DRM.  No matter how many  devices it works  on, or what
+"features" it includes  to trick people into accepting  it, DRM robs
+us of our basic rights and insults human curiosityit needs to go.
+
+If  you believe  that  the technology  we  use should  be free  from
+arbitrary restrictions, the best way  to put that belief into action
+is by becoming an FSF member.
+
+FSF activity  for users and developers rights  really was determinant,
+all doe  we still miss to  give artists better  answers and directions
+out of babylon.
+
+We're all doing our best. Next  weekend in Barcelona I'll take part in
+a          panel           about          video          distribution:
+TOPOLOGÍA, INNOVACIÓN Y POLÍTICA CULTURAL.
+
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Thu, 10 Dec 2009 00:00:00 CET</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Defective%20By%20Design%20update</guid>
+
+</item>
+
+<item>
+<title>:</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#%3A</link>
+<description><![CDATA[Carsten Agger on nettime
+http://somethingmanky.blogspot.com/
+http://www.guardian.co.uk/environment/2009/dec/05/climate-change-carbon-offset-copenhagen
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Sat, 05 Dec 2009 00:00:00 CET</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#%3A</guid>
+
+</item>
+
+<item>
+<title>Internet of Things workshop</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Internet%20of%20Things%20workshop</link>
+<description><![CDATA[Apparently with great  success, the first workshop of  the IoT Council
+was held  in Bruxelles as a  Lift! event, seeing  the participation of
+several EU  officials, rapidly capped to 100  participants already two
+weeks in advance.
+
+Council is a  loose group of professionals with  different ideas and
+opinions. We sometimes differ and  will probably clash. We prefer to
+host the full range of opinions on what will be a small avalanche of
+disruptive innovations.  We do have  something in common  though. We
+have  been  through  the  full  range  of  emotions  and  conceptual
+breakdown  that   comes  with  grasping  the   territory,  the  full
+logistical, business,  social and philosophical  implications of the
+Internet of Things.
+
+The  outcomes of  our  workshop Tools  for  mediation in  the IoT  are
+resumed by this Human / Tech Mediation mind-map.
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Fri, 04 Dec 2009 00:00:00 CET</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Internet%20of%20Things%20workshop</guid>
+
+</item>
+
+<item>
+<title>Open Source business models</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Open%20Source%20business%20models</link>
+<description><![CDATA[The latest Open Source column  on ZDNet presents the following article
+by Dana Blankenhorn & Paula Rooney regarding business models:
+
+Critics are always claiming open source lacks a business model.
+
+In  fact it's proprietary  software that  is lacking  in imagination.
+They have only one business model:
+
+EULA  Ware: Give  me money.   Now go away.  It doesn't  work? Go
+away.  You want  your money back? Read your EULA,  and go away. You
+want to see the software? Go away.
+
+This has the virtue of  simplicity.  People pay and you really aren?t
+required to  give them anything.  But it lacks  a certain je  ne sais
+quoi
+
+Don't know  what that  is? You must  work for a  proprietary software
+company.  (Go away.)
+
+Telling people  to pay you and  go away worked for  an amazingly long
+time. It sounds  like it shouldn't.  It sounds a  bit like theft. But
+software is a  miracle, and for decades EULA Ware  was the only model
+there was.
+
+Open  source companies, on  the other  hand, they  have to  use their
+imagination.  They  can't feed  people EULA Ware,  so they  must make
+money in other ways:
+
+Support Ware: Pay us money and we'll support the software. We'll
+answer your questions. Or we'll try to. Over the phone, on the Web,
+whatever. Pay  us enough  and we'll come  over. Red Hat  likes this
+business model.
+
+Product  Ware : The  software is free,  you just buy the  box it
+runs in. Android phones use  this. So do some network routers. It's
+number two, but with a bullet.
+
+Cloud Ware : Our software is  in the clouds now. Pay us for what
+it  does. The  money goes  into the  cloud. Later  it will  rain on
+us. SugarCRM likes this business model.
+
+Project Ware  : Need  something done?   We'll do  it  with open
+source.  Pay us for our work, and pay us for the project. IBM makes
+a ton on this business model.
+
+SaaS Ware : Our software is SaaSy. You can rent it, by the hour,
+by   the   month,  by   the   user.    This   is  wildly   popular.
+Zoho uses it. So do many other companies.
+
+Ad  Ware : This is  a free version  of SaaS Ware. You  don't pay
+anything, the advertiser pays instead. Heard of The Google? This is
+their primary business model. ZDNet also uses this business model.
+
+Sugar Daddy  Ware : Our software has a  sugar daddy. Firefox has
+Google. Eclipse  has IBM. Open Office  has Sun, or it  did. So just
+use the stuff. Daddy will provide. We believe in daddy.
+
+Foundation Ware : Our software  has a foundation. It has lots of
+sugar  daddies.  Want to  be  one? Linux  runs  this  way. So  does
+Apache. Not to mention Wikipedia.
+
+Beg Ware : Please give us  money. We know you don?t have to. But
+give us  money anyway.  Lots of little  projects use  this business
+model. Or pretend to.
+
+Tchotchke Ware  : Wanna  buy a  t-shirt? How  about  a bumper
+sticker? A pen?
+
+Let's Make a Deal Ware : The programmers who wrote the software
+support  it out  of their  own pockets  until they  can  figure out
+something.   Wordpress started  this  way.  So  did  Drupal. Go  by
+Sourceforge and you?ll find tons of folks still using this business
+model.
+
+The great thing  about open source is you don't have  to use just one
+business  model.  You  can mix-and-match  as  you see  fit.  You  can
+change. You can go to a more profitable model and buy a suit, or fork
+the code and go down the stack.
+
+This is what  freedom is about. It's about  having choices. You don't
+have to  go to Sand Hill Road  to get into the  software business. If
+they tell  you to go away, go  open source and in  time maybe they'll
+call you.
+
+Then you can tell them to go away.
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Wed, 02 Dec 2009 00:00:00 CET</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Open%20Source%20business%20models</guid>
+
+</item>
+
+<item>
+<title>Corpus building for minority languages</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Corpus%20building%20for%20minority%20languages</link>
+<description><![CDATA[A  bit  of  curiosity  about  the state  of  ispell  dictionaries  and
+independent work done in language research today lead to An Crúbadán a
+web  crawler doing  automatic development  of large  text  corpora for
+minority languages.
+
+It has been around for a  while, wondering if it's also thanks to this
+research  that Google  today offers  an amazing  range  of translation
+possibilities between languages.
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Fri, 20 Nov 2009 00:00:00 CET</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Corpus%20building%20for%20minority%20languages</guid>
+
+</item>
+
+<item>
+<title>Stubnitz: free Amsterdam?</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Stubnitz%3A%20free%20Amsterdam%3F</link>
+<description><![CDATA[A  petition is  out  to free  the  historical Stubnitz  boat from  the
+neo-prohibitionist  wave hitting  the city  of Amsterdam.   This  is a
+paradox for such an historical  free culture harbour in Europe, but we
+must admit  that Mokum A is  showing signals of decline  since a while
+now.
+
+For centuries  Amsterdam was  proud of being  a tolerant  city.  Its
+recent vertrutting undermines this.
+
+MS Stubnitz, 'the  ship of 100 subcultures', is  a representative of
+the diverse  and tolerant cultural spirit of  Amsterdam.  For unjust
+reasons  the ship  has  been shut  down  by the  City of  Amsterdam,
+leaving this  independent cultural hot-spot  and its crew  in limbo:
+unable to operate the ship  and unable to leave Amsterdam.  The very
+survival of the project is in imminent danger.
+
+Please join  our protest in support  of the Stubnitz,  its crew, and
+Amsterdam's onttrutting. *This event  will take place at Dam Square,
+this Friday,  13 November  2009, from 15.00  till 18.00h.   A public
+discussion on "vertrutting" and  "onttrutting" will take place at de
+Balie, this  Saturday, 14 November, from 20.30  till 23.00h. Details
+of the program will be announced on tolerantamsterdam.jjmdo.com.
+
+Please   support  the   Stubnitz   by  signing   the  petition.
+
+Details on the illegitimate closure  of the Stubnitz can be found in
+the document Bezwaargronden" (in Dutch).
+
+*Save the Stubnitz from capsizing!*
+
+What  basically happened is  that police  smuggled a  dozen undercover
+cops into a Saturday night party  held at the Stubnitz, the boat being
+part  of  the  NDSM  cultural  evening  program,  an  industrial  area
+converted to  art and  entertainment, subsidised by  creative industry
+funds.
+
+The  silent cops  took just  notes during  the party,  emphasising the
+"drug  abuse"  happening.  The  day  after,  their anonymously  signed
+memorial depicted  the boat as a  place of perdition for  the youth of
+Amsterdam, justifying its seizing.
+
+If you  know Amsterdam you know  how ridiculous this is,  a trick that
+could be played on a vast number of public places on a Saturday night,
+nevertheless  the  cultural  and  political  significance  of  the  MS
+Stubnitz seems  a defined target for the  prohibitionist powers taking
+over our city. Ai! Amsterdam.
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Sun, 15 Nov 2009 00:00:00 CET</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Stubnitz%3A%20free%20Amsterdam%3F</guid>
+
+</item>
+
+<item>
+<title>Memorable Mindfck code</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Memorable%20Mindfck%20code</link>
+<description><![CDATA[Just found that Ku-ma-me posted some time ago an exquisite exercise of
+recursively polymorphic  code in ruby  (Quine): it can  be interpreted
+cascading across 12 languages
+
+
+
+# ruby
+l=92.chr;eval s="s=s.dump[r=1..-2].gsub(/("+l*4+"){4,}(?!\")/){|t|'\"+l*%d+\"'%(t
+.size/2)};5.times{s=s.dump[r]};puts\"# python\\nprint(\\\"# perl\\\\nprint(\\\\\\
+\"# lua"+l*4+"nprint("+l*7+"\"(* ocaml *)"+l*8+"nprint_endline"+l*15+"\"-- haskel
+l"+l*16+"nimport Data.List;import Data.Bits;import Data.Char;main=putStrLn("+l*31
++"\"/* C */"+l*32+"n#include<stdio.h>"+l*32+"nint main(void){char*s[501]={"+l*31+
+"\"++intercalate"+l*31+"\","+l*31+"\"(c(tail(init(show("+l*31+"\"/* Java */"+l*32
++"npublic class QuineRelay{public static void main(String[]a){String[]s={"+l*31+"
+\"++intercalate"+l*31+"\","+l*31+"\"(c("+l*31+"\"brainfuck"+l*64+"n++++++++[>++++
+<-]+++++++++>>++++++++++"+l*31+"\"++(concat(snd(mapAccumL h 2("+l*31+"\"110"+l*31
++"\"++g(length s)++"+l*31+"\"22111211100111112021111102011112120012"+l*31+"\"++co
+ncatMap("+l*32+"c->let d=ord c in if d<11then"+l*31+"\"21002"+l*31+"\"else"+l*31+
+"\"111"+l*31+"\"++g d++"+l*31+"\"22102"+l*31+"\")s++"+l*31+"\"2100211101012021122
+2211211101000120211021120221102111000110120211202"+l*31+"\"))))))++"+l*31+"\","+l
+*63+"\""+l*64+"n"+l*63+"\"};int i=0;for(;i<94;i++)System.out.print(s[i]);}}"+l*31
++"\")))))++"+l*31+"\",0};int i=0;for(;s[i];i++)printf("+l*63+"\"%s"+l*63+"\",s[i]
+);puts("+l*63+"\""+l*63+"\");return 0;}"+l*31+"\");c s=map("+l*32+"s->"+l*31+"\""
++l*63+"\""+l*31+"\"++s++"+l*31+"\""+l*63+"\""+l*31+"\")(unfoldr t s);t[]=Nothing;
+t s=Just(splitAt(if length s>w&&s!!w=='"+l*31+"\"'then 501else w)s);w=500;f 0=Not
+hing;f x=Just((if x`mod`2>0then '0'else '1'),x`div`2);g x= reverse (unfoldr f x);
+h p c=let d=ord c-48in(d,replicate(abs(p-d))(if d< p then '<'else '>')++"+l*31+"\"
+."+l*31+"\");s="+l*31+"\"# ruby"+l*32+"n"+l*31+"\"++"+l*31+"\"l=92.chr;eval s=\"+
+(z=l*31)+\"\\\"\"+s+z+\"\\\""+l*31+"\"++"+l*31+"\""+l*32+"n"+l*31+"\""+l*15+"\""+
+l*7+"\")"+l*4+"n\\\\\\\")\\\")\"########### (c) Yusuke Endoh, 2009 ###########\n"
+</stdio.h>
+
+ ruby QuineRelay.rb > QuineRelay.py
+ python QuineRelay.py > QuineRelay.pl
+ perl QuineRelay.pl > QuineRelay.lua
+ lua QuineRelay.lua > QuineRelay.ml
+ ocaml QuineRelay.ml > QuineRelay.hs
+ runghc QuineRelay.hs > QuineRelay.c
+ gcc -Wall -o QuineRelay QuineRelay.c
+  ./QuineRelay > QuineRelay.java
+ javac QuineRelay.java && java QuineRelay > QuineRelay.bf
+ beef QuineRelay.bf > QuineRelay.ws
+ wspace QuineRelay.ws > QuineRelay.unl
+ unlambda QuineRelay.unl > QuineRelay2.rb
+
+
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Thu, 12 Nov 2009 00:00:00 CET</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Memorable%20Mindfck%20code</guid>
+
+</item>
+
+<item>
+<title>ICT labour issues</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#ICT%20labour%20issues</link>
+<description><![CDATA[Yesterday  Adobe  Systems  Inc.   fired  approximately  680  full-time
+positions worldwide.
+
+Meanwhile today  in Italy the ICT  company Eutelia Spa  is occupied by
+its  employees on  strike  after not  receiving  their payments  since
+months. Something that quickly escalated  as the owner of the company,
+known         for          his         right-wing         connections,
+organised a "private raid" to force the striking employees out. Nevertheless
+the occupants resisted and are well determined to keep the place until
+they'll have their rights respected.
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Wed, 11 Nov 2009 00:00:00 CET</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#ICT%20labour%20issues</guid>
+
+</item>
+
+<item>
+<title>The Anomalous Wave hits the Northern shores</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#The%20Anomalous%20Wave%20hits%20the%20Northern%20shores</link>
+<description><![CDATA[With thousands  of students protesting  in Austria and Germany,  it is
+now clear  that the Anomalous Wave advances  inexorably across Europe:
+it  crosses languages  as well  political and  economical differences,
+uniting a generation of young  people increasingly aware of the rights
+they are being negated and the future they are being stolen.
+
+The "Unsere  Uni" movement both  in Austria and Germany  is blossoming
+with various initiatives, a grass-root participation in youth protests
+that can be hardly found in social-democratic-land and dulcis in fundo
+lots   arguments   and   reasons   for  being   hungry   against   the
+commercialization   of   culture.     Here   below   the   Allgemeiner
+Forderungskatalog from Austrian students:
+
+Antidiskriminierung:
+
+Wir fordern antidiskriminatorische Betriebsvereinbarungen und
+Anti-Diskrimninierung als Grundkonsens in allen Bildungseinrichtungen.
+
+Das so genannte Behindertengleichstellungsgesetz muss in allen
+Institutionen des Bildungswesens umgesetzt werden. Wir fordern
+barrierefreies Studieren, Lehren und Lernen. D.h. beispielsweise
+die Verfügbarkeit von Dolmetscher_innen zur Übersetzung in
+Gebärdensprache sowie infrastrukturelle Maßnahmen für Menschen mit
+besonderen Bedürfnissen, Bsp. Barrierefreie Räume und Lifte;
+Wir fordern eine 50-prozentige Frauenquote in allen
+Arbeitsbereichen des Bildungswesens auf allen Ebenen;
+Wir fordern Quoten zur Förderung von Migrant_innen in allen
+Arbeitsbereichen des Bildungswesens auf allen Ebenen;
+Wir fordern Maßnahmen gegen Diskriminierung von LGBTQ-Personen
+(lesbian, gay, bisexual, transgender/transsexual, queer) und
+weiteren Angehörigen systematisch diskriminierter Gruppen in allen
+Arbeitsbereichen des Bildungswesens auf allen Ebenen;
+Wir fordern gleiches Recht auf Mobilität und Bildung unabhängig von
+Staatsbürger_innenschaft; Z.B.: Keine doppelten Studiengebühren von
+Drittstaatsangehörigen sowie die Anerkennung von akademischen
+Titeln aller Länder.
+
+Demokratisierung der Universitäten:
+
+Unser Ziel ist die demokratische Organisation der Universitäten. Dazu
+gehört eine Demokratisierung der Verwaltung in einer Form, die
+Professor_innen, Studierende, das wissenschaftliche und
+nicht-wissenschaftliche Personal gleichberechtigt an der
+Entscheidungsbildung beteiligt.
+
+Wir fordern eine demokratische, selbstverwaltete Organisation der
+Universitäten.
+Wir fordern eine gleichberechtigte Einbeziehung aller vier Kurien:
+Studierende, Mittelbau, Professor_innen und allgemeines
+Universitätspersonal.
+Wir sprechen uns gegen die Dominanz von Rektorat, Unirat und
+Ministerium aus.
+Wir bestehen auf der Zusammenlegung des Ministeriums für Unterricht
+und Kunst und des Ministeriums fur Wissenschaft und Forschung.
+Wir fordern die Abschaffung des Universitätsrates.
+Wir fordern die Beschneidung der Befugnisse des Rektorats bei
+gleichzeitiger Aufwertung demokratisch legitimierter Gremien.
+Wir fordern die Abschaffung von quantifizierenden
+Kontrollmechanismen wie Leistungsvereinbarungen und
+Wissensbilanzen.
+Wir fordern Budgettransparenz. D.h. die Offenlegung aller
+Finanzaktivitäten und die demokratische Mitbestimmung bei der
+Budgetverteilung.
+Wir fordern die Rücknahme der ÖH-Wahlrechtsreform von 2004 und die
+Wiedereinführung des direkten Wahlmodus.
+Selbst-organisierte studentische Räume müssen geschützt und
+unterstützt werden. Die derzeitigen Besetzungen zeigen die
+Notwendigkeit des Austauschs und der Vernetzung in autonomen
+Räumen.
+
+Keine Ökonomisierung von Bildung:
+
+Wir fordern den freien Hochschulzugang und die Abschaffung
+ökonomischer Kriterien für den Zugang zu Bildung, welche den
+strukturellen Rassismus und die soziale und ökonomische
+Ungleichheit aufrecht erhalten, d.h. die Abschaffung aller
+Studiengebühren und die Aufhebung aller weiteren finanziellen
+Zugangsbarrieren im Bildungsbereich und zwar unabhängig von
+Staatsbürger_innenschaft, Alter und Dauer des Studiums.
+Schluss mit Unterfinanzierung, Wettbewerbslogik und Elitenbildung
+im Bildungsbereich, d.h. keine Privatisierung und kein Ausverkauf
+öffentlicher Einrichtung und Güter.
+Die Qualität von Bildung und Lehre soll nicht durch
+Zugangsbeschränkungen, sondern durch ausreichende Finanzierung im
+Bildungssektor gewährleistet werden.
+Wir fordern die Abschaffung prekärer Dienstverhältnisse im
+Bildungsbereich sowie in der gesamten Arbeitswelt. D.h. keine
+a-typischen Beschäftigungsverhältnisse wie freie Dienstverträge,
+zeitlich befristete Verträge, Werkverträge etc. Die systematische
+Prekarisierung von Lehrenden und Forschenden hat Vereinzelung,
+Verunsicherung, Demotivierung und Konkurrenzdenken zur Folge.
+Wir fordern die Ausfinanzierung aller Bildungseinrichtungen.
+Wir fordern die Finanzierung von Forschung und Lehre in einem
+Ausmaß, das die Beschaffung von Drittmittel nicht notwendig macht.
+Wir reklamieren das Streikrecht für Student_innen und
+Schüler_innen.
+
+Selbstbestimmtes Studieren:
+
+Abschaffung des Selektionsinstruments der Studieneingangsphasen
+(STEPs) inklusive ihrer Knock-Out-Prüfungen.
+Schluss mit den Voraussetzungsketten.
+Freie Wahlfächer statt Erweiterungscurricula.
+Abschaffung der intransparenten Anmeldesysteme.
+Abschaffung der Deadlines für Sozialförderungen.
+Die Beendigung des angefangenen Diplomstudiums muss gewährleistet
+sein. Dazu bedarf es eines entsprechenden Lehrangebots und fixer
+Äquivalenzlisten sowie der Aufhebung der bestehenden
+Übergangsfristen.
+Aufrechterhaltung aller bestehenden Diplomstudiengänge.
+Gewährleistung der Anrechenbarkeit von Lehrveranstaltungen und
+Abschlüssen im In- und Ausland.
+Freie Zugänge zu allen Studiengängen.
+
+Außerdem sprechen wir uns aus:
+
+Gegen die Einführung der Zentralmatura.
+Gegen ein autoritäres Beurteilungssystem in Schulen – Sitzenbleiben
+abschaffen.
+
+Geschichtliche Aufarbeitung:
+
+Wir fordern die Erhaltung, die Förderung und den Ausbau kritischer
+und emanzipatorischer Forschung und Lehre.
+Wir verlangen die Restitution aller im Zuge der Shoa geraubten
+Güter, die sich in „Besitz“ der Universitäten sowie anderer
+staatlicher Einrichtungen befinden.
+Wir bestehen auf der geschichtspolitischen Auseinandersetzung, mit
+der Teilhabe der Wissenschaft und ihrer Institutionen, an
+Kolonialismus, Faschismus und Nationalsozialismus.
+
+Wir fordern freie Bildung für alle!
+
+Wir fordern nicht nur einen Stop der Ökonomisierung der Bildung!
+
+Wir fordern einen Stop der Ausbeutung in allen Lebensbereichen!
+
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Thu, 05 Nov 2009 00:00:00 CET</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#The%20Anomalous%20Wave%20hits%20the%20Northern%20shores</guid>
+
+</item>
+
+<item>
+<title>RFID nest attack implemented</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#RFID%20nest%20attack%20implemented</link>
+<description><![CDATA[Researchers    at   Nethemba    released   a    few   days    ago   an
+implementation  of the  nest  attack on  Mifare  Classic cards.
+
+We have analysed Czech/Slovak  most used public transport and access
+smart  cards  (Bratislava  public  transport  card,  University/ISIC
+cards,  parking  cards, Slovak  Lines  cards  etc)  based on  Mifare
+Classic technology.  Using various technologies and thanks to public
+available academical papers, we have demonstrated the possibility of
+gaining all  access keys used  for the card content  encryption.  We
+have  also verified  that these  keys can  be subsequently  used for
+complete reading,  altering and  cloning the cards  that can  pose a
+serious threat for affected transport companies.
+
+Fairly well  packaged, this software progressively  discovers the keys
+closing the blocks on the RFID cards, starting from at least one known
+key  (commonly found,  as mentioned  by Roel  Verdult in  his "Classic
+Mistakes" lecture) using the "Nested Authentication Attack" documented
+by  the  paper  "Wirelessly   Pickpocketing  a  Mifare  Classic  Card"
+published by scholars of the Radboud University in Nijmegen.
+
+Theoretically this  is nothing  so new, nevertheless  this is  a fully
+working implementation (and  fast, thanks to libNFC) that  can let you
+crack Mifare  chips using  a 30$ cheap  touch-a-tag without  more tech
+skills than compiling a small C  code. Tried on the dutch OV-chip card
+today: it took less than 2 hours  to find all the keys of the card and
+read out all its sectors. Wide open, quite impressive.
+
+Nethemba's head of  research Pavol Lupták will soon  present in person
+his findings at the upcoming Confidence 2.0 in Warsaw.
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Wed, 04 Nov 2009 00:00:00 CET</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#RFID%20nest%20attack%20implemented</guid>
+
+</item>
+
+<item>
+<title>The Ghetto Biennale</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#The%20Ghetto%20Biennale</link>
+<description><![CDATA[Definitely  the most  interesting  Biennale of  contemporary art  I've
+heard of  this year,  at least judging  from the artist's  line-up and
+surrounding statements:
+
+"The  artists  use all  the  detritus  of  a post-industrial  global
+economy  which uses  Haiti as  a  dumping ground.   They return  the
+compliment,  creating astounding  bricolages  and assemblages  which
+express  both the despair  and the  seemingly endless  creativity of
+Haiti and Vodou. I have  visited their ateliers on Haiti's Grand Rue
+on several occasions  over the last four years. I  have had a chance
+to  see their  sculptures  as  they were  being  wrought from  their
+desperate materials  in a scrap yard  on this wreck of  a street, in
+this wreck of a city, in  this wreck of a country.  Saying all that,
+I would also have to add  that, like Haiti, their sculptures seem to
+express  the   boundless  creative  energy  of  a   people  who  are
+simultaneously  the economically  poorest, and  artistically richest
+culture in the New World."  ( Professor Donald Cosentino, World Arts
+and Cultures, University of California, LA )
+
+The Ghetto  Biennale, a  Salon des Refuses  for the 21st  century will
+open  its doors  this year,  exhibiting among  the others  our beloved
+hacker  stars   Nancy  Mauro-Flude  and  Jessie   Darling,  plus  more
+interesting artists  like for instance  Ace Lehner and  Crow Cianciola
+with their witty critical project called OINGO, about NGO abuse:
+
+Our project  looks to the  ghetto biennale as a  counter exhibition,
+disrupting  conventional art  scene exclusions,  as well  as  a bold
+conversion of  global power systems, centers of  art production, and
+cultural  transmission.  As  U.S.   artists proposing  to travel  to
+Port-au-Prince, Haiti  to participate in  the Ghetto Biennale  it is
+important to us  to be part of a  critical dialogue about globalism.
+There are approximately 10,000  NGO's operating in Haiti, all backed
+by the interests and finances of the US, France and Canada.  Many of
+these NGOs  are immersed in agricultural  production.  The resulting
+farms  are  part and  parcel  of  the  global industry  of  economic
+assistance.  We  are interested in utilizing  tangerines and oranges
+from  farms  that  have  become  part of  the  Haitian  agricultural
+landscape through the presence of US funded NGO's.
+
+Among the  other things  found in the  documentation of  this Biennale
+there is  this fascinating warning  for those submitting to  the call:
+"Artists should be  aware that Haiti has only a  50% literacy rate and
+text heavy projects could be problematic for the local audience".
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Wed, 28 Oct 2009 00:00:00 CET</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#The%20Ghetto%20Biennale</guid>
+
+</item>
+
+<item>
+<title>The e-reader race</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#The%20e%2Dreader%20race</link>
+<description><![CDATA[In the  last few hours Amazon's  stock markets made  a remarkable leap
+(approximately  +26% in  less than  24 hours),  on the  hype  of their
+e-reader and the opening market of e-paper press.
+
+It sounds quite logical as  Christmas approaches the western world and
+the  e-readers   place  themselves  as   a  perfect  new   gadget  for
+yuppies. Nevertheless it is a  bit too early to draw conclusions about
+who    is     going    to     win    the    e-reader     market,    as
+the Nook tablet  is coming up as well the  Asus dual screen EEE-reader
+which is already rumored to be the cheaper and best.
+
+And while  Amazon's Kindle deletes the  books from the  hands of their
+customers, these other cheaper models seem to come free from DRM.
+
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Fri, 23 Oct 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#The%20e%2Dreader%20race</guid>
+
+</item>
+
+<item>
+<title>Free Culture Forum</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Free%20Culture%20Forum</link>
+<description><![CDATA[I'm honoured to be one  of the participants in the international Forum
+on Access  to Culture  and Knowledge in  the Digital Age  organised by
+Exgae, Networked  Politics and  Free Knowledge Institute  in Barcelona
+from October 29 to November 1, 2009.
+
+The Forum will be a major international meeting of the most relevant
+world-wide  organizations   and  individuals  who   are  engaged  in
+reflecting   on  the   social   and  economic   challenges  to   the
+dissemination of culture and knowledge in the digital age.
+
+While   governments  around  the   world  discuss   legislation  and
+self-regulation,  the Forum will  articulate the  valuable proposals
+that are  emerging from civil  society and find ways  of harmonising
+the  recognition  of  creativity,  innovation  and  investment  with
+people’s right to access  knowledge in a sustainable and cooperative
+world.
+
+The Forum  will be a space  in which to lay  down concrete proposals
+and         articulate        the         work         of        the
+more than 60 experts invited to participate.
+
+The  Forum   continues  the  work  carried  out   by  civil  society
+organizations  at  the Ministerial  Conference  “Forum for  Creative
+Europe” organised as part of  the Czech Presidency of the Council of
+the European Union in March this year (see attached abstract).  This
+enterprise is  supported by the European  Commission’s Education and
+Culture  Committee,  which  will  continue its  involvement  through
+Official Observers at the Barcelona event.
+
+Full  program  is on  fcforum.net,  Another  interesting  text is  the
+Exgae paper  at the Forum for a  Creative Europe as part  of the Czech
+Presidency.
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Sun, 18 Oct 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Free%20Culture%20Forum</guid>
+
+</item>
+
+<item>
+<title>JAHTARI, RASTASOFT et al.</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#JAHTARI%2C%20RASTASOFT%20et%20al%2E</link>
+<description><![CDATA[Tonight  it's show  time, with  an alchemy  between Reggae  Riddim and
+8-bit, free software development  and Rastafari redemption. The gig is
+hosted  by the Worm  in Rotterdam  and co-organised  with Moddr  - the
+coolest hackerspace in the city.
+
+Liberation  from mental slavery  in software  and hardware,  chips and
+tunes.
+
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Sat, 17 Oct 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#JAHTARI%2C%20RASTASOFT%20et%20al%2E</guid>
+
+</item>
+
+<item>
+<title>Rich countries cut food aid</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Rich%20countries%20cut%20food%20aid</link>
+<description><![CDATA[The      Guardian       newspaper      yesterday      reported      an
+impressive  declaration  by the  head  of  UN's  World Food  Programme
+stating that in a near future  several millions of people will be lost
+to  malnutrition,   riots  and  political   destabilisation,  as  rich
+countries  have  minimized  aid  funding  for  food  rations  in  poor
+countries.
+
+As extreme as it sounds, this  projection could lead to a reality well
+defined  by earlier  analysis as  that  of the  Club of  Rome and  MIT
+researchers. From the article:
+
+This could be the "loss of a generation" sayd Josette Sheeran, head of
+the UN's WFP, feeding aid food to nearly 100 million people a year "We
+are facing a silent tsunami []  a humanitarian disaster".
+
+Quoting some parts of the article:
+
+The US, by  far the world's biggest contributor to  food aid, has so
+far pledged $800m less than in 2008; Saudi Arabia has paid only $10m
+in 2009  compared with  $500m in  2008; and the  EU has  given $130m
+less.  Britain's promise of $69m this year is nearly $100m less than
+2008, and, if nothing more is given, will be its lowest contribution
+since 2001.
+
+[..]
+
+World food supplies are under increased strain this year following a
+succession of  droughts, typhoons, floods and  earthquakes that have
+destroyed crops in  Africa and south-east Asia. But  human needs are
+also  greater because  the financial  crisis has  led  to widespread
+unemployment.  In  addition, the remittances  from foreign nationals
+living in  rich countries  to their families  at home are  20% lower
+than last year.
+
+Last month the UN said that the number of hungry people in the world
+had increased by more than 150 million in a single year to more than
+one billion. Aid agencies last  week warned of severe food shortages
+in southern India after heavy floods damaged hundreds of millions of
+dollars' worth of crops.
+
+[]
+
+This  is the  worst food  crisis  since the  1970s. We  will lose  a
+generation. Children will never recover," said Sheeran.
+
+More than 40 million people  could be affected by the WFP's enforced
+scaling back  of its food rations.  Countries most likely  to be hit
+include Bangladesh, where the budget is  likely to be cut by as much
+as  50%, and Kenya,  where similar  cuts will  worsen the  plight of
+millions of extra people made destitute by a long drought.
+
+[]
+
+"We are  making hard choices  over who to  feed.  We are  very aware
+that  as we  dismantle  [feeding  programmes] it  may  take out  the
+underpinning  of society  and leads  to  political destabilisation,"
+said Sheeran.
+
+"We are  very concerned  about the large  budget shortfall  faced by
+WFP,  which means  the  programme has  to  cut the  food rations  to
+millions  of people  who  rely  on this  assistance  for their  very
+survival," said Fred  Mousseau, Oxfam's humanitarian policy adviser.
+"This will translate  into more child deaths, with  more than 16,000
+children already dying from hunger-related causes every day."
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Mon, 12 Oct 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Rich%20countries%20cut%20food%20aid</guid>
+
+</item>
+
+<item>
+<title>GNU Debugger 7</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#GNU%20Debugger%207</link>
+<description><![CDATA[A new  version of an  important GNU tool,  completing the set  of core
+applications necessary for software  development , has been released a
+few days ago: the GNU Debugger (GDB) version 7.
+
+A remarkable  improvement of this  new version is the  possibility for
+debugging, so that  one can step backwards after  a break-point in the
+execution flow.  This evidently implies a re-factoring of the internal
+architecture of  GDB, finally achieving  a feature already  present in
+other proprietary products.
+
+In  software  development,  the  debugger  is  a  vital  tool  letting
+programmers  dissect and observe  the execution  flow of  their source
+code, inspecting the contents  of variable memory at certain positions
+and at the occurrence of specific states.
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Sun, 11 Oct 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#GNU%20Debugger%207</guid>
+
+</item>
+
+<item>
+<title>Re-Imagining the City</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Re%2DImagining%20the%20City</link>
+<description><![CDATA[In occasion of  a FreeJ workshop we've held in  De Balie Amsterdam, we
+were      invited       among      the      audience       of      the
+International Amsterdam  Film Festival an  extremely interesting panel
+called Re-imagining the City.
+
+The   projects  presented,  mostly   dealing  with   architecture  and
+participative  citizenship,  are all  worth  a  look:  Gecekondu is  a
+research  on gypsy  buildings built  over night,  Model Citizens  is a
+framework  for   collective  planning   of  a  neighbourhood   by  its
+inhabitants,   Lima  2427   is  a   creative  response   to   the  bad
+administration     of     city     developments    in     Peru     and
+The  Cook,  the  Farmer, his  Wife  and  their  Neighbour is  a  local
+experiment  in  grass-root  building   of  a  public  space  with  the
+inhabitants of the Geuzenveld-Slotermeer multi-cultural outer district
+of Amsterdam.
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Sat, 10 Oct 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Re%2DImagining%20the%20City</guid>
+
+</item>
+
+<item>
+<title>Hotmail passwords leaked</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Hotmail%20passwords%20leaked</link>
+<description><![CDATA[Time  is  proving that  hackers  were  right  criticising the  ongoing
+centralisation of  communication infrastructures in the hand  of a few
+mega-corporations  and  their  monstrous  server  conglomerations,  as
+Internet grew into its "consumerist age".
+
+This      is     the      time     of      hotmail      indeed,     as
+as thousands  of passwords were  leaked online, exposing users  to the
+black market of tapping, making their privacy an unfortunate victim of
+industrial error.
+
+What happens commonly is also the habit of using the same password for
+various  Internet service accounts,  so that  this security  breach is
+potentially   affecting  the  integrity   of  other   on-line  service
+industries.
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Tue, 06 Oct 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Hotmail%20passwords%20leaked</guid>
+
+</item>
+
+<item>
+<title>Intersquat meeting</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Intersquat%20meeting</link>
+<description><![CDATA[These days  an international meeting  of squatters is taking  place in
+France  called Intersquat,  mostly  bound to  the  French and  Italian
+experiences of squatting.
+
+Still far  from being completed  with a more  international dimension,
+the initiative is hopefully a  good start to represent the various and
+inter-connected cultural activities of squats in Europe.
+
+Also in  the Netherlands  is found a  valuable heritage  of squatters,
+with people and places that  have been recognized for fighting endemic
+phenomenons  of  house market  speculations  and  letting artists  and
+migrants develop outside of the constraints of the capitalist system.
+
+Just these  days the  Dutch Parliament hosts  an hot  discussion about
+abolishing  squatting,  which  is  currently "protected"  by  granting
+squatters the right for a regular court-case about their occupation of
+private  property. The  documentary  Table,  bed and  chair  is in  my
+opinion one  of the best explanations  of how this all  works, done by
+many of  the friends  we have in  Amsterdam :)  we also showed  it for
+curious hackers at HAR2009 in our village.
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Mon, 05 Oct 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Intersquat%20meeting</guid>
+
+</item>
+
+<item>
+<title>Abbenay Hackerspace Stockholm</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Abbenay%20Hackerspace%20Stockholm</link>
+<description><![CDATA[The  global  Hackerspace  movement  is  rapidly  bouncing  initiatives
+between USA and Europe this year, last but not least this new squatted
+space in Stockholm called  "Abbenay", resisting to threats of eviction
+and, what's  most important, making a  good point about  its reason to
+exist. Here below a call of the hacker occupants which openly asks for
+a  dialogue with  all players  involved,  including the  owner of  the
+building:
+
+The Abbenay  hacklab opened early  this month in Stockholm,  where a
+housing crisis is at full blow.
+
+We are set up in a place that was squatted downtown by Kommando Carl
+Bildt since late August, called AK4. The house was empty since June,
+and there was no plans to use it until one year and a half.
+
+Unfortunately,  squats   are  very   unusual  in  Sweden,   and  the
+discussions  with  the  landlord  and  the  city  of  Stockholm  are
+extremely  difficult, even though  many newspapers  speak positively
+about AK4.  The place currently  sets a record for the country, with
+a life  time of one month  (and counting) while  most squats usually
+get raided by the police in a few days.
+
+We  are  however  facing  an  imminent eviction  threat  and  police
+pressure has been significantly  increasing lately - with civil cops
+coming very often to take pictures of the house and sirens waking us
+up early in the morning.
+
+This call is  asking you to contact the landlord  to show support to
+the  hacklab  and  the  squat.  So  far, he  has  been  very  closed
+minded. He only proposed that we leave the place and talked about an
+expensive and abusive rental contract.   It was about a much smaller
+office, and according  to which we would not be  allowed to sleep in
+the premises,  we would  not be allowed  to host concerts,  cafes or
+parties, etc.
+
+The landlord is  Fredrik Winberg; he is the CEO  of Cementa AB, part
+of HeidelbergCement  Global with a  revenue of 15 billion  euros per
+year. He also runs the Biteam AB company.  We do not believe that he
+or any  of his fellows will  turn poor should we  definitely get the
+house  in Stockholm,  and we  think that  his behavior  is basically
+motivated by  the capitalist idea  that the right to  stay somewhere
+must always be paid for.
+
+We hereby ask  you to contact him to expose  your views on squatting
+and hackerspaces in  order to give him a  more comprehensive view on
+the  subject   than  what  he   could  have  had  as   a  capitalist
+entrepreneur. His contact email is fredrik.winberg at cementa.se and
+he can be reached by phone at  +46 (0)708 25 68 04 (NB: this contact
+information is available from the WWW).
+
+We do  not give  a "copy and  paste" email  to send him,  since mail
+bombing  would   probably  not   be  effective  and   only  increase
+tensions. Also, please do not  be aggressive nor engage in any other
+activity (defacing etc.) which would not lead anywhere.
+
+Thank you,
+The Abbenay Hacklab
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Tue, 29 Sep 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Abbenay%20Hackerspace%20Stockholm</guid>
+
+</item>
+
+<item>
+<title>Sourcemap</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Sourcemap</link>
+<description><![CDATA[Sourcemap,  "a collective  tool for  transparency  and sustainability"
+developed at the MIT medialab has entered the public beta stage.
+
+
+Simply  put: We believe  that people  have the  right to  know where
+things come from and what they are made of.
+
+Sourcemap is a platform  for researching, optimizing and sharing the
+supply chains behind a number of everyday products (more info).
+
+Looks like  an early attempt  for a quantitative analysis  tool within
+the Internet of  Things framework, has a good  potential especially in
+industrial  production  distributed  in  urban  areas,  still  doesn't
+differs much  from previous  consumer association's initiatives  and I
+believe its limits will be analogous. Still, an interesting initiative
+and of course very well marketed. The mission reads like:
+
+When  you invite  people  to an  event,  buy the  ingredients for  a
+recipe,  or design  the  parts of  a  product, your  choices have  a
+significant impact.
+
+Some things  have vast supply  chains that stretch across  the world
+while others are completely regional. Understanding the reach of our
+sourcing   is  fundamental   to  improving   economic,   social  and
+environmental conditions.
+
+Sourcemap is a tool for  producers, business owners and consumers to
+understand the impact of supply chains. Our site is a social network
+where anyone can  contribute to a shared understanding  of the story
+behind  products.  You  can  simulate the  impact of  manufacturing,
+transporting, using and throwing  away products using our Life-Cycle
+Assessment  calculator. This  web-based tool  uses linked  data from
+geological and  geographic resources.  Each 'Sourcemap'  can be used
+to help market socially- and environmentally- conscious products and
+to buy carbon  offsets.  Supply chains published on  the site can be
+embedded  in external  websites, printed  onto product  packaging or
+linked  through QR  codes readable  by  camera phones.  As the  site
+grows, suppliers  will be able  to contribute their products  to the
+Sourcemap database, providing a geographic catalogue of materials
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Sat, 26 Sep 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Sourcemap</guid>
+
+</item>
+
+<item>
+<title>European Security Research</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#European%20Security%20Research</link>
+<description><![CDATA[Living in an  European community where migrants and  asylum seeker are
+captured in the jungle, there  are things I'd feel better not knowing:
+the       1.4      billion       EUR       fund      assigned       to
+European Security Research (FP-7 2009)  to move "towards a more secure
+society  and increased industrial  competitiveness", whit  45 projects
+declaring  to  fight  "more  terrorism, organised  crime  and  natural
+disasters".
+
+The  picture coming  out is  that of  a society  of fear  and control,
+waging wars overseas and hunting  refugees at home, in a de-humanizing
+spiral of projects like "Automatic Detection of Abnormal Behaviour and
+Threats  in  crowded Spaces"  (ADABTS),  or  the  "BeSeCu" project  to
+investigate cross-cultural  and ethnic differences  of human behaviour
+in  crisis situations.   In the  100 pages  document linked  above are
+found  key-phrases like  "monitor security  down to  the neighbourhood
+level"  and "intelligent  information  system supporting  observation,
+searching   and  detection   for   security  of   citizens  in   urban
+environment", titles  like "IDetecT 4ALL" or  "SAMURAI", projects like
+"TALOS" to develop unmanned patrol vehicles for border controls.
+
+A  Kafkian  feeling  is  given  by reading  this  document,  while  it
+represents a  succulent documentation to understand  the imaginary and
+dialectic  of  European fears:  migration  and  terrorism are  closely
+related, war threats can be  hidden everywhere, urban public space and
+border  zones are  at high  risk, even  private spaces  are dangerous,
+everything can be used against everyone.  I have no doubts this is the
+scenario  of  a  collective  paranoid  mind, as  well  for  a  growing
+generational conflict,  see the Freedom Not Fear  protests against the
+surveillance mania.
+
+Last but not least, all countries involved are actually European, with
+two  exceptions:  Turkey  and Israel,  over-militarised  Mediterranean
+countries  definitely  not   complying  with  European  standards  for
+human-rights, still  receiving more security funds.   Should we wonder
+how such advanced technologies will be deployed there?
+
+Better not.   I'd feel  much better not  knowing all this,  maybe this
+should  be the next  step of  Europe to  keep the  mental peace  of it
+citizens:   seamless   control  and   secreted   plans  for   security
+research. This  is the  sad paradox for  a governance that  can either
+despotically and silently hide  an explosion of fear or democratically
+and transparently implode in paranoia.
+
+NeoConOpticon  -  The  EU  Security-Industrial Complex  is  a  related
+publication  by  Ben Hayes  (Statewatch  and TransNational  Institute)
+dealing with the issues I'm mentioning here. The colophon recites:
+
+Despite  the  often  benign  intent  behind  collaborative  European
+"research"   into  integrated   land,  air,   maritime,   space  and
+cyber-surveillance  systems, the  EU's  security and  R&D policy  is
+coalescing  around   a  high-tech  blueprint  for  a   new  kind  of
+security. It envisages a future  world of red zones and green zones;
+external borders  controlled by military  force and internally  by a
+sprawling  network  of physical  and  virtual security  checkpoints;
+public spaces,  micro-states and "mega events"  policed by high-tech
+surveillance systems  and rapid reaction  forces; "peacekeeping" and
+"crisis  management" missions that  make no  operational distinction
+between the  suburbs of  Basra or the  Banlieue; and  the increasing
+integration of  defence and national security functions  at home and
+abroad.
+
+It is  not just a  case of "sleepwalking  into" or "waking up  to" a
+"surveillance  society", as  the Britain's  Information Commissioner
+famously warned, it feels more like turning a blind eye to the start
+of  a new  kind  of arms  race, one  in  which all  the weapons  are
+pointing inwards. Welcome to the Neo-ConOpticon.
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Tue, 22 Sep 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#European%20Security%20Research</guid>
+
+</item>
+
+<item>
+<title>GSM finally opening up</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#GSM%20finally%20opening%20up</link>
+<description><![CDATA[This   year  at  HAR2009   i  had   the  occasion   to  try   out  the
+Open  Source GSM  Network set  up in  a tent  nearby our  village.  It
+worked, even with my 2nd hand phone which is more than 6 years old, it
+was amazing to see such  backward compatibility and the huge potential
+it has for developing countries.
+
+As Alberto  puts it, we've been waiting  over 20 years to  make such a
+phone call :) while Alejo is already setting something up in Colombia,
+the  OpenBTS project  seems to  be the  main  reference implementation
+running on USRP base stations.
+
+This truly is a ground-breaking  development, despite the fact it took
+too  long  to  come,  mostly   because  of  "security"  seals  on  GSM
+communication protocols to endure the business of state monopolies.
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Sun, 20 Sep 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#GSM%20finally%20opening%20up</guid>
+
+</item>
+
+<item>
+<title>Hackmitin México</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Hackmitin%20México</link>
+<description><![CDATA[Here below the call for the first hackmeeting of Mezo-America
+
+The smoke signals are clear: RASTASOFTWARE Tribes are United!
+
+De vuestra querida presencia, hackers do México!
+
+CALL 4 NODES LLAMADA A LA PARTICIPACIÓN v.1.0
+
+
+..:: conocimiento | tecnología | poder ::..
+..:: compartir | construir | resistir ::..
+
+
+9-11 Octubre 2009, México DF - http://espora.org/hackmitin
+
+
+Este mensaje es  una invitación a participar en  la construcción del
+Hackmitin  2009  para  seguir  tejiendo  una red  de  actividades  y
+encuentros en torno al Hacktivismo, el Ciberespacio, la telemática y
+sus dimensiones tecnopolíticas. Una red que se materializará durante
+un intenso  fin de semana  autogestionado y libre,  en el ZAM  de la
+calle Xola (Ciudad Monstruo, México DF) del 9 al 11 de Octubre.
+
+Como ya sabrás, el HM es un encuentro participativo y gratuito en el
+que  la dicotomía  organizador/asistente se  diluye en  el  deseo de
+autogestionar el encuentro  colectivamente.  Entendemos el Hackmitin
+como  una  red de  actividades  autoorganizadas (talleres,  charlas,
+mesas  redondas,  exposiciones,  posters,  etc.) que  hemos  llamado
+nodos.      Puedes       sumarte      proponiendo      nodos      de
+trabajo/actividad/difusión.    Cualquier   persona   es   libre   de
+coordinar, presentar, difundir un nodo dentro del Hackmitin: ÚNETE a
+La RED.
+
+Este  será el  primer  "Hackmeeting" que  realizamos  en México,  un
+experimento con vocación  de permanencia a través de  la creación de
+distintos Hacklabs y  de repetir el año que viene,  quien sabe si de
+nuevo  en  la otra  ciudad  monstruo  o  en cualquier  otro  estado,
+dependerá de  las fuerzas  e ilusiones que  veamos, pero esto  ya no
+tiene  freno  decenas  de  hackers y  hacktivistas Mexicanos  nos
+ponemos a trabajar  para crear y hacer crecer  nuestra comunidad, de
+manera autogestionada, igualitaria, horizontal y, sobre todo, libre.
+
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Fri, 18 Sep 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Hackmitin%20México</guid>
+
+</item>
+
+<item>
+<title>Get greener with Carbon-Colonialism</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Get%20greener%20with%20Carbon%2DColonialism</link>
+<description><![CDATA["Non  Governmental  Organisations"  hit  the market  of  managing  the
+balance of  carbon emissions  with a "good  old colonialist  taste" it
+seems.
+
+As  reported  by  IPS  news,  the  "Forests  Absorbing  Carbon-dioxide
+Emissions  Foundation" (FACE),  a Dutch  organisation involved  in the
+voluntary  carbon  market,  has  generated controversy  as  indigenous
+people in the Mount Elgon region  have been displaced to clear the way
+for tree-planting projects.
+
+Under carbon  trading programmes, companies  that release greenhouse
+gases can either reduce their emissions  or buy the right to keep on
+polluting, by paying for emissions-reducing projects somewhere else.
+
+The United  Nations considers carbon markets an  efficient system to
+guide  investments toward cutting  greenhouse emissions.   The Clean
+Development Mechanism (CDM) established by the Kyoto Protocol allows
+two types of forestry  offsets: reforestation of previously forested
+areas and  afforestation, that is, planting new  trees where forests
+have not existed for over 50 years.
+
+Carbon trading is divided  into two separate markets: the compliance
+market  - as provided  for under  the CDM  and the  European Union's
+Emission  Trading  Scheme,  mandatory  programmes worth  32  billion
+dollars last  year -  and the much  smaller voluntary  carbon offset
+market.
+
+Voluntary  carbon offsets  involve individuals,  companies  and even
+governments  to pay for  projects to  mitigate their  greenhouse gas
+emissions. These projects range  from wind farms and other renewable
+energy  sources,   to  efforts  to  reduce   methane  released  from
+landfills, to forestry.
+
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Mon, 14 Sep 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Get%20greener%20with%20Carbon%2DColonialism</guid>
+
+</item>
+
+<item>
+<title>Squatting in Prague</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Squatting%20in%20Prague</link>
+<description><![CDATA[Indymedia  reports  violence and  police  repression against  hundreds
+people in Prague, spontaneously willing to liberate an abandoned space
+to put it in function for the community as a squatted social center.
+
+Their declaration of intention follows:
+
+This house  has been  chosen for several  reasons: it's  empty since
+many  years, neglected  and  left to  disrepair.  Even the  smallest
+reparation works has not been done  and the roof is then broken with
+water coming in.  On the other hand, door and  windows are very well
+walled up, so that nobody can live in here.
+
+According to an auction report,  this house would be "an ideal place
+to  build luxury  appartements  and commercial  spaces", that  means
+another  victory  of  profit  and  not  the one  of  real  needs  of
+inhabitants of the city, who  can see emerging luxury houses, but no
+affordable  housing,  like  if  the  need  for  it  would  not  even
+exist.  This  particular house  is  constantly  secured against  all
+those, who don't  have a place to stay, because  it's there to serve
+to  the rich  and for  the commercial  purpose, which  is  a process
+happening  in the  whole  center of  Prague.  And it  is becoming  a
+display window, deprived of any  sign of everyday life of those, who
+can't afford the expensive housing and who don't go shopping in posh
+stores.
+
+The building  of the former  bathhouse dating back  to 1932 is  in a
+complicated situation: the estate  agents, who own the house, cannot
+dispose of  it, because it's  probably in a bad  financial situation
+and the house is now used  as a guarantee. The house went in auction
+in 2002, but unsuccesfully. It could  then fall into much of a worse
+state in the  next few years or it can become  a cultural and social
+space,  different  from the  uniform  Prague  centre.  A place  that
+wouldn't serve only to those, who would live in there, but to a wide
+public, who miss something specific in the town centre
+
+Several  people  are arrested  and  injured  after  the attempt,  more
+information flows via the website of the Milada collective.
+
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Sun, 13 Sep 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Squatting%20in%20Prague</guid>
+
+</item>
+
+<item>
+<title>Harder better faster HTTP</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Harder%20better%20faster%20HTTP</link>
+<description><![CDATA[This autumn bring some interesting  new code for serving data on-line,
+as two  new web-servers  enter a space  that has been  occupied almost
+exclusively by Apache  for the last decade: Tornado  Web is the python
+daemon used  at Facebook to  serve pages, released  open-source, while
+nginx is a mythical Russian  implementation, also a small HTTP daemon,
+very popular in the bot-net and embedded scenes.
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Sat, 12 Sep 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Harder%20better%20faster%20HTTP</guid>
+
+</item>
+
+<item>
+<title>GTK Flow canvas</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#GTK%20Flow%20canvas</link>
+<description><![CDATA[Just noticed this  new GTK widget: FlowCanvas, by  Dave Robilla who is
+investing  his  valuable  experience  in making  this  shared  toolkit
+component. His  previously named  OM-synth application was  sporting a
+sexy patch panel already some years ago.
+
+Code looks clean and well documented, we'll give it a go on top of the
+new FreeJ engine.
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Thu, 10 Sep 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#GTK%20Flow%20canvas</guid>
+
+</item>
+
+<item>
+<title>Digital distractions</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Digital%20distractions</link>
+<description><![CDATA[Web  2.0, mobile device  integration with  online services  and social
+networks  brought   an  almost  overwhelming   load  of  distractions:
+especially if compared to how browsing the Internet was ten years ago,
+we are now constantly distracted by the connections available.
+
+It's probably worth to look closer  into it from a psychology point of
+view,    meanwhile    there    is    this    funny    graph    of    a
+hierarchy  of digital  distractions depicting  the behaviour  of those
+whom we call "IPhone and Martini  people" - no offence intended if you
+are one, it's just such an obvious and neo-kitsch stereotype
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Wed, 09 Sep 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Digital%20distractions</guid>
+
+</item>
+
+<item>
+<title>Geek Hero comic</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Geek%20Hero%20comic</link>
+<description><![CDATA[This on-line  comic strip  is awesome: Geek  Hero comic  by Salvatore
+Iovene,  it really hooks  up well  on the  kind of  irony of  the most
+popular  xkcd, elaborating  in  an intriguing  way  on geek's  ethical
+issues at work.
+
+I'd recommend following this  comic strip to all computer programmers,
+for entertainment and educational purposes.
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Tue, 08 Sep 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Geek%20Hero%20comic</guid>
+
+</item>
+
+<item>
+<title>Anti Advertising Agency</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Anti%20Advertising%20Agency</link>
+<description><![CDATA[This is so cool: the Anti Advertising Agency, something Anne Elizabeth
+Moore is  also involved - and  well, she is  so awesome you know  :)
+
+The Anti-Advertising Agency co-opts the tools and structures used by
+the advertising and public relations industries. Our work calls into
+question  the purpose and  effects of  advertising in  public space.
+Through constructive parody and  gentle humor our Agency's campaigns
+will ask passers  by to critically consider the  role and strategies
+of today's  marketing media as  well as alternatives for  the public
+arena.   Our work  will de-normalize  "out-of-home"  advertising and
+increase awareness  of the  public's power to  contribute to  a more
+democratically-based outdoor environment.
+
+I'm wondering if they  already surfed on Julian Oliver's collaboration
+The Artvertiser,  he recently posted  some new demonstration  video of
+the 0.2 version.
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Sat, 05 Sep 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Anti%20Advertising%20Agency</guid>
+
+</item>
+
+<item>
+<title>Hacking RFID</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Hacking%20RFID</link>
+<description><![CDATA[Checking out a  "Touchatag" USB device bought at  HAR2009, is a decent
+RFID reader (ACR122U), supporting ISO 14443  Type A & B cards - MIFARE
+cards  (Classics, DESFire) and  Topaz NFC  Tags. A  low authentication
+layer is  the SAM, implemented with  a GSM SIM sized  card holding the
+unique ID of the reader.
+
+The SAM or Secure Access Module  is an additional feature in a Smart
+Card Reader  that can  enhance the level  of security in  your Smart
+Card based application.  Normally card authentication is implemented
+in PC or application level.  However with the presence of a SAM, key
+diversification and mutual authentication can be implemented between
+card  and  reader which  means  that the  PC  will  not perform  the
+authentication but it will be done  via card to reader and reader to
+card authentication making your system more secure and less prone to
+hacking.
+
+So I'm  finally owning something  to study RFID passports.   There are
+collections of  government released MRTD public keys  on jmrtd.org and
+rfidiot.org,  but  I  still  didn't   hack  enough  to  use  them  for
+authentication.
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Wed, 02 Sep 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Hacking%20RFID</guid>
+
+</item>
+
+<item>
+<title>WEB WEB BOY</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#WEB%20WEB%20BOY</link>
+<description><![CDATA[Please  don't ask  me  this  journal  entry is  obnoxious for  most
+readers and is  going to link a website heavy  on javascript that will
+make  your browser terribly  slow down
+
+anyway it is too cute and hilarious geeky nifty to be left out of this
+journal: I'm talking about o--o WEB WEB BOY !
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Sun, 30 Aug 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#WEB%20WEB%20BOY</guid>
+
+</item>
+
+<item>
+<title> Hacking at Random</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#%20Hacking%20at%20Random</link>
+<description><![CDATA[Every 4  years in the  Netherlands is held  one of the  biggest hacker
+camps in  Europe: this year it was  the time for Hacking  at Random in
+Vierhouten, which  hosted about  3000 people for  4 days on  a camping
+field 70km away from Amsterdam.
+
+The event  was full of presentations, debates  and workshops exploring
+recent  issues in technical  and social  aspects of  hacking cultures,
+made possible  by passionate volunteers  who worked day and  night, as
+well international guests of renewed fame.
+
+As of today all the public  talks held at HAR are freely available via
+the  website  www.rehash.nl,  gathering  an overwhelming  quantity  of
+information that  can keep you busy  for days catching up  on what you
+missed wether you have been there or not.
+
+Most interesting  panels include  a presentation and  a debate  on the
+Wikileaks project,  a panel  discussion on copyright  issues involving
+BREIN, MPAA and  Pirate Bay activists, various updates  on privacy and
+cryptography  technologies,  a scary  and  hilarious  overview on  how
+insecure  are SSL certificates,  workshops on  lockpicking techniques,
+reflections on governmental and corporate policy procedures as well on
+labour  dynamics in  ICT and  open source  development and  much, much
+more.
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Fri, 28 Aug 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#%20Hacking%20at%20Random</guid>
+
+</item>
+
+<item>
+<title>Incoming FreeJ 1.0 release</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Incoming%20FreeJ%201%2E0%20release</link>
+<description><![CDATA[Together with various developers  and contributors and about 30 people
+in the audience, we had quite  some fun yesterday in the FreeJ release
+party,  celebrating the  new upcoming  release of  our GNU  GPL Vision
+Mixing software, sponsored by the Dutch fund Digitale Pioniers.
+
+We've used 15k EUR (plus a  5k EUR worth of facilities and hosting) to
+support a team  of a dozen developers over a period  of 9 months. Most
+of us  are living in Europe, so  this money was more  an incentive for
+volunteering rather than an income,  but it served motivating the team
+to achieve concrete results in an established time frame.
+
+The  activity  is  resumed  in   the  git  log  and  visible  in  this
+code swarm video:  it triplicated in volume between  November 2008 and
+August  2009. We  have  major  enhancements of  the  engine thanks  to
+talented coders  involved: Xant, Shammash, Robin and  Caedes among the
+others.
+
+In  brief now  FreeJ became  a library  with language  bindings, fully
+cross-platform,  providing applications  with a  low-latency streaming
+engine that can  be scripted in javascript and  controlled from Python
+or  Ruby. A  couple of  new  graphical interfaces  are being  actively
+developed,  mostly to  demonstrate  the possibilities  offered by  the
+engine, like the Carbon version for OSX 10.5 and the script console in
+PyGTK.   On  the  web  front  we  also  had  major  enhancements  like
+integration with video RSS feeds (tested on DMMDB and Plumi CMS).
+
+Lots  more can  be  done  from now  on:  broadcasting applications  of
+various kinds, besides more debugging and adjustments on streaming: as
+soon as Ogg/Vorbis/Theora playback is a stable implementation in HTML5
+browsers we will  finally get rid of proprietary  technology in online
+video streaming ;)
+
+We will soon tag a 1.0  release, still conscious of known bugs we plan
+to fix during the 1.x lifetime which should last one or two years. The
+wide outreach given by OSX  and Debian packaging will help stabilizing
+the engine and maybe gather some community funding.  Many TV companies
+have contacted us so far about  collaborations, this is a good time to
+make plans, we can adapt this new 1.0 framework to different needs.
+
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Mon, 24 Aug 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Incoming%20FreeJ%201%2E0%20release</guid>
+
+</item>
+
+<item>
+<title>Classics archive on-line</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Classics%20archive%20on%2Dline</link>
+<description><![CDATA[A good  resource for classic  literature since long time  already, the
+The Internet Classics  Archive maintained at the MIT  counts up to 441
+texts of classic literature, mostly translated from ancient Greek.
+
+I'm often feeling nostalgic for  such kind of readings, somehow a very
+distant  prose from  what we  are used  to read  nowadays,  still very
+inspirational if one knows where to look.
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Fri, 14 Aug 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Classics%20archive%20on%2Dline</guid>
+
+</item>
+
+<item>
+<title>Clean energy stocks</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Clean%20energy%20stocks</link>
+<description><![CDATA[I'm not  really a  stock market guy  myself, mostly because  the whole
+thing is  about exploitation of  labour which is  completely alienated
+from  people's life,  a game  played  by armies  of mindless  egoistic
+yuppies.
+
+Still  it  is  interesting  to follow  market  analysis  commentaries,
+especially when written by people with good experience on how decision
+making  reacts to technological  innovation: Occidental  societies are
+running on  "gov-less" systems where  the stock market  tendencies are
+actually a valuable resource to interpret their rationale.
+
+Here  is  a recent  article  on the  so  called  clean energy  economy
+analysing with  good detail what  are the actual choices  of financial
+capitals on emerging stocks, in the middle of these years' crisis.
+
+Trying to read in between the lines, a resonating term as "smart grid"
+is hinting the possibly collective nature of new startups.
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Mon, 10 Aug 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Clean%20energy%20stocks</guid>
+
+</item>
+
+<item>
+<title>Plumbercon</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Plumbercon</link>
+<description><![CDATA[Attended Plumbercon in Vienna, mostly populated by hackers from Europe
+and  USA,  animating  a  dense  series  of  talks  during  2  days  of
+conference.
+
+Worth  noting is  the presence  of Mitch  Altman with  a  new enhanced
+version  of his  TV  B-Gone, the  Toool  lock-picking research  group,
+various technical  "black hat"  presentations on systems  security and
+forensics;  dulcis in fundo  a "science  rock-star" talk  quoting some
+interesting projects like Theo Jansen's Strandbeesten.
+
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Sat, 08 Aug 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Plumbercon</guid>
+
+</item>
+
+<item>
+<title>Paper data storage</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Paper%20data%20storage</link>
+<description><![CDATA[Paperbak is  a free software able  to store in an  efficient way (well
+benchmarked  by this  article on  codinghorror) data  on paper,  to be
+retrieved  later by  scanning the  paper and  processing it  back into
+digital.
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Mon, 03 Aug 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Paper%20data%20storage</guid>
+
+</item>
+
+<item>
+<title>HackIt 2009 - don't Panic</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#HackIt%202009%20%2D%20don%27t%20Panic</link>
+<description><![CDATA[Out of the 11th hackmeeting held in Italy, a video documenting it came
+out:  HackIt2009 -  don't Panic.   It is  mostly in  italian language,
+collecting very good statements on  hacking, with a gallery of figures
+that animated the community since its birth.
+
+Having  participated  to  the  growth  of  this  community  since  the
+beginning, and learning  a lot from it, it was touching  to see it.
+
+This "digital  community" is coagulating  since more than a  decade in
+the hackmeeting  gathering, held  in liberated squatted  places around
+Italy, without a fixed organiser committee, in a truly spontaneous and
+grass-root   spirit.    It   won   an   honorary   mention   for   the
+Digital Communities award of the Ars Electronica Festival this year.
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Fri, 31 Jul 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#HackIt%202009%20%2D%20don%27t%20Panic</guid>
+
+</item>
+
+<item>
+<title>Generation M</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Generation%20M</link>
+<description><![CDATA[An  interesting article  came out,  worth noting  - despite  being yet
+another manifesto -  its title is Generation M  and describes well the
+thoughts of a generation I'm also feeling part of.
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Wed, 29 Jul 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Generation%20M</guid>
+
+</item>
+
+<item>
+<title>Zero for Owned</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Zero%20for%20Owned</link>
+<description><![CDATA[The hacker  e-zine ZFO came  out with its  5th issue "Summer  of Ham",
+gaining lots  of popularity for the groundbreaking  publication of all
+the "personal digital life" of  Kevin Mitnick and Dan Kaminsky, famous
+showbiz hackers and security consultants,  hacked in a pretty lame way
+in their very home.
+
+The issue is really funny to  read, but you need to have some sysadmin
+and  coding  knowledge  to  catch  the fun:  it  actually  realizes  a
+wonderful  piece  of  literature  in  machine-language,  developing  a
+narrative  exploring the  files of  the two  hacked-hackers  and their
+techniques  to  keep  secure   their  websites,  and  those  of  their
+customers.
+
+Very nice to  see that someone is breaking  the ice of representation,
+this is not an act of  terrorism rather than pure poetry declaring the
+fact that Security doesn't exists and those selling it by the pound or
+waving  it  at blinky  conferences  in  Las  Vegas are  just  decadent
+puppets.
+
+Here  below  an interesting  excerpt:
+
+
+
+                                           |
+                                       \       /            _\/_
+     Industry check                      .-'-.              //o\  _\/_
+                                    --  /     \  --           |   /o\\
+  ^^~^~^~^~^~^~^~^~~^~^~^~^~^~^~^~^~^~^-=======-~^~~^^~~^~^~^~|~~^~^|^~`
+     We don't talk to police                                        |
+       We don't make a peace bond
+
+The security scene  is fucked. You have Dan  Kaminsky lecturing you on
+how DNS poisoning  will destroy life as we know  it. You have Matasano
+harvesting talent  and critiquing everyone,  and then Ptacek  can only
+announce  the release  of....a graphical  firewall  management client.
+There's kingcope  killing bugs and dropping  weaponized exploits while
+making no  other contribution  except putting a  smile on the  face of
+kiddies. There's  iDefense and their competitors  selling exploits and
+only doing  research in how to  make more exploits.  There's Jeff Moss
+running a  conference under the hideous  misnomer "Blackhat Briefings"
+where the same researchers search  for glory and present the same shit
+year after year. There are people who just live press release by press
+release. And on top  of it all, somehow you STILL have  not got rid of
+Kevin Mitnick.  The industry cares  about virtualization one  year and
+iPhones the  next, every  year forgetting the  lessons it  should have
+picked up in the last.
+
+If you are just someone looking to  pay a fair price to not get owned,
+you find  out quickly  that none  of these people  exist to  help you.
+Very few people in this  industry have their income model based around
+actually making you  more secure. At best, some of  them have it based
+around convincing you that you are better off.
+
+The  very concept  of "penetration  testing" is  fundamentally flawed.
+The problem with  it is that the penetration tester  has a limited set
+of targets they're allowed to attack, while a real attacker can attack
+anything in order to  gain access to the site/box.  So if  a site on a
+shared host is  being tested, just because site1.com  is "secure" that
+does NOT in  anyway mean that the server  is secure, because site2.com
+could easily be  vulnerable to all sorts of  simple attacks.  The time
+constraint is another problem. A professional pentester with a week or
+two to spend on a client's network may or may not get into everything.
+A real  dedicated hacker making the  slog who spends a  month of eight
+hour days WILL get into anything  they target. You're lucky if it even
+takes him that long, really.
+
+Those things should all be  very obvious, but whitehats still make the
+mistake of discounting them. Look at Mitnick. Every time he gets owned
+he blames his host or his  DNS provider. If he's getting owned through
+them, that's still his fault.  Choosing a host is a security decision,
+it's  just like  choosing a  password. If  you choose  a weak  one you
+expose yourself.  It's still your fault.
+
+It's   the   same   with   outsourcing   the   development   of   your
+security-critical code.  Mitnick could get  someone else to make him a
+flashy website,  and then blame them  when it is full  of file include
+vulnerabilities.  People do this  all the  time, indirectly,  by using
+ridiculous  CMS  or  blog  software.  As  an  easy  example,  look  at
+Wordpress.  Even easier,  look  at Wordpress  in  2007.  Horrid.  When
+considering Wordpress, a blackhat starts reading the PHP, shudders and
+giggles, and then laughs at the idea  of ever using it on one of their
+servers. A whitehat never gets  that far apparently, they just install
+it  and  get  owned.  I  simply  fail  to  see  how  leading  security
+researchers run  all kinds  of code that  is blatantly  dangerous. Are
+they really that bad at reading code? Or do they just not care much if
+their passwords end up on  Full Disclosure? If it's the second option,
+why is that?  Why can these people make a living selling security when
+they make such bad choices? How do they maintain legitimacy? They take
+less responsibility for getting owned than do the people who they sell
+services to.
+
+There's a popular term for people who don't read code.
+We call them script kiddies.
+
+You cannot outsource  blame. You HAVE to take  responsibility for your
+mistakes, whether they are mistakes in your code, mistakes in code you
+are using, mistakes by your host,  or mistakes in who you trust. These
+are all  security choices.  Learn to control  this shit. Learn  how to
+read code.  A lot of the  time it only  takes a very shallow  audit to
+realise that the code is crap and  is bound to have bugs. In a smarter
+world,  security professionals get  paid to  stop people  from getting
+owned. End of. These is no limit to the scope of an audit.
+
+Are you professional  types really this out of touch?  I see all these
+papers about how to protect yourself from these super-fucking-advanced
+techniques and exploits that very few people can actually develop, and
+most hackers will NEVER USE. It's the simple stuff that works now, and
+will continue to work years into the future. Not only is it way easier
+to dev for  simple mistakes, but they are easier to  find and are more
+plentiful.
+
+The  whole concept  of full-disclosure  has backfired.  It  will never
+work. It's some slashdot hippie pipe dream. Even you dumbass corporate
+types should recognize this. If  you're constantly giving away all the
+vulnerabilites you  find, for *FREE*  mind you (and what  other industry
+does that?), and the vulnerabilites  get harder and harder to find and
+exploit, it will  get harder and harder for you all  to do your "job".
+Frankly, I'm  surprised that the non-disclosure  movement didn't start
+in  the security industry  in the  first place.  In a  way it  did, by
+default.   With full-disclosure,  the security  industry is  all about
+show and  gloat, it is not about  fixing anything. A lot  of bugs have
+been fixed  from it, but it comes  with the price of  an industry that
+likes to cripple itself. Projects  run by teams of trained monkeys are
+always eager to add more bugs to replace those that have been fixed.
+
+We hate  the industry because  it is full  of shit. There are  so many
+trolls like Kaminsky who just  desperately search for anything new, to
+get  attention.   So  many  talentless  buffoons trying  to  scam  the
+planet.  A   lot  of   the  actual  talent   out  there   is  severely
+misapplied. It's  an industry  tied to news  and not  results, because
+very few  of you can  even attain results.  When you can't,  who's the
+wiser? Your  customers can  hardly tell if  you have really  made them
+more  secure  or  not.   Sometimes  there  are  superficial  benefits,
+sometimes there aren't. How do you convince the customer that they are
+more ZF0-safe than  before, if they were never  targetted and probably
+never will  be? And you all lack  the legitimacy to really  do the job
+you should anyways. We can only expose so many frauds, the rest of you
+can pretend you have changed something.
+
+Very few whitehats  actually go out there and  provide a service where
+they make people more  secure. Not just for a day or  a month. Are you
+genuinely fixing  the underlying design and logic  flaws that generate
+security problems for your clients or customers? If you actually clean
+up every exposed security flaw  they have, will they still be "secure"
+in six months or a year?
+
+We could go on. Just in general, the industry is failing.
+Flat out failing.
+You cannot even protect yourselves.
+
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Tue, 28 Jul 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Zero%20for%20Owned</guid>
+
+</item>
+
+<item>
+<title>Farming under Fire</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Farming%20under%20Fire</link>
+<description><![CDATA[Certainly  this  year   will  be  remembered  as  one   of  the  worst
+humanitarian disasters  willingly caused by the  Israeli Defence Force
+in  Palestine, including  bombing  of schools,  hospitals  and of  the
+United Nations headquarters in Gaza.
+
+Still as of  today the situation doesn't gets  better: as denounced on
+the  website farming under  fire, farmers  are denied  from harvesting
+their crops  by continuous provocations  and aggressions by  the bully
+militias  of  IDF.   The  situation  seems to  escalate  pretty  fast,
+following the incursion  of Abassan Jedida which injured  at least one
+farmer and killed a donkey.
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Mon, 27 Jul 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Farming%20under%20Fire</guid>
+
+</item>
+
+<item>
+<title>Drug decriminalization in Portugal</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Drug%20decriminalization%20in%20Portugal</link>
+<description><![CDATA[An  interesting  book titled  "Drug  Decriminalization  in Portugal  -
+Lessons for Creating Fair  and Successful Drug Policies" was published
+recently this year, written by Glenn Greenwald.
+
+On  July 1,  2001, a  nationwide law  in Portugal  took  effect that
+decriminalized all  drugs, including  cocaine and heroin.  Under the
+new   legal  framework,   all  drugs   were   "decriminalized,"  not
+"legalized."  Thus, drug possession  for personal use and drug usage
+itself  are  still  legally  prohibited,  but  violations  of  those
+prohibitions are deemed  to be exclusively administrative violations
+and are removed completely from the criminal realm. Drug trafficking
+continues to be prosecuted as a criminal offense.
+
+The  objective of the  book is  to provide  an account,  complete with
+empirical   metrics,   about   the   changes   occurred   after   drug
+decriminalization in Portuguese society.  The conclusions are quite an
+impressive lesson for future drug policies in Europe:
+
+More  significantly,  none  of  the nightmare  scenarios  touted  by
+pre-enactment decriminalization  opponents - from  rampant increases
+in drug usage among the young to the transformation of Lisbon into a
+haven for "drug tourists" - has occurred.
+
+The   political   consensus  in   favor   of  decriminalization   is
+unsurprising in  light of the  relevant empirical data.   Those data
+indicate that  decriminalization has had  no adverse effect  on drug
+usage  rates in  Portugal, which,  in numerous  categories,  are now
+among the lowest  in the EU, particularly when  compared with states
+with      stringent      criminalization     regimes.       Although
+postdecriminalization usage rates have  remained roughly the same or
+even  decreased  slightly  when   compared  with  other  EU  states,
+drug-related pathologies - such as sexually transmitted diseases and
+deaths due to drug usage  - have decreased dramatically. Drug policy
+experts attribute  those positive trends to the  enhanced ability of
+the  Portuguese  government  to  offer  treatment  programs  to  its
+citizens  - enhancements  made  possible, for  numerous reasons,  by
+decriminalization.
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Sat, 25 Jul 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Drug%20decriminalization%20in%20Portugal</guid>
+
+</item>
+
+<item>
+<title>Graph visualization</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Graph%20visualization</link>
+<description><![CDATA[Just  found out  (thanks Itzhack)  a new  graph  visualization library
+called Prefuse:
+
+Prefuse is  a set  of software tools  for creating  rich interactive
+data  visualizations.  The   original  prefuse  toolkit  provides  a
+visualization framework for the Java programming language.
+
+Meanwhile I've made myself fluent using both Graphviz and Ditaa.
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Mon, 20 Jul 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Graph%20visualization</guid>
+
+</item>
+
+<item>
+<title>Amazon's strings on your property</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Amazon%27s%20strings%20on%20your%20property</link>
+<description><![CDATA[A     very     worrying      news     came     out     today     about
+Amazon deleting  purchased books from Kindles. This  is very worrying:
+strings attached to  purchased books in digital form,  so far that you
+don't even control the deletion of texts on your own device.
+
+It  is very  ironical that  this happened  first with  George Orwell's
+masterpieces "1984" and "Animal Farm".
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Fri, 17 Jul 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Amazon%27s%20strings%20on%20your%20property</guid>
+
+</item>
+
+<item>
+<title>Gypsies under siege in Belgrade</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Gypsies%20under%20siege%20in%20Belgrade</link>
+<description><![CDATA[Belgrade's art  collective drugascena takes  part in Universiade 2009
+with  a  strong statement  against  "intensifying  racist measures  of
+Belgrade authorities in Roma settlements near Belville in Block 67":
+
+Members of Druga Scena and friends will be permanent guests in these
+Roma  settlements from  the opening  of Universiade,  Wednesday July
+1st.  During   Universiade,  and  in   cooperation  with  ghettoized
+residents  of settlement,  we  will organize  a  number of  informal
+meetings,  art  workshops  and  cultural  programs,  culminating  in
+cultural show and press conference on Wednesday July 8th
+
+On June 16th 2009, a  wired fence was built around Roma settlements,
+while security  and police “guard” it on  external side. Recently,
+wire was covered  by promotional banners of Universiade  in order to
+hide  Roma people behind  it.  In  addition, police  patrol operates
+along the wire fence inside this settlement! Residents are forbidden
+to  leave the  settlement, to  walk  the streets  near Belville,  to
+gather  materials from  surrounding dumpsters  (which is  their only
+source of  income). These  measures have limited  the right  to free
+movement  and  the  right  to   work  for  residents  of  this  Roma
+settlement.
+
+Belgrade authorities  have ignored the  problems of Roma  people for
+more than decade  including refusal to provide them  with basic life
+conditions. Now they went  step further in discriminating our fellow
+citizens,  using  the  security   measures  for  Universiade  as  an
+excuse. By  building the wired fence around  settlement and imposing
+police surveillance - city authorities have shown that they actually
+don't want  to deal  with improving life  conditions of  people, but
+just  improve media  image of  this city.   The main  goal  of these
+measures is  to hide  the "shame" -  poverty and misery  Roma people
+live in, from international guests and public.
+
+We will not let humiliation  of our fellow citizens, nor forging the
+reality. The true image of Serbia consists of images of Belville and
+Roma settlements next to each other, the corruption on highest level
+and  fired  workers, privatization  of  University and  Universiade,
+sports event that  turned out to be more  important than human lives
+and dignity.  We  demand that wired fence around  Roma Settlement in
+Block  67 is removed  IMMEDIATELY, as  well as  to start  working on
+finding appropriate ways to improve life conditions of the residents
+of the most vulnerable settlements in the city.
+
+No to ghettos in our neighborhood  for the "benefit of city"!  No to
+Universiade  against human  dignity!  No  to authorities  that value
+capital over  life of people and  use racist strategies as  a way of
+management!
+
+We invite all  interested colleagues from cultural scene  to join us
+and help  realization of  cultural programs, art  workshops, cooking
+actions, movie projects.
+
+signed:  Drugascena,  Platform of  Belgrade  independent cultural  and
+activist  scene.    Quite  a  powerful  blow  to   the  city  council,
+considering  this critical standing  point is  published today  on the
+main web-page of Universiade (and on nettime, BTW).
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Sun, 12 Jul 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Gypsies%20under%20siege%20in%20Belgrade</guid>
+
+</item>
+
+<item>
+<title>Satellite navigation threatens local knowledge</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Satellite%20navigation%20threatens%20local%20knowledge</link>
+<description><![CDATA[BBC  published   today  an   interesting  article  about   fears  that
+Sat-nav  systems are starting  to erode  local knowledge.   It doesn't
+really sound  like primitiveness, rather  than a worrying  argument on
+how people  driving on sat-nav  ignore their surroundings and  loose a
+certain  sense  of awareness  and  decision  making while  navigating.
+Apparently this is not yet the case, as most frequent travelers aren't
+relying much on their navigation device. Joe Moran writes:
+
+We still don't  quite trust the electronic voice to  get us where we
+want to  go. Since before even  the arrival of the  car, people have
+worried  that maps  sever  us  from real  places,  render the  world
+untouchable,  reduce it  to a  bare outline  of Cartesian  lines and
+intersections.  Sat-nav  feeds into  this  long-held  fear that  the
+cold-blooded modern world is  destroying local knowledge, that roads
+no longer lead to real places but around and through them.
+
+Local  knowledge is  an extremely  important feature  for any  kind of
+self-motivated operation around a certain neighbourhood, especially if
+planned outside  the given  schemes of an  architecture; but  it seems
+that sat-nav  users are acquainted at loosing  information (and power)
+over their surroundings, a new  sort of alienation.  Still we must say
+that maps  of terrains at high  detail, similar to  those now employed
+for bicycle navigation,  were once harder to find,  mostly provided as
+military grade information.
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Thu, 09 Jul 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Satellite%20navigation%20threatens%20local%20knowledge</guid>
+
+</item>
+
+<item>
+<title>Society of the Query</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Society%20of%20the%20Query</link>
+<description><![CDATA[The Institute of Network Cultures announces a new upcoming conference,
+which  will  be presumably  followed  by  an interesting  publication:
+Society of the Query to be held in Amsterdam on 13 - 14 November 2009.
+
+In this  query driven society,  The Society of the  Query conference
+seeks to  analyze what  impact our reliance  on resources  to manage
+knowledge  on the  Internet  has on  our  culture. The  theory of  a
+semantic  web  lurking around  the  corner  revives  the "human  vs.
+artificial  intelligence" debate.  The  centralizing web  demands to
+critically  question the  distribution of  power, the  diversity and
+accessibility of  web content, while promising  alternatives for the
+dominant   paradigm  surface   in  peer-to-peer   and   open  source
+initiatives.  Finally,  the question  arises what role  politics and
+education,   after   having    invested   substantially   in   media
+intelligence, can play in the creation of an informed users' group.
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Mon, 06 Jul 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Society%20of%20the%20Query</guid>
+
+</item>
+
+<item>
+<title>Atari game sources</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Atari%20game%20sources</link>
+<description><![CDATA[Great  news  for  retro-computing  geeks!  the  historical  game  firm
+Atari has  released the sourcecode  of some of their  legendary games,
+among them  Dig Dug,  Centipede, Joust and  Pac Man. They  were kindly
+donated to  a so  called "Atari Museum",  while this move  arose great
+interest by retro-computing collectors.
+
+In an  official release,  Atari has quoted  that the purpose  of the
+release  is to give  potential developers  insight into  the Atari's
+gaming platform  so they  may possibly build  upon the  7800 series.
+
+One step forward  towards the recognition of the  importance of museum
+preservation of our digital past.
+
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Sat, 04 Jul 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Atari%20game%20sources</guid>
+
+</item>
+
+<item>
+<title>Hackerspace festival account</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Hackerspace%20festival%20account</link>
+<description><![CDATA[Back from  tmp/lab in Paris, here is  a short account of  just some of
+the interesting things  found among the talks. The  whole festival was
+amazing -  I'd even say legendary  - and surely won't  be forgotten by
+its  participants. It  challenged everyone  in the  making,  since the
+place that hosted  it was in a really bad  condition, it required some
+practical skills and good cooperation by all people present.
+
+Food was really good.  It was delicious and nutrient.  Kudos to JNM of
+craslab.org  and all  the volunteers  who  helped.  Big  kudos to  the
+farmers who brought  us a 400EUR worth of  biological food (old-school
+farming,  very  tasty  and  healthy)  that fueled  the  whole  5  days
+festival.   Look up  the french  AMAP  networks, they  are an  awesome
+alternative to the food industry  crisis.  There are times when even a
+5 star catering can make you hug a toilet after two days of conference
+food; considered  the conditions  and the tools,  this was  some magic
+"heros feast" spell  casted twice per day, with  vegetarian dishes for
+everyone, still filling up the diet very well.
+
+Now  let's go  through the  content of  HSF: I'm  gathering  here some
+interesting links  to things presented,  still sorry that  this humble
+account won't cover all the interventions deserving it.
+
+The Gaming Platform  Libre was a delight for those of  us who dream of
+game  development on free  platform and  I must  admit I  wasn't aware
+myself of the  many things being said, even  if usually researching on
+the  topic.   The YASEP  platform  was  presented  (Yet Another  Small
+Embedded Processor) and its instruction set explained, all accompanied
+by these slides presented by Laura Bécognée and Yann Guidon.
+
+A well  known cryptographer, Karsten  Nohl, has illustrated  in detail
+the procedure  of reverse engineering integrated circuits  as RFID: it
+was  quite  an  experience  to  hear  such a  talk  by  the  one  that
+reverse-engineered  the  MiFare  -  CRYPTO1  :)
+
+Among the  tools Karsten  mentioned a software  I didn't  knew before:
+Degate  helps you  explore ICs,  matching logic  gates on  the imagery
+given  by graphical  templates and  assisting you  in  tracing circuit
+paths.
+
+More on  the blinky side  of life was  the presentation of  Kiniou who
+demonstrated  how  to import  Open  Office  presentations in  Blender,
+taking  advantage of  a  3d environment  to  show your  slides. He  is
+publishing this and other stuff on the website knokorpo.fr.
+
+The Syn2Cat hackerspace crew from Luxembourg was present all the time,
+animating  a blinkful space  in the  HSF as  well giving  an inspiring
+presentation  of their  activities,  well oriented  to animate  public
+spaces,  art  environments and  to  leverage  the political  discourse
+around  civil   liberties.   Among  their  code  pearls   there  is  a
+port of  LaserTag software on  GNU/Linux (finally!!)  and  their early
+experiments with Clutter.
+
+
+At the  core of  the theoretical  discussion in HSF  there was  a very
+interesting presentation  of EGPL, a general public  license that lets
+authors "exclude"  certain uses for  their creations. Under  the motto
+"Creative  Uncommons License"  (acronym  CUL) and  the  symbol (*)  it
+unfolded  extremely  interesting insights  on  licensing, ethics,  the
+pitfalls of Creative Commons license  and in general a deep reflection
+on  the use  values of  creations. I've  actively participated  to the
+debate trying  to defend  the total freedom  granted by  classical GNU
+licenses,  still   I  must  admit  that  the   EGPL  arguments  aren't
+superficial as it might seem on  the first glance and, until a certain
+degree, they might even be implementable.
+
+From the  Swedish hackerspace  Forskningsavd a young  phreaking genius
+named      Kugg     came      to      present     his      experiments
+interfacing Arduino boards to phone networks: developing the so called
+Optoshield  and,  *dulcis in  fundo*,  releasing  his  new creation  the
+Arduino  Phoneshield -  all HSF  participants got  the  opportunity to
+download the circuit  scheme of this new shield,  soon to be available
+on  the webshop  of blushing  boy.  Feels  like back  to the  roots :)
+the phreaking scene will never die.
+
+During the  whole festival, the indefatigable  tmp/lab hacker lekernel
+ran  several  workshops:  how  to make  bio-diesel  (in  collaboration
+Gaëtan),  Milkymist  (an  hardware   Vj  platform  built  with  FPGA),
+DIY Vacuum tubes  amplifier and at last an  half day hands-on workshop
+on FPGA Verilog development. The guy is a mental Volcano eruption.
+
+Another   good  interdisciplinary   presence  in   the   festival  was
+Milovann Yanatchkov: this visionary  architect uses only free software
+for  his work,  with  good  and original  results.   His workshop  was
+entitled after Paul Graham's book  "Hackers and Painters" and ended up
+illustrating the early concept of  perspective in Paolo Ucello as well
+his experiments with Fluxus 3D live coding engine..
+
+Dulcis in fundo there  were several interesting lightning talks, among
+them the nomadic hacker  Meinhard gave three interesting presentations
+also pointing out this interesting anonet.org initiative, which sounds
+new to me. As well  Robin Gareus outlining his new development project
+at  the University of  Paris: theartcollider,  something that  will be
+very  interesting   for  all  of  us   experimenting  with  Ogg/Theora
+streaming.
+
+
+Feeling sorry  to have missed it  all? well you should  since this HSF
+was really  legendary, until  the next  comes up: see  you in  2010 in
+Istanbul!
+
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Sat, 27 Jun 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Hackerspace%20festival%20account</guid>
+
+</item>
+
+<item>
+<title>Tor helps</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Tor%20helps</link>
+<description><![CDATA[http://yro.slashdot.org/story/09/06/29/1230216/The-Technology-Keeping-Information-Flowing-in-Iran
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Mon, 29 Jun 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Tor%20helps</guid>
+
+</item>
+
+<item>
+<title>India making the wrong step</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#India%20making%20the%20wrong%20step</link>
+<description><![CDATA[http://yro.slashdot.org/story/09/06/28/1538221/India-To-Put-All-Citizen-Info-In-a-Central-Database
+
+Issues on census and the Tsunami
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Sun, 28 Jun 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#India%20making%20the%20wrong%20step</guid>
+
+</item>
+
+<item>
+<title>Augmented reality (now for real)</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Augmented%20reality%20</link>
+<description><![CDATA[http://www.iema.net/news/envnews?aid=18913
+
+The Evolution of Google
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Fri, 26 Jun 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Augmented%20reality%20</guid>
+
+</item>
+
+<item>
+<title>The Walnut Tree</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#The%20Walnut%20Tree</link>
+<description><![CDATA[
+
+
+My head foaming clouds, sea inside me and out
+i am a walnut tree in Gulhane Park
+an old walnut, knot by knot, shred by shred
+Neither you are aware of this, nor the police
+
+I am a walnut tree in Gulhane Park
+My leaves are nimble, nimble like fish in water
+My leaves are sheer, sheer like a silk handkerchief
+pick, wipe, my rose, the tear from your eyes
+My leaves are my hands, I have one hundred thousand
+I touch you with one hundred thousand hands, I touch Istanbul
+My leaves are my eyes, I look in amazement
+I watch you with one hundred thousand eyes, I watch Istanbul
+Like one hundred thousand hearts, beat, beat my leaves
+
+I am a walnut tree in Gulhane Park
+neither you are aware of this, nor the police
+
+
+(Nazim Hikmet, 1 July 1957, Balcik)
+
+Thanks Ozge for this sweet dedication.
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Thu, 25 Jun 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#The%20Walnut%20Tree</guid>
+
+</item>
+
+<item>
+<title>Hackerspace festival #2</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Hackerspace%20festival%20%232</link>
+<description><![CDATA[Just  touched base  at the  tmp/lab in  Paris, getting  ready  for the
+second edition of the  hackerspace festival, which raises already high
+expectations this  year, as it has  been noticed even  by slashdot.
+
+On the first edition we had about 50 registered participants, counting
+up to 200 people attendance during the whole 3 days; this year we have
+200 registered participants, so we'll see how it goes.
+
+I'll be  facilitating a round-table  on ICT disaster recovery  as well
+taking part to a debate on the future of hackerspaces.
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Wed, 24 Jun 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Hackerspace%20festival%20%232</guid>
+
+</item>
+
+<item>
+<title>Deforestation doesn't make people rich</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Deforestation%20doesn%27t%20make%20people%20rich</link>
+<description><![CDATA[A recent academic study on economical growth in deforested areas shows
+that the benefits of this business are short-lived and unsustainable.
+"Boom-and-Bust Development Patterns Across the Amazon Deforestation Frontier"
+is  the title of  this research  that was  undertaken by  academics in
+Cambridge, Montpellier and Lisbon.
+
+The  idea that  forests are  worth more  alive than  dead  is commonly
+advocated by natives, but for  decades we assisted to their massacres,
+last  but not  least the  recent slaughter  in Peru.  Apparently those
+corporations making a business  on deforestation are too short sighted
+and maybe even a bit sadistic, let me add.
+
+Another study titled "The economics of ecosystems and biodiversity" is
+running through its  first phase in Europe, as if  there would be more
+evidence     needed      after     disasters     like      that     in
+the deforestation of Malawi,  Indonesia, the well known Amazonian rain
+forest and many others.
+
+I'm feeling kind of stupid  in reporting all this. What really matters
+is the  amount of  time that  the World needed  so far  to acknowledge
+these  results: that  time  is directly  proportional  to the  urgency
+motivating  the actions  of networks  like  E.L.F.  -  so wouldn't  be
+better to  seek common ground and  start a peace  process, rather than
+persecuting  the  so   called  "eco-terrorists"  and  keeping  current
+policies?
+
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Tue, 16 Jun 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Deforestation%20doesn%27t%20make%20people%20rich</guid>
+
+</item>
+
+<item>
+<title>Big company doesn't always win</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Big%20company%20doesn%27t%20always%20win</link>
+<description><![CDATA[An        interesting       article       came        out       titled
+The Lies  Of The Copyright Industry,  commenting on the  outcomes of a
+recent "World Copyright Summit".
+
+Released on the same day and by the same author, another publication
+is worth noting:
+
+The End Of Microsoft Money: Big Company Doesn't Always Win stating
+how smaller companies are often more innovative and effective at
+taking on big companies.
+
+Let me just state that there is a clear connection visible between the
+two issues.
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Fri, 12 Jun 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Big%20company%20doesn%27t%20always%20win</guid>
+
+</item>
+
+<item>
+<title>Word clouds</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Word%20clouds</link>
+<description><![CDATA[Today I was having a look in an appealing technology for text analysis
+so far neglected  in my research, mostly because of  lack of time: the
+so called "word cloud".
+
+Rendering  a word  cloud implies  a fairly  complicated  algorithm for
+"packing", which  in recent  implementations explores the  presence of
+vertical words and different colors.
+
+For  a  while  the  state-of-the-art implementation  has  been  closed
+source, implemented by  Wordle as an online service  running in a java
+applet. But a  refreshing announcement comes at hand  here, offering a
+code   that    can   be    evaluated   in   Ruby    language,   thanks
+Nina Jansen's cloud publication.
+
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Thu, 11 Jun 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Word%20clouds</guid>
+
+</item>
+
+<item>
+<title>Brain-computer interface,</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Brain%2Dcomputer%20interface%2C</link>
+<description><![CDATA[The          Brown          university          announced          the
+second round  of BrainGate development,  a new clinical  trial towards
+the ultimate goal of helping patients with spinal cord injury, stroke,
+muscular dystrophy,  amyotrophic lateral sclerosis (ALS)  or limb loss
+turn  their thoughts into  actions, restoring  independence, mobility,
+and communication.
+
+BrainGate, an  investigational technology being  developed to detect
+brain  signals and  to  allow  people with  paralysis  to use  those
+signals to  control assistive devices,  is about to begin  a second,
+larger  clinical  trial.  The   system  is  based  on  neuroscience,
+engineering and computer science research at Brown University.
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Wed, 10 Jun 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Brain%2Dcomputer%20interface%2C</guid>
+
+</item>
+
+<item>
+<title>N2N peer 2 peer at layer 2</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#N2N%20peer%202%20peer%20at%20layer%202</link>
+<description><![CDATA[Just  found a very  interesting attempt  to implement  a peer  to peer
+network protocol on the Layer Two: N2N by the ntop folks.
+
+In a nutshell, as OpenVPN  moved SSL from application (e.g.  used to
+implement  the https protocol)  to network  protocol, n2n  moves P2P
+from application to network level.
+
+The  main   n2n  design  features   are:  asymmetrically  encrypted,
+community  based,  NAT and  firewall  traversal, interoperable  with
+other networks.
+
+Sounds yummie, thanks Shammash for the pointer.
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Mon, 08 Jun 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#N2N%20peer%202%20peer%20at%20layer%202</guid>
+
+</item>
+
+<item>
+<title>The global lies are dissolving</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#The%20global%20lies%20are%20dissolving</link>
+<description><![CDATA[Recently there is more emerging  of truth than usual around stories of
+oil exploitation in lands owned  by natives, from Nigeria to Amazonia,
+might be the positive effect of a globally connected society.
+
+The essay Peak Oil, Sustainability  and the Problem of Freedom by Kurt
+Cobb suggests  this wave of  rationality reaches widely and  deeply on
+how  our societies  are  articulated, elaborating  on  the concept  of
+Freedom.
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Sun, 07 Jun 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#The%20global%20lies%20are%20dissolving</guid>
+
+</item>
+
+<item>
+<title>Hands off the Internet in Canada</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Hands%20off%20the%20Internet%20in%20Canada</link>
+<description><![CDATA[The CRTC (Canadian Radio-television and Telecommunications Commission)
+has  released its  2009 new  media decision  on  Internet regulations,
+rejecting  to  limit  the   liberties  offered  by  digital  networks,
+basically taking an hands off approach. Here below a quote:
+
+"Regulatory  intervention would get  in the  way of  innovation and
+that a compelling case was not made that additional support through
+an ISP levy was needed." []  "The Commission is of the view that
+parties advocating repeal of the exemption orders did not establish
+that  licensing undertakings  in  the new  media environment  would
+contribute  in  a material  manner  to  the  implementation of  the
+broadcasting policy set out in the Act."
+
+Here the full text of the document.
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Fri, 05 Jun 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Hands%20off%20the%20Internet%20in%20Canada</guid>
+
+</item>
+
+<item>
+<title>A scientific approach to economy</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#A%20scientific%20approach%20to%20economy</link>
+<description><![CDATA[The New Scientist came out today with an interesting article profiling
+possible scientific approaches to economy.
+
+It's been a while I'm  planning to drive experiments with evolutionary
+algorithms  on different scenarios  of economic  administration, maybe
+using the Acovea engine. Anyone interested?
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Thu, 04 Jun 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#A%20scientific%20approach%20to%20economy</guid>
+
+</item>
+
+<item>
+<title>The state of Video CoDecs  </title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#The%20state%20of%20Video%20CoDecs%20%20</link>
+<description><![CDATA[Here  a  very interesting  interview  with  Dan  Marlin, developer  of
+Matroska and  Xvid, one  of the pioneers  in modern  video compression
+systems:  small industries  all  around the  World producing  embedded
+video  devices  and software  benefit  of  the  free and  open  source
+software that Dan and his team released.
+
+This  and more seminal  video codec  developments are  at risk  on the
+non-free      market      ground      of     software      monopolies:
+Micro$oft plans to  block third party codecs in  Windows media player,
+which  sets the  base for  yet another  anti-trust  court-case against
+Redmond's falling giant.
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Wed, 03 Jun 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#The%20state%20of%20Video%20CoDecs%20%20</guid>
+
+</item>
+
+<item>
+<title>Shell finally facing reality?</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Shell%20finally%20facing%20reality%3F</link>
+<description><![CDATA[Anyone remember Saro Wiwa? He  is the victim of Shell oil corporation,
+a  martyr for  the many  unpunished aggressions  to the  ecosystem and
+people of Nigeria for which Shell is guilty.
+
+While people is  calling justice for the Ogoni tribes  in front of the
+human                 rights                tribunal                in
+New York,  where the court-case against  Shell is being  held, some of
+the current  Shell functionaries and managers are  leaving the company
+(and their responsibilities?)
+
+Dutch   newspaper   NRC   is   one   of   the   few   daily   tabloids
+reporting   news    on   the    topic,   updating   us    also   about
+the recent explosion of violence  in the Niger delta connected to this
+court-case.
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Wed, 27 May 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Shell%20finally%20facing%20reality%3F</guid>
+
+</item>
+
+<item>
+<title>dyne:II in Mexico Monster City</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#dyne%3AII%20in%20Mexico%20Monster%20City</link>
+<description><![CDATA[Vlax writes:
+
+Heyall / hola
+
+in  the context  of the  Latin American  Free  Software Installation
+Festival (aka  FLISOL), the Mexico's Monster  City Espora.org's crew
+presented  the dynebolic  II  distro and  the  Spanish version  user
+manual, recently completed.
+
+
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Tue, 26 May 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#dyne%3AII%20in%20Mexico%20Monster%20City</guid>
+
+</item>
+
+<item>
+<title>The slackers had it right after all</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#The%20slackers%20had%20it%20right%20after%20all</link>
+<description><![CDATA[Here a brilliant article that came out earlier this year on the Boston
+Globe:  So  maybe  the  slackers  had  it right  after  all  by  David
+Scharfenberg (tanks Aldert),  giving a voice to a  whole generation of
+people  that consciously  decided  to  slack rather  than  race for  a
+career.
+
+The  author quotes  also "Generation  X", a  book by  Douglas Coupland
+unfolding   an  interesting   narrative  spiced   by  the   irony  and
+disenchantment of  skilled IT professionals born between  the '70s and
+the  '80s.
+
+Still  what i  find most  representative  of this  generation are  the
+"peculiar intimate doubts" found in writings by Jonathan Alex Gold.
+
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Sun, 17 May 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#The%20slackers%20had%20it%20right%20after%20all</guid>
+
+</item>
+
+<item>
+<title>House of Commons washes hands</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#House%20of%20Commons%20washes%20hands</link>
+<description><![CDATA[An  interesting signal  from London  where the  corruption  of several
+Members of Parliament (mostly caused by alienating and disproportional
+cast  privileges) is  causing the  resignation of  a minister  and the
+expulsion of two members, while two Lords are investigated.
+
+It       seems       to        have       started       with       the
+Daily Telegraph publishing  MP's expenses, an investigative journalism
+operation that costed 150k GBP to the tabloid. My heartfelt thanks for
+the investment.
+
+Interesting how media in UK is free to document all this and even play
+a  role in  promoting the  investigations: quite  a different  code of
+deontology in respect to what turned Italy in a media dictatorship.
+
+In  the "Mani Pulite"  Italian episode  in the  early 90's  media also
+played an  important role  until they could,  while the  operation was
+mostly lead by  magistrates; they soon had to  leave their jobs, while
+some became politicians like Di Pietro. Craxi for example had to leave
+for  his  villa  in  Hammamet  (Libia),  while  the  highest  cast  of
+politicians  still  welcomes  his   dynasty  today:  Craxi's  son  and
+daughter.  In  fact nothing really  changed until today: the  wages of
+Italian members of Parliament are  the higher in all Europe, double as
+those of UK members.
+
+I wonder  if British MP's  also have a  "plan B" ready in  an offshore
+villa
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Sat, 16 May 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#House%20of%20Commons%20washes%20hands</guid>
+
+</item>
+
+<item>
+<title>Benchmark of serialization tools</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Benchmark%20of%20serialization%20tools</link>
+<description><![CDATA[A     short    article     came    out     with    results     of    a
+benchmark on serialisation tools  as java, json, protobuf, xstream and
+others.
+
+It provides a good evaluation at first glance, with small charts about
+their  performance  in  tasks  as object  creation,  serializaton  and
+deserialization.
+
+My choice for  a overall winner is JSON, which  i repute well reliable
+for deployment,  considering it is  free, has a vast  community behind
+and a flexible implementation in javascript language.
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Mon, 11 May 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Benchmark%20of%20serialization%20tools</guid>
+
+</item>
+
+<item>
+<title>A pattern in prime numbers?</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#A%20pattern%20in%20prime%20numbers%3F</link>
+<description><![CDATA[This  recent theory (some  kind of  "hot water  discovery", as  it was
+unnoticed  for long)  has  shaken the  imaginary  of geeks  worldwide:
+a  new pattern  seems to  be found  in prime  numbers.  Mathematicians
+stated  that  the  prime  number   sequence  can  be  described  by  a
+generalization of  Benford's law, as  the frequency of  higher decimal
+cyphers in  the leading digit  of prime numbers follows  a logarithmic
+decay.
+
+Somewhat unexpectedly, the leading digits aren't randomly or uniformly
+distributed. Besides providing insight  into the nature of primes, the
+finding could also have applications in areas such as fraud detection,
+stock market analysis and cryptography.
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Sat, 09 May 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#A%20pattern%20in%20prime%20numbers%3F</guid>
+
+</item>
+
+<item>
+<title>Positions in Flux</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Positions%20in%20Flux</link>
+<description><![CDATA[Today  I've taken  part in  the Positions  in Flux  symposium  held in
+Amsterdam   in  occasion   of  the   30  years   anniversary   of  the
+Netherlands Media  Art Institute, formerly known as  Montevideo / Time
+Based Arts.
+
+Rather than a panoramic on projects I'm conducting, still easy to find
+online for those interested, I've taken the occasion to share thoughts
+on the current perception of  Free Software and Open Source philosophy
+in  art, along  with some  overdue criticism  of the  Creative Commons
+hollow hype, as well of the Creative Industries and their systematised
+processing of art for the global market.
+
+Even if not  obvious, I believe the dynamics  of these two phenomenons
+are  related; among  the  references quoted  in  the intervention  are
+Benjamin                          Mako                          Hill's
+Towards a Standard of Freedom: Creative Commons and the Free Software Movement
+and        Florian        Cramer's        post       on        nettime
+The Creative  Common Misunderstanding, while the  vigorous critique of
+the   creative   industries    stands   on   Rana   Dasgupta's   essay
+The Next Idea of the Artist (Art, music and the present threat of creativity).
+
+Here below a short transcript:
+
+"Open Source" doesn't mean free  access, nor open space or open air;
+it  presumes a  seamful  approach to  design  as a  response to  the
+increasing  reliance  on technology  and  its  accessibility; it  is
+interactive    without    prescribed    boundaries,   following    a
+combinatorial,  generative approach  to development;  it is  peer to
+peer as no producer can  control further interaction patterns; it is
+grassroot as creations are born out of initiative and cohesion based
+on needs felt and understood in first person by community members.
+
+About  Creative Commons,  its  motto "Some  rights  reserved." is  a
+relatively  hollow  call: the  slogan  factually  reverses the  Free
+Software and  Open Source philosophy  of reserving rights  to users,
+not  copyright  owners, in  order  to  allow  the former  to  become
+producers themselves.
+
+The  dis/appropriating loop of  creativity must  be recursive  to be
+fruitful: not only production means belong to the people using them,
+further creations should  be free to be recombined.   rights must be
+granted focusing on people interacting, not just those providing the
+interactive infrastructure.
+
+Unfortunately there is a diffuse lack of perception for alternatives
+offered by the  Open Source and Free Software  approach over current
+profit models.
+
+As a present  problem, also deriving from the  lack of understanding
+of  the  importance  of  grass-root  creativity,  top-down  cultural
+management is  patronising art production:  mass-media aesthetics of
+an  entirely sanitised and  efficient creativity,  of the  sort that
+will  not rely  on unstable  people  and can  therefore be  globally
+rationalised.
+
+That the great artists of  modern Western culture managed to produce
+what they did, despite the danger and intensity of their effort, was
+due in large part to improvised social forms built around close-knit
+networks where thought and affect circulated with high velocity, and
+where it  was possible  to try out  forms of  non-conventional human
+relationships that would not destroy, nor be destroyed by, a life of
+art.
+
+Seen  from an  historical perspective,  In  the second  half of  the
+twentieth century  many of the  functions of creative  networks were
+already  taken over  in Europe  by institutions  (government funding
+bodies,  universities, museums,  etc)  and much  of their  excessive
+feeling was  neutralised.  This was only  a small part  of a general
+process  of   the  time:  the  absorption  of   human  emotion  into
+bureaucratic channels,  and the emergence  of a social  coolness, an
+efficiency of feeling.
+
+At this stage  in the twenty-first century, we are  in the middle of
+another  large-scale  restructuring   of  ideas  of  creativity  and
+culture.  As  one of  the most significant  generators of  image and
+value, creativity now has become  a critical resource for the global
+economic engine. What creativity is,  and how it can be systematised
+and  circulated,  are  therefore  urgent questions  of  contemporary
+capitalist organisation.  As cultural  producers are thrust into the
+full intensity  of globally dispersed,  just-in-time production, new
+images  of creative  inspiration and  output are  required  that sit
+tidily within the systematised processes of the global market.
+
+Creativity   must  be   rendered  comprehensible,   transparent  and
+rational: there can  be none of the destructive  excesses evident in
+the  lives of  many of  the  greatest artists  of European  history.
+Creativity must  circulate cleanly and quickly, and  it should leave
+no dirty remainder.
+
+For  what interests  Hollywood, and  the market  in general,  is not
+creativity as  a complex human  process, weighed down in  bodies and
+relationships and empty days, but creativity as an abstraction, free
+of irrationality  and pain, and light  enough to hover  like a great
+logo above the continents.
+
+Perhaps,  as  the  logic  of systematised  production  occupies  the
+terrain of human  creativity more completely, we will  reach a stage
+where we surrender all knowledge about this troubling domain, and it
+will  become entirely  alien  to us.   Perhaps  one day  we will  be
+terrified  of  what  explosive   dangers  might  rise  up  from  the
+creativity of human beings.
+
+
+Heartfelt thanks  to all  my colleagues at  NIMk for  having organised
+such an interesting symposium which  has seen among the guest speakers
+Wafaa  Bilal,  Marcus Neustetter,  Femke  Snelting  and Renée  Turner,
+Marcos Garcia and Joasia Krysa.
+
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Fri, 08 May 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Positions%20in%20Flux</guid>
+
+</item>
+
+<item>
+<title>European Telecom Package</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#European%20Telecom%20Package</link>
+<description><![CDATA[Today the EU Parliament rejected the Telecom Package while passing the
+138  amendment:  the controlled  regime  that  Sarkozy and  Berlusconi
+wanted to establish  in Europe is far from  complying with the current
+decision.
+
+Still there  will be  a 3rd  reading of the  package later  this year,
+while the Opennet coalition is actively campaigning against those that
+want to lock up the Internet, see Blackout Europe.
+
+
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Wed, 06 May 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#European%20Telecom%20Package</guid>
+
+</item>
+
+<item>
+<title>Prosthetics with HONF in the fablab</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Prosthetics%20with%20HONF%20in%20the%20fablab</link>
+<description><![CDATA[Four researchers  from the House  of Natural Fibers in  Yogyakarta are
+visiting     Amsterdam     during     these    days,     running     a
+workshop  on prosthetics  in  the Fablab,  envisioning new  affordable
+possibilities in development of  artificial limbs, which are currently
+sold at exorbitant prices.
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Mon, 04 May 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Prosthetics%20with%20HONF%20in%20the%20fablab</guid>
+
+</item>
+
+<item>
+<title>RIP Fravia</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#RIP%20Fravia</link>
+<description><![CDATA[Leaving  us  a beautiful  swansong,  frankly  announcing his  imminent
+death, Fravia passed away today and will be missed by many.
+
+He has  been the  most influential reverse-engineer  of our  times, in
+fact  considered to  be the  father of  reverse-engineering  in modern
+age. And  not just  an "engineer",  he has produced  a vast  amount of
+documentation, reflections and texts  collected since the early Usenet
+times.
+
+Fravia left us  a search engine for all documents  he gathered, plus a
+comprehensive documentation on how to use search engines "beyond their
+surface". His  knowledge base collection, as unconventional  as it can
+be seen  from an  academic point  of view, it  is an  extremely actual
+corpus for contemporary studies on digital heuristics.
+
+Rest in Peace Fravia  sperando  il prossimo giro avvenga su di un
+pianeta con meno imbecilli.
+
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Sun, 03 May 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#RIP%20Fravia</guid>
+
+</item>
+
+<item>
+<title>Riots in Istanbul</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Riots%20in%20Istanbul</link>
+<description><![CDATA[Today  is May Day  and anniversary  of the  Taksim Square  massacre in
+1977,  when  extreme  right  wing  snipers  opened  fire  on  May  Day
+demonstrators in Istanbul, killing 34 people.
+
+Just a few days ago the Turkish parliament passed a law making May 1 a
+national  holiday again.  It was  taken  off the  public holiday  list
+following a military  coup in 1980.
+
+Still,  there is  very  little coverage  on  the media  about what  is
+happening  in Istanbul  today: an  unnatural silence,  while  even the
+Istanbul   Indymedia   website    is   defaced   by   some   religious
+fundamentalists.
+
+This                           recent                          article
+Deepening Crisis,  Growing Resistance: Workers in Turkey  gives a good
+overview on the  situation, while the following press  agency is all I
+could find so far about the current riots:
+
+ISTANBUL (AFP)Several  hundred May Day  demonstrators clashed with
+police in central Istanbul Friday  in battles which saw water cannon
+fired and  several arrests made.   Turkish riot police  staged three
+charges against  hundreds of demonstrators in the  Sisli district of
+the  city who  had hurled  rocks  at security  forces, according  to
+correspondents at  the scene.  Several thousand union  and left wing
+activists took part in the annual protest.
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Fri, 01 May 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Riots%20in%20Istanbul</guid>
+
+</item>
+
+<item>
+<title>Minix plans more development</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Minix%20plans%20more%20development</link>
+<description><![CDATA[ITWorld  reports  that  Prof.   Andrew  S.   Tanenbaum  of  the  Vrije
+Universiteit van  Amsterdam received a trust by  the European Research
+Council for the  development of Minix a legendary  implementation of a
+micro-kernel OS.
+
+Tanenbaum's minimalist approach is long  time inspiring, be it just in
+the  name of his  system, which  used to  run from  a floppy  disk and
+require very  little memory.  I enjoyed studying  in its  early times.
+A discussion about the event follows on Slashdot.
+
+I'd be interested to hear what are the plans for the Syllable hackers.
+The next  generation of Minix  will be developed  by a core team  of 6
+people funded with 2.5m EUR over a period of 5 years.
+
+
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Wed, 29 Apr 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Minix%20plans%20more%20development</guid>
+
+</item>
+
+<item>
+<title>Geocities falling?</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Geocities%20falling%3F</link>
+<description><![CDATA[Geocities was the first place on the Internet where anyone could get a
+free  website, hosting  several thousands  of websites  made available
+before  the third millennium  (mostly all  decorated with  that cheesy
+look that some of us nostalgically smile at).
+
+Later  bought by  Yahoo,  the  company is  now  dropping the  service,
+letting a huge piece of Internet's history fall away as a trail of its
+financial  crisis.
+
+While the Archive Team is busy saving Internet pre-history, let me add
+that Geocities is the first  world-wide implementation of what we call
+"social networks"  and web-2.0 nowadays:  even if the interface  was a
+simple FTP upload of HTML  pages, the social dynamic configured itself
+as a (very chaotic) social web of people going public on the net.
+
+Still I'll  honestly conclude that  Geocities hosted some of  the most
+horribly designed pages that ever appeared on the Internet, but that's
+a part of history we can learn from, right?
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Tue, 28 Apr 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Geocities%20falling%3F</guid>
+
+</item>
+
+<item>
+<title>The Narcysist P.H.A.T.W.A.</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#The%20Narcysist%20P%2EH%2EA%2ET%2EW%2EA%2E</link>
+<description><![CDATA[The Narcysist released his new music video P.H.A.T.W.A.
+
+It makes it up for a  good laugh, expressing well the feeling of youth
+in multi-ethnic societies about police repression.
+
+Paranoid controls on pedestrians since  9/11 didn't made it any better
+(and bomb attacks have been all  over anyway) while the raise of false
+positives  generated quite  a bad  feeling  against those  who try  to
+"protect the citizens".
+
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Sun, 26 Apr 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#The%20Narcysist%20P%2EH%2EA%2ET%2EW%2EA%2E</guid>
+
+</item>
+
+<item>
+<title>A &quot;cyber-attack&quot; on a city</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#A%20%22cyber%2Dattack%22%20on%20a%20city</link>
+<description><![CDATA[Now this  is something one could really  call "cyber-crime", wondering
+if the word  will get to the right hears: while  the policy makers are
+too busy persecuting kids writing  viruses, they are not even aware of
+the risks involved in building centralised information architectures.
+
+Here
+Bruce Perens took his time to describe and warn about the situation in Morgan Hill
+when a few weeks ago unidentified attackers climbed down four manholes
+and cut eight fiber cables serving the city.
+
+That attack demonstrated a  severe fault in American infrastructure:
+its  centralization. The  city of  Morgan  Hill and  parts of  three
+counties lost 911 service, cellular mobile telephone communications,
+land-line  telephone,  DSL internet  and  private networks,  central
+station fire  and burglar alarms,  ATMs, credit card  terminals, and
+monitoring of critical utilities. In addition, resources that should
+not  have  failed,  like  the  local  hospital's  internal  computer
+network, proved  to be dependent on external  resources, leaving the
+hospital with a "paper system" for the day.
+
+Scary stuff,  especially considering the military  intelligence is too
+busy developing futuristic warplanes and worrying about who stole them
+the plans for their new super-secret toys.
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Thu, 23 Apr 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#A%20%22cyber%2Dattack%22%20on%20a%20city</guid>
+
+</item>
+
+<item>
+<title>GPU Grid</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#GPU%20Grid</link>
+<description><![CDATA[Great project: GPUGrid, finally someone did it!
+
+Wishing it will grow in compatibility with more video cards.
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Wed, 22 Apr 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#GPU%20Grid</guid>
+
+</item>
+
+<item>
+<title>Eucalyptus</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Eucalyptus</link>
+<description><![CDATA[Eucalyptus is  the "Elastic Utility Computing  Architecture" of choice
+for  Ubuntu Server  9.04,  with full  compatibility  with the  "Amazon
+Elastic Compute Cloud (EC2)".
+
+That's now a serious competitor for Google App Engine, offering a less
+proprietary approach at first glance.
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Tue, 21 Apr 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Eucalyptus</guid>
+
+</item>
+
+<item>
+<title>Manifesto of Post-Futurism</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Manifesto%20of%20Post%2DFuturism</link>
+<description><![CDATA[Even if  i don't really like manifestos,  this text by BiFo  goes in a
+good  direction  declaring  the  Death  of Futurism  and  laying  down
+directions for the Post-Futurist movements to come.
+
+Among all the points made, the numbers 9 and 10 read good:
+
+We want to ridicule the idiots  who spread the discourse of war: the
+fanatics of competition, the fanatics of the bearded gods who incite
+massacres,  the  fanatics  terrorised  by the  disarming  femininity
+blossoming in all of us.
+
+We demand  that art  turns into a  life-changing force.  We  seek to
+abolish  the separation  between poetry  and mass  communication, to
+reclaim the power  of media from the merchants and  return it to the
+poets and the sages.
+
+Just  a doubt  about who  are the  sages,  this might  be a  bit of  a
+controversy, along with other parts  of the text which sound like from
+the middle-ages. I sense a lack  of peer to peer attitude overall, but
+well it's  already a very good  step forward from  silence; I've never
+been 100% happy with "post-" movements anyway.
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Mon, 20 Apr 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Manifesto%20of%20Post%2DFuturism</guid>
+
+</item>
+
+<item>
+<title>Cluster computing in javascript</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Cluster%20computing%20in%20javascript</link>
+<description><![CDATA[This is potentially one of  the most interesting projects of the year,
+"map reduce in the browser became very popular among geeks already in
+march this  year.  As a result,  it received lots  of contributions.
+
+Very smart people, exemplar design  of such a website and its contents
+and a very powerful project.
+
+
+
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Sat, 18 Apr 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Cluster%20computing%20in%20javascript</guid>
+
+</item>
+
+<item>
+<title>Exoskeletons going for sale</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Exoskeletons%20going%20for%20sale</link>
+<description><![CDATA[http://www.hplusmagazine.com/articles/robotics/i-am-ironman
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Mon, 13 Apr 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Exoskeletons%20going%20for%20sale</guid>
+
+</item>
+
+<item>
+<title>Free market bulldozed in Lagos</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Free%20market%20bulldozed%20in%20Lagos</link>
+<description><![CDATA[Speaking of  what really is free  market, some 7.000  traders in Lagos
+(we're  speaking   of  official  members  of   the  Freedom  Merchants
+Association of Awodi-Ora Estate, Mile  2 Oke) have seen their premises
+bulldozed away by State agents and militars on February this year.
+
+The story  is that of a  big injustice, made even  more significant if
+taken as a brutal metaphor  of what happened in the "neo-liberist era"
+to small business initiatives.
+
+Refraining question: what the financial crisis is about?
+
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Wed, 18 Mar 2009 00:00:00 CET</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Free%20market%20bulldozed%20in%20Lagos</guid>
+
+</item>
+
+<item>
+<title>RIP Dave Arneson</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#RIP%20Dave%20Arneson</link>
+<description><![CDATA[RIP http://en.wikipedia.org/wiki/Dave_Arneson
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Tue, 07 Apr 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#RIP%20Dave%20Arneson</guid>
+
+</item>
+
+<item>
+<title>6 april movements</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#6%20april%20movements</link>
+<description><![CDATA[Today is the 6th  of april, a date marking the birth  of a movement in
+Cairo which  mostly coordinates and  grow online, with a  fixed yearly
+appointment  on the  streets,  see  the blogs  in  English and  Arabic
+languages; and since i really can't keep it inside, let me add more.
+
+We're  living in a  peculiar period,  just before  the "Epiphany  of a
+Catastrophe":  it  is a  period  in  which  those who  foresee  what's
+happening can be persecuted, lynched, imprisoned, exiled.
+
+An metaphor  is offered  by the earthquake  which stroke  Abruzzo last
+night,  for  which a  polemic  now  started:  the geologist  Giampaolo
+Giuliani who predicted the disaster was called to court for "procurato
+allarme", calling a  crime his act of giving an  alarm that could have
+saved the lives of many.
+
+Im not sure what do you think about the last tumults in London City, i
+guess you have heard, a man was killed by police it seems, for sure he
+was  the  last  person  that  they wanted  to  beat  down   factory
+occupations started in Paris (deja vu?!)  with kidnapping of managers,
+also  in London  a  factory was  occupied  by its  workers, the  story
+unfolds on London Indymedia webpages. Way better initiatives for fired
+workers, compared to those in USA (one dumped by IBM?! what a hot geek
+gossip)  who opened  fire in  NYC killing  13 immigrants,  and another
+fired-gunman the day after. I mean just yesterday. Quite some shocking
+news, excuse me the tone.
+
+As  time is accelerating,  we are  also.  Online  is possible  to keep
+yourself  updated,  its getting  more  participative  thanks to  fluid
+exchanges of  ideas and  views.  You can  even be persecuted  for your
+public opinion - expressed by a simple click - just joining a group on
+facebook.
+
+I was visiting Cairo exactly one year ago, on 6 of april, when factory
+workers  in the  nearby "industrial  town" of  Mahalla went  to engage
+police in the street with sword  fights. have you heard of that? There
+are times when, for as much as  we have heard and seen in the past few
+years and predictably going to  see more, military intelligence had to
+strike the  situation to  an end.  I  just wonder  how it is  going to
+happen  today, when  the most  powerful intelligence  is media.
+
+And  most importantly,  how long  it all  has to  occur before  we can
+really  represent  the  state of  things?  is  it  the Epiphany  of  a
+Catastrophe?
+
+where are thou Orson Wells! with your martians to make us humble??!
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Mon, 06 Apr 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#6%20april%20movements</guid>
+
+</item>
+
+<item>
+<title>OpenGL in HTML</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#OpenGL%20in%20HTML</link>
+<description><![CDATA[http://blog.vlad1.com/canvas-3d/
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Fri, 03 Apr 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#OpenGL%20in%20HTML</guid>
+
+</item>
+
+<item>
+<title>London.c</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#London%2Ec</link>
+<description><![CDATA[londra riots, factory occupations
+
+
+
+/*
+ * Requiem for Peace (and one dead man in London.c)
+ *
+ * Cycle 78, year 26 (Ji-Chou), month 3 (Wu-Chen), day 7 (Ding-Chou)
+ *
+ * (A)m*dam(jrml)
+*/
+
+int moment = 0;
+
+int justice = 7;
+
+void *anger = "
+  There was a  pause, and an eerie silence, just before  he did it.  A
+  green  scarf  masking  his face,  the  man  held  a large  piece  of
+  scaffolding  above  his   head  and,  surrounded  by  photographers,
+  eyeballed  the unprotected window  of the  Royal Bank  of Scotland's
+  branch on Threadneedle Street.
+";
+
+void *exception = "
+  In that  split second, one voice  amid thousands in  the crowd broke
+  the silence.  - Don't do  it -  she screamed -  He did -  This isn't
+  violence -  retorted another voice in  the crowd - We  paid for this
+  building.
+";
+
+unsigned int moment;
+unsigned int imacy;
+unsigned int cause;
+bool represented;
+
+extern void *wave;
+extern void *street;
+extern void *justice;
+extern int death;
+
+while(protest) {
+
+  for(moment=0; moment < justice; moment++) {
+
+    wave = malloc( sizeof( anger ) );
+
+    // wave is filled with people
+    democracy[moment] -> reclaim(wave, street);
+
+    try {
+
+
+// check if they smile
+
+
+      represented = reality(moment);
+
+      if(!represented) throw(exception);
+
+    }
+
+    if( moment[wave] == death ) {
+
+      // One protester at the scene said the man was in his 30s and died
+      // of natural causes, the  Press Association news agency reported.
+
+      imacy  = moment[wave]; // zoom in
+
+      cause  = natural(imacy); // the cause is just an index
+
+      /* Alok,  currently  in Exchange  Square,  would  like to  thank
+         Muriel for  lending him  her pen when  his run out.   He says
+         there are around 150 people  out in sympathy with the man who
+         died and 70 police. */
+      imacy -= democracy[cause] -> individual(justice);
+
+      rip(imacy); // the man was there to protest, but he is no more
+
+    }
+
+
+// RFC-G20
+
+
+    if( !listen(moment) ) {
+      justice--; // will affect globally
+    }
+
+  }
+
+  catch(void *e) {
+
+    printf((char*)exception);
+
+    // Once they  had broken into the bank,  however, the protesters
+    // did not quite know what to do.
+
+    printf("justice is %u", justice);
+    printf("anger address is %p (out of bounds?)", anger);
+    printf("it seems they are still smiling.");
+    // seen before, anyway we send the warning
+
+  }
+
+ } // street protest ends, but the wave will hit more shores
+
+/* this code won't compile alone, it is part of a larger software. */
+
+
+
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Wed, 01 Apr 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#London%2Ec</guid>
+
+</item>
+
+<item>
+<title>Untitled</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#20090330</link>
+<description><![CDATA[++ http://www.boingboing.net/2009/03/30/scavengers-manifesto.html
+http://www.trashwiki.org
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Mon, 30 Mar 2009 00:00:00 CEST</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#20090330</guid>
+
+</item>
+
+<item>
+<title>:</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#%3A</link>
+<description><![CDATA[http://33bits.org/
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Sun, 29 Mar 2009 00:00:00 CET</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#%3A</guid>
+
+</item>
+
+<item>
+<title>Untitled</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#20090326</link>
+<description><![CDATA[http://www.guardian.co.uk/commentisfree/2009/mar/26/anticapitalism-protest-recession-g20
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Thu, 26 Mar 2009 00:00:00 CET</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#20090326</guid>
+
+</item>
+
+<item>
+<title>Cyber-politics in China</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Cyber%2Dpolitics%20in%20China</link>
+<description><![CDATA[http://chinadigitaltimes.net/2009/03/left-and-right-in-chinese-cyber-politics/
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Tue, 24 Mar 2009 00:00:00 CET</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Cyber%2Dpolitics%20in%20China</guid>
+
+</item>
+
+<item>
+<title>Dyne:bolic at school</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Dyne%3Abolic%20at%20school</link>
+<description><![CDATA[Just found out that Uncle Paulie is showing dyne:bolic to his classes,
+documenting and coordinating his activity into this blog, hopefully it
+served the purpose of introducing  pupils to GNU/Linux.
+
+Our  dyne:bolic live/CD  works  quite straightforward  for the  simple
+tasks it  has to accomplish; the  dyne:II core hasn't  been updated in
+the past  2 years, we  could even argue  that's a feature :)  still we
+support old  computers, provide a simple and  consistent interface for
+GNU users and the simplest procedure installation ever :)
+
+Later on  this year there  will be some  news about the future  of our
+dyne operating  system ;) meanwhile keep  an eye on  pure:dyne and its
+active  development crew,  rowing high  to  the goal  of a  multimedia
+production system with higher hardware requirements.
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Mon, 23 Mar 2009 00:00:00 CET</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Dyne%3Abolic%20at%20school</guid>
+
+</item>
+
+<item>
+<title>Open source gaze tracker</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Open%20source%20gaze%20tracker</link>
+<description><![CDATA[Found this very interesting project today, thanks to Caedes:
+
+Opengazer is an open source application that uses an ordinary webcam
+to estimate the direction of your gaze. This information can then be
+passed to other applications.  For example, used in conjunction with
+Dasher, opengazer allows you to write with your eyes. Opengazer aims
+to be  a low-cost software alternative  to commercial hardware-based
+eye trackers.
+
+which actually  works! after compiling the source  it runned smoothly,
+tracking the  movements of my pupils  and moving the  mouse across the
+screen very cool sensation.
+
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Sun, 22 Mar 2009 00:00:00 CET</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Open%20source%20gaze%20tracker</guid>
+
+</item>
+
+<item>
+<title>Untitled</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#20090319</link>
+<description><![CDATA[http://www.repubblica.it/2009/03/sezioni/scuola_e_universita/servizi/scuola-2009-10/brunetta-onda/brunetta-onda.html
+
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Thu, 19 Mar 2009 00:00:00 CET</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#20090319</guid>
+
+</item>
+
+<item>
+<title>Untitled</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#20090318</link>
+<description><![CDATA[http://www.lavanguardia.es/sucesos/noticias/20090318/53662650766/el-robin-de-los-bancos-pasara-a-disposicion-judicial-tras-declarar-ante-mossos-barcelona-duran-unive.html
+
+
+http://www.boingboing.net/2009/03/18/newspaper-box-gravey.html
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Wed, 18 Mar 2009 00:00:00 CET</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#20090318</guid>
+
+</item>
+
+<item>
+<title>Untitled</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#20090310</link>
+<description><![CDATA[http://www.radiomundial.com.ve/yvke/noticia.php?20929
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Tue, 10 Mar 2009 00:00:00 CET</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#20090310</guid>
+
+</item>
+
+<item>
+<title>Winter Camp</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Winter%20Camp</link>
+<description><![CDATA[http://networkcultures.org/wpmu/wintercamp/2009/03/08/opening-eyes-and-earlids/
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Sun, 08 Mar 2009 00:00:00 CET</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Winter%20Camp</guid>
+
+</item>
+
+<item>
+<title>:</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#%3A</link>
+<description><![CDATA[http://hardware.slashdot.org/article.pl?sid=09/02/24/1918217
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Wed, 25 Feb 2009 00:00:00 CET</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#%3A</guid>
+
+</item>
+
+<item>
+<title>Labour in high tech China</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Labour%20in%20high%20tech%20China</link>
+<description><![CDATA[High Tech Misery In China
+http://news.slashdot.org/article.pl?sid=09/02/15/2020200
+
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Mon, 16 Feb 2009 00:00:00 CET</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Labour%20in%20high%20tech%20China</guid>
+
+</item>
+
+<item>
+<title>Empty for one year..</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Empty%20for%20one%20year%2E%2E</link>
+<description><![CDATA[429 eviction law denied in dutch high court
+
+http://www.ravagedigitaal.org/index.htm?2009nieuws/februari/12/nws.php~mainFrame
+http://indymedia.nl/nl/2009/02/57634.shtml
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Thu, 12 Feb 2009 00:00:00 CET</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Empty%20for%20one%20year%2E%2E</guid>
+
+</item>
+
+<item>
+<title>Vilem Flusser award</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Vilem%20Flusser%20award</link>
+<description><![CDATA[http://www.transmediale.de/en/critical-consumer-practice-2-event
+
+overwhelmed (video)
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Wed, 04 Feb 2009 00:00:00 CET</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Vilem%20Flusser%20award</guid>
+
+</item>
+
+<item>
+<title>Blood and Coltan</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Blood%20and%20Coltan</link>
+<description><![CDATA[Am Handy klebt Blut http://futurezone.orf.at/stories/1502204/
+
+Vér tapad a PC-khez és a mobilokhoz
+http://www.sg.hu/cikkek/65428/ver_tapad_a_pc_khez_es_a_mobilokhoz
+
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Tue, 03 Feb 2009 00:00:00 CET</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Blood%20and%20Coltan</guid>
+
+</item>
+
+<item>
+<title>Forge.mil</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Forge%2Emil</link>
+<description><![CDATA[Today  US  Dept.   of  Defense  announced  the  creation  of  its  own
+open-source code repository: Forge.mil.
+
+Mjasay writes on  slasldot:
+
+The  US Department  of Defense,  which has  been flirting  with open
+source for years as a way to improve software quality and cut costs,
+has finally  burst the  dam on Defense-related  open-source adoption
+with Forge.mil, an open-source code repository based on Sourceforge.
+Though it currently only holds  three projects and is limited to DoD
+personnel for  security reasons, all  code is publicly  viewable and
+will almost  certainly lead to  other agencies participating  on the
+site or  creating their  own.  Open source  has clearly come  a long
+way. Years ago  studies declared open source a  security risk.  Now,
+one of  the most security-conscious  organizations on the  planet is
+looking to  open source to provide better  security than proprietary
+alternatives."
+
+This is a very interesting  move if interpreted as the potential start
+for  a "planetary  intelligence", as  much as  open-source development
+created  a planetary  dynamic that  spread horizontally  over national
+boundaries.
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Mon, 02 Feb 2009 00:00:00 CET</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Forge%2Emil</guid>
+
+</item>
+
+<item>
+<title>UK Gov. abandons piracy legislation</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#UK%20Gov%2E%20abandons%20piracy%20legislation</link>
+<description><![CDATA[http://www.custompc.co.uk/news/605400/government-abandons-piracy-legislation.html
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Wed, 28 Jan 2009 00:00:00 CET</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#UK%20Gov%2E%20abandons%20piracy%20legislation</guid>
+
+</item>
+
+<item>
+<title>People's search engines</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#People%27s%20search%20engines</link>
+<description><![CDATA[http://geek2live.blogspot.com/2009/01/people-search-engine-or-when-you-want.html
+
+Community Networks — the Robin Hood Approach
+http://blogs.nmss.com/communications/2009/01/community-networks-the-robinhood-approach.html
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Tue, 27 Jan 2009 00:00:00 CET</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#People%27s%20search%20engines</guid>
+
+</item>
+
+<item>
+<title>Anomalous Wave</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Anomalous%20Wave</link>
+<description><![CDATA[We Won’t Pay for Your Crisis: Italian Struggles Against Education Reform
+
+http://www.metamute.org/en/content/we_won_t_pay_for_your_crisis_italian_struggles_against_education_reform
+
+http://www.insutv.it/domenicaut/numero-puntata/07
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Thu, 22 Jan 2009 00:00:00 CET</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Anomalous%20Wave</guid>
+
+</item>
+
+<item>
+<title>Social Networking and Surveillance</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Social%20Networking%20and%20Surveillance</link>
+<description><![CDATA[Fuchs, Christian. 2009. Social Networking Sites and the Surveillance
+Society. A Critical Case Study of the Usage of studiVZ, Facebook, and
+MySpace by Students in Salzburg in the Context of Electronic
+Surveillance. Salzburg/Vienna: Research Group UTI. ISBN 978-3-200-01428-2.
+
+Study: http://fuchs.icts.sbg.ac.at/SNS_Surveillance_Fuchs.pdf
+
+Background Information: http://fuchs.icts.sbg.ac.at/SNS_E.html
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Tue, 20 Jan 2009 00:00:00 CET</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Social%20Networking%20and%20Surveillance</guid>
+
+</item>
+
+<item>
+<title>Obama's stimulus</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Obama%27s%20stimulus</link>
+<description><![CDATA[An  article titled  Yes, We  Can  Make the  Stimulus More  Stimulating
+appeared  online and  bounced across  many geek's  websites especially
+because mentioning the "Funding  for the Development of Open Software"
+in  USA, apparently  a possible  concern on  the new  president's desk
+Barack Obama.
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Sun, 18 Jan 2009 00:00:00 CET</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Obama%27s%20stimulus</guid>
+
+</item>
+
+<item>
+<title>Al-Jazeera footage released (CC) BY-NC-ND</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Al%2DJazeera%20footage%20released%20</link>
+<description><![CDATA[The news  network Al-Jazeera, originally Arabic and  recently also run
+by  English speaking  editors, decided  to licence  all  its published
+materials under  a Creative Commons  non-commercial and non-derivative
+license.
+
+The  CC.Al-Jazeera  repository was  launched,  archiving all  released
+materials in a organized way and providing download of high-resolution
+media files.
+
+
+http://firefogg.org/
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Thu, 15 Jan 2009 00:00:00 CET</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Al%2DJazeera%20footage%20released%20</guid>
+
+</item>
+
+<item>
+<title>The silkworm dish</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#The%20silkworm%20dish</link>
+<description><![CDATA[Among the list  of efficient food sources, not  really vegetarian, but
+apparently sustainable: eating silkworms.
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Wed, 14 Jan 2009 00:00:00 CET</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#The%20silkworm%20dish</guid>
+
+</item>
+
+<item>
+<title>Politics in Israel</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Politics%20in%20Israel</link>
+<description><![CDATA[Just before  the elections in Israel  and right after  the massacre of
+civilians in Gaza, which also  included bombing of UN headquarters and
+public incitations to murder peace  activists, it's maybe time to have
+a look at  how reasonable people are doing over there.
+
+One impressive  campaign is  December 18th: at  the motto of  FREE THE
+SHMINISTIM" young conscious objectors (among them also the daughter of
+a former deputy  head of Mossad) stepped forward  and refused to serve
+the omnipresent  militarization of Israel, the country  where they are
+born and that still forces them to serve IDF for 2 to 3 years.
+
+Since 20 years now (and finally) we had abolition of coercive military
+service  for youth  in  Europe: this  is  definitely one  of the  most
+important political standpoints  for Israel to work on,  if it intends
+to get closer to Europe.
+
+More on what the militarization of  Israel is doing to the soul of its
+children is  poetically depicted by  the animation Waltz  with Bashir,
+the story of massacres in Sabra  and Shatila in the eyes and memory of
+those who actually served the IDF operated massacres in 1982.
+
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Tue, 13 Jan 2009 00:00:00 CET</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Politics%20in%20Israel</guid>
+
+</item>
+
+<item>
+<title>Not quite in the zone</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#Not%20quite%20in%20the%20zone</link>
+<description><![CDATA[http://www.metamute.org/en/content/not_quite_in_the_zone
+Ben Watson http://www.militantesthetix.co.uk/
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Fri, 09 Jan 2009 00:00:00 CET</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#Not%20quite%20in%20the%20zone</guid>
+
+</item>
+
+<item>
+<title>:</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#%3A</link>
+<description><![CDATA[uscito zeitgeist final ???
+
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Wed, 07 Jan 2009 00:00:00 CET</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#%3A</guid>
+
+</item>
+
+<item>
+<title>:</title>
+<link>http://jaromil.dyne.org/journal/research_2009.html#%3A</link>
+<description><![CDATA[John Maddog Hall: http://www.linux-magazine.com/online/blogs/paw_prints_writings_of_the_maddog/campus_party_brazil_maddog_s_challenge_multimedia_and_free_software
+
+]]></description>
+<author>jaromil</author>
+<pubDate>Mon, 05 Jan 2009 00:00:00 CET</pubDate>
+<guid>http://jaromil.dyne.org/journal/research_2009.html#%3A</guid>
+
+</item>
+
+  </channel>
+</rss>

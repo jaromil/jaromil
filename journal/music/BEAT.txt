@@ -1,0 +1,11 @@
+
+BEAT - funky fasttracking
+by jaromil (1998) - free (OAL)
+
+composed using DOS fasttracker2 
+me and my roland midi controller
+
+full sourcescore available in .XM
+(you can use soundtracker with it)
+render with timidity and gus patches
+

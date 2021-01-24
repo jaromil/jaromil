@@ -1,0 +1,119 @@
+digraph sitemap {
+	graph [root="Jaromil's Musings",
+	       size="25,25!",
+	       bgcolor="#FFEEDD",
+	       rankdir="LR",
+	       overlap="false"];
+	
+	node [URL="\N.html",
+	      style="filled",
+              fontsize="18",
+	      fillcolor="white"];
+	"diaries" [shape="doublecircle", fontsize="22"];
+	"research_2010" [tooltip="Jaromil's Research 2010"];
+	"diaries" -> "research_2010"
+	"research_2009" [tooltip="Jaromil's Research 2009"];
+	"diaries" -> "research_2009"
+	"research_2008" [tooltip="Jaromil's Research 2008"];
+	"diaries" -> "research_2008"
+	"indonesia" [tooltip="Indonesian diary"];
+	"diaries" -> "indonesia"
+	"articles" [shape="doublecircle", fontsize="22"];
+	"wikileaks" [tooltip="Wikileaks cablegates"];
+	"articles" -> "wikileaks"
+	"three_frames_de_menezes" [tooltip="Three frames from the life and death of Jean Charles de Menezes"];
+	"articles" -> "three_frames_de_menezes"
+	"italy_2009" [tooltip="Italy in 2009"];
+	"articles" -> "italy_2009"
+	"eeepc" [tooltip="EEEPC 300EUR GNU/Linux laptop"];
+	"articles" -> "eeepc"
+	"cyclown-circus" [tooltip="The globe-trotter Cyclown Circus"];
+	"articles" -> "cyclown-circus"
+	"jakarta_hackermeeting" [tooltip="Hackers meet in Jakarta"];
+	"articles" -> "jakarta_hackermeeting"
+	"taring_padi" [tooltip="Taring Padi artist collective"];
+	"articles" -> "taring_padi"
+	"software" [shape="doublecircle", fontsize="22"];
+	"dynebolic" [tooltip="dyne:bolic GNU/Linux the Nomadic Multimedia OS"];
+	"software" -> "dynebolic"
+	"artworks" [shape="doublecircle", fontsize="22"];
+	"hasciicam" [tooltip="HasciiCam"];
+	"artworks" -> "hasciicam"
+	"forkbomb_art" [tooltip="ASCII Shell Forkbomb"];
+	"artworks" -> "forkbomb_art"
+	"farah" [tooltip="Farah"];
+	"artworks" -> "farah"
+	"tbt" [tooltip="Time Based Text"];
+	"artworks" -> "tbt"
+	"music" [shape="doublecircle", fontsize="22"];
+	"BEAT" [tooltip="BEAT"];
+	"music" -> "BEAT"
+	"korova" [tooltip="Korova nicest dreams"];
+	"music" -> "korova"
+	"live_in_Makrolab" [tooltip="Live in Makrolab"];
+	"music" -> "live_in_Makrolab"
+	"live_in_Wien" [tooltip="Live in Wien"];
+	"music" -> "live_in_Wien"
+	"novels" [shape="doublecircle", fontsize="22"];
+	"il_cecchino" [tooltip="Il Cecchino"];
+	"novels" -> "il_cecchino"
+	"il_cercastorie" [tooltip="Il Cercastorie"];
+	"novels" -> "il_cercastorie"
+	"il_piantachiodi" [tooltip="Il Piantachiodi"];
+	"novels" -> "il_piantachiodi"
+	"milano_napoli" [tooltip="Milano - Napoli"];
+	"novels" -> "milano_napoli"
+	"inspirations" [shape="doublecircle", fontsize="22"];
+	"design4commoning" [tooltip="Design for Commoning"];
+	"inspirations" -> "design4commoning"
+	"neruda_seabirds" [tooltip="Neruda's seabirds"];
+	"inspirations" -> "neruda_seabirds"
+	"net_collectivism" [tooltip="Network Collectivism"];
+	"inspirations" -> "net_collectivism"
+	"post_futurism" [tooltip="Manifesto of Post Futurism"];
+	"inspirations" -> "post_futurism"
+	"proximity" [tooltip="About Proximity"];
+	"inspirations" -> "proximity"
+	"zero_dollar_laptop" [tooltip="Zero Dollar Laptop Manifesto"];
+	"inspirations" -> "zero_dollar_laptop"
+	"expirations" [shape="doublecircle", fontsize="22"];
+	"weaver_birds" [tooltip="The Weaver Birds"];
+	"expirations" -> "weaver_birds"
+	"piracy_privacy" [tooltip="Piracy, Privacy and Thought Control"];
+	"expirations" -> "piracy_privacy"
+	"rastasoft" [tooltip="Rastasoft - Freedom of Creation"];
+	"expirations" -> "rastasoft"
+	"weaver_birds-it" [tooltip="Gli Uccelli Tessitori"];
+	"expirations" -> "weaver_birds-it"
+	"forkbomb" [tooltip=":(){ :|:& };: - ou de la bohème digitale"];
+	"expirations" -> "forkbomb"
+	"aspirations" [shape="doublecircle", fontsize="22"];
+	"dyne_foundation" [tooltip="dyne.org free software foundry"];
+	"aspirations" -> "dyne_foundation"
+	"dynebolic" [tooltip="dyne:bolic - GNU/Linux multimedia live-CD"];
+	"aspirations" -> "dynebolic"
+	"streamtime" [tooltip="Streamtime "];
+	"aspirations" -> "streamtime"
+	"classes" [shape="doublecircle", fontsize="22"];
+	"VideoMapping-NIMk-2010" [tooltip="Video Mapping Workshop"];
+	"classes" -> "VideoMapping-NIMk-2010"
+	"free_software_ATT" [tooltip="MA class on Art, Theory & Techniques of Free Software"];
+	"classes" -> "free_software_ATT"
+	"make_radio" [tooltip="Make Radio"];
+	"classes" -> "make_radio"
+	"i4d_2007_KL" [tooltip="Video making workshop with Rana Ghose"];
+	"classes" -> "i4d_2007_KL"
+	"about" [shape="doublecircle", fontsize="22"];
+	"who" [tooltip="Who is musing here"];
+	"about" -> "who"
+	"how" [tooltip="How this journal is made"];
+	"about" -> "how"
+	"donate" [tooltip="Invite me for a beer :)"];
+	"about" -> "donate"
+	"why" [tooltip="Why this journal"];
+	"about" -> "why"
+	"resources" [tooltip="Information resources"];
+	"about" -> "resources"
+	"what" [tooltip="What you'll find here?"];
+	"about" -> "what"
+}

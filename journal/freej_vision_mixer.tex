@@ -1,0 +1,120 @@
+\usemodule[pre-01]
+\usemodule[tikz]
+\usemodule[newmat]
+\setupinteraction [state=start]
+\starttext
+\TitlePage { FreeJ Vision Mixer
+\blank[3*medium]
+\tfa Jaromil
+ \blank[2*medium]
+  \tfa Digitale Pioners}\Topic {Brewed in C++ since 2001}
+
+\placefigure[][]{FreeJ logo by Sciatto Prod.}{\externalfigure[images/ipernav.png]}
+
+Following the motto:  {\bf set the veejay free!} FreeJ is  the first GNU GPL
+``veejay'' software, also aiming at  a 100\% free video plugin framework,
+together with Fukuchi Kentaro's EffecTV.
+
+
+\Topic {Realtime video mixer and linear video editor}
+
+FreeJ is a digital instrument for realtime video manipulation used in
+the fields of dance theater, veejaying, medical visualization and TV.
+
+FreeJ  lets  you interact  with  multiple  layers  of video  (images,
+movies,   live  cameras  and   streams,  particle   generators,  text
+scrollers, flash animations and more), filter them with effect chains
+and  then mix  them together.
+
+It  can be  operated live  from  a text  console and  scripted to  be
+controlled by keyboard, midi, OSC and joysticks.
+
+
+\Topic {Core features}
+
+- Interoperable: code can be reused and plugged in applications
+
+- Efficient: faster than usual multimedia frameworks for desktops
+
+- Computes in parallel: designed for multi-threading since the beginning
+
+- Modular: makes use of existing libraries, plugs to different software
+
+- It's 100\% FREE: GNU GPL v3, listed in the FSF software directory
+
+
+\Topic {Developers and contributions}
+
+\placefigure[][]{The FreeJ team at Piksel 2005 in Norway, from left to right: Kysucix, Mr.Goil and Jaromil}{\externalfigure[fotos/portraits/freej_piksel2005.jpg]}
+
+
+Code included:
+
+- Sam Lantinga (sdl\textunderscore{}*)
+
+- FFMpeg video decoders
+
+- Andreas Schiffler (sdl\textunderscore{}gfx)
+
+- Jan (theorautils)
+
+- Dave Griffiths (audio bus)
+
+- Nemosoft (ccvt)
+
+- Charles Yates (yuv2rgb)
+
+- Steve Harris (liblo)
+
+- Olivier Debon (flash).
+
+
+\Topic {Backend engine}
+
+\placefigure[][]{}{\externalfigure[images/freej_serverside.png]}
+
+
+\Topic {Easy to Deploy}
+
+Binary  packages   are  maintained   for  the  main   repositories  of
+Debian/Ubuntu, Fedora and more GNU/Linux distributions.
+
+Debian package subdivision:
+
+- freej
+
+- freej-dbg
+
+- freej-doc
+
+- libfreej
+
+- libfreej-dev
+
+- python-freej
+
+- python-freej-dbg
+
+
+
+\Topic {Tagtool points of interest}
+
+- 100\% Free - GNU GPL version 3
+
+- Cross Platform (32/64 bit, big/little endian, ARM support)
+
+- Extensible Layer and Controller API
+
+- Scriptability in Python and Javascript
+
+- OSX support (Native Cocoa/Carbon and QT components)
+
+- Encoding and Streaming support (Ogg/Theora)
+
+- Controllers: Wiimote, Mouse \& Joy, OSC, MIDI, serial and text Console
+
+- Highly efficient and documented code with reliable dependencies
+
+
+
+\stoptext
