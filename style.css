@@ -10,34 +10,41 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-}
- h1,
- h2,
- h3 {
-     line-height: 1.2;
- }
- code,
- kbd,
- samp,
- pre {
-     font-family:
-         ui-monospace,
-         SFMono-Regular,
-         Consolas,
-         'Liberation Mono',
-         Menlo,
-         monospace; /* 1 */
-     font-size: 1em; /* 2 */
- }
- ul { list-style-type: '' }
 
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+}
+code,
+kbd,
+samp,
+pre {
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Consolas,
+        'Liberation Mono',
+        Menlo,
+        monospace; /* 1 */
+    font-size: 1em; /* 2 */
+}
+ul { list-style-type: '';
+	 margin: 0;
+	 padding: 0;
+   }
+li { margin: 0;
+	 padding: 0;
+	 font-size: .9em;
+   }
 img,
 embed,
 object,
 audio,
 video {
-  max-width: 100%; }
+    max-width: 100%; }
 
 summary {
-	font-size: .8em;
+    font-size: .8em;
+	padding-bottom: 1em;
 }
