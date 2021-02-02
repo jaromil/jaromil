@@ -1,0 +1,81 @@
+==================================================================
+https://keybase.io/jaromil
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://jaromil.dyne.org
+  * I am jaromil (https://keybase.io/jaromil) on keybase.
+  * I have a public key with fingerprint 6113 D89C A825 C5CE DD02  C872 73B3 5DA5 4ACB 7D10
+
+To claim this, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "6113d89ca825c5cedd02c87273b35da54acb7d10",
+            "host": "keybase.io",
+            "key_id": "73b35da54acb7d10",
+            "uid": "e26bf705335861946df6e67e513ed700",
+            "username": "jaromil"
+        },
+        "service": {
+            "hostname": "jaromil.dyne.org",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1412436954,
+    "expire_in": 157680000,
+    "prev": "655de67e2c9f4c6a8697e5abbca0f2f8d8deb255c4e1187622758339b6c40b73",
+    "seqno": 4,
+    "tag": "signature"
+}
+
+with the aforementioned key, yielding the PGP signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG v1
+
+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
+=xP/b
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/jaromil
+
+==================================================================
+
