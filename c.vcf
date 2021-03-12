@@ -1,0 +1,12 @@
+N:VCARD
+VERSION:2.1
+N:Roio;Denis;Jaromil;Dr.
+FN:Jaromil
+ORG:Dyne.org
+PHOTO;GIF:https://jaromil.dyne.org/img/jaromil_vcf.gif
+TEL;WORK;VOICE:+31612628160
+TEL;HOME;VOICE:+393501431762
+ADR;WORK;PREF:;;Haparandadam 7-A1;Amsterdam;NH;1013-AK;The Netherlands
+EMAIL:j@dyne.org
+REV:20212021T202120Z
+END:VCARD
