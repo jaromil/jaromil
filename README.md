@@ -5,8 +5,9 @@
 [![Linkedin Badge](https://img.shields.io/badge/-jaromil-0072b1?style=flat&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/jaromil/)](https://www.linkedin.com/in/jaromil/)  [![Twitter Badge](https://img.shields.io/badge/-jaromil-00acee?style=flat&logo=twitter&logoColor=white&link=https://twitter.com/jaromil/)](https://www.twitter.com/jaromil/)  
 
 
-[![Github stats](https://github-readme-stats.vercel.app/api?username=jaromil&show_icons=true&include_all_commits=true)](https://github.com/jaromil/github-readme-stats)
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=jaromil&layout=compact)](https://github.com/jaromil/github-readme-stats)
+![Github stats](https://github-readme-stats.vercel.app/api?username=jaromil&show_icons=true&include_all_commits=true)
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=jaromil&layout=compact)
+![Trophies](https://github-profile-trophy.vercel.app/?username=jaromil&column=4&&margin-w=5&margin-h=5&no-bg=true&no-frame=true&theme=flat)
 
 <p align=left> <img src=https://komarev.com/ghpvc/?username=jaromil alt=jaromil /> </p>
 
