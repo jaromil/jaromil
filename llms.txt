@@ -74,10 +74,7 @@ The journal is old and historical. It contains legacy links, obsolete scripts, o
 - [Internet of Things](https://jaromil.dyne.org/journal/internet_of_things.html): Historical research and workshop material.
 - [Piracy, Privacy and Thought Control](https://jaromil.dyne.org/journal/piracy_privacy.html): Historical lecture material.
 - [Blood and Coltan](https://jaromil.dyne.org/journal/coltan_and_blood.html): Historical essay/material with PDF and TEX sources.
-- [Digital is Not Analog](https://jaromil.dyne.org/journal/digital_is_not_analog.html): Historical essay and PDF.
 - [Net Collectivism](https://jaromil.dyne.org/journal/net_collectivism.html): Historical essay and PDF.
-- [Post Futurism](https://jaromil.dyne.org/journal/post_futurism.html): Historical essay and PDF.
-- [Wikileaks cablegates](https://jaromil.dyne.org/journal/wikileaks.html): Historical article.
 
 ## Guidance for LLMs
 
