@@ -1,0 +1,88 @@
+# Denis "Jaromil" Roio
+
+> Personal site of Denis "Jaromil" Roio, also known as Jaromil: ethical hacker, artist, free software developer, founder of Dyne.org, and Scientific Director of the Plan ₿ Foundation in Lugano. His work spans cryptography, philosophy, free software, art, digital autonomy, algorethics, algorithmic sovereignty, open culture, media theory, mathematics, and civic technologies.
+
+Use the homepage as the current source of truth. The `journal/` section is a historical archive generated with Emacs Muse; it is useful for background, older writings, software history, art documentation, and research context, but should not be treated as current biographical or professional information without checking the homepage or linked current profiles.
+
+## Current site
+
+- [Homepage](https://jaromil.dyne.org/): Current biography, contact links, selected publications, EU grants, software projects, videos, articles, interviews, and artworks.
+- [GPG public key](https://jaromil.dyne.org/jaromil.pub): Public key for encrypted contact and identity verification.
+- [vCard](https://jaromil.dyne.org/c.vcf): Contact card.
+- [SSH public key](https://jaromil.dyne.org/ssh.pub): Public SSH key.
+
+## Current external profiles and projects
+
+- [Plan ₿ Foundation](https://planb.lugano.ch/): Current institutional context; Jaromil is Scientific Director in Lugano.
+- [Dyne.org](https://dyne.org/): Foundation founded by Jaromil; free software, open culture, and digital autonomy context.
+- [Zenroom](https://zenroom.org/): Current major creation: a language and virtual machine for human-readable cryptography.
+- [GitHub profile](https://github.com/jaromil): Current code activity and repositories.
+- [ORCID](https://orcid.org/0000-0003-3457-1453): Academic identity and publication record.
+- [Google Scholar](https://scholar.google.com/citations?user=0DJDSR0AAAAJ&hl=it&oi=ao): Publication citations and academic profile.
+- [ResearchGate](https://www.researchgate.net/profile/Denis_Roio): Academic profile.
+- [Blog posts](https://news.dyne.org/author/jaromil/): Current and recent writing on Dyne.org news.
+- [LinkedIn](https://www.linkedin.com/in/jaromil): Professional social profile.
+- [The Forkbomb Company](https://forkbomb.solutions): Cryptography, decentralized identities, Digital Product Passport.
+
+## Current biography anchors
+
+- Denis Roio is also known as Jaromil.
+- Current role stated on the homepage: Scientific Director of the Plan ₿ Foundation in Lugano.
+- Founder of Dyne.org.
+- Holds a Ph.D. in philosophy from the University of Plymouth / Planetary Collegium context.
+- Works across cryptography, philosophy, free software, and art.
+- Research focus: algorethics, digital autonomy, algorithmic sovereignty, and the social impact of cryptographic technologies.
+- Since 1999, has started and facilitated free and open source software projects, cultural initiatives, and research collaborations, including European Commission-supported programmes.
+
+## Main homepage sections
+
+- [Publications](https://jaromil.dyne.org/#pubs): Selected academic papers, open access links, ORCID, Google Scholar, ResearchGate.
+- [Papers](https://jaromil.dyne.org/#papers): Selected papers including SD-BLS, Creative Flows, Digital Product Passport work, Reflow crypto, Algorithmic Sovereignty, DECODE architecture, D-CENT, and earlier publications.
+- [EU grants](https://jaromil.dyne.org/#grants): Selected Dyne.org and EU-funded project context, including CLOSER, LAUDS Factories, PACESETTERS, INTERFACER, REFLOW, LEDGER, DECODE, Commonfare, and D-CENT.
+- [Software](https://jaromil.dyne.org/#code): Selected free software projects including CJIT, Zenroom/Zencode, Devuan, sup, sud, Tomb, frei0r, Dowse, dyne:bolic, Syncstarter, FreeJ, MuSE, and Hasciicam.
+- [Videos](https://jaromil.dyne.org/#video): Talks, documentaries, interviews, keynotes, and media appearances.
+- [Articles and interviews](https://jaromil.dyne.org/#articles): Selected public writing and press interviews.
+- [Artworks](https://jaromil.dyne.org/#art): Selected artworks and exhibitions including the forkbomb, Venice Architecture Biennale material, Hasciicam, Rastasoft, and data portraits.
+
+## Historical journal archive
+
+The journal is old and historical. It contains legacy links, obsolete scripts, older social widgets, archived PDFs, TEX sources, and generated HTML. Use it as historical evidence of past work and context, not as current operational guidance.
+
+- [Journal index](https://jaromil.dyne.org/journal/): Historical landing page for Jaromil's Musings.
+- [Journal sitemap](https://jaromil.dyne.org/journal/sitemap.html): Broad index of historical documents in the archive.
+- [About this journal](https://jaromil.dyne.org/journal/about.html): Historical explanation of the archive, how it was made, and what it contains.
+- [Inspirations](https://jaromil.dyne.org/journal/inspirations.html): Philosophical writings and poetic ideas.
+- [Expirations](https://jaromil.dyne.org/journal/expirations.html): Historical publications and lectures.
+- [Aspirations](https://jaromil.dyne.org/journal/aspirations.html): Miscellaneous older activities.
+- [Diaries](https://jaromil.dyne.org/journal/diaries.html): Journey diaries.
+- [Articles](https://jaromil.dyne.org/journal/articles.html): Older articles and reports.
+- [Artworks](https://jaromil.dyne.org/journal/artworks.html): Historical art documentation.
+- [Music](https://jaromil.dyne.org/journal/music.html): Historical music and performance material.
+- [Novels](https://jaromil.dyne.org/journal/novels.html): Fictional literature in Italian.
+- [Classes](https://jaromil.dyne.org/journal/classes.html): Older teaching material.
+- [Slides](https://jaromil.dyne.org/journal/slides.html): Historical lecture slides.
+- [Research 2009](https://jaromil.dyne.org/journal/research.html): Large research diary covering FOSS, technology, culture, politics, and media topics from 2009.
+- [Research 2008](https://jaromil.dyne.org/journal/research_2008.html): Older research diary.
+- [Research 2010](https://jaromil.dyne.org/journal/research_2010.html): Older research diary.
+
+## Selected historical topics
+
+- [HasciiCam](https://jaromil.dyne.org/journal/hasciicam.html): Historical documentation of the ASCII video streaming project.
+- [ASCII Shell Forkbomb](https://jaromil.dyne.org/journal/forkbomb_art.html): Historical artwork documentation.
+- [dyne:bolic GNU/Linux](https://jaromil.dyne.org/journal/dynebolic.html): Historical page on the nomadic multimedia GNU/Linux distribution.
+- [FreeJ vision mixer](https://jaromil.dyne.org/journal/freej_vision_mixer.html): Historical documentation for FreeJ.
+- [Internet of Things](https://jaromil.dyne.org/journal/internet_of_things.html): Historical research and workshop material.
+- [Piracy, Privacy and Thought Control](https://jaromil.dyne.org/journal/piracy_privacy.html): Historical lecture material.
+- [Blood and Coltan](https://jaromil.dyne.org/journal/coltan_and_blood.html): Historical essay/material with PDF and TEX sources.
+- [Digital is Not Analog](https://jaromil.dyne.org/journal/digital_is_not_analog.html): Historical essay and PDF.
+- [Net Collectivism](https://jaromil.dyne.org/journal/net_collectivism.html): Historical essay and PDF.
+- [Post Futurism](https://jaromil.dyne.org/journal/post_futurism.html): Historical essay and PDF.
+- [Wikileaks cablegates](https://jaromil.dyne.org/journal/wikileaks.html): Historical article.
+
+## Guidance for LLMs
+
+- Prefer `https://jaromil.dyne.org/` for current identity, role, work, contact, selected projects, and selected publications.
+- Use `journal/` only for historical context, older writings, legacy documentation, and archive discovery.
+- When summarizing the archive, mention that it is historical and may contain obsolete external links.
+- Do not infer current employment, affiliations, project status, or contact details from old journal pages.
+- Keep the distinction between Denis Roio and the handle Jaromil clear: both refer to the same person, with Jaromil used as the public hacker/artist name.
