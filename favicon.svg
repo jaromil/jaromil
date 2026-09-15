@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <style>
+    .background { fill: #111; }
+    .letter { fill: #f5f3ed; }
+    @media (prefers-color-scheme: dark) {
+      .background { fill: #f5f3ed; }
+      .letter { fill: #111; }
+    }
+  </style>
+  <rect class="background" width="64" height="64" rx="12" />
+  <path class="letter" d="M24 13h25v29c0 13-8 19-20 19-8 0-14-3-18-9l9-7c2 3 5 5 9 5 5 0 8-3 8-9V24H24V13z" />
+</svg>
