@@ -1,0 +1,70 @@
+---
+import { getCollection } from 'astro:content';
+import { href } from '../lib/paths';
+
+/**
+ * Related works: explicit slugs first, then siblings from the same practice.
+ * Rendered as a plain typographic index — no thumbnails, no cards.
+ */
+interface Props {
+  /** Slug of the work being viewed (excluded from the list). */
+  current: string;
+  /** Practice slug whose other works are included. */
+  practice?: string;
+  /** Explicitly related work slugs. */
+  slugs?: string[];
+}
+
+const { current, practice, slugs = [] } = Astro.props;
+
+const works = await getCollection('works');
+const seen = new Set([current]);
+const related = [];
+
+for (const slug of slugs) {
+  const work = works.find((w) => w.id === slug);
+  if (work && !seen.has(work.id)) {
+    seen.add(work.id);
+    related.push(work);
+  }
+}
+if (practice) {
+  for (const work of works) {
+    if (work.data.practice?.id === practice && !seen.has(work.id)) {
+      seen.add(work.id);
+      related.push(work);
+    }
+  }
+}
+---
+
+{
+  related.length > 0 && (
+    <nav class="related" aria-label="Related works">
+      <h2>Related works</h2>
+      <ul class="index-list">
+        {related.map((work) => (
+          <li>
+            <a href={href(`work/${work.id}`)}>{work.data.title}</a>
+            <span class="aside">{work.data.year ?? ''}</span>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  )
+}
+
+<style>
+  .related {
+    margin-block-start: 5rem;
+  }
+  h2 {
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    font-weight: 400;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--grey);
+    margin-block-end: 1rem;
+  }
+</style>

@@ -43,6 +43,8 @@ body {
   margin: 0;
   min-block-size: 100dvh;
   font-size: var(--step-0);
+  /* FullBleed spans 100vw; never allow a horizontal scrollbar */
+  overflow-x: clip;
 }
 
 img, video, svg, iframe { display: block; max-inline-size: 100%; }

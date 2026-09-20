@@ -1,0 +1,9 @@
+---
+/** Secondary information: small, grey, quiet. */
+interface Props {
+  lang?: string;
+}
+const { lang } = Astro.props;
+---
+
+<p class="caption" lang={lang}><slot /></p>

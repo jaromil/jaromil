@@ -1,0 +1,19 @@
+---
+/** Media that escapes the text column and spans the full viewport width. */
+---
+
+<div class="full-bleed">
+  <slot />
+</div>
+
+<style>
+  .full-bleed {
+    inline-size: 100vw;
+    margin-inline-start: calc(50% - 50vw);
+    padding-inline: var(--space-edge);
+  }
+  .full-bleed :global(figcaption) {
+    max-inline-size: var(--measure);
+    margin-inline: auto;
+  }
+</style>

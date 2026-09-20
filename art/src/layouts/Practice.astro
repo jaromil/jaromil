@@ -1,0 +1,84 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import Base from './Base.astro';
+import Media from '../components/Media.astro';
+import { href } from '../lib/paths';
+
+/**
+ * A Practice is an ongoing technique/medium — an authored page explaining
+ * the method and its evolution, exposing the works produced through it.
+ */
+interface Props {
+  entry: CollectionEntry<'practices'>;
+}
+
+const { entry } = Astro.props;
+const { title, yearFrom, yearTo, status, statement, hero, currentRealization } = entry.data;
+
+const works = (await getCollection('works')).filter((w) => w.data.practice?.id === entry.id);
+works.sort((a, b) => (a.data.year ?? 0) - (b.data.year ?? 0));
+
+const current = currentRealization ? await getEntry(currentRealization) : undefined;
+const years = yearFrom
+  ? `${yearTo ? `${yearFrom}–${yearTo}` : `since ${yearFrom}`}`
+  : undefined;
+const contextLine = ['Practice', years, status].filter(Boolean).join(' · ');
+---
+
+<Base title={title} context="Practice">
+  <article class="page">
+    <header>
+      <p class="context">{contextLine}</p>
+      <h1 class="title" transition:name={`title-${entry.id}`}>{title}</h1>
+    </header>
+
+    <div class="hero" transition:name={`hero-${entry.id}`}>
+      <Media media={hero} eager sizes="(min-width: 768px) 76rem, 100vw" />
+    </div>
+
+    <p class="statement">{statement}</p>
+
+    <div class="body">
+      <slot />
+    </div>
+
+    {
+      works.length > 0 && (
+        <section aria-labelledby="works-heading">
+          <h2 class="section-label" id="works-heading">
+            Works
+          </h2>
+          <ul class="index-list">
+            {current && (
+              <li>
+                <a href={href(`work/${current.id}`)}>{current.data.title}</a>
+                <span class="aside">current realization</span>
+              </li>
+            )}
+            {works
+              .filter((w) => w.id !== current?.id)
+              .map((work) => (
+                <li>
+                  <a href={href(`work/${work.id}`)}>{work.data.title}</a>
+                  <span class="aside">{work.data.year ?? ''}</span>
+                </li>
+              ))}
+          </ul>
+        </section>
+      )
+    }
+  </article>
+</Base>
+
+<style>
+  header .context {
+    margin-block-end: 0.5rem;
+  }
+  .statement {
+    margin-block: 4rem 0;
+  }
+  section {
+    margin-block-start: 5rem;
+  }
+</style>

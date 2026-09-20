@@ -54,6 +54,30 @@ h1, h2, h3 {
 }
 .meta { font-family: var(--font-mono); }
 
+/* Content pages: one centered column, generous air */
+.page {
+  padding: 6rem var(--space-edge) 8rem;
+  max-inline-size: 76rem;
+  margin-inline: auto;
+}
+.page .hero { margin-block: 3rem; }
+.page .body { margin-block-start: 4rem; }
+.page .body > * { max-inline-size: var(--measure); }
+.page .body > figure,
+.page .body > .full-bleed,
+.page .body > .statement-block { max-inline-size: none; }
+.page .body > * + * { margin-block-start: 2.5rem; }
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--grey);
+  margin-block-end: 1rem;
+}
+
 /* Typographic indexes: rows of titles, no cards, no thumbnails */
 .index-list {
   list-style: none;

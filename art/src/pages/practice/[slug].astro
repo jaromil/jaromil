@@ -1,0 +1,25 @@
+---
+import { getCollection, render } from 'astro:content';
+import Practice from '../../layouts/Practice.astro';
+import Media from '../../components/Media.astro';
+import Statement from '../../components/Statement.astro';
+import Essay from '../../components/Essay.astro';
+import FullBleed from '../../components/FullBleed.astro';
+import Caption from '../../components/Caption.astro';
+import Meta from '../../components/Meta.astro';
+import RelatedWorks from '../../components/RelatedWorks.astro';
+
+export async function getStaticPaths() {
+  const practices = await getCollection('practices');
+  return practices.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<Practice entry={entry}>
+  <Content
+    components={{ Media, Statement, Essay, FullBleed, Caption, Meta, RelatedWorks }}
+  />
+</Practice>

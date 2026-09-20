@@ -1,0 +1,93 @@
+---
+import { getEntry } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import Base from './Base.astro';
+import Media from '../components/Media.astro';
+import RelatedWorks from '../components/RelatedWorks.astro';
+import { href } from '../lib/paths';
+
+/**
+ * A Work: may belong to a Practice, be a realization of it, or stand alone.
+ * The relationship is explicit but visually unobtrusive — a single context
+ * line above the title.
+ */
+interface Props {
+  entry: CollectionEntry<'works'>;
+}
+
+const { entry } = Astro.props;
+const { title, subtitle, year, yearTo, practice, location, statement, hero, exhibitions } =
+  entry.data;
+
+const practiceEntry = practice ? await getEntry(practice) : undefined;
+const exhibitionEntries = (
+  await Promise.all(exhibitions.map((reference) => getEntry(reference)))
+).filter((e) => e !== undefined);
+
+const dateLine = year ? (yearTo ? `${year}–${yearTo}` : `${year}`) : undefined;
+const metaLine = [dateLine, subtitle, location].filter(Boolean).join(' · ');
+---
+
+<Base title={title} context={practiceEntry?.data.title ?? 'Work'}>
+  <article class="page">
+    <header>
+      {
+        practiceEntry && (
+          <p class="context">
+            <a href={href(`practice/${practiceEntry.id}`)}>{practiceEntry.data.title}</a>
+          </p>
+        )
+      }
+      <h1 class="title" transition:name={`title-${entry.id}`}>{title}</h1>
+      {metaLine && <p class="meta">{metaLine}</p>}
+    </header>
+
+    <div class="hero" transition:name={`hero-${entry.id}`}>
+      <Media media={hero} eager sizes="(min-width: 768px) 76rem, 100vw" />
+    </div>
+
+    {statement && <p class="statement">{statement}</p>}
+
+    <div class="body">
+      <slot />
+    </div>
+
+    {
+      exhibitionEntries.length > 0 && (
+        <section aria-labelledby="exhibitions-heading">
+          <h2 class="section-label" id="exhibitions-heading">
+            Exhibitions
+          </h2>
+          <ul class="index-list">
+            {exhibitionEntries.map((exhibition) => (
+              <li>
+                <a href={href(`exhibition/${exhibition.id}`)}>{exhibition.data.title}</a>
+                <span class="aside">
+                  {exhibition.data.showings.map((s) => s.year).join(', ')}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
+
+    <RelatedWorks
+      current={entry.id}
+      practice={practice?.id}
+      slugs={entry.data.relatedWorks.map((reference) => reference.id)}
+    />
+  </article>
+</Base>
+
+<style>
+  header .context {
+    margin-block-end: 0.5rem;
+  }
+  .statement {
+    margin-block: 4rem 0;
+  }
+  section {
+    margin-block-start: 5rem;
+  }
+</style>

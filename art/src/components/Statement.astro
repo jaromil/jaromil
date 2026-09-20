@@ -1,0 +1,17 @@
+---
+/** Short conceptual statement surrounded by substantial negative space. */
+interface Props {
+  lang?: string;
+}
+const { lang } = Astro.props;
+---
+
+<section class="statement-block" lang={lang}>
+  <p class="statement"><slot /></p>
+</section>
+
+<style>
+  .statement-block {
+    padding-block: clamp(4rem, 14vh, 10rem);
+  }
+</style>

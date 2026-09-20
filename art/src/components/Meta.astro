@@ -1,0 +1,39 @@
+---
+/** Factual metadata as a quiet definition list (imprint, hashes, materials). */
+interface Item {
+  label: string;
+  value: string;
+}
+interface Props {
+  items: Item[];
+}
+const { items } = Astro.props;
+---
+
+<dl class="meta-list">
+  {
+    items.map((item) => (
+      <div>
+        <dt>{item.label}</dt>
+        <dd>{item.value}</dd>
+      </div>
+    ))
+  }
+</dl>
+
+<style>
+  .meta-list {
+    display: grid;
+    gap: 0.4rem;
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    color: var(--grey);
+  }
+  .meta-list div {
+    display: grid;
+    grid-template-columns: 10ch 1fr;
+    gap: 1rem;
+  }
+  dt { margin: 0; }
+  dd { margin: 0; overflow-wrap: anywhere; }
+</style>
