@@ -28,7 +28,7 @@ const total = String(states.length).padStart(2, '0');
     {
       states.map((state, i) => (
         <li class="state" data-state data-slug={state.slug} inert={i !== 0}>
-          <a class="visual" href={state.href} data-visual aria-label={`${state.title} — enter`}>
+          <a class="visual" href={state.href} data-visual aria-label={`Enter ${state.title}`}>
             <Media media={state.hero} eager={i === 0} sizes="(min-width: 768px) 60vw, 92vw" />
           </a>
           <p class="label">
