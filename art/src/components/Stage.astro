@@ -39,14 +39,15 @@ const total = String(states.length).padStart(2, '0');
     }
   </ul>
 
-  <p class="counter" aria-live="polite" aria-atomic="true">
-    <span data-current>01</span> / {total}
+  <p class="counter">
+    <span class="row">
+      <button class="step" type="button" data-prev aria-label="Previous work">←</button>
+      <span><span data-current>01</span> / {total}</span>
+      <button class="step" type="button" data-next aria-label="Next work">→</button>
+    </span>
+    <span class="hint" data-hint hidden>scroll · swipe · arrows</span>
   </p>
-
-  <p class="stage-nav">
-    <button class="visually-hidden" type="button" data-prev>Previous work</button>
-    <button class="visually-hidden" type="button" data-next>Next work</button>
-  </p>
+  <span class="visually-hidden" role="status" aria-live="polite" data-live></span>
 </section>
 
 <style>
@@ -110,12 +111,36 @@ const total = String(states.length).padStart(2, '0');
     position: absolute;
     inset-block-end: 1.4rem;
     inset-inline: 0;
-    text-align: center;
+    display: grid;
+    justify-items: center;
+    gap: 0.5rem;
     font-family: var(--font-mono);
     font-size: var(--step--1);
     letter-spacing: 0.14em;
     color: var(--grey);
   }
+  .counter .row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.9rem;
+  }
+  .step {
+    appearance: none;
+    background: none;
+    border: 0;
+    padding: 0.6rem 0.75rem;
+    font: inherit;
+    letter-spacing: inherit;
+    color: var(--grey);
+    cursor: pointer;
+  }
+  .step:hover { color: var(--white); }
+  .hint {
+    font-size: 0.85em;
+    color: color-mix(in srgb, var(--grey) 70%, transparent);
+    transition: opacity var(--dur) var(--ease);
+  }
+  .hint.fading { opacity: 0; }
 
   /* Mobile: label and counter move into the persistent bottom bar */
   @media (max-width: 767px) {
@@ -155,6 +180,17 @@ const total = String(states.length).padStart(2, '0');
       event.preventDefault();
       stage.dispatchEvent(new CustomEvent('stage:step', { detail: step }));
     });
+
+    // Step buttons (stage counter arrows, mobile bottom-bar arrows).
+    document.addEventListener('click', (event) => {
+      const button = (event.target as HTMLElement).closest('[data-prev], [data-next]');
+      if (!button) return;
+      const stage = document.querySelector<HTMLElement>('[data-stage]');
+      if (!stage) return;
+      stage.dispatchEvent(
+        new CustomEvent('stage:step', { detail: button.hasAttribute('data-prev') ? -1 : 1 }),
+      );
+    });
   }
 
   document.addEventListener('astro:page-load', () => {
@@ -163,11 +199,23 @@ const total = String(states.length).padStart(2, '0');
 
     const states = [...stage.querySelectorAll<HTMLElement>('[data-state]')];
     const current = stage.querySelector<HTMLElement>('[data-current]')!;
+    const live = stage.querySelector<HTMLElement>('[data-live]')!;
     const total = String(states.length).padStart(2, '0');
     const bbCounter = document.querySelector<HTMLElement>('[data-bb-counter]');
     const bbContext = document.querySelector<HTMLElement>('[data-bb-context]');
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
     let index = 0;
+
+    // One-time gesture hint: shown until the first state change, then never again.
+    const HINT_KEY = 'jaromil-stage-hint-seen';
+    const hint = stage.querySelector<HTMLElement>('[data-hint]');
+    if (hint && !localStorage.getItem(HINT_KEY)) hint.hidden = false;
+    function dismissHint() {
+      if (!hint || hint.hidden) return;
+      localStorage.setItem(HINT_KEY, '1');
+      hint.classList.add('fading');
+      hint.addEventListener('transitionend', () => (hint.hidden = true), { once: true });
+    }
 
     function show(next: number) {
       const previous = states[index];
@@ -193,11 +241,11 @@ const total = String(states.length).padStart(2, '0');
       });
 
       const label = `${String(index + 1).padStart(2, '0')} / ${total}`;
+      const title = active.querySelector('[data-label]')?.textContent ?? '';
       current.textContent = String(index + 1).padStart(2, '0');
+      live.textContent = `${title} — ${index + 1} of ${states.length}`;
       if (bbCounter) bbCounter.textContent = label;
-      if (bbContext) bbContext.textContent = active.dataset.slug
-        ? (active.querySelector('[data-label]')?.textContent ?? '')
-        : '';
+      if (bbContext) bbContext.textContent = title;
 
       // If focus was inside the state being hidden, move it to the new one.
       if (previous.contains(document.activeElement)) {
@@ -210,14 +258,12 @@ const total = String(states.length).padStart(2, '0');
     }
 
     stage.addEventListener('stage:step', (event) => {
+      dismissHint();
       const detail = (event as CustomEvent).detail;
       if (detail === 'first') show(0);
       else if (detail === 'last') show(states.length - 1);
       else step(detail);
     });
-
-    stage.querySelector('[data-prev]')?.addEventListener('click', () => step(-1));
-    stage.querySelector('[data-next]')?.addEventListener('click', () => step(1));
 
     // Mouse wheel / trackpad: accumulate, threshold, then lock briefly.
     let accumulated = 0;

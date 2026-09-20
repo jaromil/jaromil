@@ -2,12 +2,28 @@
 interface Props {
   /** Short context label, e.g. the practice a work belongs to. */
   context?: string;
+  /** Show stage step arrows (homepage only). */
+  stageControls?: boolean;
 }
-const { context } = Astro.props;
+const { context, stageControls = false } = Astro.props;
 ---
 
 <nav class="bottom-bar" aria-label="Index">
+  {
+    stageControls && (
+      <button class="step" type="button" data-prev aria-label="Previous work">
+        ←
+      </button>
+    )
+  }
   <span class="counter" data-bb-counter aria-hidden="true"></span>
+  {
+    stageControls && (
+      <button class="step" type="button" data-next aria-label="Next work">
+        →
+      </button>
+    )
+  }
   <span class="context" data-bb-context>{context ?? ''}</span>
   <button class="open" type="button" data-open-index aria-haspopup="dialog" aria-expanded="false">
     <span aria-hidden="true">↑</span> INDEX
@@ -32,6 +48,17 @@ const { context } = Astro.props;
   }
   .counter { color: var(--grey); }
   .counter:empty { display: none; }
+  .step {
+    appearance: none;
+    background: none;
+    border: 0;
+    padding: 0.6rem 0.4rem;
+    margin: -0.6rem -0.2rem;
+    font: inherit;
+    color: var(--grey);
+    cursor: pointer;
+  }
+  .step:hover { color: var(--white); }
   .context {
     overflow: hidden;
     text-overflow: ellipsis;

@@ -11,12 +11,15 @@ interface Props {
   description?: string;
   /** Short context label for the mobile bottom bar. */
   context?: string;
+  /** Homepage: bottom bar carries stage step arrows. */
+  stageControls?: boolean;
 }
 
 const {
   title,
   description = 'Jaromil (Denis Roio) — artist and hacker. Data Portraits, Hasciicam, Dowse, forkbomb.',
   context,
+  stageControls = false,
 } = Astro.props;
 ---
 
@@ -37,7 +40,7 @@ const {
     <main id="main">
       <slot />
     </main>
-    <BottomBar context={context} />
+    <BottomBar context={context} stageControls={stageControls} />
     <IndexOverlay />
   </body>
 </html>
