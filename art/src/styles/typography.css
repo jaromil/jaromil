@@ -93,11 +93,13 @@ h1, h2, h3 {
 }
 .index-list li:last-child { border-block-end: 1px solid color-mix(in srgb, var(--grey) 22%, transparent); }
 .index-list a {
-  text-decoration: none;
+  /* Resting: no underline; hover reveals it. */
+  text-decoration: underline;
+  text-decoration-color: transparent;
   font-size: var(--step-1);
   line-height: 1.2;
 }
-.index-list a:hover { color: var(--white); }
+.index-list a:hover { text-decoration-color: currentColor; }
 .index-list .aside {
   margin-inline-start: auto;
   font-family: var(--font-mono);

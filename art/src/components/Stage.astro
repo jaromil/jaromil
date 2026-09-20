@@ -105,7 +105,15 @@ const total = String(states.length).padStart(2, '0');
     text-transform: uppercase;
     text-align: center;
   }
-  .label a { text-decoration: none; }
+  .label a {
+    text-decoration: underline;
+    text-decoration-color: transparent;
+  }
+  .label a:hover { text-decoration-color: currentColor; }
+  .visual:hover {
+    outline: 1px solid var(--white);
+    outline-offset: 4px;
+  }
 
   .counter {
     position: absolute;
