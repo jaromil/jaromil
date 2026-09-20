@@ -1,151 +1,105 @@
 # Jaromil — artist website
 
-The homepage is completely black; the works generate the visual variation.
-Built with Astro + MDX + vanilla CSS/TypeScript. No UI framework, no CMS,
-no trackers. PeerTube is the only intentional third-party media infrastructure.
-
-## Run
+Black-stage Astro site. The works generate the visual variation; the
+interface stays monochrome. Stack: Astro + MDX + vanilla CSS/TS. Nothing else.
 
 ```sh
 npm install
-npm run dev        # develop at http://localhost:4321/art/
-npm run build      # static output in dist/
-npm run preview    # serve the build locally
-npm run check      # type-check
+npm run dev       # http://localhost:4321/art/
+npm run build     # static output in dist/
+npm run preview   # serve the build
+npm run check     # type-check
 ```
 
-The site is configured to be served under `https://jaromil.dyne.org/art/`
-(`site` + `base` in `astro.config.mjs`). To deploy at a (sub)domain root,
-set `base: '/'` and update `site`, then rebuild.
+Deploy: push to `master` — `.github/workflows/deploy.yml` builds `art/`
+and publishes the whole site (repo root + `art/dist/` at `/art/`) to
+GitHub Pages. One-time: Settings → Pages → Source = "GitHub Actions".
 
-## Deploy
+## Updating content
 
-GitHub Action `.github/workflows/deploy.yml` (on push to `master`, or
-manual dispatch): builds `art/` with `npm ci && npm run build`, assembles
-the full site — the static repository root plus `art/dist/` mounted at
-`/art/` — and deploys to GitHub Pages. One-time setup: repository
-Settings → Pages → Source must be **GitHub Actions** (previously
-"Deploy from a branch"). Manual deploy is equally valid: copy `dist/`
-to any static web server under `/art/` — no runtime, no server code.
+All content is MDX files in `src/content/`. Edit a file, push, done.
+Media files (images, videos) go in `src/assets/media/` and are referenced
+by file name. Facts come only from supplied source material; mark gaps
+with `<p class="todo">…</p>` — never invent.
 
-## Content model
+| To… | Do this |
+|---|---|
+| Edit the site description / identity | `src/lib/site.ts` (single source of truth) |
+| Edit a practice | `src/content/practices/<slug>.mdx` |
+| Edit a work | `src/content/works/<slug>.mdx` |
+| Edit an exhibition | `src/content/exhibitions/<slug>.mdx` |
+| Edit a text | `src/content/texts/<slug>.mdx` |
+| Change the homepage stage order | `sequence` list in `src/pages/index.astro` |
+| Change colors / type | tokens in `src/styles/global.css` |
 
-File-based, typed in `src/content.config.ts`. Four collections in
-`src/content/`: **practices** (ongoing techniques: Data Portraits,
-Hasciicam, Dowse), **works** (may belong to a practice, realize one, or
-stand alone), **exhibitions**, **texts**. Bodies are MDX — compose pages
-with the provided primitives, not with templates.
-
-Media is a typed union (`src/lib/media.ts`): `image | video | peertube | svg | code`.
-Media files live in `src/assets/media/` and are referenced by file name.
-Code is first-class visual material (forkbomb's hero *is* the code).
-
-## Add a Practice
-
-Create `src/content/practices/my-practice.mdx`:
-
-```mdx
----
-title: My Practice
-yearFrom: 2024            # optional; yearTo optional
-status: ongoing           # ongoing | archived
-statement: One or two sentences — shown on the stage and in indexes.
-hero:
-  type: image             # image | video | peertube | svg | code
-  src: my-image.png       # file in src/assets/media/
-  alt: Describe the image for screen readers.
-currentRealization: my-work   # optional slug of a work
----
-
-MDX body — concept, process, evolution. Use <Statement>, <Essay>,
-<FullBleed>, <Media>, <Caption>, <Meta> freely.
-```
-
-Works whose frontmatter says `practice: my-practice` appear automatically
-in the practice page's Works list. To put the practice on the homepage
-stage, add its slug to `sequence` in `src/pages/index.astro`.
-
-## Add a Work
+## Add a work
 
 Create `src/content/works/my-work.mdx`:
 
 ```mdx
 ---
 title: My Work
-year: 2025                # optional; yearTo optional
-practice: my-practice     # optional — omit for standalone works
-location: Lugano          # optional
-statement: Short conceptual statement.   # optional
+year: 2025
+practice: dowse            # optional — links the work to a practice
 hero:
-  type: image
-  src: my-work.png
-  alt: Describe the image.
-relatedWorks: [other-work]        # optional slugs
-exhibitions: [my-exhibition]      # optional slugs
+  type: image              # image | video | peertube | svg | code
+  src: my-image.png        # file in src/assets/media/
+  alt: Describe the image for screen readers.
 ---
 
-MDX body.
+MDX body — prose, or components: <Statement> <Essay> <FullBleed>
+<Media> <Caption> <Meta> <RelatedWorks>.
 ```
 
-Associating a work with a practice is the single `practice:` line — the
-practice page lists it, and the work page shows the practice as context
-above the title. Nothing else to edit.
+The one `practice:` line is the whole association: the practice page
+lists the work, the work page shows the practice. Nothing else to edit.
 
-## Add PeerTube media
+## Add a practice
 
-Anywhere a Media is accepted (hero, or `<Media media={{ ... }} />` in MDX):
+Create `src/content/practices/my-practice.mdx` — same shape, plus
+`statement:` (one or two sentences, shown on the stage) and optional
+`yearFrom`, `status: ongoing|archived`, `currentRealization: <work-slug>`.
+To show it on the homepage stage, add its slug to `sequence` in
+`src/pages/index.astro`.
+
+## Add an exhibition
+
+`src/content/exhibitions/my-exhibition.mdx` with `title`, optional
+`curator`, `showings:` (list of `year` / `venue` / `city`), and
+`works:` (slugs).
+
+## Video and PeerTube
+
+Self-hosted, plays through a plain `<video>`:
 
 ```yaml
-type: peertube
-host: video.example.org     # instance hostname
-uuid: 9c9de5e8-....         # video UUID
-title: Title of the video
-poster: my-poster.png       # optional, from src/assets/media/
+type: video
+sources: [{ src: my-clip.webm, type: video/webm }]
+poster: my-poster.png     # optional
 aspect: 16 / 9
-autoplay: false             # autoplay only ever plays muted
+autoplay: false           # autoplay only ever plays muted
 muted: true
 loop: false
 controls: true
 ```
 
-The page ships only a poster + a link; the iframe is created on activation
-(or in-view for muted autoplay). One video plays at a time; `save-data`
-and reduced-motion are respected. Self-hosted video uses `type: video`
-with `sources: [{ src: clip.webm, type: video/webm }]` and plays through a
-plain `<video>` element.
+PeerTube — lazy by design (poster first, iframe only on activation):
 
-## Add an Exhibition
-
-Create `src/content/exhibitions/my-exhibition.mdx`:
-
-```mdx
----
-title: My Exhibition
-curator: Name             # optional
-showings:
-  - year: 2025
-    venue: Gallery
-    city: City
-works: [my-work]          # slugs
----
-
-MDX body — brief text, documentation via <Media>.
+```yaml
+type: peertube
+host: video.example.org   # instance hostname
+uuid: 9c9de5e8-....       # video UUID
+title: Title of the video
+poster: my-poster.png     # optional
+aspect: 16 / 9
 ```
+
+Use either in a `hero:` or inline in MDX: `<Media media={{ … }} />`.
 
 ## Conventions
 
-- Missing content is marked with `<p class="todo">…</p>` and YAML
-  `# TODO:` comments — never invent facts, dates, or interpretations.
-- Source texts in Italian stay in Italian inside `<div lang="it">`.
-- Homepage stage order is the explicit `sequence` list in
-  `src/pages/index.astro`.
-- Interface stays monochrome (`--black/--white/--grey` in
-  `src/styles/global.css`); colour comes only from the works.
-
-## Smoke tests (development)
-
-Playwright scripts (not part of the build): `stage-test.mjs` (stage
-behaviour), `pages-test.mjs` (routes + relationships), `vt-test.mjs`
-(view transitions + reduced motion), `a11y-test.mjs` (landmarks, h1, alt,
-tab order). Run `npm run build && npm run preview`, then
-`node <script>.mjs`.
+- Italian source prose stays in Italian inside `<div lang="it">`.
+- Interface stays monochrome (`--black/--white/--grey`); colour comes
+  only from artworks. No cards, grids, shadows, badges, hamburger menus.
+- Smoke tests (dev only): `node stage-test.mjs`, `a11y-test.mjs`,
+  `vt-test.mjs`, `pages-test.mjs` against `npm run preview`.

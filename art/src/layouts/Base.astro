@@ -3,6 +3,7 @@ import { ClientRouter } from 'astro:transitions';
 import SiteHeader from '../components/SiteHeader.astro';
 import BottomBar from '../components/BottomBar.astro';
 import IndexOverlay from '../components/IndexOverlay.astro';
+import { site } from '../lib/site';
 import '../styles/global.css';
 import '../styles/typography.css';
 
@@ -17,7 +18,7 @@ interface Props {
 
 const {
   title,
-  description = 'Jaromil (Denis Roio) — artist and hacker. Data Portraits, Hasciicam, Dowse, forkbomb.',
+  description = site.description,
   context,
   stageControls = false,
 } = Astro.props;
@@ -31,7 +32,7 @@ const {
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
-    <title>{title ? `${title} — Jaromil` : 'Jaromil'}</title>
+    <title>{title ? `${title} — ${site.name}` : site.name}</title>
     <ClientRouter />
   </head>
   <body>
