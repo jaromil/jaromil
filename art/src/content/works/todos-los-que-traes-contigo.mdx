@@ -1,0 +1,46 @@
+---
+title: Todos los que traes contigo
+# TODO: year not stated in the source portfolio (2023–26) — confirm
+practice: dowse
+statement: A projector casts the activity of a local network onto a wall across the street; passers-by connect to the Wi-Fi and watch their own devices join the image.
+hero:
+  type: image
+  src: dowse-network.png
+  alt: Luminous network visualization — devices as nodes, their connection requests radiating toward remote services.
+---
+
+<div lang="it">
+
+Un proiettore trasmette l'attività di una rete locale su una parete dall'altra parte della strada. I passanti possono connettersi alla rete Wi-Fi e osservare i propri dispositivi entrare a far parte dell'immagine. Le connessioni si aggregano attorno a ogni nuovo arrivo, intersecandosi con quelle degli altri dispositivi già presenti. Il marciapiede diventa un luogo in cui fermarsi e osservare qualcosa che solitamente è percepibile solo attraverso i suoi effetti.
+
+Un partecipante ripone il telefono, ma l'immagine continua a muoversi. L'opera si concentra sulle comunicazioni avviate dai dispositivi all'insaputa dell'utente o senza alcuna azione intenzionale da parte sua. Il software contatta servizi remoti mentre la nostra attenzione è rivolta altrove, eseguendo istruzioni la cui attuazione raramente diventa visibile. La proiezione conferisce un ritmo percepibile alle richieste di connessione che transitano attraverso l'hub locale. Restando sotto la proiezione, è possibile osservare il proprio dispositivo agire senza avergli impartito alcun comando.
+
+Il titolo fa riferimento alla compagnia che portiamo con noi. Accanto alle persone che scegliamo come compagni di viaggio, vi sono servizi remoti e le organizzazioni che li gestiscono. Alcuni ci sono familiari; altri rivelano relazioni di cui ignoravamo l'esistenza. La loro presenza complica la percezione abituale dell'arrivare soli in un luogo. All'interno dell'immagine, il dispositivo nella tasca di una persona appartiene sia all'aggregazione immediata sia a dinamiche che si estendono ben oltre la strada.
+
+La finestra conferisce a questo incontro un carattere particolare. La connessione viene offerta dall'interno di un edificio: un piccolo gesto di ospitalità verso chi si trova all'esterno. La proiezione permette di osservare ciò che tale invito accoglie. La sua durata segue il ritmo irregolare della strada: uno sguardo di sfuggita mentre si cammina, qualche minuto di attesa per qualcuno, una conversazione tra sconosciuti che notano come i loro dispositivi stiano puntando verso la stessa destinazione. La partecipazione non richiede alcuna performance; gran parte di ciò che compone l'immagine è già in atto.
+
+L'installazione si basa su Dowse, un software libero sviluppato da Dyne.org. Essa amplia la proposta del progetto di creare una rete "demilitarizzata", affrontando la privacy come una responsabilità legata alla convivenza con gli altri. Una connessione sconosciuta non è di per sé segno di ostilità. L'opera crea uno spazio per incuriosirsi riguardo a questi scambi, riconoscerne le abitudini e interrogarsi sulle condizioni in cui avvengono. Il suo apparato rimane aperto all'analisi e alla modifica.
+
+Tale apertura definisce anche i limiti dell'installazione. Solo i dispositivi connessi intenzionalmente dai partecipanti entrano nella visualizzazione, apparendo sotto nomi temporanei anziché identificativi personali. L'interfaccia pubblica non rivela dati sensibili, non esamina il contenuto dei messaggi e non conserva alcuna cronologia delle singole sessioni; tali condizioni vengono illustrate prima di ogni accesso. È possibile fruire dell'opera appieno anche semplicemente osservandola, senza connettersi.
+
+Su scala di quartiere, questa configurazione temporanea concretizza la possibilità di un'infrastruttura gestita e governata dalle persone che la utilizzano. La ricerca più ampia alla base del progetto indaga in che modo i cittadini possano decidere cosa condividere tramite i propri dispositivi e come il valore generato da tali scambi possa sostenere la vita della comunità locale. In questo caso, l'iniziativa prende le mosse da una connessione offerta da una finestra e aperta alla fruizione pubblica. Interrogativi solitamente riservati a chi eroga il servizio possono così emergere direttamente sul marciapiede, tra le persone i cui dispositivi stanno alimentando la rete.
+
+</div>
+
+<section aria-labelledby="tecnica">
+
+## Nota tecnica
+
+<div lang="it">
+
+Il plugin DNS di Dowse monitora le richieste di risoluzione dei domini e le pubblica come eventi dotati di marcatura temporale attraverso un canale Redis locale. Ogni evento include un riferimento temporaneo al dispositivo, un conteggio delle richieste, il dominio, il relativo dominio di primo livello e, ove disponibile, una categoria di servizio più ampia. Il sistema non legge il contenuto dei messaggi né acquisisce materiale scambiato con servizi remoti. Prima che un evento venga visualizzato nell'immagine pubblica, un ulteriore livello di filtraggio rimuove gli indirizzi di rete e altre informazioni identificative, maschera i nomi host sensibili e traduce i domini riconosciuti in etichette curate relative al servizio o all'organizzazione.
+
+Un processo di visualizzazione si connette a questo flusso di eventi in tempo reale. Ogni dispositivo partecipante appare come un nodo temporaneo; le sue richieste generano percorsi verso i servizi contattati. Una prima richiesta crea una relazione, mentre le richieste successive ne modificano l'intensità o il movimento. La convergenza su destinazioni comuni permette alle connessioni di diversi partecipanti di incontrarsi all'interno dell'immagine.
+
+Dowse può fornire questo flusso tramite l'output esistente compatibile con Gource o tramite il protocollo Open Sound Control, consentendo l'utilizzo di un motore grafico personalizzato o di una rappresentazione audiovisiva combinata.
+
+Tutta l'elaborazione avviene localmente. L'installazione utilizza una memoria volatile per gli eventi, disabilita la registrazione persistente dell'attività di rete ed elimina pseudonimi e stato della sessione quando un dispositivo si disconnette o dopo un breve periodo di inattività. Non viene conservata alcuna cronologia di navigazione individuale. L'immagine proiettata è quindi generata dall'attività di rete corrente, anziché da un archivio di dati accumulati nel tempo.
+
+</div>
+
+</section>
