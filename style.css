@@ -1,3 +1,19 @@
+@font-face {
+  font-family: "Literata";
+  src: url("fonts/Literata-Variable.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 200 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Literata";
+  src: url("fonts/Literata-Italic-Variable.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 200 900;
+  font-display: swap;
+}
+
 :root {
   --background: #fff;
   --text: #222;
@@ -7,6 +23,7 @@
   --rule: #ddd;
   --font-text:
     system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display: "Literata", Georgia, "Times New Roman", serif;
   --type-display: clamp(4rem, 14vw, 6rem);
   --type-section: clamp(2rem, 7vw, 2.75rem);
   --type-subsection: 1.3rem;
@@ -84,22 +101,32 @@ h3 {
 }
 
 h1 {
-  max-width: 7ch;
+  max-width: 9ch;
   margin-top: 0;
   margin-bottom: var(--space-6);
+  font-family: var(--font-display);
   font-size: var(--type-display);
-  font-weight: 800;
-  line-height: 0.9;
-  letter-spacing: -0.04em;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 0.96;
+  letter-spacing: -0.025em;
 }
 
 h2 {
   margin-top: var(--space-20);
   margin-bottom: var(--space-5);
+  font-family: var(--font-display);
   font-size: var(--type-section);
-  font-weight: 750;
-  line-height: 1.05;
-  letter-spacing: -0.03em;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+
+h1,
+h2,
+.tc-quote {
+  font-optical-sizing: auto;
+  font-synthesis: none;
 }
 
 h3 {
@@ -272,11 +299,12 @@ hr {
   display: block;
   max-width: 32ch;
   margin: var(--space-6) 0 3.5rem;
+  font-family: var(--font-display);
   font-size: clamp(1.25rem, 4vw, 1.5rem);
-  font-style: normal;
+  font-style: italic;
   font-weight: 600;
-  line-height: 1.45;
-  letter-spacing: -0.015em;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
 }
 
 footer {
