@@ -1,0 +1,37 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { href, pageLocale, t } from '../../lib/i18n';
+
+const locale = pageLocale(Astro.url.pathname);
+const practices = await getCollection('practices');
+---
+
+<Base title={t(locale, 'practices')} context={t(locale, 'practices')}>
+  <div class="page">
+    <header>
+      <h1 class="title">{t(locale, 'practices')}</h1>
+    </header>
+    <ul class="index-list">
+      {
+        practices.map((practice) => (
+          <li>
+            <a href={href(`practice/${practice.id}`, locale)}>{practice.data.title}</a>
+            <span class="aside">
+              {[
+                practice.data.yearFrom
+                  ? practice.data.yearTo
+                    ? `${practice.data.yearFrom}–${practice.data.yearTo}`
+                    : `${t(locale, 'since')} ${practice.data.yearFrom}`
+                  : null,
+                t(locale, practice.data.status),
+              ]
+                .filter(Boolean)
+                .join(' · ')}
+            </span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</Base>

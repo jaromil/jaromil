@@ -1,5 +1,6 @@
 ---
 import type { Media as MediaT } from '../lib/media';
+import { pageLocale, t } from '../lib/i18n';
 import Media from './Media.astro';
 
 /**
@@ -21,9 +22,15 @@ interface Props {
 
 const { states } = Astro.props;
 const total = String(states.length).padStart(2, '0');
+const locale = pageLocale(Astro.url.pathname);
 ---
 
-<section class="stage" data-stage aria-label="Featured works and practices">
+<section
+  class="stage"
+  data-stage
+  data-of={t(locale, 'of')}
+  aria-label={t(locale, 'stageLabel')}
+>
   <ul class="states">
     {
       states.map((state, i) => (
@@ -41,11 +48,11 @@ const total = String(states.length).padStart(2, '0');
 
   <p class="counter">
     <span class="row">
-      <button class="step" type="button" data-prev aria-label="Previous work">←</button>
+      <button class="step" type="button" data-prev aria-label={t(locale, 'prevWork')}>←</button>
       <span><span data-current>01</span> / {total}</span>
-      <button class="step" type="button" data-next aria-label="Next work">→</button>
+      <button class="step" type="button" data-next aria-label={t(locale, 'nextWork')}>→</button>
     </span>
-    <span class="hint" data-hint hidden>scroll · swipe · arrows</span>
+    <span class="hint" data-hint hidden>{t(locale, 'stageHint')}</span>
   </p>
   <span class="visually-hidden" role="status" aria-live="polite" data-live></span>
 </section>
@@ -251,7 +258,7 @@ const total = String(states.length).padStart(2, '0');
       const label = `${String(index + 1).padStart(2, '0')} / ${total}`;
       const title = active.querySelector('[data-label]')?.textContent ?? '';
       current.textContent = String(index + 1).padStart(2, '0');
-      live.textContent = `${title} — ${index + 1} of ${states.length}`;
+      live.textContent = `${title} — ${index + 1} ${stage.dataset.of} ${states.length}`;
       if (bbCounter) bbCounter.textContent = label;
       if (bbContext) bbContext.textContent = title;
 

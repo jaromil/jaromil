@@ -4,7 +4,7 @@ import type { CollectionEntry } from 'astro:content';
 import Base from './Base.astro';
 import Media from '../components/Media.astro';
 import RelatedWorks from '../components/RelatedWorks.astro';
-import { href } from '../lib/paths';
+import { href, pageLocale, t } from '../lib/i18n';
 
 /**
  * A Work: may belong to a Practice, be a realization of it, or stand alone.
@@ -26,15 +26,16 @@ const exhibitionEntries = (
 
 const dateLine = year ? (yearTo ? `${year}–${yearTo}` : `${year}`) : undefined;
 const metaLine = [dateLine, subtitle, location].filter(Boolean).join(' · ');
+const locale = pageLocale(Astro.url.pathname);
 ---
 
-<Base title={title} context={practiceEntry?.data.title ?? 'Work'}>
+<Base title={title} context={practiceEntry?.data.title ?? t(locale, 'work')}>
   <article class="page">
     <header>
       {
         practiceEntry && (
           <p class="context">
-            <a href={href(`practice/${practiceEntry.id}`)}>{practiceEntry.data.title}</a>
+            <a href={href(`practice/${practiceEntry.id}`, locale)}>{practiceEntry.data.title}</a>
           </p>
         )
       }
@@ -56,12 +57,12 @@ const metaLine = [dateLine, subtitle, location].filter(Boolean).join(' · ');
       exhibitionEntries.length > 0 && (
         <section aria-labelledby="exhibitions-heading">
           <h2 class="section-label" id="exhibitions-heading">
-            Exhibitions
+            {t(locale, 'exhibitions')}
           </h2>
           <ul class="index-list">
             {exhibitionEntries.map((exhibition) => (
               <li>
-                <a href={href(`exhibition/${exhibition.id}`)}>{exhibition.data.title}</a>
+                <a href={href(`exhibition/${exhibition.id}`, locale)}>{exhibition.data.title}</a>
                 <span class="aside">
                   {exhibition.data.showings.map((s) => s.year).join(', ')}
                 </span>

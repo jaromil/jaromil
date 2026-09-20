@@ -1,33 +1,15 @@
 ---
-import { getEntry } from 'astro:content';
 import Base from '../layouts/Base.astro';
-import Stage, { type StageState } from '../components/Stage.astro';
-import { href } from '../lib/paths';
+import Stage from '../components/Stage.astro';
+import { getStageStates } from '../lib/stage';
+import { pageLocale, t } from '../lib/i18n';
 
-// The stage sequence, in order. One practice/work at a time; the interface
-// stays constant while the media change. Edit this list to change the rhythm.
-const sequence = [
-  { kind: 'practice', slug: 'data-portraits' },
-  { kind: 'practice', slug: 'dowse' },
-  { kind: 'practice', slug: 'hasciicam' },
-  { kind: 'work', slug: 'forkbomb' },
-] as const;
-
-const states: StageState[] = await Promise.all(
-  sequence.map(async ({ kind, slug }) => {
-    const entry = await getEntry(kind === 'practice' ? 'practices' : 'works', slug);
-    if (!entry) throw new Error(`Stage entry not found: ${kind}/${slug}`);
-    return {
-      slug,
-      title: entry.data.title,
-      href: href(`${kind}/${slug}`),
-      hero: entry.data.hero,
-    };
-  }),
-);
+// The stage sequence itself is edited in src/lib/stage.ts.
+const locale = pageLocale(Astro.url.pathname);
+const states = await getStageStates(locale);
 ---
 
 <Base stageControls>
-  <h1 class="visually-hidden">Jaromil — artist</h1>
+  <h1 class="visually-hidden">{t(locale, 'stageHome')}</h1>
   <Stage states={states} />
 </Base>

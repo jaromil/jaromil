@@ -1,7 +1,8 @@
 ---
 import { getCollection } from 'astro:content';
-import { href } from '../lib/paths';
+import { href, pageLocale, t } from '../lib/i18n';
 
+const locale = pageLocale(Astro.url.pathname);
 const practices = (await getCollection('practices')).filter((p) => !p.id.startsWith('_'));
 const works = (await getCollection('works')).filter((w) => !w.id.startsWith('_'));
 works.sort((a, b) => (b.data.year ?? 0) - (a.data.year ?? 0));
@@ -10,33 +11,33 @@ works.sort((a, b) => (b.data.year ?? 0) - (a.data.year ?? 0));
 <div class="overlay" id="index-overlay" role="dialog" aria-modal="true" aria-label="Index" hidden>
   <nav class="panel" aria-label="Site index">
     <section>
-      <h2>Practices</h2>
+      <h2>{t(locale, 'practices')}</h2>
       <ul>
         {practices.map((p) => (
-          <li><a href={href(`practice/${p.id}`)}>{p.data.title}</a></li>
+          <li><a href={href(`practice/${p.id}`, locale)}>{p.data.title}</a></li>
         ))}
       </ul>
     </section>
     <section>
-      <h2>Works</h2>
+      <h2>{t(locale, 'works')}</h2>
       <ul>
         {works.map((w) => (
-          <li><a href={href(`work/${w.id}`)}>{w.data.title}</a></li>
+          <li><a href={href(`work/${w.id}`, locale)}>{w.data.title}</a></li>
         ))}
       </ul>
     </section>
     <section class="pages">
-      <h2>Site</h2>
+      <h2>{t(locale, 'siteNav')}</h2>
       <ul>
-        <li><a href={href('practices')}>Practices</a></li>
-        <li><a href={href('works')}>Works</a></li>
-        <li><a href={href('texts')}>Texts</a></li>
-        <li><a href={href('exhibitions')}>Exhibitions</a></li>
-        <li><a href={href('bio')}>Bio</a></li>
+        <li><a href={href('practices', locale)}>{t(locale, 'practices')}</a></li>
+        <li><a href={href('works', locale)}>{t(locale, 'works')}</a></li>
+        <li><a href={href('texts', locale)}>{t(locale, 'texts')}</a></li>
+        <li><a href={href('exhibitions', locale)}>{t(locale, 'exhibitions')}</a></li>
+        <li><a href={href('bio', locale)}>{t(locale, 'bio')}</a></li>
       </ul>
     </section>
   </nav>
-  <button class="close" type="button" data-close-index aria-label="Close index">×</button>
+  <button class="close" type="button" data-close-index aria-label={t(locale, 'closeIndex')}>×</button>
 </div>
 
 <style>

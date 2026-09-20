@@ -1,4 +1,6 @@
 ---
+import { pageLocale, t } from '../lib/i18n';
+
 interface Props {
   /** Short context label, e.g. the practice a work belongs to. */
   context?: string;
@@ -6,12 +8,13 @@ interface Props {
   stageControls?: boolean;
 }
 const { context, stageControls = false } = Astro.props;
+const locale = pageLocale(Astro.url.pathname);
 ---
 
 <nav class="bottom-bar" aria-label="Index">
   {
     stageControls && (
-      <button class="step" type="button" data-prev aria-label="Previous work">
+      <button class="step" type="button" data-prev aria-label={t(locale, 'prevWork')}>
         ←
       </button>
     )
@@ -19,7 +22,7 @@ const { context, stageControls = false } = Astro.props;
   <span class="counter" data-bb-counter aria-hidden="true"></span>
   {
     stageControls && (
-      <button class="step" type="button" data-next aria-label="Next work">
+      <button class="step" type="button" data-next aria-label={t(locale, 'nextWork')}>
         →
       </button>
     )

@@ -1,6 +1,6 @@
 ---
 import { getCollection, render } from 'astro:content';
-import ExhibitionPage from '../../components/pages/ExhibitionPage.astro';
+import ExhibitionPage from '../../../components/pages/ExhibitionPage.astro';
 
 export async function getStaticPaths() {
   const exhibitions = await getCollection('exhibitions');

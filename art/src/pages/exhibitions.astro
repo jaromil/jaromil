@@ -1,31 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
-import Base from '../layouts/Base.astro';
-import { href } from '../lib/paths';
-
-const exhibitions = await getCollection('exhibitions');
+import ExhibitionsPage from '../components/pages/ExhibitionsPage.astro';
 ---
 
-<Base title="Exhibitions" context="Exhibitions">
-  <div class="page">
-    <header>
-      <h1 class="title">Exhibitions</h1>
-    </header>
-    {
-      exhibitions.length === 0 ? (
-        <p class="todo">No exhibitions documented yet</p>
-      ) : (
-        <ul class="index-list">
-          {exhibitions.map((exhibition) => (
-            <li>
-              <a href={href(`exhibition/${exhibition.id}`)}>{exhibition.data.title}</a>
-              <span class="aside">
-                {exhibition.data.showings.map((s) => s.year).join(', ')}
-              </span>
-            </li>
-          ))}
-        </ul>
-      )
-    }
-  </div>
-</Base>
+<ExhibitionsPage />

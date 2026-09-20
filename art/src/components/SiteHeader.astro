@@ -1,12 +1,18 @@
 ---
-import { href } from '../lib/paths';
+import { href, pageLocale } from '../lib/i18n';
+import LangSwitch from './LangSwitch.astro';
+
+const locale = pageLocale(Astro.url.pathname);
 ---
 
 <header class="site-header">
-  <a class="wordmark" href={href()} aria-label="Jaromil — home">JAROMIL</a>
-  <button class="info" type="button" data-open-index aria-haspopup="dialog" aria-expanded="false">
-    INDEX
-  </button>
+  <a class="wordmark" href={href('', locale)} aria-label="Jaromil — home">JAROMIL</a>
+  <div class="controls">
+    <LangSwitch />
+    <button class="info" type="button" data-open-index aria-haspopup="dialog" aria-expanded="false">
+      INDEX
+    </button>
+  </div>
 </header>
 
 <style>
@@ -30,6 +36,11 @@ import { href } from '../lib/paths';
     text-decoration-color: transparent;
   }
   .wordmark:hover { text-decoration-color: currentColor; }
+  .controls {
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+  }
   .info {
     appearance: none;
     background: none;

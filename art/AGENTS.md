@@ -30,9 +30,16 @@ and publishes repo root + `art/dist/` at `/art/` to GitHub Pages.
   `image | video | peertube | svg | code`. Never raw HTML strings.
   `src/lib/assets.ts` resolves files from `src/assets/media/`.
 - `src/lib/site.ts` — site identity (name, description). Single source.
-- `src/lib/paths.ts` — `href()` honors base + trailing slash.
-- `src/pages/index.astro` — the homepage: an explicit `sequence` list of
-  slugs feeds `src/components/Stage.astro`. Open it to understand the site.
+- `src/lib/i18n.ts` — multi-language system: locales (en default, it at
+  /it/), `ui` string dictionary, `t()`, `pageLocale()`, `href()`,
+  `altLocaleUrl()`. `src/lib/paths.ts` re-exports `href` (back-compat).
+- `src/lib/stage.ts` — the homepage stage sequence (editorial knob) and
+  its resolver. `src/pages/index.astro` + `src/pages/it/index.astro`
+  render it via `src/components/Stage.astro`.
+- `src/components/pages/` — shared page bodies (Practices, Works,
+  Exhibitions, Texts, Bio, Exhibition, Text) used by both EN pages and
+  the thin `src/pages/it/` wrappers. Dynamic [slug] routes are duplicated
+  thin wrappers per locale; layouts do the real work.
 - `src/layouts/` — `Base` (chrome, ClientRouter), `Work`, `Practice`.
 - `src/components/` — Stage, IndexOverlay, SiteHeader, BottomBar, Media
   family (Image/Video/PeerTube/CodeWork), MDX primitives (Statement,
@@ -80,10 +87,12 @@ motion). Chromium path: `~/.cache/ms-playwright/chromium_headless_shell-1228/...
 
 Complete: scaffold, design system, media abstraction, content (3
 practices, 5 works, 1 exhibition, 1 text), black stage with
-counter-as-control, all routes, view transitions, a11y pass, CI deploy.
-Critique fixes applied (hover states, opaque header, prose rhythm, INDEX
-naming). Open content TODOs (marked in files): Data Portraits practice
-text; years of the three portraits (2024, inferred); year of Todos los
-que traes contigo; Hasciicam video/PeerTube material; la-boheme-digitale
+counter-as-control, all routes, view transitions, a11y pass, CI deploy,
+multi-language (EN default + IT at /it/ with browser-detect redirect on
+entry, header switch override, fallback to available language). Critique
+fixes applied (hover states, opaque header, prose rhythm, INDEX naming).
+Open content TODOs (marked in files): Data Portraits practice text;
+years of the three portraits (2024, inferred); year of Todos los que
+traes contigo; Hasciicam video/PeerTube material; la-boheme-digitale
 full text. Dowse practice/work prose deduplication was proposed, paused
 by the user.

@@ -1,0 +1,29 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { pageLocale, t } from '../../lib/i18n';
+
+interface Props {
+  entry: CollectionEntry<'texts'>;
+}
+
+const { entry } = Astro.props;
+const { title, year, status } = entry.data;
+const locale = pageLocale(Astro.url.pathname);
+---
+
+<Base title={title} context={t(locale, 'text')}>
+  <article class="page">
+    <header>
+      <p class="context">
+        {t(locale, 'text')}{status === 'draft' ? ` · ${t(locale, 'forthcoming')}` : ''}
+      </p>
+      <h1 class="title">{title}</h1>
+      {year && <p class="meta">{year}</p>}
+    </header>
+
+    <div class="body essay">
+      <slot />
+    </div>
+  </article>
+</Base>

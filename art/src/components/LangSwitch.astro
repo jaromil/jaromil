@@ -1,0 +1,61 @@
+---
+import { pageLocale, altLocaleUrl, locales, type Locale } from '../lib/i18n';
+
+/**
+ * Very small language switch: two-letter ISO codes in the header.
+ * Shows the current locale; a manual choice is stored and overrides the
+ * browser language on later visits.
+ */
+const locale = pageLocale(Astro.url.pathname);
+const urls = Object.fromEntries(
+  locales.map((l: Locale) => [l, altLocaleUrl(Astro.url.pathname, l)]),
+);
+---
+
+<select
+  class="lang-switch"
+  data-lang-switch
+  data-urls={JSON.stringify(urls)}
+  aria-label="Language / Lingua"
+>
+  {
+    locales.map((l) => (
+      <option value={l} selected={l === locale}>
+        {l.toUpperCase()}
+      </option>
+    ))
+  }
+</select>
+
+<style>
+  .lang-switch {
+    appearance: none;
+    background: var(--black);
+    border: 0;
+    padding: 0;
+    font: inherit;
+    letter-spacing: inherit;
+    color: var(--grey);
+    cursor: pointer;
+  }
+  .lang-switch:hover { color: var(--white); }
+  .lang-switch option {
+    background: var(--black);
+    color: var(--white);
+  }
+</style>
+
+<script>
+  if (document.documentElement.dataset.langSwitchInit !== 'true') {
+    document.documentElement.dataset.langSwitchInit = 'true';
+    document.addEventListener('change', (event) => {
+      const select = (event.target as HTMLElement).closest<HTMLSelectElement>('[data-lang-switch]');
+      if (!select) return;
+      try {
+        localStorage.setItem('lang', select.value);
+      } catch {}
+      const urls = JSON.parse(select.dataset.urls ?? '{}');
+      if (urls[select.value]) location.href = urls[select.value];
+    });
+  }
+</script>

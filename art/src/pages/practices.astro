@@ -1,36 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
-import Base from '../layouts/Base.astro';
-import { href } from '../lib/paths';
-
-const practices = await getCollection('practices');
+import PracticesPage from '../components/pages/PracticesPage.astro';
 ---
 
-<Base title="Practices" context="Practices">
-  <div class="page">
-    <header>
-      <h1 class="title">Practices</h1>
-    </header>
-    <ul class="index-list">
-      {
-        practices.map((practice) => (
-          <li>
-            <a href={href(`practice/${practice.id}`)}>{practice.data.title}</a>
-            <span class="aside">
-              {[
-                practice.data.yearFrom
-                  ? practice.data.yearTo
-                    ? `${practice.data.yearFrom}–${practice.data.yearTo}`
-                    : `since ${practice.data.yearFrom}`
-                  : null,
-                practice.data.status,
-              ]
-                .filter(Boolean)
-                .join(' · ')}
-            </span>
-          </li>
-        ))
-      }
-    </ul>
-  </div>
-</Base>
+<PracticesPage />

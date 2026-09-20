@@ -18,6 +18,17 @@ const routes = [
   'work/forkbomb/',
   'exhibition/i-love-you/',
   'text/la-boheme-digitale/',
+  'it/',
+  'it/practices/',
+  'it/works/',
+  'it/exhibitions/',
+  'it/texts/',
+  'it/bio/',
+  'it/practice/dowse/',
+  'it/work/forkbomb/',
+  'it/work/todos-los-que-traes-contigo/',
+  'it/exhibition/i-love-you/',
+  'it/text/la-boheme-digitale/',
 ];
 
 const browser = await chromium.launch({

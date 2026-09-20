@@ -29,8 +29,22 @@ with `<p class="todo">…</p>` — never invent.
 | Edit a work | `src/content/works/<slug>.mdx` |
 | Edit an exhibition | `src/content/exhibitions/<slug>.mdx` |
 | Edit a text | `src/content/texts/<slug>.mdx` |
-| Change the homepage stage order | `sequence` list in `src/pages/index.astro` |
+| Edit interface strings (EN/IT) | `ui` dictionary in `src/lib/i18n.ts` |
+| Change the homepage stage order | `sequence` list in `src/lib/stage.ts` |
 | Change colors / type | tokens in `src/styles/global.css` |
+
+## Languages
+
+EN is the default (unprefixed URLs), IT lives under `/it/`. The entry
+page redirects to the browser language; a manual choice in the header
+switch (EN/IT codes) is stored and overrides the browser thereafter.
+Deep links never redirect. Content without a translation falls back to
+the only language available — Italian source prose shows on English
+pages, English-only strings on Italian ones.
+
+To add a language: add its code to `locales` in `src/lib/i18n.ts`, add
+its `ui` dictionary, and mirror the page wrappers from `src/pages/it/`
+into `src/pages/<code>/`.
 
 ## Add a work
 

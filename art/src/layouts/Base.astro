@@ -4,6 +4,7 @@ import SiteHeader from '../components/SiteHeader.astro';
 import BottomBar from '../components/BottomBar.astro';
 import IndexOverlay from '../components/IndexOverlay.astro';
 import { site } from '../lib/site';
+import { pageLocale, altLocaleUrl, locales, t } from '../lib/i18n';
 import '../styles/global.css';
 import '../styles/typography.css';
 
@@ -22,21 +23,47 @@ const {
   context,
   stageControls = false,
 } = Astro.props;
+
+const locale = pageLocale(Astro.url.pathname);
+const alternates = locales.map((l) => ({
+  locale: l,
+  url: new URL(altLocaleUrl(Astro.url.pathname, l), site.url).href,
+}));
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={locale} data-base={import.meta.env.BASE_URL}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script is:inline>
+      // Language routing on the entry point only: a stored manual choice
+      // wins; otherwise the browser language decides. Deep links never redirect.
+      (function () {
+        try {
+          var base = (document.documentElement.dataset.base || '/').replace(/\/?$/, '/');
+          var stored = null;
+          try { stored = localStorage.getItem('lang'); } catch (e) {}
+          var want = stored || ((navigator.language || '').toLowerCase().indexOf('it') === 0 ? 'it' : 'en');
+          var p = location.pathname;
+          if (p === base || p === base.slice(0, -1)) {
+            if (want === 'it') location.replace(base + 'it/');
+          } else if (p === base + 'it/' || p === base + 'it') {
+            if (want === 'en') location.replace(base);
+          }
+        } catch (e) {}
+      })();
+    </script>
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
+    {alternates.map((a) => <link rel="alternate" hreflang={a.locale} href={a.url} />)}
+    <link rel="alternate" hreflang="x-default" href={alternates[0].url} />
     <title>{title ? `${title} — ${site.name}` : site.name}</title>
     <ClientRouter />
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+    <a class="skip-link" href="#main">{t(locale, 'skipLink')}</a>
     <SiteHeader />
     <main id="main">
       <slot />

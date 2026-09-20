@@ -3,7 +3,7 @@ import { getCollection, getEntry } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import Base from './Base.astro';
 import Media from '../components/Media.astro';
-import { href } from '../lib/paths';
+import { href, pageLocale, t } from '../lib/i18n';
 
 /**
  * A Practice is an ongoing technique/medium — an authored page explaining
@@ -20,13 +20,14 @@ const works = (await getCollection('works')).filter((w) => w.data.practice?.id =
 works.sort((a, b) => (a.data.year ?? 0) - (b.data.year ?? 0));
 
 const current = currentRealization ? await getEntry(currentRealization) : undefined;
+const locale = pageLocale(Astro.url.pathname);
 const years = yearFrom
-  ? `${yearTo ? `${yearFrom}–${yearTo}` : `since ${yearFrom}`}`
+  ? `${yearTo ? `${yearFrom}–${yearTo}` : `${t(locale, 'since')} ${yearFrom}`}`
   : undefined;
-const contextLine = ['Practice', years, status].filter(Boolean).join(' · ');
+const contextLine = [t(locale, 'practice'), years, t(locale, status)].filter(Boolean).join(' · ');
 ---
 
-<Base title={title} context="Practice">
+<Base title={title} context={t(locale, 'practice')}>
   <article class="page">
     <header>
       <p class="context">{contextLine}</p>
@@ -47,20 +48,20 @@ const contextLine = ['Practice', years, status].filter(Boolean).join(' · ');
       works.length > 0 && (
         <section aria-labelledby="works-heading">
           <h2 class="section-label" id="works-heading">
-            Works
+            {t(locale, 'works')}
           </h2>
           <ul class="index-list">
             {current && (
               <li>
-                <a href={href(`work/${current.id}`)}>{current.data.title}</a>
-                <span class="aside">current realization</span>
+                <a href={href(`work/${current.id}`, locale)}>{current.data.title}</a>
+                <span class="aside">{t(locale, 'currentRealization')}</span>
               </li>
             )}
             {works
               .filter((w) => w.id !== current?.id)
               .map((work) => (
                 <li>
-                  <a href={href(`work/${work.id}`)}>{work.data.title}</a>
+                  <a href={href(`work/${work.id}`, locale)}>{work.data.title}</a>
                   <span class="aside">{work.data.year ?? ''}</span>
                 </li>
               ))}
