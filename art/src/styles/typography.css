@@ -38,6 +38,13 @@ h1, h2, h3 {
   line-height: 1.7;
 }
 .essay > * + * { margin-block-start: 1.15em; }
+
+/* Source prose wrapped in language divs gets the same rhythm as essays;
+   the .body > * + * block rule only reaches direct children. */
+.page .body [lang] { line-height: 1.7; }
+.page .body [lang] > * + * { margin-block-start: 1.15em; }
+/* MDX-authored sections (e.g. Nota tecnica): heading then prose */
+.page .body section > * + * { margin-block-start: 1.15em; }
 .essay blockquote {
   margin-inline: 0;
   padding-inline-start: 1.2em;
