@@ -1,0 +1,40 @@
+---
+import { href } from '../lib/paths';
+---
+
+<header class="site-header">
+  <a class="wordmark" href={href()} aria-label="Jaromil — home">JAROMIL</a>
+  <button class="info" type="button" data-open-index aria-haspopup="dialog" aria-expanded="false">
+    INFO
+  </button>
+</header>
+
+<style>
+  .site-header {
+    position: fixed;
+    inset-block-start: 0;
+    inset-inline: 0;
+    z-index: 40;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 1rem var(--space-edge);
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    letter-spacing: 0.14em;
+  }
+  .wordmark {
+    text-decoration: none;
+  }
+  .info {
+    appearance: none;
+    background: none;
+    border: 0;
+    padding: 0;
+    font: inherit;
+    letter-spacing: inherit;
+    color: var(--grey);
+    cursor: pointer;
+  }
+  .info:hover { color: var(--white); }
+</style>

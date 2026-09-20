@@ -1,0 +1,149 @@
+---
+import { getCollection } from 'astro:content';
+import { href } from '../lib/paths';
+
+const practices = (await getCollection('practices')).filter((p) => !p.id.startsWith('_'));
+const works = (await getCollection('works')).filter((w) => !w.id.startsWith('_'));
+works.sort((a, b) => (b.data.year ?? 0) - (a.data.year ?? 0));
+---
+
+<div class="overlay" id="index-overlay" role="dialog" aria-modal="true" aria-label="Index" hidden>
+  <nav class="panel" aria-label="Site index">
+    <section>
+      <h2>Practices</h2>
+      <ul>
+        {practices.map((p) => (
+          <li><a href={href(`practice/${p.id}`)}>{p.data.title}</a></li>
+        ))}
+      </ul>
+    </section>
+    <section>
+      <h2>Works</h2>
+      <ul>
+        {works.map((w) => (
+          <li><a href={href(`work/${w.id}`)}>{w.data.title}</a></li>
+        ))}
+      </ul>
+    </section>
+    <section class="pages">
+      <h2>Site</h2>
+      <ul>
+        <li><a href={href('practices')}>Practices</a></li>
+        <li><a href={href('works')}>Works</a></li>
+        <li><a href={href('texts')}>Texts</a></li>
+        <li><a href={href('exhibitions')}>Exhibitions</a></li>
+        <li><a href={href('bio')}>Bio</a></li>
+      </ul>
+    </section>
+  </nav>
+  <button class="close" type="button" data-close-index aria-label="Close index">×</button>
+</div>
+
+<style>
+  .overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    background: var(--black);
+    overflow-y: auto;
+    padding: 4.5rem var(--space-edge) 5rem;
+    opacity: 0;
+    transition: opacity var(--dur) var(--ease);
+  }
+  .overlay.open { opacity: 1; }
+  .panel {
+    display: grid;
+    gap: 3rem;
+    max-inline-size: 70rem;
+  }
+  @media (min-width: 768px) {
+    .panel { grid-template-columns: 1fr 1fr 1fr; }
+  }
+  h2 {
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    font-weight: 400;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--grey);
+    margin-block-end: 1rem;
+  }
+  ul { list-style: none; margin: 0; padding: 0; }
+  li { padding-block: 0.35rem; }
+  a {
+    text-decoration: none;
+    font-size: var(--step-1);
+    line-height: 1.25;
+  }
+  .pages a { font-size: var(--step-0); }
+  .close {
+    position: fixed;
+    inset-block-start: 1rem;
+    inset-inline-end: var(--space-edge);
+    appearance: none;
+    background: none;
+    border: 0;
+    padding: 0;
+    font: inherit;
+    font-size: var(--step-1);
+    color: var(--grey);
+    cursor: pointer;
+  }
+  .close:hover { color: var(--white); }
+</style>
+
+<script>
+  // Document-level listeners are registered once; the overlay element is
+  // queried fresh on every event because ClientRouter swaps page DOM.
+  if (!(document.documentElement.dataset.indexInit === 'true')) {
+    document.documentElement.dataset.indexInit = 'true';
+    let lastTrigger: HTMLElement | null = null;
+
+    const overlay = () => document.getElementById('index-overlay');
+    const setExpanded = (value: boolean) =>
+      document
+        .querySelectorAll<HTMLElement>('[data-open-index]')
+        .forEach((t) => t.setAttribute('aria-expanded', String(value)));
+
+    function open(trigger: HTMLElement) {
+      const el = overlay();
+      if (!el) return;
+      lastTrigger = trigger;
+      el.hidden = false;
+      requestAnimationFrame(() => el.classList.add('open'));
+      document.body.style.overflow = 'hidden';
+      setExpanded(true);
+      el.querySelector<HTMLElement>('a')?.focus();
+    }
+
+    function close() {
+      const el = overlay();
+      if (!el) return;
+      el.classList.remove('open');
+      document.body.style.overflow = '';
+      setExpanded(false);
+      const done = () => {
+        el.hidden = true;
+        el.removeEventListener('transitionend', done);
+      };
+      el.addEventListener('transitionend', done);
+      // Fallback if the transition does not run (reduced motion).
+      setTimeout(done, 600);
+      lastTrigger?.focus();
+    }
+
+    document.addEventListener('click', (event) => {
+      const target = event.target as HTMLElement;
+      const opener = target.closest<HTMLElement>('[data-open-index]');
+      if (opener) {
+        overlay()?.hidden ? open(opener) : close();
+        return;
+      }
+      if (target.closest('[data-close-index]')) close();
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && overlay() && !overlay()!.hidden) close();
+    });
+  }
+</script>

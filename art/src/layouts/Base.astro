@@ -1,0 +1,42 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import SiteHeader from '../components/SiteHeader.astro';
+import BottomBar from '../components/BottomBar.astro';
+import IndexOverlay from '../components/IndexOverlay.astro';
+import '../styles/global.css';
+import '../styles/typography.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  /** Short context label for the mobile bottom bar. */
+  context?: string;
+}
+
+const {
+  title,
+  description = 'Jaromil (Denis Roio) — artist and hacker. Data Portraits, Hasciicam, Dowse, forkbomb.',
+  context,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title ? `${title} — Jaromil` : 'Jaromil'}</title>
+    <ClientRouter />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <SiteHeader />
+    <main id="main">
+      <slot />
+    </main>
+    <BottomBar context={context} />
+    <IndexOverlay />
+  </body>
+</html>

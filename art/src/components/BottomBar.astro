@@ -1,0 +1,57 @@
+---
+interface Props {
+  /** Short context label, e.g. the practice a work belongs to. */
+  context?: string;
+}
+const { context } = Astro.props;
+---
+
+<nav class="bottom-bar" aria-label="Index">
+  <span class="counter" data-bb-counter aria-hidden="true"></span>
+  <span class="context" data-bb-context>{context ?? ''}</span>
+  <button class="open" type="button" data-open-index aria-haspopup="dialog" aria-expanded="false">
+    <span aria-hidden="true">↑</span> INDEX
+  </button>
+</nav>
+
+<style>
+  .bottom-bar {
+    position: fixed;
+    inset-block-end: 0;
+    inset-inline: 0;
+    z-index: 40;
+    display: none;
+    align-items: baseline;
+    gap: 1.25rem;
+    padding: 0.9rem var(--space-edge);
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    background: var(--black);
+  }
+  .counter { color: var(--grey); }
+  .counter:empty { display: none; }
+  .context {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .open {
+    appearance: none;
+    background: none;
+    border: 0;
+    padding: 0;
+    margin-inline-start: auto;
+    font: inherit;
+    letter-spacing: inherit;
+    text-transform: inherit;
+    color: var(--grey);
+    cursor: pointer;
+  }
+  .open:hover { color: var(--white); }
+
+  @media (max-width: 767px) {
+    .bottom-bar { display: flex; }
+  }
+</style>

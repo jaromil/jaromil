@@ -1,0 +1,83 @@
+/* Typography carries the visual identity. */
+
+h1, h2, h3 {
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+/* Page title (work / practice) */
+.title {
+  font-size: var(--step-2);
+  margin-block-end: 0.35em;
+}
+
+/* Context line above a title: DOWSE / TODOS LOS QUE TRAES CONTIGO */
+.context {
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--grey);
+}
+.context a { color: inherit; text-decoration: none; }
+.context a:hover { color: var(--white); }
+
+/* Short conceptual statement surrounded by negative space */
+.statement {
+  font-size: var(--step-1);
+  line-height: 1.35;
+  max-inline-size: 34ch;
+  text-wrap: balance;
+}
+
+/* Long-form reading: restrained measure, generous leading */
+.essay {
+  max-inline-size: var(--measure);
+  line-height: 1.7;
+}
+.essay > * + * { margin-block-start: 1.15em; }
+.essay blockquote {
+  margin-inline: 0;
+  padding-inline-start: 1.2em;
+  border-inline-start: 1px solid var(--grey);
+  color: var(--grey);
+  font-style: italic;
+}
+
+/* Captions and secondary information */
+.caption, .meta {
+  font-size: var(--step--1);
+  color: var(--grey);
+  line-height: 1.5;
+}
+.meta { font-family: var(--font-mono); }
+
+/* Typographic indexes: rows of titles, no cards, no thumbnails */
+.index-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.index-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+  padding-block: 0.9rem;
+  border-block-start: 1px solid color-mix(in srgb, var(--grey) 22%, transparent);
+}
+.index-list li:last-child { border-block-end: 1px solid color-mix(in srgb, var(--grey) 22%, transparent); }
+.index-list a {
+  text-decoration: none;
+  font-size: var(--step-1);
+  line-height: 1.2;
+}
+.index-list a:hover { color: var(--white); }
+.index-list .aside {
+  margin-inline-start: auto;
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  color: var(--grey);
+  text-align: end;
+}
