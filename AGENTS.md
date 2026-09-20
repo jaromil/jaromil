@@ -6,9 +6,11 @@ plus the artist website in `art/` (Astro project, branch `artist-website`).
 ## art/ — artist website
 
 Astro + MDX + vanilla CSS/TS. No UI framework, no CMS, no trackers.
-Docs: `art/README.md`. Build: `cd art && npm run build`. Type-check:
-`npm run check`. Smoke tests: `art/*-test.mjs` (Playwright, against
-`npm run preview`).
+**Start here: `art/AGENTS.md`** (full session briefing). Docs:
+`art/README.md` (content updates), `DESIGN.md` (visual system, with
+`.impeccable/design.json` sidecar). Build: `cd art && npm run build`.
+Type-check: `npm run check`. Smoke tests: `art/*-test.mjs` (Playwright,
+against `npm run preview`).
 
 Key invariants — do not break these without explicit instruction:
 

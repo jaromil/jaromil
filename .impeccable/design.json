@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-20T23:20:00Z",
+  "title": "Design System: Jaromil — Artist Website",
+  "extensions": {
+    "colorMeta": {
+      "stage-black": {
+        "role": "neutral",
+        "displayName": "Stage Black",
+        "canonical": "#080808",
+        "tonalRamp": ["#050505", "#0d0d0c", "#161615", "#242422", "#3a3a37", "#5c5c58", "#8d8d88", "#c8c8c4"]
+      },
+      "warm-white": {
+        "role": "neutral",
+        "displayName": "Warm White",
+        "canonical": "#f1f1ed",
+        "tonalRamp": ["#1a1a19", "#2e2e2c", "#4a4a47", "#6b6b67", "#8d8d88", "#b3b3ae", "#d4d4d0", "#f1f1ed"]
+      },
+      "whisper-grey": {
+        "role": "neutral",
+        "displayName": "Whisper Grey",
+        "canonical": "#8d8d88",
+        "tonalRamp": ["#141413", "#232322", "#383836", "#51514e", "#6e6e6a", "#8d8d88", "#b6b6b2", "#e0e0dc"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Page titles — work and practice names." },
+      "body": { "displayName": "Body", "purpose": "Prose; 62ch measure, 1.7 leading in long-form." },
+      "label": { "displayName": "Label", "purpose": "Mono microtype for code, data, counters, chrome." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "ease-stage", "value": "cubic-bezier(0.22, 0.61, 0.21, 1)", "purpose": "The single easing — stage crossfades, overlay, hint fade." },
+      { "name": "dur-stage", "value": "480ms", "purpose": "The single duration; reduced-motion collapses it to instant." }
+    ],
+    "breakpoints": [
+      { "name": "md", "value": "768px", "purpose": "The only breakpoint; fluid either side via clamp()." }
+    ]
+  },
+  "components": [
+    {
+      "name": "Step Arrow (pager chrome)",
+      "kind": "button",
+      "refersTo": "step-arrow",
+      "description": "Mono arrow button; grey at rest, white on hover — the site's only control style.",
+      "html": "<button class=\"ds-step-arrow\" type=\"button\" aria-label=\"Next work\">→</button>",
+      "css": ".ds-step-arrow { appearance: none; background: none; border: 0; padding: 10px 12px; font-family: var(--font-mono, ui-monospace, Menlo, Consolas, monospace); font-size: 14px; letter-spacing: 0.14em; color: var(--grey, #8d8d88); cursor: pointer; } .ds-step-arrow:hover { color: var(--white, #f1f1ed); } .ds-step-arrow:focus-visible { outline: 1px solid var(--white, #f1f1ed); outline-offset: 4px; }"
+    },
+    {
+      "name": "Wordmark",
+      "kind": "nav",
+      "refersTo": "wordmark",
+      "description": "JAROMIL top-left; white resting, underline revealed on hover.",
+      "html": "<a class=\"ds-wordmark\" href=\"#\">JAROMIL</a>",
+      "css": ".ds-wordmark { font-family: var(--font-mono, ui-monospace, Menlo, Consolas, monospace); font-size: 14px; letter-spacing: 0.14em; color: var(--white, #f1f1ed); text-decoration: underline; text-decoration-color: transparent; text-underline-offset: 0.18em; } .ds-wordmark:hover { text-decoration-color: currentColor; } .ds-wordmark:focus-visible { outline: 1px solid var(--white, #f1f1ed); outline-offset: 4px; }"
+    },
+    {
+      "name": "Index List Row",
+      "kind": "custom",
+      "refersTo": "index-row",
+      "description": "Directory-listing row: hairline rule, title, mono grey aside.",
+      "html": "<ul class=\"ds-index-list\"><li><a href=\"#\">Todos los que traes contigo</a><span class=\"ds-aside\">dowse</span></li><li><a href=\"#\">forkbomb</a><span class=\"ds-aside\">2002</span></li></ul>",
+      "css": ".ds-index-list { list-style: none; margin: 0; padding: 0; font-family: system-ui, sans-serif; } .ds-index-list li { display: flex; align-items: baseline; gap: 24px; padding: 14px 0; border-top: 1px solid color-mix(in srgb, #8d8d88 22%, transparent); } .ds-index-list li:last-child { border-bottom: 1px solid color-mix(in srgb, #8d8d88 22%, transparent); } .ds-index-list a { color: var(--white, #f1f1ed); font-size: clamp(1.35rem, 1.2rem + 0.75vw, 1.8rem); line-height: 1.2; text-decoration: underline; text-decoration-color: transparent; text-underline-offset: 0.18em; } .ds-index-list a:hover { text-decoration-color: currentColor; } .ds-index-list .ds-aside { margin-left: auto; font-family: var(--font-mono, ui-monospace, Menlo, Consolas, monospace); font-size: 13px; color: var(--grey, #8d8d88); text-align: end; }"
+    },
+    {
+      "name": "Context Label",
+      "kind": "custom",
+      "refersTo": "context-label",
+      "description": "Mono tracked-caps grey line above a title: DOWSE / TODOS LOS QUE TRAES CONTIGO.",
+      "html": "<p class=\"ds-context\"><a href=\"#\">Dowse</a></p><h1 class=\"ds-title\">Todos los que traes contigo</h1>",
+      "css": ".ds-context { margin: 0 0 8px; font-family: var(--font-mono, ui-monospace, Menlo, Consolas, monospace); font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--grey, #8d8d88); } .ds-context a { color: inherit; text-decoration: none; } .ds-context a:hover { color: var(--white, #f1f1ed); } .ds-title { margin: 0; font-family: system-ui, sans-serif; font-weight: 500; font-size: clamp(1.8rem, 1.4rem + 2vw, 3rem); line-height: 1.08; letter-spacing: -0.01em; color: var(--white, #f1f1ed); }"
+    },
+    {
+      "name": "Stage Counter",
+      "kind": "custom",
+      "refersTo": "stage-counter",
+      "description": "The counter as control: ← 01 / 04 → in mono microtype.",
+      "html": "<p class=\"ds-counter\"><button class=\"ds-step\" type=\"button\" aria-label=\"Previous work\">←</button><span>01 / 04</span><button class=\"ds-step\" type=\"button\" aria-label=\"Next work\">→</button></p>",
+      "css": ".ds-counter { display: flex; align-items: baseline; justify-content: center; gap: 14px; margin: 0; font-family: var(--font-mono, ui-monospace, Menlo, Consolas, monospace); font-size: 13px; letter-spacing: 0.14em; color: var(--grey, #8d8d88); } .ds-counter .ds-step { appearance: none; background: none; border: 0; padding: 10px 12px; font: inherit; color: inherit; cursor: pointer; } .ds-counter .ds-step:hover { color: var(--white, #f1f1ed); } .ds-counter .ds-step:focus-visible { outline: 1px solid var(--white, #f1f1ed); outline-offset: 4px; }"
+    },
+    {
+      "name": "Statement",
+      "kind": "custom",
+      "refersTo": "statement",
+      "description": "Short conceptual statement isolated in negative space.",
+      "html": "<section class=\"ds-statement\"><p>Thirteen characters that, executed in a terminal, trigger an inexorable self-replicating process.</p></section>",
+      "css": ".ds-statement { padding-block: clamp(4rem, 14vh, 10rem); } .ds-statement p { margin: 0; max-inline-size: 34ch; font-family: system-ui, sans-serif; font-size: clamp(1.35rem, 1.2rem + 0.75vw, 1.8rem); line-height: 1.35; color: var(--white, #f1f1ed); text-wrap: balance; }"
+    },
+    {
+      "name": "Code Work",
+      "kind": "custom",
+      "refersTo": "code-work",
+      "description": "Code as artwork: large selectable mono on black, never replaced by a photograph.",
+      "html": "<figure class=\"ds-code-work\"><pre><code>:(){ :|:&amp; };:</code></pre></figure>",
+      "css": ".ds-code-work { margin: 0; display: grid; place-items: center; background: var(--black, #080808); } .ds-code-work pre { margin: 0; padding: clamp(1.25rem, 4vw, 4rem); overflow-x: auto; max-inline-size: 100%; } .ds-code-work code { font-family: var(--font-mono, ui-monospace, Menlo, Consolas, monospace); font-size: clamp(1.4rem, 5.5vw, 4.5rem); line-height: 1.2; white-space: pre; color: var(--white, #f1f1ed); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Black Stage",
+    "overview": "The homepage is completely black, and the works generate the visual variation. The site is not a portfolio but an exhibition space made from black, typography, moving image, images, diagrams, code, generated visual material, substantial conceptual writing, and empty space. The interface stays structurally constant while the artistic media change radically. The sophistication is meant to be invisible: no framework aesthetic, no decoration, no chrome that exists because websites normally have it. The black space is not unused space; it is part of the work.",
+    "keyCharacteristics": [
+      "Monochrome interface; colour appears only when a work introduces it",
+      "Typography and spatial composition carry the entire visual identity",
+      "One thing at a time: one work on the stage, one column on the page",
+      "Real URLs and real text; effects never sacrifice addressability or access",
+      "Honest placeholders [ … ] instead of invented content"
+    ],
+    "rules": [
+      { "name": "The Artwork-Only Color Rule", "body": "The interface is monochrome. Colour enters a screen only because an artwork carries it. Never tint the UI, never desaturate a work to match the UI.", "section": "colors" },
+      { "name": "The Grey-Rests-White-Acts Rule", "body": "Chrome rests in Whisper Grey and brightens to Warm White on hover; content links rest in Warm White and reveal an underline on hover. Two rules cover every interactive element on the site.", "section": "colors" },
+      { "name": "The Typography-Is-Identity Rule", "body": "No decoration may substitute for typographic composition. If a screen feels empty, the answer is scale, space, or placement — never an added element.", "section": "typography" },
+      { "name": "The Flat Void Rule", "body": "Any shadow, glow, or gradient on interface elements is a defect. The void has no light source.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep the interface to the three neutrals and let artworks supply colour.",
+      "Do give every work and practice a real, shareable URL.",
+      "Do use mono for code, data, imprints, counters, and measurement.",
+      "Do mark missing content with bracketed placeholders ([ … ]) in mono grey — honest gaps over invented prose.",
+      "Do keep media lazy: poster first, muted autoplay only, one video at a time, reduced-motion and save-data respected.",
+      "Do compose mobile intentionally (bottom bar, swipe, viewport media)."
+    ],
+    "donts": [
+      "Don't add cards, thumbnail grids, masonry, shadows, gradients, rounded rectangles, badges, or dashboard aesthetics.",
+      "Don't add hamburger menus, oversized navigation bars, or marketing typography.",
+      "Don't add decorative animation or gratuitous scroll effects; motion is the crossfade, the view-transition morph, and the works themselves.",
+      "Don't desaturate or frame artworks to match the interface.",
+      "Don't load trackers, analytics, webfonts, or third-party content beyond intentional PeerTube media.",
+      "Don't fill missing artistic content with generic placeholder prose."
+    ]
+  }
+}
