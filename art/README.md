@@ -16,8 +16,17 @@ npm run check      # type-check
 
 The site is configured to be served under `https://jaromil.dyne.org/art/`
 (`site` + `base` in `astro.config.mjs`). To deploy at a (sub)domain root,
-set `base: '/'` and update `site`, then rebuild. Deployment is copying
-`dist/` to the web server — no runtime, no server code.
+set `base: '/'` and update `site`, then rebuild.
+
+## Deploy
+
+GitHub Action `.github/workflows/deploy.yml` (on push to `master`, or
+manual dispatch): builds `art/` with `npm ci && npm run build`, assembles
+the full site — the static repository root plus `art/dist/` mounted at
+`/art/` — and deploys to GitHub Pages. One-time setup: repository
+Settings → Pages → Source must be **GitHub Actions** (previously
+"Deploy from a branch"). Manual deploy is equally valid: copy `dist/`
+to any static web server under `/art/` — no runtime, no server code.
 
 ## Content model
 

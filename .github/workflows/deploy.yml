@@ -1,0 +1,67 @@
+name: Deploy site to GitHub Pages
+
+# The site has two parts assembled into one artifact:
+#   1. the static files at the repository root (index.html, journal/, …)
+#   2. the artist website in art/, built with Astro into art/dist/ → served at /art/
+#
+# One-time setup: repository Settings → Pages → Source must be "GitHub Actions"
+# (it was previously "Deploy from a branch").
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: art/package-lock.json
+
+      - name: Build the artist website
+        working-directory: art
+        run: |
+          npm ci
+          npm run build
+
+      - name: Assemble the full site
+        run: |
+          mkdir -p _site/art
+          rsync -a \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='art' \
+            --exclude='_site' \
+            --exclude='node_modules' \
+            ./ _site/
+          rsync -a art/dist/ _site/art/
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
