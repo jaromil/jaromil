@@ -1,0 +1,72 @@
+---
+import { getImage } from 'astro:assets';
+import type { Media } from '../lib/media';
+import { fileAsset, imageAsset } from '../lib/assets';
+
+interface Props {
+  media: Extract<Media, { type: 'video' }>;
+  class?: string;
+}
+
+const { media, class: className } = Astro.props;
+
+// Autoplay is only ever allowed muted and inline (no unexpected audio).
+const autoplay = media.autoplay && media.muted;
+
+const poster = media.poster
+  ? await getImage({ src: imageAsset(media.poster), format: 'webp', width: 1600 })
+  : undefined;
+---
+
+<figure class:list={['media-video', className]} style={media.aspect ? `--aspect: ${media.aspect}` : undefined}>
+  <video
+    autoplay={autoplay || undefined}
+    muted={media.muted || autoplay}
+    loop={media.loop || undefined}
+    controls={media.controls || undefined}
+    playsinline
+    preload={autoplay ? 'auto' : 'metadata'}
+    poster={poster?.src}
+    data-autoplay={autoplay || undefined}
+  >
+    {media.sources.map((s) => <source src={fileAsset(s.src)} type={s.type} />)}
+  </video>
+  {media.caption && <figcaption class="caption">{media.caption}</figcaption>}
+</figure>
+
+<style>
+  .media-video { margin: 0; }
+  .media-video video {
+    inline-size: 100%;
+    block-size: auto;
+    aspect-ratio: var(--aspect, auto);
+    background: var(--black);
+  }
+  figcaption { margin-block-start: 0.6rem; }
+</style>
+
+<script>
+  // Pause autoplaying videos when they leave the viewport; resume on return.
+  if (document.documentElement.dataset.videoInit !== 'true') {
+    document.documentElement.dataset.videoInit = 'true';
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          const video = entry.target as HTMLVideoElement;
+          if (entry.isIntersecting && !reduced.matches) video.play().catch(() => {});
+          else video.pause();
+        }
+      },
+      { threshold: 0.25 },
+    );
+
+    const watch = () =>
+      document
+        .querySelectorAll<HTMLVideoElement>('video[data-autoplay]')
+        .forEach((v) => observer.observe(v));
+
+    document.addEventListener('astro:page-load', watch);
+  }
+</script>

@@ -1,0 +1,40 @@
+---
+import type { Media } from '../lib/media';
+import ImageMedia from './ImageMedia.astro';
+import VideoMedia from './VideoMedia.astro';
+import PeerTube from './PeerTube.astro';
+import CodeWork from './CodeWork.astro';
+import { fileAsset } from '../lib/assets';
+
+interface Props {
+  media: Media;
+  eager?: boolean;
+  sizes?: string;
+  class?: string;
+}
+
+const { media, eager = false, sizes, class: className } = Astro.props;
+---
+
+{media.type === 'image' && <ImageMedia media={media} eager={eager} sizes={sizes} class={className} />}
+
+{
+  media.type === 'svg' && (
+    <figure class:list={['media-svg', className]}>
+      <img src={fileAsset(media.src)} alt={media.alt} loading={eager ? 'eager' : 'lazy'} decoding="async" />
+      {media.caption && <figcaption class="caption">{media.caption}</figcaption>}
+    </figure>
+  )
+}
+
+{media.type === 'video' && <VideoMedia media={media} class={className} />}
+
+{media.type === 'peertube' && <PeerTube media={media} class={className} />}
+
+{media.type === 'code' && <CodeWork media={media} class={className} />}
+
+<style>
+  .media-svg { margin: 0; }
+  .media-svg img { inline-size: 100%; block-size: auto; }
+  .media-svg figcaption { margin-block-start: 0.6rem; }
+</style>

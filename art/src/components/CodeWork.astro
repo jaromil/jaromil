@@ -1,0 +1,46 @@
+---
+import type { Media } from '../lib/media';
+
+/**
+ * For works whose code is itself the visual material (forkbomb).
+ * The code occupies the visual field, stays selectable, and is never
+ * replaced by a photograph.
+ */
+interface Props {
+  media: Extract<Media, { type: 'code' }>;
+  class?: string;
+}
+
+const { media, class: className } = Astro.props;
+---
+
+<figure class:list={['code-work', className]}>
+  <pre><code lang={media.lang}>{media.code}</code></pre>
+  {media.caption && <figcaption class="caption">{media.caption}</figcaption>}
+</figure>
+
+<style>
+  .code-work {
+    margin: 0;
+    display: grid;
+    place-items: center;
+    min-block-size: inherit;
+  }
+  pre {
+    margin: 0;
+    padding: var(--space-edge);
+    overflow-x: auto;
+    max-inline-size: 100%;
+  }
+  code {
+    font-family: var(--font-mono);
+    font-size: clamp(1.4rem, 5.5vw, 4.5rem);
+    line-height: 1.2;
+    white-space: pre;
+    color: var(--white);
+  }
+  figcaption {
+    margin-block-start: 1rem;
+    text-align: center;
+  }
+</style>

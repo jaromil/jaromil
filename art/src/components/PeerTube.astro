@@ -1,0 +1,154 @@
+---
+import { getImage } from 'astro:assets';
+import type { Media } from '../lib/media';
+import { imageAsset } from '../lib/assets';
+
+/**
+ * PeerTube embeds are lazy and privacy-respecting: the page ships only a
+ * poster (or a plain play surface) plus a link to the video on its instance.
+ * The iframe is created only when the visitor activates the media, or when
+ * an autoplay item scrolls into view (always muted).
+ */
+interface Props {
+  media: Extract<Media, { type: 'peertube' }>;
+  class?: string;
+}
+
+const { media, class: className } = Astro.props;
+
+const poster = media.poster
+  ? await getImage({ src: imageAsset(media.poster), format: 'webp', width: 1600 })
+  : undefined;
+
+const params = new URLSearchParams({
+  title: '0',
+  warningTitle: '0',
+  peertubeLink: '0',
+  controls: media.controls ? '1' : '0',
+  loop: media.loop ? '1' : '0',
+});
+const watchUrl = `https://${media.host}/w/${media.uuid}`;
+---
+
+<figure
+  class:list={['peertube', className]}
+  style={`--aspect: ${media.aspect}`}
+  data-peertube
+  data-host={media.host}
+  data-uuid={media.uuid}
+  data-params={params.toString()}
+  data-autoplay={media.autoplay || undefined}
+  data-muted={media.muted || undefined}
+>
+  <button class="surface" type="button" aria-label={`Play video: ${media.title}`}>
+    {poster && <img src={poster.src} alt="" loading="lazy" decoding="async" />}
+    <span class="play" aria-hidden="true">▶</span>
+  </button>
+  <noscript>
+    <p class="caption"><a href={watchUrl}>Watch “{media.title}” on {media.host}</a></p>
+  </noscript>
+  {media.caption && <figcaption class="caption">{media.caption}</figcaption>}
+</figure>
+
+<style>
+  .peertube { margin: 0; }
+  .surface {
+    appearance: none;
+    display: block;
+    inline-size: 100%;
+    aspect-ratio: var(--aspect, 16 / 9);
+    padding: 0;
+    border: 0;
+    background: color-mix(in srgb, var(--white) 4%, var(--black));
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  .surface img {
+    position: absolute;
+    inset: 0;
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+  }
+  .play {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    font-size: var(--step-2);
+    color: var(--white);
+    opacity: 0.75;
+    transition: opacity var(--dur) var(--ease);
+  }
+  .surface:hover .play, .surface:focus-visible .play { opacity: 1; }
+  .peertube iframe {
+    inline-size: 100%;
+    aspect-ratio: var(--aspect, 16 / 9);
+    border: 0;
+    background: var(--black);
+  }
+  figcaption { margin-block-start: 0.6rem; }
+</style>
+
+<script>
+  if (document.documentElement.dataset.peertubeInit !== 'true') {
+    document.documentElement.dataset.peertubeInit = 'true';
+
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const saveData = (navigator as Navigator & { connection?: { saveData?: boolean } })
+      .connection?.saveData === true;
+    const originals = new WeakMap<Element, string>();
+
+    function activate(el: Element) {
+      if (el.classList.contains('is-active')) return;
+      // Only one primary video plays at a time.
+      document.querySelectorAll('[data-peertube].is-active').forEach(deactivate);
+      const { host, uuid, params, muted } = (el as HTMLElement).dataset;
+      if (!originals.has(el)) originals.set(el, el.querySelector('.surface')?.outerHTML ?? '');
+      const iframe = document.createElement('iframe');
+      const query = new URLSearchParams(params);
+      query.set('autoplay', '1');
+      if (muted === 'true' || query.get('autoplay') === '1') query.set('muted', '1');
+      iframe.src = `https://${host}/videos/embed/${uuid}?${query.toString()}`;
+      iframe.allow = 'autoplay; fullscreen; picture-in-picture';
+      iframe.allowFullscreen = true;
+      iframe.title = el.querySelector('.surface')?.getAttribute('aria-label') ?? 'Video';
+      el.classList.add('is-active');
+      el.querySelector('.surface')?.replaceWith(iframe);
+    }
+
+    function deactivate(el: Element) {
+      if (!el.classList.contains('is-active')) return;
+      const html = originals.get(el);
+      el.classList.remove('is-active');
+      if (html) el.querySelector('iframe')?.replaceWith(
+        document.createRange().createContextualFragment(html),
+      );
+    }
+
+    document.addEventListener('click', (event) => {
+      const surface = (event.target as HTMLElement).closest('.surface');
+      const host = surface?.closest('[data-peertube]');
+      if (host) activate(host);
+    });
+
+    // Autoplay items activate in view (muted only) and pause when leaving.
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting && !reduced.matches && !saveData) activate(entry.target);
+          else deactivate(entry.target);
+        }
+      },
+      { threshold: 0.5 },
+    );
+
+    document.addEventListener('astro:page-load', () => {
+      if (saveData) return;
+      document
+        .querySelectorAll('[data-peertube][data-autoplay="true"]')
+        .forEach((el) => observer.observe(el));
+    });
+  }
+</script>

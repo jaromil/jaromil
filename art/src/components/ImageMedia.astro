@@ -1,0 +1,43 @@
+---
+import { Image } from 'astro:assets';
+import type { Media } from '../lib/media';
+import { imageAsset } from '../lib/assets';
+
+interface Props {
+  media: Extract<Media, { type: 'image' }>;
+  /** Above-the-fold: load eagerly with high priority. */
+  eager?: boolean;
+  sizes?: string;
+  class?: string;
+}
+
+const {
+  media,
+  eager = false,
+  sizes = '(min-width: 768px) 75vw, 100vw',
+  class: className,
+} = Astro.props;
+---
+
+<figure class:list={['media-image', className]}>
+  <Image
+    src={imageAsset(media.src)}
+    alt={media.alt}
+    widths={[720, 1080, 1600, 2048]}
+    sizes={sizes}
+    format="webp"
+    loading={eager ? 'eager' : 'lazy'}
+    decoding="async"
+    fetchpriority={eager ? 'high' : 'auto'}
+  />
+  {media.caption && <figcaption class="caption">{media.caption}</figcaption>}
+</figure>
+
+<style>
+  .media-image { margin: 0; }
+  .media-image img {
+    inline-size: 100%;
+    block-size: auto;
+  }
+  figcaption { margin-block-start: 0.6rem; }
+</style>
