@@ -1,0 +1,75 @@
+---
+import { getCollection, getEntry, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { href } from '../../lib/paths';
+
+export async function getStaticPaths() {
+  const exhibitions = await getCollection('exhibitions');
+  return exhibitions.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { title, curator, showings, works } = entry.data;
+const { Content } = await render(entry);
+
+const workEntries = (await Promise.all(works.map((reference) => getEntry(reference)))).filter(
+  (w) => w !== undefined,
+);
+---
+
+<Base title={title} context="Exhibition">
+  <article class="page">
+    <header>
+      <p class="context">Exhibition</p>
+      <h1 class="title">{title}</h1>
+      {curator && <p class="meta">curated by {curator}</p>}
+    </header>
+
+    <section aria-labelledby="showings-heading">
+      <h2 class="section-label" id="showings-heading">Showings</h2>
+      <ul class="index-list">
+        {
+          showings.map((showing) => (
+            <li>
+              <span>{showing.venue}</span>
+              <span class="aside">
+                {showing.year} · {showing.city}
+              </span>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <div class="body">
+      <Content />
+    </div>
+
+    {
+      workEntries.length > 0 && (
+        <section aria-labelledby="works-heading">
+          <h2 class="section-label" id="works-heading">
+            Works shown
+          </h2>
+          <ul class="index-list">
+            {workEntries.map((work) => (
+              <li>
+                <a href={href(`work/${work.id}`)}>{work.data.title}</a>
+                <span class="aside">{work.data.year ?? ''}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
+  </article>
+</Base>
+
+<style>
+  section {
+    margin-block-start: 3rem;
+  }
+  .body {
+    margin-block-start: 3rem;
+  }
+</style>

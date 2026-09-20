@@ -1,0 +1,28 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import { href } from '../lib/paths';
+
+const works = await getCollection('works');
+works.sort((a, b) => (b.data.year ?? 0) - (a.data.year ?? 0));
+---
+
+<Base title="Works" context="Works">
+  <div class="page">
+    <header>
+      <h1 class="title">Works</h1>
+    </header>
+    <ul class="index-list">
+      {
+        works.map((work) => (
+          <li>
+            <a href={href(`work/${work.id}`)}>{work.data.title}</a>
+            <span class="aside">
+              {[work.data.year, work.data.practice?.id].filter(Boolean).join(' · ')}
+            </span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</Base>

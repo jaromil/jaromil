@@ -112,6 +112,10 @@ works.sort((a, b) => (b.data.year ?? 0) - (a.data.year ?? 0));
       el.hidden = false;
       requestAnimationFrame(() => el.classList.add('open'));
       document.body.style.overflow = 'hidden';
+      // Keep keyboard focus inside the dialog.
+      document.querySelectorAll('main, .site-header, .bottom-bar').forEach((n) => {
+        (n as HTMLElement).inert = true;
+      });
       setExpanded(true);
       el.querySelector<HTMLElement>('a')?.focus();
     }
@@ -121,6 +125,9 @@ works.sort((a, b) => (b.data.year ?? 0) - (a.data.year ?? 0));
       if (!el) return;
       el.classList.remove('open');
       document.body.style.overflow = '';
+      document.querySelectorAll('main, .site-header, .bottom-bar').forEach((n) => {
+        (n as HTMLElement).inert = false;
+      });
       setExpanded(false);
       const done = () => {
         el.hidden = true;

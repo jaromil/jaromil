@@ -1,0 +1,40 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import { href } from '../lib/paths';
+
+const texts = await getCollection('texts');
+texts.sort((a, b) => (b.data.year ?? 0) - (a.data.year ?? 0));
+---
+
+<Base title="Texts" context="Texts">
+  <div class="page">
+    <header>
+      <h1 class="title">Texts</h1>
+    </header>
+    <ul class="index-list">
+      {
+        texts.map((text) => (
+          <li>
+            <a href={href(`text/${text.id}`)}>{text.data.title}</a>
+            <span class="aside">
+              {[text.data.year, text.data.status === 'draft' ? 'forthcoming' : null]
+                .filter(Boolean)
+                .join(' · ')}
+            </span>
+          </li>
+        ))
+      }
+    </ul>
+    <p class="caption">
+      Long-form writing also lives inside the practice and work pages. Jaromil's journal of
+      musings is at <a href="https://jaromil.dyne.org/journal/">jaromil.dyne.org/journal</a>.
+    </p>
+  </div>
+</Base>
+
+<style>
+  .caption {
+    margin-block-start: 3rem;
+  }
+</style>

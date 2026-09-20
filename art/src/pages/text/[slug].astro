@@ -1,0 +1,29 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+export async function getStaticPaths() {
+  const texts = await getCollection('texts');
+  return texts.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { title, year, status } = entry.data;
+const { Content } = await render(entry);
+---
+
+<Base title={title} context="Text">
+  <article class="page">
+    <header>
+      <p class="context">
+        Text{status === 'draft' ? ' · forthcoming' : ''}
+      </p>
+      <h1 class="title">{title}</h1>
+      {year && <p class="meta">{year}</p>}
+    </header>
+
+    <div class="body essay">
+      <Content />
+    </div>
+  </article>
+</Base>
