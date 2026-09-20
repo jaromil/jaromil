@@ -1,0 +1,245 @@
+---
+import type { Media as MediaT } from '../lib/media';
+import Media from './Media.astro';
+
+/**
+ * The homepage is one black stage. Works and practices appear one at a
+ * time; the interface stays structurally identical while the artistic
+ * media change radically. It is a selector, not a carousel: every state
+ * links to a real URL.
+ */
+export interface StageState {
+  slug: string;
+  title: string;
+  href: string;
+  hero: MediaT;
+}
+
+interface Props {
+  states: StageState[];
+}
+
+const { states } = Astro.props;
+const total = String(states.length).padStart(2, '0');
+---
+
+<section class="stage" data-stage aria-label="Featured works and practices">
+  <ul class="states">
+    {
+      states.map((state, i) => (
+        <li class="state" data-state data-slug={state.slug} inert={i !== 0}>
+          <a class="visual" href={state.href} data-visual aria-label={`${state.title} — enter`}>
+            <Media media={state.hero} eager={i === 0} sizes="(min-width: 768px) 60vw, 92vw" />
+          </a>
+          <p class="label">
+            <a href={state.href} data-label>{state.title}</a>
+          </p>
+        </li>
+      ))
+    }
+  </ul>
+
+  <p class="counter" aria-live="polite" aria-atomic="true">
+    <span data-current>01</span> / {total}
+  </p>
+
+  <p class="stage-nav">
+    <button class="visually-hidden" type="button" data-prev>Previous work</button>
+    <button class="visually-hidden" type="button" data-next>Next work</button>
+  </p>
+</section>
+
+<style>
+  .stage {
+    position: relative;
+    block-size: 100dvh;
+    overflow: hidden;
+  }
+  .states {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .state {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    align-items: center;
+    justify-items: center;
+    padding: 4rem var(--space-edge) 5.5rem;
+    opacity: 1;
+    visibility: visible;
+    transition:
+      opacity var(--dur) var(--ease),
+      visibility 0s linear 0s;
+  }
+  .state[inert] {
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity var(--dur) var(--ease),
+      visibility 0s linear var(--dur);
+  }
+
+  .visual {
+    display: grid;
+    place-items: center;
+    max-inline-size: 100%;
+    text-decoration: none;
+  }
+  .visual :global(img) {
+    max-block-size: 62dvh;
+    inline-size: auto;
+    max-inline-size: 100%;
+    margin-inline: auto;
+  }
+  .visual :global(.code-work) {
+    min-block-size: 40dvh;
+  }
+
+  .label {
+    font-size: var(--step-1);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .label a { text-decoration: none; }
+
+  .counter {
+    position: absolute;
+    inset-block-end: 1.4rem;
+    inset-inline: 0;
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    letter-spacing: 0.14em;
+    color: var(--grey);
+  }
+
+  /* Mobile: label and counter move into the persistent bottom bar */
+  @media (max-width: 767px) {
+    .state { padding-block-end: 4.5rem; }
+    .label, .counter { display: none; }
+    .visual :global(img) { max-block-size: 66dvh; }
+  }
+</style>
+
+<script>
+  // Document-level key handling is registered once (ClientRouter keeps the
+  // document alive across navigations); wheel/touch bind per page load.
+  if (document.documentElement.dataset.stageKeysInit !== 'true') {
+    document.documentElement.dataset.stageKeysInit = 'true';
+
+    document.addEventListener('keydown', (event) => {
+      const stage = document.querySelector<HTMLElement>('[data-stage]');
+      if (!stage) return;
+      // Do not steal keys while the index overlay is open or a field is focused.
+      const overlay = document.getElementById('index-overlay');
+      if (overlay && !overlay.hidden) return;
+      const tag = (event.target as HTMLElement).tagName;
+      if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
+      if (event.metaKey || event.ctrlKey || event.altKey) return;
+
+      const step =
+        event.key === 'ArrowDown' || event.key === 'ArrowRight' || event.key === 'PageDown'
+          ? 1
+          : event.key === 'ArrowUp' || event.key === 'ArrowLeft' || event.key === 'PageUp'
+            ? -1
+            : event.key === 'Home'
+              ? 'first'
+              : event.key === 'End'
+                ? 'last'
+                : null;
+      if (step === null) return;
+      event.preventDefault();
+      stage.dispatchEvent(new CustomEvent('stage:step', { detail: step }));
+    });
+  }
+
+  document.addEventListener('astro:page-load', () => {
+    const stage = document.querySelector<HTMLElement>('[data-stage]');
+    if (!stage) return;
+
+    const states = [...stage.querySelectorAll<HTMLElement>('[data-state]')];
+    const current = stage.querySelector<HTMLElement>('[data-current]')!;
+    const total = String(states.length).padStart(2, '0');
+    const bbCounter = document.querySelector<HTMLElement>('[data-bb-counter]');
+    const bbContext = document.querySelector<HTMLElement>('[data-bb-context]');
+    let index = 0;
+
+    function show(next: number) {
+      const previous = states[index];
+      index = (next + states.length) % states.length;
+      const active = states[index];
+
+      states.forEach((state, i) => {
+        state.inert = i !== index;
+        // Only the visible state carries view-transition names, so a page
+        // navigation morphs the current visual/title into the work page.
+        const visual = state.querySelector<HTMLElement>('[data-visual]');
+        const label = state.querySelector<HTMLElement>('[data-label]');
+        if (visual) visual.style.viewTransitionName = i === index ? `hero-${state.dataset.slug}` : '';
+        if (label) label.style.viewTransitionName = i === index ? `title-${state.dataset.slug}` : '';
+      });
+
+      const label = `${String(index + 1).padStart(2, '0')} / ${total}`;
+      current.textContent = String(index + 1).padStart(2, '0');
+      if (bbCounter) bbCounter.textContent = label;
+      if (bbContext) bbContext.textContent = active.dataset.slug
+        ? (active.querySelector('[data-label]')?.textContent ?? '')
+        : '';
+
+      // If focus was inside the state being hidden, move it to the new one.
+      if (previous.contains(document.activeElement)) {
+        active.querySelector<HTMLElement>('a')?.focus({ preventScroll: true });
+      }
+    }
+
+    function step(direction: number) {
+      show(index + direction);
+    }
+
+    stage.addEventListener('stage:step', (event) => {
+      const detail = (event as CustomEvent).detail;
+      if (detail === 'first') show(0);
+      else if (detail === 'last') show(states.length - 1);
+      else step(detail);
+    });
+
+    stage.querySelector('[data-prev]')?.addEventListener('click', () => step(-1));
+    stage.querySelector('[data-next]')?.addEventListener('click', () => step(1));
+
+    // Mouse wheel / trackpad: accumulate, threshold, then lock briefly.
+    let accumulated = 0;
+    let locked = false;
+    stage.addEventListener(
+      'wheel',
+      (event) => {
+        event.preventDefault();
+        if (locked) return;
+        accumulated += event.deltaY;
+        if (Math.abs(accumulated) < 40) return;
+        step(accumulated > 0 ? 1 : -1);
+        accumulated = 0;
+        locked = true;
+        setTimeout(() => (locked = false), 700);
+      },
+      { passive: false },
+    );
+
+    // Touch: vertical swipe.
+    let touchY: number | null = null;
+    stage.addEventListener('touchstart', (event) => {
+      touchY = event.touches[0].clientY;
+    }, { passive: true });
+    stage.addEventListener('touchend', (event) => {
+      if (touchY === null) return;
+      const delta = touchY - event.changedTouches[0].clientY;
+      touchY = null;
+      if (Math.abs(delta) > 48) step(delta > 0 ? 1 : -1);
+    }, { passive: true });
+
+    show(0);
+  });
+</script>

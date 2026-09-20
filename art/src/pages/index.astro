@@ -1,7 +1,32 @@
 ---
+import { getEntry } from 'astro:content';
 import Base from '../layouts/Base.astro';
+import Stage, { type StageState } from '../components/Stage.astro';
+import { href } from '../lib/paths';
+
+// The stage sequence, in order. One practice/work at a time; the interface
+// stays constant while the media change. Edit this list to change the rhythm.
+const sequence = [
+  { kind: 'practice', slug: 'data-portraits' },
+  { kind: 'practice', slug: 'dowse' },
+  { kind: 'practice', slug: 'hasciicam' },
+  { kind: 'work', slug: 'forkbomb' },
+] as const;
+
+const states: StageState[] = await Promise.all(
+  sequence.map(async ({ kind, slug }) => {
+    const entry = await getEntry(kind === 'practice' ? 'practices' : 'works', slug);
+    if (!entry) throw new Error(`Stage entry not found: ${kind}/${slug}`);
+    return {
+      slug,
+      title: entry.data.title,
+      href: href(`${kind}/${slug}`),
+      hero: entry.data.hero,
+    };
+  }),
+);
 ---
 
 <Base>
-  <p class="todo">stage forthcoming</p>
+  <Stage states={states} />
 </Base>

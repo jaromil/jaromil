@@ -87,6 +87,34 @@ ul, ol { padding-inline-start: 1.2em; }
 .todo::before { content: "[ "; }
 .todo::after { content: " ]"; }
 
+/* Visually hidden but available to assistive technology */
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+.visually-hidden:focus-visible {
+  position: fixed;
+  inset-block-end: 1rem;
+  inset-inline-start: 1rem;
+  inline-size: auto;
+  block-size: auto;
+  margin: 0;
+  padding: 0.5rem 0.75rem;
+  clip: auto;
+  clip-path: none;
+  background: var(--white);
+  color: var(--black);
+  z-index: 100;
+}
+
 /* Reduced motion: nothing moves, transitions become instant. */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
