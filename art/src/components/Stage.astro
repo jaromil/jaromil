@@ -166,6 +166,7 @@ const total = String(states.length).padStart(2, '0');
     const total = String(states.length).padStart(2, '0');
     const bbCounter = document.querySelector<HTMLElement>('[data-bb-counter]');
     const bbContext = document.querySelector<HTMLElement>('[data-bb-context]');
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
     let index = 0;
 
     function show(next: number) {
@@ -181,6 +182,14 @@ const total = String(states.length).padStart(2, '0');
         const label = state.querySelector<HTMLElement>('[data-label]');
         if (visual) visual.style.viewTransitionName = i === index ? `hero-${state.dataset.slug}` : '';
         if (label) label.style.viewTransitionName = i === index ? `title-${state.dataset.slug}` : '';
+        // IntersectionObserver does not react to inert toggles, so the stage
+        // itself starts/stops autoplay media in its states.
+        state
+          .querySelectorAll<HTMLVideoElement>('video[data-autoplay]')
+          .forEach((video) => {
+            if (i === index && !reduced.matches) video.play().catch(() => {});
+            else video.pause();
+          });
       });
 
       const label = `${String(index + 1).padStart(2, '0')} / ${total}`;

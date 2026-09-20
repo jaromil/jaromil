@@ -20,7 +20,6 @@ const poster = media.poster
 
 <figure class:list={['media-video', className]} style={media.aspect ? `--aspect: ${media.aspect}` : undefined}>
   <video
-    autoplay={autoplay || undefined}
     muted={media.muted || autoplay}
     loop={media.loop || undefined}
     controls={media.controls || undefined}
@@ -55,7 +54,10 @@ const poster = media.poster
       (entries) => {
         for (const entry of entries) {
           const video = entry.target as HTMLVideoElement;
-          if (entry.isIntersecting && !reduced.matches) video.play().catch(() => {});
+          // Intersection alone is not enough: an element inside an inert or
+          // hidden ancestor (e.g. an inactive stage state) still intersects.
+          const concealed = video.closest('[inert], [hidden]') !== null;
+          if (entry.isIntersecting && !concealed && !reduced.matches) video.play().catch(() => {});
           else video.pause();
         }
       },
