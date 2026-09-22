@@ -1,0 +1,425 @@
+---
+import { Image } from 'astro:assets';
+import type { Media } from '../lib/media';
+import { imageAsset } from '../lib/assets';
+import { pageLocale, t } from '../lib/i18n';
+
+/**
+ * Live HasciiCam: the WASM build of hasciicam (vendored from the dyne.org
+ * CI demo into public/hasciicam/) renders the visitor's camera as ASCII,
+ * drawn on a canvas with the site mono font. The poster stands in until
+ * the camera runs and stays as fallback when it cannot. The camera starts
+ * when the media becomes active (stage state or visible hero) and every
+ * track stops when it is swiped away, hidden, or the page is left.
+ * Frames never leave the browser.
+ */
+interface Props {
+  media: Extract<Media, { type: 'hasciicam' }>;
+  eager?: boolean;
+  class?: string;
+}
+
+const { media, eager = false, class: className } = Astro.props;
+const locale = pageLocale(Astro.url.pathname);
+---
+
+<figure
+  class:list={['media-hasciicam', className]}
+  data-hasciicam
+  data-base={import.meta.env.BASE_URL}
+  data-msg-unavailable={t(locale, 'cameraUnavailable')}
+  data-msg-denied={t(locale, 'cameraDenied')}
+>
+  <Image
+    src={imageAsset(media.poster)}
+    alt={media.alt}
+    widths={[720, 1080, 1600]}
+    sizes="(min-width: 768px) 75vw, 100vw"
+    format="webp"
+    loading={eager ? 'eager' : 'lazy'}
+    decoding="async"
+    fetchpriority={eager ? 'high' : 'auto'}
+    data-poster
+  />
+  <canvas width="640" height="477" role="img" aria-label={media.alt} data-canvas hidden></canvas>
+  <video playsinline muted aria-hidden="true" data-video hidden></video>
+  <p class="controls">
+    <button type="button" class="toggle" data-toggle hidden>{t(locale, 'startCamera')}</button>
+  </p>
+  <p class="visually-hidden" role="status" data-status></p>
+  {media.caption && <figcaption class="caption">{media.caption}</figcaption>}
+</figure>
+
+<style>
+  .media-hasciicam { margin: 0; }
+  .media-hasciicam img,
+  .media-hasciicam canvas {
+    inline-size: 100%;
+    block-size: auto;
+    display: block;
+  }
+  .media-hasciicam img[hidden],
+  .media-hasciicam canvas[hidden],
+  .media-hasciicam video[hidden] { display: none; }
+  .controls { margin: 0.6rem 0 0; }
+  .controls:has(.toggle[hidden]) { display: none; }
+  .toggle {
+    appearance: none;
+    background: none;
+    border: 0;
+    padding: 0;
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--grey);
+    cursor: pointer;
+  }
+  .toggle:hover { color: var(--white); }
+  figcaption { margin-block-start: 0.6rem; }
+</style>
+
+<script>
+  /**
+   * One WASM runtime per session; one camera session per component root.
+   * Lifecycle is event-driven: the Stage dispatches hasciicam:activate /
+   * hasciicam:deactivate on the root when its state becomes current or is
+   * swiped away; standalone heroes activate via IntersectionObserver.
+   * Document-level hooks are registered once (ClientRouter keeps the
+   * document alive across navigations).
+   */
+  const SOURCE_W = 320;
+  const SOURCE_H = 240;
+  const GRID_W = 80;
+  const GRID_H = 53;
+  const FONT_STACK = 'ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, monospace';
+
+  interface WasmApi {
+    init(sW: number, sH: number, gW: number, gH: number, renderer: number): number;
+    submit(ptr: number, size: number, w: number, h: number, stride: number): number;
+    render(): number;
+    asciiText(): number;
+    asciiWidth(): number;
+    asciiHeight(): number;
+    shutdown(): void;
+  }
+
+  interface Session {
+    desired: boolean;
+    running: boolean;
+    starting: boolean;
+    token: number;
+    stream: MediaStream | null;
+    raf: number;
+    ptr: number;
+    ptrSize: number;
+    initialized: boolean;
+    source: HTMLCanvasElement | null;
+  }
+
+  type HasciicamModule = Record<string, any>;
+
+  let runtimePromise: Promise<void> | null = null;
+  let api: WasmApi | null = null;
+
+  function module_(): HasciicamModule {
+    return (window as any).Module;
+  }
+
+  function loadRuntime(base: string): Promise<void> {
+    if (runtimePromise) return runtimePromise;
+    runtimePromise = new Promise<void>((resolve, reject) => {
+      (window as any).Module = {
+        onRuntimeInitialized: () => resolve(),
+        onAbort: (message: unknown) => reject(new Error(String(message))),
+        printErr: () => {},
+      };
+      const script = document.createElement('script');
+      script.src = `${base}hasciicam/hasciicam.js`;
+      script.async = true;
+      script.onerror = () => reject(new Error('hasciicam.js failed to load'));
+      document.head.appendChild(script);
+    });
+    runtimePromise.catch(() => {
+      runtimePromise = null;
+    });
+    return runtimePromise;
+  }
+
+  function getApi(): WasmApi {
+    if (!api) {
+      const M = module_();
+      api = {
+        init: M.cwrap('hasciicam_wasm_init', 'number', [
+          'number', 'number', 'number', 'number', 'number',
+        ]),
+        submit: M.cwrap('hasciicam_wasm_submit_rgba', 'number', [
+          'number', 'number', 'number', 'number', 'number',
+        ]),
+        render: M.cwrap('hasciicam_wasm_render', 'number', []),
+        asciiText: M.cwrap('hasciicam_wasm_ascii_text', 'number', []),
+        asciiWidth: M.cwrap('hasciicam_wasm_ascii_width', 'number', []),
+        asciiHeight: M.cwrap('hasciicam_wasm_ascii_height', 'number', []),
+        shutdown: M.cwrap('hasciicam_wasm_shutdown', null, []),
+      };
+    }
+    return api!;
+  }
+
+  function newSession(): Session {
+    return {
+      desired: false,
+      running: false,
+      starting: false,
+      token: 0,
+      stream: null,
+      raf: 0,
+      ptr: 0,
+      ptrSize: 0,
+      initialized: false,
+      source: null,
+    };
+  }
+
+  function sessionOf(root: HTMLElement): Session {
+    return ((root as any).__hc ??= newSession());
+  }
+
+  function setStatus(root: HTMLElement, message: string) {
+    const status = root.querySelector<HTMLElement>('[data-status]');
+    if (status) status.textContent = message;
+  }
+
+  function showToggle(root: HTMLElement, show: boolean) {
+    const toggle = root.querySelector<HTMLButtonElement>('[data-toggle]');
+    if (toggle) toggle.hidden = !show;
+  }
+
+  function showCanvas(root: HTMLElement, live: boolean) {
+    const poster = root.querySelector<HTMLElement>('[data-poster]');
+    const canvas = root.querySelector<HTMLCanvasElement>('[data-canvas]');
+    if (poster) poster.hidden = live;
+    if (canvas) canvas.hidden = !live;
+  }
+
+  function stopSession(root: HTMLElement) {
+    const s = sessionOf(root);
+    s.token += 1;
+    s.starting = false;
+    s.running = false;
+    if (s.raf) cancelAnimationFrame(s.raf);
+    s.raf = 0;
+    if (s.stream) s.stream.getTracks().forEach((track) => track.stop());
+    s.stream = null;
+    const video = root.querySelector<HTMLVideoElement>('[data-video]');
+    if (video) video.srcObject = null;
+    if (s.initialized) {
+      s.initialized = false;
+      try {
+        getApi().shutdown();
+      } catch {}
+    }
+    if (s.ptr) {
+      try {
+        module_()._free(s.ptr);
+      } catch {}
+    }
+    s.ptr = 0;
+    s.ptrSize = 0;
+    showCanvas(root, false);
+  }
+
+  function drawFrame(root: HTMLElement) {
+    const s = sessionOf(root);
+    const canvas = root.querySelector<HTMLCanvasElement>('[data-canvas]');
+    const video = root.querySelector<HTMLVideoElement>('[data-video]');
+    if (!canvas || !video || !api) return false;
+    if (!s.source) {
+      s.source = document.createElement('canvas');
+      s.source.width = SOURCE_W;
+      s.source.height = SOURCE_H;
+    }
+    const src = s.source.getContext('2d', { willReadFrequently: true });
+    const ctx = canvas.getContext('2d');
+    if (!src || !ctx) return false;
+
+    src.drawImage(video, 0, 0, SOURCE_W, SOURCE_H);
+    const pixels = src.getImageData(0, 0, SOURCE_W, SOURCE_H).data;
+    const M = module_();
+    if (pixels.byteLength > s.ptrSize) {
+      if (s.ptr) M._free(s.ptr);
+      s.ptr = M._malloc(pixels.byteLength);
+      s.ptrSize = s.ptr ? pixels.byteLength : 0;
+      if (!s.ptr) return false;
+    }
+    M.HEAPU8.set(pixels, s.ptr);
+    if (!api.submit(s.ptr, pixels.byteLength, SOURCE_W, SOURCE_H, SOURCE_W * 4)) return false;
+    if (!api.render()) return false;
+
+    const textPtr = api.asciiText();
+    const width = api.asciiWidth();
+    const height = api.asciiHeight();
+    if (!textPtr || width <= 0 || height <= 0) return false;
+
+    const cellW = canvas.width / width;
+    const cellH = canvas.height / height;
+    ctx.fillStyle = '#080808';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = '#f1f1ed';
+    ctx.font = `${cellH}px ${FONT_STACK}`;
+    ctx.textBaseline = 'top';
+    const glyphW = ctx.measureText('M').width || cellW;
+    ctx.save();
+    ctx.scale(cellW / glyphW, 1);
+    for (let row = 0; row < height; row += 1) {
+      const start = textPtr + row * width;
+      const line = String.fromCharCode(...M.HEAPU8.subarray(start, start + width));
+      ctx.fillText(line, 0, row * cellH);
+    }
+    ctx.restore();
+    return true;
+  }
+
+  function scheduleFrame(root: HTMLElement) {
+    const s = sessionOf(root);
+    if (!s.running || s.raf) return;
+    s.raf = requestAnimationFrame(() => {
+      s.raf = 0;
+      if (!s.running) return;
+      if (!drawFrame(root)) {
+        fail(root, root.dataset.msgUnavailable ?? '');
+        return;
+      }
+      scheduleFrame(root);
+    });
+  }
+
+  function fail(root: HTMLElement, message: string) {
+    stopSession(root);
+    sessionOf(root).desired = false;
+    if (message) setStatus(root, message);
+    showToggle(root, true);
+  }
+
+  async function startSession(root: HTMLElement, manual: boolean) {
+    const s = sessionOf(root);
+    if (s.running || s.starting) return;
+    s.desired = true;
+    if (!manual) {
+      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const saveData = (navigator as any).connection?.saveData === true;
+      if (reduced || saveData) {
+        showToggle(root, true);
+        return;
+      }
+    }
+    if (!window.isSecureContext || !navigator.mediaDevices?.getUserMedia) {
+      fail(root, root.dataset.msgUnavailable ?? '');
+      return;
+    }
+
+    const token = ++s.token;
+    s.starting = true;
+    try {
+      await loadRuntime(root.dataset.base ?? '/');
+      if (token !== s.token) return;
+      const stream = await navigator.mediaDevices.getUserMedia({
+        video: { width: SOURCE_W, height: SOURCE_H },
+        audio: false,
+      });
+      if (token !== s.token) {
+        stream.getTracks().forEach((track) => track.stop());
+        return;
+      }
+      s.stream = stream;
+      const video = root.querySelector<HTMLVideoElement>('[data-video]')!;
+      video.srcObject = stream;
+      await new Promise<void>((resolve) =>
+        video.addEventListener('loadedmetadata', () => resolve(), { once: true }),
+      );
+      if (token !== s.token) return;
+      await video.play();
+      if (token !== s.token) return;
+      // Renderer 2: AA-lib renders to its text buffer; we draw it with
+      // native Canvas 2D — no SDL window or WebGL context involved.
+      if (!getApi().init(SOURCE_W, SOURCE_H, GRID_W, GRID_H, 2)) {
+        fail(root, root.dataset.msgUnavailable ?? '');
+        return;
+      }
+      s.initialized = true;
+      s.starting = false;
+      s.running = true;
+      setStatus(root, '');
+      showToggle(root, false);
+      showCanvas(root, true);
+      scheduleFrame(root);
+    } catch (error) {
+      if (token !== s.token) return;
+      const denied =
+        error instanceof DOMException &&
+        (error.name === 'NotAllowedError' || error.name === 'SecurityError');
+      fail(root, denied ? (root.dataset.msgDenied ?? '') : (root.dataset.msgUnavailable ?? ''));
+    }
+  }
+
+  if (document.documentElement.dataset.hasciicamInit !== 'true') {
+    document.documentElement.dataset.hasciicamInit = 'true';
+
+    document.addEventListener('astro:page-load', () => {
+      const observer = new IntersectionObserver((entries) => {
+        for (const entry of entries) {
+          const root = entry.target as HTMLElement;
+          if (entry.isIntersecting) startSession(root, false);
+          else {
+            sessionOf(root).desired = false;
+            stopSession(root);
+          }
+        }
+      });
+
+      document.querySelectorAll<HTMLElement>('[data-hasciicam]').forEach((root) => {
+        if (root.dataset.hcBound !== 'true') {
+          root.dataset.hcBound = 'true';
+          root.addEventListener('hasciicam:activate', () => startSession(root, false));
+          root.addEventListener('hasciicam:deactivate', () => {
+            sessionOf(root).desired = false;
+            stopSession(root);
+          });
+          root.querySelector('[data-toggle]')?.addEventListener('click', () => {
+            startSession(root, true);
+          });
+        }
+        const state = root.closest<HTMLElement>('[data-state]');
+        if (state) {
+          // Stage-driven: the Stage dispatches activate/deactivate events.
+          // Cover the initial state too, in case it dispatched before our
+          // listeners were attached.
+          if (!state.inert) startSession(root, false);
+        } else {
+          observer.observe(root);
+        }
+      });
+    });
+
+    document.addEventListener('astro:before-swap', () => {
+      document.querySelectorAll<HTMLElement>('[data-hasciicam]').forEach((root) => {
+        sessionOf(root).desired = false;
+        stopSession(root);
+      });
+    });
+
+    window.addEventListener('pagehide', () => {
+      document.querySelectorAll<HTMLElement>('[data-hasciicam]').forEach(stopSession);
+    });
+
+    document.addEventListener('visibilitychange', () => {
+      document.querySelectorAll<HTMLElement>('[data-hasciicam]').forEach((root) => {
+        if (document.hidden) {
+          stopSession(root);
+        } else if (sessionOf(root).desired) {
+          startSession(root, false);
+        }
+      });
+    });
+  }
+</script>

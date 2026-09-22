@@ -27,8 +27,10 @@ and publishes repo root + `art/dist/` at `/art/` to GitHub Pages.
   **exhibitions**, **texts**. Relations are frontmatter references
   (`practice: <slug>`), never duplication.
 - `src/lib/media.ts` — Media is a zod discriminated union:
-  `image | video | peertube | svg | code`. Never raw HTML strings.
-  `src/lib/assets.ts` resolves files from `src/assets/media/`.
+  `image | video | peertube | svg | code | hasciicam`. Never raw HTML
+  strings. `src/lib/assets.ts` resolves files from `src/assets/media/`.
+  `hasciicam` is the live WASM ASCII camera (runtime vendored in
+  `public/hasciicam/`); its poster is a normal image asset.
 - `src/lib/site.ts` — site identity (name, description). Single source.
 - `src/lib/i18n.ts` — multi-language system: locales (en default, it at
   /it/), `ui` string dictionary, `t()`, `pageLocale()`, `href()`,
@@ -64,7 +66,11 @@ and publishes repo root + `art/dist/` at `/art/` to GitHub Pages.
 5. Media is lazy: PeerTube = poster-first, iframe on activation; autoplay
    only muted; one video at a time; honor reduced-motion and save-data.
    IntersectionObserver does not see `inert` toggles — the Stage starts
-   and stops its own videos.
+   and stops its own videos, and activates/deactivates `[data-hasciicam]`
+   roots (`hasciicam:activate` / `hasciicam:deactivate`). The live camera
+   never auto-starts under reduced-motion or save-data (a start button
+   appears instead) and every track stops on deactivate, pagehide,
+   before-swap, and tab hide.
 6. Accessibility is infrastructure: landmarks, one h1, skip link, visible
    focus, `inert` inactive states, aria-live announcements, keyboard for
    everything. Test with `a11y-test.mjs`.
@@ -80,7 +86,8 @@ and publishes repo root + `art/dist/` at `/art/` to GitHub Pages.
 Playwright smoke suites (dev-only, against `npm run preview`):
 `stage-test.mjs` (stage behaviour), `pages-test.mjs` (routes/relations),
 `a11y-test.mjs` (16 routes), `vt-test.mjs` (view transitions + reduced
-motion). Chromium path: `~/.cache/ms-playwright/chromium_headless_shell-1228/...`
+motion), `hasciicam-test.mjs` (live camera lifecycle with Chromium fake
+media flags). Chromium path: `~/.cache/ms-playwright/chromium_headless_shell-1228/...`
 (see any suite for `executablePath`).
 
 ## Current state (2026-09)

@@ -56,7 +56,7 @@ title: My Work
 year: 2025
 practice: dowse            # optional — links the work to a practice
 hero:
-  type: image              # image | video | peertube | svg | code
+  type: image              # image | video | peertube | svg | code | hasciicam
   src: my-image.png        # file in src/assets/media/
   alt: Describe the image for screen readers.
 ---
@@ -110,10 +110,31 @@ aspect: 16 / 9
 
 Use either in a `hero:` or inline in MDX: `<Media media={{ … }} />`.
 
+## Live HasciiCam
+
+The visitor's own camera rendered as ASCII by the WASM build of hasciicam
+(glue + binary vendored from the dyne.org CI demo into
+`public/hasciicam/`). The poster shows until the camera runs and stays as
+fallback; the camera starts when the media becomes visible/active and
+every track stops when it is swiped away, hidden, or the page is left.
+Under reduced-motion or save-data it does not auto-start — a start button
+appears instead. Frames never leave the browser.
+
+```yaml
+type: hasciicam
+poster: hasciicam-eye.png  # fallback/poster, file in src/assets/media/
+alt: Describe the live image for screen readers.
+```
+
+To refresh the vendored runtime, download `hasciicam.js` and
+`hasciicam.wasm` from https://dyne.org/hasciicam/demo/ into
+`public/hasciicam/`.
+
 ## Conventions
 
 - Italian source prose stays in Italian inside `<div lang="it">`.
 - Interface stays monochrome (`--black/--white/--grey`); colour comes
   only from artworks. No cards, grids, shadows, badges, hamburger menus.
 - Smoke tests (dev only): `node stage-test.mjs`, `a11y-test.mjs`,
-  `vt-test.mjs`, `pages-test.mjs` against `npm run preview`.
+  `vt-test.mjs`, `pages-test.mjs`, `hasciicam-test.mjs` against
+  `npm run preview`.

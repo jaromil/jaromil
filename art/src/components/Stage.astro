@@ -102,6 +102,13 @@ const locale = pageLocale(Astro.url.pathname);
     max-inline-size: 100%;
     margin-inline: auto;
   }
+  /* Scoped with .stage to outrank the component's own 100% width rule. */
+  .stage .visual :global(canvas) {
+    max-block-size: 62dvh;
+    inline-size: auto;
+    max-inline-size: 100%;
+    margin-inline: auto;
+  }
   .visual :global(.code-work) {
     min-block-size: 40dvh;
   }
@@ -162,6 +169,7 @@ const locale = pageLocale(Astro.url.pathname);
     .state { padding-block-end: 4.5rem; }
     .label, .counter { display: none; }
     .visual :global(img) { max-block-size: 66dvh; }
+    .stage .visual :global(canvas) { max-block-size: 66dvh; }
   }
 </style>
 
@@ -218,6 +226,7 @@ const locale = pageLocale(Astro.url.pathname);
     const total = String(states.length).padStart(2, '0');
     const bbCounter = document.querySelector<HTMLElement>('[data-bb-counter]');
     const bbContext = document.querySelector<HTMLElement>('[data-bb-context]');
+    const ofLabel = stage.dataset.of ?? 'of';
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
     let index = 0;
 
@@ -253,12 +262,21 @@ const locale = pageLocale(Astro.url.pathname);
             if (i === index && !reduced.matches) video.play().catch(() => {});
             else video.pause();
           });
+        // Live HasciiCam media follow the same lifecycle: camera on when
+        // the state is current, every track off when it is swiped away.
+        state
+          .querySelectorAll<HTMLElement>('[data-hasciicam]')
+          .forEach((cam) => {
+            cam.dispatchEvent(
+              new CustomEvent(i === index ? 'hasciicam:activate' : 'hasciicam:deactivate'),
+            );
+          });
       });
 
       const label = `${String(index + 1).padStart(2, '0')} / ${total}`;
       const title = active.querySelector('[data-label]')?.textContent ?? '';
       current.textContent = String(index + 1).padStart(2, '0');
-      live.textContent = `${title} — ${index + 1} ${stage.dataset.of} ${states.length}`;
+      live.textContent = `${title} — ${index + 1} ${ofLabel} ${states.length}`;
       if (bbCounter) bbCounter.textContent = label;
       if (bbContext) bbContext.textContent = title;
 

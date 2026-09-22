@@ -21,7 +21,7 @@ Key invariants — do not break these without explicit instruction:
 - Content is file-based MDX in `art/src/content/` (practices, works,
   exhibitions, texts). Works link to practices via a single
   `practice:` frontmatter reference. Media is a typed union
-  (image|video|peertube|svg|code) — never raw HTML strings.
+  (image|video|peertube|svg|code|hasciicam) — never raw HTML strings.
 - PeerTube iframes are lazy (poster first, activate on intent); autoplay
   only muted; one video at a time; respect reduced-motion and save-data.
 - Facts come only from supplied source material. Missing content is

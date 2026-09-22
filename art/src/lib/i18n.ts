@@ -44,6 +44,9 @@ const en = {
   forthcoming: 'forthcoming',
   watchOn: 'Watch',
   on: 'on',
+  startCamera: 'Start live camera',
+  cameraUnavailable: 'Live camera unavailable',
+  cameraDenied: 'Camera permission denied',
   bioP1:
     'Artist and hacker. His work moves between code and conceptual art: free software as an artistic medium, the aesthetics of computation, and the visibility of the systems that surround us.',
   bioP2: 'He has recently opened his art studio in Lugano, with new projects and works forthcoming.',
@@ -85,6 +88,9 @@ const it: Record<UiKey, string> = {
   forthcoming: 'in arrivo',
   watchOn: 'Guarda',
   on: 'su',
+  startCamera: 'Avvia la camera live',
+  cameraUnavailable: 'Camera live non disponibile',
+  cameraDenied: 'Permesso per la camera negato',
   bioP1:
     "Artista e hacker. Il suo lavoro si muove tra codice e arte concettuale: il software libero come medium artistico, l'estetica della computazione e la visibilità dei sistemi che ci circondano.",
   bioP2: "Ha recentemente aperto il suo studio d'arte a Lugano, con nuovi progetti e opere in arrivo.",

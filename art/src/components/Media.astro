@@ -4,6 +4,7 @@ import ImageMedia from './ImageMedia.astro';
 import VideoMedia from './VideoMedia.astro';
 import PeerTube from './PeerTube.astro';
 import CodeWork from './CodeWork.astro';
+import HasciiCam from './HasciiCam.astro';
 import { fileAsset } from '../lib/assets';
 
 interface Props {
@@ -32,6 +33,8 @@ const { media, eager = false, sizes, class: className } = Astro.props;
 {media.type === 'peertube' && <PeerTube media={media} class={className} />}
 
 {media.type === 'code' && <CodeWork media={media} class={className} />}
+
+{media.type === 'hasciicam' && <HasciiCam media={media} eager={eager} class={className} />}
 
 <style>
   .media-svg { margin: 0; }

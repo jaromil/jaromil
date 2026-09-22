@@ -2,8 +2,9 @@ import { z } from 'astro:content';
 
 /**
  * Media is the first-class abstraction for everything that can occupy the
- * visual field: image, video, PeerTube embed, SVG, or code (forkbomb's code
- * is itself visual material). Never arbitrary HTML strings.
+ * visual field: image, video, PeerTube embed, SVG, code (forkbomb's code
+ * is itself visual material), or live HasciiCam (the WASM ASCII camera).
+ * Never arbitrary HTML strings.
  */
 export const mediaSchema = z.discriminatedUnion('type', [
   z.object({
@@ -52,6 +53,14 @@ export const mediaSchema = z.discriminatedUnion('type', [
     type: z.literal('code'),
     code: z.string(),
     lang: z.string().default('sh'),
+    caption: z.string().optional(),
+  }),
+  z.object({
+    type: z.literal('hasciicam'),
+    /** Poster image (file in src/assets/media/) shown until the camera runs,
+        and as fallback when the camera is unavailable. */
+    poster: z.string(),
+    alt: z.string(),
     caption: z.string().optional(),
   }),
 ]);
