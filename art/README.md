@@ -54,7 +54,7 @@ Create `src/content/works/my-work.mdx`:
 ---
 title: My Work
 year: 2025
-practice: dowse            # optional — links the work to a practice
+practice: dowsing          # optional — links the work to a primary practice
 hero:
   type: image              # image | video | peertube | svg | code | hasciicam
   src: my-image.png        # file in src/assets/media/

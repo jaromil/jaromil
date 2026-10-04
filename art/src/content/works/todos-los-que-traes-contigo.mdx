@@ -1,12 +1,21 @@
 ---
-title: Todos los que traes contigo
+title: Todo lo que traes con tigo
+subtitle: forthcoming
 # TODO: year not stated in the source portfolio (2023–26) — confirm
-practice: dowse
+practice: dowsing
 statement: A projector casts the activity of a local network onto a wall across the street; passers-by connect to the Wi-Fi and watch their own devices join the image.
 hero:
-  type: image
-  src: dowse-network.png
-  alt: Luminous network visualization — devices as nodes, their connection requests radiating toward remote services.
+  type: video
+  sources:
+    - src: dowse-dns-graph.webm
+      type: video/webm
+  poster: dowse-network.png
+  aspect: 16 / 9
+  autoplay: false
+  muted: true
+  loop: true
+  controls: true
+  caption: Il flusso di eventi DNS di Dowse reso come grafo in tempo reale.
 ---
 
 <div lang="it">
@@ -26,20 +35,6 @@ Tale apertura definisce anche i limiti dell'installazione. Solo i dispositivi co
 Su scala di quartiere, questa configurazione temporanea concretizza la possibilità di un'infrastruttura gestita e governata dalle persone che la utilizzano. La ricerca più ampia alla base del progetto indaga in che modo i cittadini possano decidere cosa condividere tramite i propri dispositivi e come il valore generato da tali scambi possa sostenere la vita della comunità locale. In questo caso, l'iniziativa prende le mosse da una connessione offerta da una finestra e aperta alla fruizione pubblica. Interrogativi solitamente riservati a chi eroga il servizio possono così emergere direttamente sul marciapiede, tra le persone i cui dispositivi stanno alimentando la rete.
 
 </div>
-
-<Media
-  media={{
-    type: 'video',
-    sources: [{ src: 'dowse-dns-graph.webm', type: 'video/webm' }],
-    poster: 'dowse-network.png',
-    aspect: '16 / 9',
-    autoplay: false,
-    muted: true,
-    loop: true,
-    controls: true,
-    caption: 'Il flusso di eventi DNS di Dowse reso come grafo in tempo reale.',
-  }}
-/>
 
 <section aria-labelledby="tecnica">
 

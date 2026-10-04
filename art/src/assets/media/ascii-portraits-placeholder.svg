@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title description">
+  <title id="title">ASCII portraits — forthcoming</title>
+  <desc id="description">A monochrome placeholder made from rows of ASCII characters.</desc>
+  <rect width="1600" height="1000" fill="#080808"/>
+  <g fill="#8d8d88" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="34" opacity="0.55">
+    <text x="80" y="130">. . : : + + * * # # @ @ # # * * + + : : . .</text>
+    <text x="80" y="210">. : + * # @ @ @ # * + : . . : + * # @ @ @ #</text>
+    <text x="80" y="290">: + * # @ # * + : . . . . : + * # @ # * + :</text>
+    <text x="80" y="370">+ * # @ # * + : .       . : + * # @ # * + :</text>
+    <text x="80" y="450">* # @ # * + : .           . : + * # @ # * +</text>
+    <text x="80" y="530"># @ # * + : .               . : + * # @ # *</text>
+    <text x="80" y="610">* # @ # * + : .           . : + * # @ # * +</text>
+    <text x="80" y="690">+ * # @ # * + : .       . : + * # @ # * + :</text>
+    <text x="80" y="770">: + * # @ # * + : . . . . : + * # @ # * + :</text>
+  </g>
+  <g fill="#f1f1ed" font-family="Arial, Helvetica, sans-serif">
+    <text x="80" y="880" font-size="72">ASCII portraits</text>
+    <text x="82" y="935" font-size="28" letter-spacing="8">FORTHCOMING</text>
+  </g>
+</svg>

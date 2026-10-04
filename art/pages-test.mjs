@@ -35,18 +35,18 @@ const back = await page.evaluate(() => ({
 }));
 console.log('after goBack:', JSON.stringify(back));
 
-// Practice page: dowse — video hero, works list, current realization.
-await page.goto(base + 'practice/dowse/', { waitUntil: 'networkidle' });
+// Practice page: Dowsing — video hero and works list.
+await page.goto(base + 'practice/dowsing/', { waitUntil: 'networkidle' });
 await page.waitForTimeout(1200);
-const dowse = await page.evaluate(() => ({
+const dowsing = await page.evaluate(() => ({
   h1: document.querySelector('h1')?.textContent,
   videoPlaying: ![...document.querySelectorAll('video')].every((v) => v.paused),
   works: [...document.querySelectorAll('.index-list a')].map((a) => a.textContent),
   current: document.querySelector('.index-list .aside')?.textContent,
 }));
-console.log('dowse practice:', JSON.stringify(dowse));
+console.log('Dowsing practice:', JSON.stringify(dowsing));
 
-// Work belonging to a practice: context link back to Dowse.
+// Work belonging to a practice: context link back to Dowsing.
 await page.goto(base + 'work/todos-los-que-traes-contigo/', { waitUntil: 'networkidle' });
 const todos = await page.evaluate(() => ({
   context: document.querySelector('.context a')?.textContent,
@@ -73,9 +73,9 @@ await page.waitForTimeout(700);
 await page.screenshot({ path: 'shots/home-forkbomb.png' });
 await page.goto(base + 'work/forkbomb/', { waitUntil: 'networkidle' });
 await page.screenshot({ path: 'shots/work-forkbomb.png', fullPage: true });
-await page.goto(base + 'practice/dowse/', { waitUntil: 'networkidle' });
+await page.goto(base + 'practice/dowsing/', { waitUntil: 'networkidle' });
 await page.waitForTimeout(800);
-await page.screenshot({ path: 'shots/practice-dowse.png' });
+await page.screenshot({ path: 'shots/practice-dowsing.png' });
 await page.setViewportSize({ width: 390, height: 844 });
 await page.goto(base, { waitUntil: 'networkidle' });
 await page.screenshot({ path: 'shots/home-mobile.png' });
