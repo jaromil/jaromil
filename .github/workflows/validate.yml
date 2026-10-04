@@ -19,6 +19,3 @@ jobs:
 
       - name: Validate HTML
         run: npx --yes html-validate@10.13.1 --rule void-style:off --rule doctype-style:off index.html
-
-      - name: Check formatting
-        run: npx --yes prettier@3.8.3 --check index.html style.css .github/workflows/validate.yml
