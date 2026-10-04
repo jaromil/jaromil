@@ -40,7 +40,7 @@ const camState = () =>
 
 await page.goto(base, { waitUntil: 'networkidle' });
 
-// Step to the hasciicam state (3rd in the stage sequence).
+// Step to the ASCII art state (3rd in the stage sequence).
 await page.keyboard.press('ArrowRight');
 await page.waitForTimeout(700);
 await page.keyboard.press('ArrowRight');
@@ -49,8 +49,8 @@ const active = await page.evaluate(
   () => [...document.querySelectorAll('[data-state]')].find((s) => !s.inert)?.dataset.slug,
 );
 const on = await camState();
-console.log('stage hasciicam active:', active, JSON.stringify(on));
-if (active !== 'hasciicam') errors.push('hasciicam state not active');
+console.log('stage ASCII art active:', active, JSON.stringify(on));
+if (active !== 'ascii-art') errors.push('ASCII art state not active');
 if (!on?.canvasVisible || !on?.streaming || !on?.trackLive) errors.push('camera did not start on stage');
 if ((on?.litSamples ?? 0) < 50) errors.push('canvas looks blank: ' + on?.litSamples);
 
@@ -63,7 +63,7 @@ if (off?.streaming || off?.trackLive) errors.push('camera still live after swipe
 if (off?.canvasVisible) errors.push('canvas still visible after swipe away');
 
 // Practice page: hero runs standalone.
-await page.goto(base + 'practice/hasciicam/', { waitUntil: 'networkidle' });
+await page.goto(base + 'practice/ascii-art/', { waitUntil: 'networkidle' });
 await page.waitForTimeout(2500);
 const hero = await camState();
 console.log('practice page hero:    ', JSON.stringify(hero));

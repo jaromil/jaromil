@@ -4,7 +4,7 @@ import { mediaSchema } from './lib/media';
 
 /**
  * Practices and Works are two views over the same artistic corpus.
- * A Practice is an ongoing technique/medium (Data Portraits, Hasciicam, Dowse).
+ * A Practice is an ongoing technique/medium (Data Portraits, ASCII art, Dowsing).
  * A Work may belong to a Practice, be a realization of it, or stand alone
  * (forkbomb). Relationships use references, not duplication.
  */
@@ -32,6 +32,8 @@ const works = defineCollection({
     yearTo: z.number().optional(),
     /** Practice this work belongs to / realizes. Omit for standalone works. */
     practice: reference('practices').optional(),
+    /** Additional practices this work participates in, without replacing its primary practice. */
+    relatedPractices: z.array(reference('practices')).default([]),
     location: z.string().optional(),
     statement: z.string().optional(),
     hero: mediaSchema,

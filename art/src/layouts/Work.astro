@@ -16,10 +16,24 @@ interface Props {
 }
 
 const { entry } = Astro.props;
-const { title, subtitle, year, yearTo, practice, location, statement, hero, exhibitions } =
-  entry.data;
+const {
+  title,
+  subtitle,
+  year,
+  yearTo,
+  practice,
+  relatedPractices,
+  location,
+  statement,
+  hero,
+  exhibitions,
+} = entry.data;
 
 const practiceEntry = practice ? await getEntry(practice) : undefined;
+const relatedPracticeEntries = (
+  await Promise.all(relatedPractices.map((reference) => getEntry(reference)))
+).filter((p) => p !== undefined);
+const practiceEntries = [practiceEntry, ...relatedPracticeEntries].filter((p) => p !== undefined);
 const exhibitionEntries = (
   await Promise.all(exhibitions.map((reference) => getEntry(reference)))
 ).filter((e) => e !== undefined);
@@ -33,9 +47,14 @@ const locale = pageLocale(Astro.url.pathname);
   <article class="page">
     <header>
       {
-        practiceEntry && (
+        practiceEntries.length > 0 && (
           <p class="context">
-            <a href={href(`practice/${practiceEntry.id}`, locale)}>{practiceEntry.data.title}</a>
+            {practiceEntries.map((practice, index) => (
+              <>
+                {index > 0 && <span aria-hidden="true"> · </span>}
+                <a href={href(`practice/${practice.id}`, locale)}>{practice.data.title}</a>
+              </>
+            ))}
           </p>
         )
       }

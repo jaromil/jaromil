@@ -6,26 +6,15 @@ const locale = pageLocale(Astro.url.pathname);
 const practices = (await getCollection('practices')).filter((p) => !p.id.startsWith('_'));
 const works = (await getCollection('works')).filter((w) => !w.id.startsWith('_'));
 works.sort((a, b) => (b.data.year ?? 0) - (a.data.year ?? 0));
+const practiceGroups = practices.map((practice) => ({
+  practice,
+  works: works.filter((work) => work.data.practice?.id === practice.id),
+}));
+const standaloneWorks = works.filter((work) => !work.data.practice);
 ---
 
 <div class="overlay" id="index-overlay" role="dialog" aria-modal="true" aria-label="Index" hidden>
   <nav class="panel" aria-label="Site index">
-    <section>
-      <h2>{t(locale, 'practices')}</h2>
-      <ul>
-        {practices.map((p) => (
-          <li><a href={href(`practice/${p.id}`, locale)}>{p.data.title}</a></li>
-        ))}
-      </ul>
-    </section>
-    <section>
-      <h2>{t(locale, 'works')}</h2>
-      <ul>
-        {works.map((w) => (
-          <li><a href={href(`work/${w.id}`, locale)}>{w.data.title}</a></li>
-        ))}
-      </ul>
-    </section>
     <section class="pages">
       <h2>{t(locale, 'siteNav')}</h2>
       <ul>
@@ -35,6 +24,41 @@ works.sort((a, b) => (b.data.year ?? 0) - (a.data.year ?? 0));
         <li><a href={href('exhibitions', locale)}>{t(locale, 'exhibitions')}</a></li>
         <li><a href={href('bio', locale)}>{t(locale, 'bio')}</a></li>
       </ul>
+    </section>
+    <section class="corpus" aria-labelledby="corpus-heading">
+      <h2 class="relationship-label" id="corpus-heading">
+        <span>{t(locale, 'practices')}</span>
+        <span class="separator" aria-hidden="true">/</span>
+        <span>{t(locale, 'works')}</span>
+      </h2>
+      <div class="practice-groups">
+        {
+          practiceGroups.map(({ practice, works: primaryWorks }) => (
+            <section class="practice-group" data-practice-group={practice.id} aria-labelledby={`index-${practice.id}`}>
+              <h3 id={`index-${practice.id}`}>
+                <a href={href(`practice/${practice.id}`, locale)}>{practice.data.title}</a>
+              </h3>
+              <ul class="work-list" aria-label={`${practice.data.title}: ${t(locale, 'works')}`}>
+                {primaryWorks.map((work) => (
+                  <li><a href={href(`work/${work.id}`, locale)}>{work.data.title}</a></li>
+                ))}
+              </ul>
+            </section>
+          ))
+        }
+        {
+          standaloneWorks.length > 0 && (
+            <section class="practice-group standalone">
+              <h3>{t(locale, 'works')}</h3>
+              <ul class="work-list">
+                {standaloneWorks.map((work) => (
+                  <li><a href={href(`work/${work.id}`, locale)}>{work.data.title}</a></li>
+                ))}
+              </ul>
+            </section>
+          )
+        }
+      </div>
     </section>
   </nav>
   <button class="close" type="button" data-close-index aria-label={t(locale, 'closeIndex')}>×</button>
@@ -54,11 +78,8 @@ works.sort((a, b) => (b.data.year ?? 0) - (a.data.year ?? 0));
   .overlay.open { opacity: 1; }
   .panel {
     display: grid;
-    gap: 3rem;
+    gap: 5rem;
     max-inline-size: 70rem;
-  }
-  @media (min-width: 768px) {
-    .panel { grid-template-columns: 1fr 1fr 1fr; }
   }
   h2 {
     font-family: var(--font-mono);
@@ -69,6 +90,28 @@ works.sort((a, b) => (b.data.year ?? 0) - (a.data.year ?? 0));
     color: var(--grey);
     margin-block-end: 1rem;
   }
+  .relationship-label {
+    display: flex;
+    gap: 0.65rem;
+  }
+  .practice-groups {
+    border-block-end: 1px solid color-mix(in srgb, var(--grey) 22%, transparent);
+  }
+  .practice-group {
+    padding-block: 1.25rem 1.5rem;
+    border-block-start: 1px solid color-mix(in srgb, var(--grey) 22%, transparent);
+  }
+  h3 {
+    margin: 0;
+    font-size: var(--step-1);
+    font-weight: 500;
+    line-height: 1.2;
+  }
+  .work-list {
+    margin-block-start: 0.9rem;
+    padding-inline-start: 1rem;
+    border-inline-start: 1px solid color-mix(in srgb, var(--grey) 42%, transparent);
+  }
   ul { list-style: none; margin: 0; padding: 0; }
   li { padding-block: 0.35rem; }
   a {
@@ -77,8 +120,33 @@ works.sort((a, b) => (b.data.year ?? 0) - (a.data.year ?? 0));
     font-size: var(--step-1);
     line-height: 1.25;
   }
+  .work-list a { font-size: var(--step-0); }
   a:hover { text-decoration-color: currentColor; }
+  .pages {
+    padding-block-end: 1.25rem;
+    border-block-end: 1px solid color-mix(in srgb, var(--grey) 22%, transparent);
+  }
+  .pages ul {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 2rem;
+    row-gap: 0.25rem;
+  }
   .pages a { font-size: var(--step-0); }
+  @media (min-width: 768px) {
+    .relationship-label,
+    .practice-group {
+      display: grid;
+      grid-template-columns: minmax(12rem, 0.8fr) minmax(0, 1.6fr);
+      column-gap: clamp(2rem, 6vw, 6rem);
+    }
+    .relationship-label .separator { display: none; }
+    .practice-group { align-items: start; }
+    .work-list {
+      margin-block-start: 0;
+      padding-inline-start: clamp(1.25rem, 2.5vw, 2rem);
+    }
+  }
   .close {
     position: fixed;
     inset-block-start: 1rem;

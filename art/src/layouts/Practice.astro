@@ -16,7 +16,11 @@ interface Props {
 const { entry } = Astro.props;
 const { title, yearFrom, yearTo, status, statement, hero, currentRealization } = entry.data;
 
-const works = (await getCollection('works')).filter((w) => w.data.practice?.id === entry.id);
+const works = (await getCollection('works')).filter(
+  (w) =>
+    w.data.practice?.id === entry.id ||
+    w.data.relatedPractices.some((practice) => practice.id === entry.id),
+);
 works.sort((a, b) => (a.data.year ?? 0) - (b.data.year ?? 0));
 
 const current = currentRealization ? await getEntry(currentRealization) : undefined;

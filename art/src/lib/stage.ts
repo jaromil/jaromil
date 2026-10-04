@@ -9,8 +9,8 @@ import type { StageState } from '../components/Stage.astro';
  */
 const sequence = [
   { kind: 'practice', slug: 'data-portraits' },
-  { kind: 'practice', slug: 'dowse' },
-  { kind: 'practice', slug: 'hasciicam' },
+  { kind: 'practice', slug: 'dowsing' },
+  { kind: 'practice', slug: 'ascii-art' },
   { kind: 'work', slug: 'forkbomb' },
 ] as const;
 

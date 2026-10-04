@@ -7,6 +7,6 @@ export const site = {
   fullName: 'Jaromil (Denis Roio)',
   tagline: 'artist and hacker',
   description:
-    'Jaromil (Denis Roio) — artist and hacker. Data Portraits, Hasciicam, Dowse, forkbomb.',
+    'Jaromil (Denis Roio) — artist and hacker. Data Portraits, ASCII art, Dowsing, forkbomb.',
   url: 'https://jaromil.dyne.org',
 } as const;

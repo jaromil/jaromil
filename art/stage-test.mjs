@@ -1,3 +1,4 @@
+import assert from 'node:assert/strict';
 import { chromium } from 'playwright';
 
 const base = 'http://localhost:4323/art/';
@@ -44,6 +45,28 @@ console.log('Home:         ', JSON.stringify(await state()));
 await page.click('.site-header .info');
 await page.waitForTimeout(600);
 const overlayOpen = await page.evaluate(() => !document.getElementById('index-overlay').hidden);
+const desktopGroups = await page.evaluate(() => ({
+  firstSection: document.querySelector('.panel > section')?.className,
+  layout: getComputedStyle(document.querySelector('[data-practice-group]')).display,
+  order: [...document.querySelectorAll('[data-practice-group]')].map((group) => group.dataset.practiceGroup),
+  groups: Object.fromEntries(
+    [...document.querySelectorAll('[data-practice-group]')].map((group) => [
+      group.dataset.practiceGroup,
+      [...group.querySelectorAll('.work-list a')].map((link) => link.textContent.trim()).sort(),
+    ]),
+  ),
+}));
+assert.equal(desktopGroups.firstSection, 'pages');
+assert.equal(desktopGroups.layout, 'grid');
+assert.deepEqual(desktopGroups.groups, {
+  'ascii-art': ['ASCII mirrors', 'ASCII portraits', 'Hasciicam'].sort(),
+  'code-art': ['forkbomb'],
+  'data-portraits': ['D.P. Amsterdam', 'D.P. Lugano', 'D.P. Palermo'].sort(),
+  dowsing: ['Making visible the invisible', 'Todo lo que traes con tigo'].sort(),
+  'net-art': ['Farah: In Search for Joy'],
+  'time-based-text': [],
+});
+console.log('desktop practice/work groups:', JSON.stringify(desktopGroups));
 await page.keyboard.press('Escape');
 await page.waitForTimeout(700);
 const overlayClosed = await page.evaluate(() => document.getElementById('index-overlay').hidden);
@@ -69,6 +92,17 @@ const bb = await page.evaluate(() => ({
   barVisible: getComputedStyle(document.querySelector('.bottom-bar')).display,
 }));
 console.log('mobile bar:   ', JSON.stringify(bb));
+await page.click('.bottom-bar [data-open-index]');
+await page.waitForTimeout(500);
+const mobileGroups = await page.evaluate(() => ({
+  layout: getComputedStyle(document.querySelector('[data-practice-group]')).display,
+  order: [...document.querySelectorAll('[data-practice-group]')].map((group) => group.dataset.practiceGroup),
+}));
+assert.equal(mobileGroups.layout, 'block');
+assert.deepEqual(mobileGroups.order, desktopGroups.order);
+console.log('mobile practice/work groups:', JSON.stringify(mobileGroups));
+await page.keyboard.press('Escape');
+await page.waitForTimeout(700);
 await page.evaluate(() => {
   const stage = document.querySelector('[data-stage]');
   stage.dispatchEvent(new TouchEvent('touchstart', { touches: [new Touch({ identifier: 1, target: stage, clientY: 600 })], bubbles: true }));
