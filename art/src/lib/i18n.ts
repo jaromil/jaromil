@@ -51,6 +51,7 @@ const en = {
     'Artist and hacker. His work moves between code and conceptual art: free software as an artistic medium, the aesthetics of computation, and the visibility of the systems that surround us.',
   bioP2: 'He has recently opened his art studio in Lugano, with new projects and works forthcoming.',
   bioTodo: 'Full biography — forthcoming',
+  personalWebsite: 'Visit the personal website',
   journalNote:
     "Long-form writing also lives inside the practice and work pages. Jaromil's journal of musings is at",
   noExhibitions: 'No exhibitions documented yet',
@@ -95,6 +96,7 @@ const it: Record<UiKey, string> = {
     "Artista e hacker. Il suo lavoro si muove tra codice e arte concettuale: il software libero come medium artistico, l'estetica della computazione e la visibilità dei sistemi che ci circondano.",
   bioP2: "Ha recentemente aperto il suo studio d'arte a Lugano, con nuovi progetti e opere in arrivo.",
   bioTodo: 'Biografia completa — in arrivo',
+  personalWebsite: 'Visita il sito personale',
   journalNote:
     'La scrittura di lungo corso vive anche dentro le pagine delle pratiche e delle opere. Il journal of musings di Jaromil è su',
   noExhibitions: 'Nessuna mostra documentata finora',
