@@ -100,7 +100,7 @@ counter-as-control, all routes, view transitions, a11y pass, CI deploy,
 multi-language (EN default + IT at /it/ with browser-detect redirect on
 entry, header switch override, fallback to available language). Critique
 fixes applied (hover states, opaque header, prose rhythm, INDEX naming).
-Open content TODOs (marked in files): Data Portraits practice text;
+Open content TODOs (marked in files): Data Portraits practice start year and
 years of the three portraits (unconfirmed); year of Todos los que
 traes contigo; Hasciicam video/PeerTube material; la-boheme-digitale
 full text. Dowse practice/work prose deduplication was proposed, paused

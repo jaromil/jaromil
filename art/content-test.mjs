@@ -93,9 +93,8 @@ assert.match(iLoveYou, /Copenhagen/);
 const dataPortraits = await routeHtml('exhibition/data-portraits');
 assert.match(dataPortraits, /work\/dp-palermo/);
 
-// Reconciliation must preserve every honest gap in both locale outputs.
+// Remaining documentation gaps stay visible in both locale outputs.
 const unresolved = [
-  ['practice/data-portraits', 'Testo su Data Portraits'],
   ['practice/dowsing', 'Testo completo sulla pratica'],
   ['work/dp-amsterdam', "Testo sull[’']opera"],
   ['work/dp-palermo', 'Primary documentation of D.P. Palermo'],
@@ -113,6 +112,17 @@ for (const locale of ['', 'it/']) {
     assert.match(html, new RegExp(`<p class="todo">[^<]*(?:${notice})[^<]*</p>`), `${locale}${route} retains its unresolved notice`);
   }
   const practice = await routeHtml(`${locale}practice/data-portraits`);
+  const language = locale ? 'it' : 'en';
+  const essay = practice.match(new RegExp(`<div class="essay" lang="${language}">([\\s\\S]*?)<\\/div>`))?.[1];
+  assert.ok(essay, `${language} Data Portraits essay is rendered without JavaScript`);
+  assert.equal([...essay.matchAll(/<p>/g)].length, 7, 'all seven supplied paragraphs are present');
+  assert.match(essay, /Marcel Golay/);
+  assert.match(essay, /Gaetano La Rosa/);
+  assert.match(essay, /John Cage/);
+  assert.match(essay, language === 'it' ? /Siamo abituati a pensare/ : /We are used to thinking/);
+  assert.match(essay, language === 'it' ? /struttura stessa del ritratto/ : /very structure of the portrait/);
+  assert.doesNotMatch(practice, new RegExp(`<div class="essay" lang="${language === 'it' ? 'en' : 'it'}">`));
+  assert.doesNotMatch(practice, /<p class="todo">|Testo su Data Portraits|to be written/);
   assert.doesNotMatch(practice, /(?:since|dal)\s+2024/i, 'an imprint must not become a practice start year');
   for (const work of ['dp-amsterdam', 'dp-palermo', 'dp-lugano']) {
     assert.match(practice, new RegExp(`href="/art/${locale}work/${work}/"`));

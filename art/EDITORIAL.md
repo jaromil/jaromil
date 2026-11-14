@@ -22,13 +22,11 @@ portfolio before turning any of these gaps into facts.
 
 ## Open inputs
 
-Paths below are relative to `src/content/`. Each row covers an existing TODO;
-two rows share the Data Portraits practice file.
+Paths below are relative to `src/content/`. Each row covers an existing TODO.
 
 | Record / marker | Available evidence and disposition | Exact input needed from artist/editor |
 |---|---|---|
 | `practices/data-portraits.mdx` — YAML yearFrom | Remove the inferred 2024 start year. The existing Palermo exhibition record establishes a presentation in 2021; neither it nor an imprint establishes the practice's start date. Keep the YAML TODO. | Artist-confirmed start year or a dated primary account establishing the start. |
-| `practices/data-portraits.mdx` — `p.todo` | Retain the notice that the practice text is being written. The existing statement and three work relations remain available. | Artist-approved practice text and the original portfolio page marked to be written. |
 | `works/dp-amsterdam.mdx` — `p.todo` | Retain the work-text gap. Preserve the three supplied image captions, source filenames and SHA-1 strings as imprints, without deriving a date. | Artist-approved work text and confirmation of the grouping's date, venue and captions against the original portfolio. |
 | `works/dp-palermo.mdx` — `p.todo` | Link the existing homepage photograph. Retain the gap for work-specific primary documentation; the photograph is not evidence that the placeholder hero depicts this realization. Preserve the existing 2021 exhibition relation. | Identified images of this realization, captions/photographer credits and confirmation of which works were shown. |
 | `works/dp-lugano.mdx` — `p.todo` | Retain the notice and explicitly labelled placeholder; no Lugano-specific source recovered locally. | Artist-approved work description, date, venue, actual media and captions/credits. |
@@ -45,3 +43,11 @@ The Palermo exhibition body also retains unresolved dates, rooms, organizers and
 local titles for earlier OBA/Amsterdam and MACRO/Rome presentations. Those require
 dated programmes or artist/organizer confirmation before adding exhibition records.
 No collection counts change in this reconciliation.
+
+## Supplied practice text
+
+The artist supplied the Data Portraits practice essay and requested its English
+translation. Both versions are now in `practices/data-portraits.mdx`, rendered
+only on the matching language page. The essay retains the quotations attributed
+to Gaetano La Rosa and Jaromil. The practice start year and work-specific
+documentation gaps above remain open.

@@ -80,7 +80,7 @@ let documentationCases = 0;
 let relatedLinks = 0;
 for (const locale of ['', 'it/']) {
   for (const [route, incomplete] of [
-    ['practice/data-portraits/', true],
+    ['practice/data-portraits/', false],
     ['work/dp-lugano/', true],
     ['text/la-boheme-digitale/', true],
     ['work/farah/', false],
@@ -91,6 +91,10 @@ for (const locale of ['', 'it/']) {
     assert.equal(await article.locator('p.todo').count(), incomplete ? 1 : 0);
     assert.equal(await article.locator('.meta:empty, .aside:empty').count(), 0);
     if (route === 'practice/data-portraits/') {
+      const language = locale ? 'it' : 'en';
+      assert.equal(await article.locator(`.essay[lang="${language}"]`).count(), 1);
+      assert.equal(await article.locator('.essay p').count(), 7);
+      assert.match(await article.locator('.essay').innerText(), language === 'it' ? /Siamo abituati a pensare/ : /We are used to thinking/);
       assert.deepEqual((await article.locator('.index-list a').evaluateAll(links => links.map(a => a.getAttribute('href')))).sort(), [
         `/art/${locale}work/dp-amsterdam/`, `/art/${locale}work/dp-lugano/`, `/art/${locale}work/dp-palermo/`,
       ].sort());

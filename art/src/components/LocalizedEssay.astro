@@ -1,0 +1,12 @@
+---
+import Essay from './Essay.astro';
+import { pageLocale, type Locale } from '../lib/i18n';
+
+interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+---
+
+{pageLocale(Astro.url.pathname) === lang && <Essay lang={lang}><slot /></Essay>}
