@@ -1,11 +1,8 @@
-import { chromium } from 'playwright';
+import { launchBrowser, artBase } from './tests/browser.mjs';
 import assert from 'node:assert/strict';
 
-const base = 'http://localhost:4323/art/';
-const browser = await chromium.launch({
-  executablePath:
-    process.env.HOME + '/.cache/ms-playwright/chromium_headless_shell-1228/chrome-headless-shell-linux64/chrome-headless-shell',
-});
+const base = artBase;
+const browser = await launchBrowser();
 const errors = [];
 
 // 1. Italian browser: root redirects to /it/

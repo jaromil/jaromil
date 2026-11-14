@@ -9,14 +9,17 @@ const text = header.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ');
 const sha = value => createHash('sha256').update(value).digest('hex');
 
 // Recorded from the L1.1 candidate, before rearranging the introduction.
-test('all existing archive content and metadata remain byte-for-byte intact', () => {
+test('all existing archive content and metadata survive media loading attributes', () => {
   assert.equal(sha(html.match(/<head>[\s\S]*?<\/head>/)[0]), '4efe6b372a5aee96aa5f698cde1c8fce2a56df201724f350886df8426397dcd0');
-  assert.equal(sha(html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/)[1]), '50c58dd337a13a706cd4d16966abe7671c23de3c3dce30e44733ecaffd24558f');
+  const archive = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/)[1]
+    .replace(/<img\b[^>]*>/g, tag => tag.replace(/\s+(?:width|height|loading|decoding)="[^"]*"/g, ''));
+  assert.equal(sha(archive), '50c58dd337a13a706cd4d16966abe7671c23de3c3dce30e44733ecaffd24558f');
 });
 
 test('every existing link destination survives the introduction edit', () => {
   const destinations = [...new Set([...html.matchAll(/\bhref=["']([^"']+)/g)].map(match => match[1]))]
-    .filter(href => href !== '#main').sort();
+    // L4 adds one direct signup route; all original destinations remain frozen.
+    .filter(href => !['#main', 'https://news.dyne.org/signup-to-rewild-the-internet/'].includes(href)).sort();
   assert.equal(sha(destinations.join('\n')), '4528dd9c42404e830224dacf7eee0056a2c43179af136eddfd3d55224da31c86');
   for (const href of ['mailto:j@dyne.org', 'mailto:J@Dyne.org', 'jaromil.pub', 'jaromil-plan-b.pub']) {
     assert.ok(destinations.includes(href), `Missing contact/key destination ${href}`);

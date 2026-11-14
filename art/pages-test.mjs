@@ -1,11 +1,8 @@
 import assert from 'node:assert/strict';
-import { chromium } from 'playwright';
+import { launchBrowser, artBase } from './tests/browser.mjs';
 
-const base = 'http://localhost:4323/art/';
-const browser = await chromium.launch({
-  executablePath:
-    process.env.HOME + '/.cache/ms-playwright/chromium_headless_shell-1228/chrome-headless-shell-linux64/chrome-headless-shell',
-});
+const base = artBase;
+const browser = await launchBrowser();
 const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
 const errors = [];
 page.on('pageerror', (e) => errors.push('pageerror: ' + e.message));
@@ -26,6 +23,9 @@ const forkbomb = await page.evaluate(() => ({
   exhibitions: [...document.querySelectorAll('.index-list a')].map((a) => a.textContent),
 }));
 console.log('forkbomb page:', JSON.stringify(forkbomb));
+assert.equal(new URL(page.url()).pathname, '/art/work/forkbomb/');
+assert.equal(forkbomb.h1, 'forkbomb');
+assert.equal(forkbomb.code, ':(){ :|:& };:');
 
 // Back via history — ClientRouter restores the stage.
 await page.goBack();
@@ -35,6 +35,8 @@ const back = await page.evaluate(() => ({
   visible: [...document.querySelectorAll('[data-state]')].filter((s) => !s.inert).map((s) => s.dataset.slug),
 }));
 console.log('after goBack:', JSON.stringify(back));
+assert.equal(back.url, '/art/');
+assert.equal(back.visible.length, 1);
 
 // Practice page: Dowsing — video hero and works list.
 await page.goto(base + 'practice/dowsing/', { waitUntil: 'networkidle' });
@@ -46,6 +48,9 @@ const dowsing = await page.evaluate(() => ({
   current: document.querySelector('.index-list .aside')?.textContent,
 }));
 console.log('Dowsing practice:', JSON.stringify(dowsing));
+assert.equal(dowsing.h1, 'Dowsing');
+assert.equal(dowsing.videoPlaying, true);
+assert.ok(dowsing.works.some(title => title.includes('Todo lo que traes con tigo')));
 
 // Work belonging to a practice: context link back to Dowsing.
 await page.goto(base + 'work/todos-los-que-traes-contigo/', { waitUntil: 'networkidle' });
@@ -57,6 +62,8 @@ const todos = await page.evaluate(() => ({
   h2: [...document.querySelectorAll('h2')].map((h) => h.textContent),
 }));
 console.log('todos work:', JSON.stringify(todos));
+assert.equal(todos.contextHref, '/art/practice/dowsing/');
+assert.ok(todos.videos > 0);
 
 // Exhibition page.
 await page.goto(base + 'exhibition/i-love-you/', { waitUntil: 'networkidle' });
@@ -65,6 +72,8 @@ const exh = await page.evaluate(() => ({
   workLink: document.querySelector('.index-list a')?.getAttribute('href'),
 }));
 console.log('exhibition:', JSON.stringify(exh));
+assert.ok(exh.showings > 0);
+assert.equal(exh.workLink, '/art/work/forkbomb/');
 
 // Incomplete pages retain native reading paths and omit facts not supplied.
 let documentationCases = 0;
@@ -140,3 +149,4 @@ await page.screenshot({ path: 'shots/home-mobile.png' });
 
 console.log('errors:', errors.length ? errors : 'none');
 await browser.close();
+assert.deepEqual(errors, []);

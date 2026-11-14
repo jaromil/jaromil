@@ -1,8 +1,7 @@
 import assert from 'node:assert/strict';
-import { chromium } from 'playwright';
-const base = 'http://localhost:4323/art/';
-const browser = await chromium.launch({
-  executablePath: process.env.HOME + '/.cache/ms-playwright/chromium_headless_shell-1228/chrome-headless-shell-linux64/chrome-headless-shell',
+import { launchBrowser, artBase } from './tests/browser.mjs';
+const base = artBase;
+const browser = await launchBrowser({
   args: ['--use-fake-device-for-media-stream', '--use-fake-ui-for-media-stream'],
 });
 const errors = [];

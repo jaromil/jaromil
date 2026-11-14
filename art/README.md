@@ -140,3 +140,56 @@ To refresh the vendored runtime, download `hasciicam.js` and
 - Smoke tests (dev only): `node stage-test.mjs`, `a11y-test.mjs`,
   `vt-test.mjs`, `pages-test.mjs`, `hasciicam-test.mjs` against
   `npm run preview`.
+
+## Reproducing the regression gates
+
+Use the locked dependencies and an already installed Google Chrome. The
+shared `tests/browser.mjs` launcher uses the `chrome` channel, keeps the
+browser sandbox enabled, and never downloads a browser. If Chrome is in a
+different location, set `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` to its existing
+executable. On Linux, long session temporary paths use a verified descriptor
+alias to the same directory so Chrome's socket path fits its system limit.
+
+From `art/`:
+
+```sh
+ASTRO_TELEMETRY_DISABLED=1 npm run check
+ASTRO_TELEMETRY_DISABLED=1 npm run build
+npm run test:content
+npm run test:standalone
+ASTRO_TELEMETRY_DISABLED=1 npm run preview -- --host 127.0.0.1 --port 4323
+```
+
+Keep that production preview running; in a second terminal in `art/` run
+each command below. `ART_TEST_URL` can override the default
+`http://localhost:4323/art/` (include the trailing slash).
+
+```sh
+node stage-test.mjs
+node pages-test.mjs
+node a11y-test.mjs
+node vt-test.mjs
+node hasciicam-test.mjs
+node locale-test.mjs
+node delight-test.mjs
+node polish-test.mjs
+node typeset-test.mjs
+```
+
+The camera suite uses fake media devices and denial fixtures; no real camera
+is needed. The media fixture is built in a temporary copy and is never
+published. Diagnostic output accompanies assertions; a failed assertion
+exits nonzero. Screenshot files under `shots/` and `/tmp/opencode/` are
+local review artifacts.
+
+For the personal homepage, serve the repository root with
+`python3 -m http.server 4325 --bind 127.0.0.1`, then from that root run:
+
+```sh
+node --test tests/*.test.mjs
+node --test tests/archive-browser.mjs
+```
+
+`ROOT_TEST_URL` overrides the root browser suite's default
+`http://127.0.0.1:4325/`. These checks verify a local build; deployment is a
+separate operation.

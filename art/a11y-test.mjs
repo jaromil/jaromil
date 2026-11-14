@@ -1,7 +1,7 @@
-import { chromium } from 'playwright';
+import { launchBrowser, artBase } from './tests/browser.mjs';
 import assert from 'node:assert/strict';
 
-const base = 'http://localhost:4323/art/';
+const base = artBase;
 const routes = [
   '',
   'practices/',
@@ -43,10 +43,7 @@ const routes = [
   'it/text/la-boheme-digitale/',
 ];
 
-const browser = await chromium.launch({
-  executablePath:
-    process.env.HOME + '/.cache/ms-playwright/chromium_headless_shell-1228/chrome-headless-shell-linux64/chrome-headless-shell',
-});
+const browser = await launchBrowser();
 const page = await browser.newPage();
 let failures = 0;
 

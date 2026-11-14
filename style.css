@@ -242,6 +242,10 @@ main li {
   font-variant-numeric: tabular-nums;
 }
 
+main {
+  overflow-wrap: anywhere;
+}
+
 li + li {
   margin-top: var(--space-2);
 }

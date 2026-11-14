@@ -1,11 +1,8 @@
 import assert from 'node:assert/strict';
-import { chromium } from 'playwright';
+import { launchBrowser, artBase } from './tests/browser.mjs';
 
-const base = 'http://localhost:4323/art/';
-const browser = await chromium.launch({
-  executablePath:
-    process.env.HOME + '/.cache/ms-playwright/chromium_headless_shell-1228/chrome-headless-shell-linux64/chrome-headless-shell',
-});
+const base = artBase;
+const browser = await launchBrowser();
 const page = await browser.newPage({ viewport: { width: 1440, height: 900 }, hasTouch: true });
 const errors = [];
 page.on('pageerror', (e) => errors.push('pageerror: ' + e.message));
