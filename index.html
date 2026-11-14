@@ -118,31 +118,19 @@
   </head>
 
   <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
     <header id="about">
       <h1>Jaromil</h1>
 
       <p>
-        Hi! I’m Denis Roio, also known as Jaromil, scientific director
-        of the Plan ₿ Foundation in Lugano and the founder of Dyne.org
-        think & do tank.
+        Hi! I’m Denis Roio, known as Jaromil, scientific director of
+        the Plan ₿ Foundation and founder of Dyne.org think & do tank.
       </p>
       <p>
         I work across digital innovation, free software, and art. My
         research focuses on algorethics, digital autonomy, and the
         social impact of cryptography.
       </p>
-      <p>
-        I hold an old-school Ph.D., literally in philosophy. Over the years I
-        have coined the term "Algorithmic Sovereignty" and published on ethics
-        and society, media theory, and hard sciences.
-      </p>
-      <p>
-        Since 1999 I have started and facilitated
-        <a href="#code">free and open source software projects</a>, cultural
-        initiatives, and research collaborations, including work supported by
-        <a href="#grants">European Commission</a> programmes.
-      </p>
-
       <nav class="page-nav" aria-label="Page sections">
         <ul>
           <li><a href="#pubs">Publications</a></li>
@@ -153,31 +141,21 @@
         </ul>
       </nav>
 
-      <div class="utilities">
-      <p>Watch some <a href="#video">video recordings of my talks</a>.</p>
+      <p><a href="/art/">Visit the artist website</a>.</p>
 
-      <p>
-        Read further on
-        <a href="https://news.dyne.org/author/jaromil/" target="_blank"
-          >my blog</a
-        >.
-      </p>
-      <p>
-        Contact me via private E-mail:
-        <a href="mailto:j@dyne.org">J @ Dyne.org</a>.
-      </p>
+      <section class="utilities intro-section" aria-labelledby="contact">
+        <h2 id="contact">Contact &amp; links</h2>
+        <p>
+          Contact me via private E-mail:
+          <a href="mailto:j@dyne.org">J @ Dyne.org</a>.
+        </p>
+        <p>
+          <a href="https://news.dyne.org/author/jaromil/" target="_blank">My blog</a>
+          and <a rel="me" href="https://www.linkedin.com/in/jaromil" target="_blank">LinkedIn</a>.
+        </p>
 
-      <p>
-        Connect on
-        <a
-          rel="me"
-          href="https://www.linkedin.com/in/jaromil"
-          target="_blank"
-          >LinkedIn</a>.
-      </p>
-
-      <p>Receive the Dyne.org think & do tank newsletter:</p>
-      <div class="signup-form">
+        <p>Receive the Dyne.org think &amp; do tank newsletter:</p>
+        <div class="signup-form">
         <script
           src="https://cdn.jsdelivr.net/ghost/signup-form@~0.1/umd/signup-form.min.js"
           data-label-1="jaromil.dyne.org"
@@ -186,27 +164,47 @@
           data-site="https://news.dyne.org/"
           async
         ></script>
-      </div>
+        </div>
+        <p class="newsletter-fallback">
+          <a href="https://news.dyne.org/signup-to-rewild-the-internet/">Sign up on news.dyne.org</a>.
+        </p>
 
-      </div>
-
-      <hr />
-      <img
-        src="img/jaromil_portrait_by_robert_lloyd.png"
-        alt="Stylo portrait courtesy of Robert Lloyd"
-        title="Stylo portrait courtesy of Robert Lloyd"
-      />
-      <p class="note">
-        Stylo portrait courtesy of Robert Lloyd. Public signing keys follow<br />
+        <h3>Public signing keys</h3>
+        <p class="note">
         <a href="jaromil.pub">GPG</a>: 6113 D89C A825 C5CE DD02 C872 73B3 5DA5
         4ACB 7D10<br />
         <a href="jaromil-plan-b.pub">GPG</a>: 5EAD D53F 2CD1 F0B7 AEEE 920D 25FC 5C29
         CD52 8E32
+        </p>
+      </section>
+
+      <section class="intro-section" aria-labelledby="background">
+        <h2 id="background">Background</h2>
+        <p>
+          I hold an old-school Ph.D., literally in philosophy. Over the years I
+          have coined the term "Algorithmic Sovereignty" and published on ethics
+          and society, media theory, and hard sciences.
+        </p>
+        <p>
+          Since 1999 I have started and facilitated
+          <a href="#code">free and open source software projects</a>, cultural
+          initiatives, and research collaborations, including work supported by
+          <a href="#grants">European Commission</a> programmes.
+        </p>
+      </section>
+
+      <img
+        src="img/jaromil_portrait_by_robert_lloyd.png" width="258" height="423" loading="lazy" decoding="async"
+        alt="Stylo portrait courtesy of Robert Lloyd"
+        title="Stylo portrait courtesy of Robert Lloyd"
+      />
+      <p class="note">
+        Stylo portrait courtesy of Robert Lloyd.
       </p>
       <hr />
     </header>
 
-    <main>
+    <main id="main" tabindex="-1">
       <section aria-labelledby="pubs">
       <h2 id="pubs">Publications</h2>
       <p class="note">
@@ -216,7 +214,7 @@
         ><br />
         ORCID record:
         <a href="https://orcid.org/0000-0003-3457-1453" target="_blank">
-          <img class="icon" src="img/orcid24.png" alt="ORCID"/>
+          <img class="icon" src="img/orcid24.png" width="24" height="24" loading="lazy" decoding="async" alt="ORCID"/>
           0000-0003-3457-1453</a
         ><br />
         Profile on
@@ -302,7 +300,7 @@
         <li>
           2018 <a href="https://algosov.org/">Algorithmic Sovereignty</a>
           <img
-            src="img/decode_software_design.jpg"
+            src="img/decode_software_design.jpg" width="1404" height="967" loading="lazy" decoding="async"
             alt="Diagram of techno-political dependencies in software design, from the DECODE project"
           />
         </li>
@@ -406,12 +404,13 @@
 
       <div class="note media-block">
         <a href="https://github.com/jaromil" target="_blank">
-          <img src="img/coding_like_bob_ross.jpg" alt="Coding like Bob Ross" />
+          <img src="img/coding_like_bob_ross.jpg" width="744" height="299" loading="lazy" decoding="async" alt="Coding like Bob Ross" />
           <img
             src="https://img.shields.io/badge/-jaromil_on_github-gray?style=flat&logo=Github&logoColor=white&link=https://github.com/jaromil/"
+            loading="lazy" decoding="async"
             alt="Github Badge"
           /><br />
-          <img src="img/github-recap-2025.png" alt="Github stats 2025" />
+          <img src="img/github-recap-2025.png" width="1536" height="1298" loading="lazy" decoding="async" alt="Github stats 2025" />
         </a>
       </div>
 
@@ -486,7 +485,7 @@
 
       <a href="https://www.trustblockchainsociety.online">
         <img
-          src="img/trust_in_blockchain_society.jpg"
+          src="img/trust_in_blockchain_society.jpg" width="1827" height="1035" loading="lazy" decoding="async"
           alt="Portraits of people interviewed in blockchain society"
       /></a>
 
@@ -604,7 +603,7 @@
           <a href="https://www.youtube.com/watch?v=EmkVHuyl0d0">
             Cybersecurity and IoT
             <img
-              src="img/cybersecurity_eurotv.jpg"
+              src="img/cybersecurity_eurotv.jpg" width="1894" height="806" loading="lazy" decoding="async"
               alt="Screenshot of Jaromil talking at EUparl TV"
           /></a>
           EUparl TV
@@ -654,7 +653,7 @@
           <a href="https://www.youtube.com/watch?v=y4B5RFKRs68">
             hacker (etico) è bello!
             <img
-              src="img/hacker_e_bello.jpg"
+              src="img/hacker_e_bello.jpg" width="1306" height="589" loading="lazy" decoding="async"
               alt="Screenshot of Jaromil talking at CNR TV"
           /></a>
           CNRPisa (italiano)
@@ -698,7 +697,7 @@
 
       <a href="img/osservatore_romano_2022.png">
         <img
-          src="img/osservatore_romano_2022.png"
+          src="img/osservatore_romano_2022.png" width="1708" height="1774" loading="lazy" decoding="async"
           alt="Readable screenshot of the newspaper page"
       /></a>
 
@@ -945,10 +944,12 @@
       <section aria-labelledby="art">
       <h2 id="art">Artworks</h2>
 
+      <p><a href="/art/">Visit the artist website</a>.</p>
+
       <p>
         <a href="https://zkm.de/media/file/de/forkbomb_boheme_digitale.pdf"
           ><img
-            src="img/forkbomb.jpg"
+            src="img/forkbomb.jpg" width="703" height="176" loading="lazy" decoding="async"
             alt="Reproduction of the Forkbomb artwork"
         /></a>
       </p>
@@ -963,25 +964,25 @@
         href="https://www.e-flux.com/announcements/339153/always-the-property-drama/"
       >
         <img
-          src="img/german_pavillion_venezia.gif"
+          src="img/german_pavillion_venezia.gif" width="1200" height="676" loading="lazy" decoding="async"
           alt="Animated infographic of the German Pavillon exhibition"
       /></a>
 
       <a href="https://binart.eu/hasciicam/">
         <img
-          src="img/hasciicam_interview.jpg"
+          src="img/hasciicam_interview.jpg" width="1152" height="924" loading="lazy" decoding="async"
           alt="Screenshot of Jaromil's interview on ASCII"
       /></a>
 
       <a href="https://rastasoft.org">
-        <img src="img/rastasoft_flag.jpg" alt="Rastasoft flag"
+        <img src="img/rastasoft_flag.jpg" width="1156" height="648" loading="lazy" decoding="async" alt="Rastasoft flag"
       /></a>
 
       <a
         href="https://www.raiplay.it/video/2018/02/Denis-Jaromil-Rojo-Data-Portaits-Dal-digitale-allanalogico-1ed2d452-a07f-4bc4-992d-fed51ed35c8e.html"
       >
         <img
-          src="img/dataportraits_palermo.jpg"
+          src="img/dataportraits_palermo.jpg" width="768" height="1024" loading="lazy" decoding="async"
           alt="Picture of Jaromil's solo exhibition 'data portraits' in Palermo"
       /></a>
       <!--

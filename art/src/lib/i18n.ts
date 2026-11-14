@@ -16,6 +16,11 @@ export const defaultLocale: Locale = 'en';
 
 const en = {
   skipLink: 'Skip to content',
+  index: 'Index',
+  siteIndex: 'Site index',
+  enter: 'Enter',
+  home: 'Jaromil — home',
+  language: 'Language',
   closeIndex: 'Close index',
   siteNav: 'Site',
   practices: 'Practices',
@@ -43,6 +48,8 @@ const en = {
   showings: 'Showings',
   forthcoming: 'forthcoming',
   watchOn: 'Watch',
+  watchVideo: 'Watch video',
+  playVideo: 'Play video:',
   on: 'on',
   startCamera: 'Start live camera',
   cameraUnavailable: 'Live camera unavailable',
@@ -51,6 +58,7 @@ const en = {
     'Artist and hacker. His work moves between code and conceptual art: free software as an artistic medium, the aesthetics of computation, and the visibility of the systems that surround us.',
   bioP2: 'He has recently opened his art studio in Lugano, with new projects and works forthcoming.',
   bioTodo: 'Full biography — forthcoming',
+  personalWebsite: 'Visit the personal website',
   journalNote:
     "Long-form writing also lives inside the practice and work pages. Jaromil's journal of musings is at",
   noExhibitions: 'No exhibitions documented yet',
@@ -60,6 +68,11 @@ export type UiKey = keyof typeof en;
 
 const it: Record<UiKey, string> = {
   skipLink: 'Salta al contenuto',
+  index: 'Indice',
+  siteIndex: 'Indice del sito',
+  enter: 'Entra in',
+  home: 'Jaromil — pagina iniziale',
+  language: 'Lingua',
   closeIndex: "Chiudi l'indice",
   siteNav: 'Sito',
   practices: 'Pratiche',
@@ -87,6 +100,8 @@ const it: Record<UiKey, string> = {
   showings: 'Presentazioni',
   forthcoming: 'in arrivo',
   watchOn: 'Guarda',
+  watchVideo: 'Guarda il video',
+  playVideo: 'Riproduci il video:',
   on: 'su',
   startCamera: 'Avvia la camera live',
   cameraUnavailable: 'Camera live non disponibile',
@@ -95,6 +110,7 @@ const it: Record<UiKey, string> = {
     "Artista e hacker. Il suo lavoro si muove tra codice e arte concettuale: il software libero come medium artistico, l'estetica della computazione e la visibilità dei sistemi che ci circondano.",
   bioP2: "Ha recentemente aperto il suo studio d'arte a Lugano, con nuovi progetti e opere in arrivo.",
   bioTodo: 'Biografia completa — in arrivo',
+  personalWebsite: 'Visita il sito personale',
   journalNote:
     'La scrittura di lungo corso vive anche dentro le pagine delle pratiche e delle opere. Il journal of musings di Jaromil è su',
   noExhibitions: 'Nessuna mostra documentata finora',

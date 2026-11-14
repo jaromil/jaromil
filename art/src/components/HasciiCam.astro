@@ -46,7 +46,7 @@ const locale = pageLocale(Astro.url.pathname);
   <p class="controls">
     <button type="button" class="toggle" data-toggle hidden>{t(locale, 'startCamera')}</button>
   </p>
-  <p class="visually-hidden" role="status" data-status></p>
+  <p class="camera-status" role="status" data-status></p>
   {media.caption && <figcaption class="caption">{media.caption}</figcaption>}
 </figure>
 
@@ -68,6 +68,7 @@ const locale = pageLocale(Astro.url.pathname);
     background: none;
     border: 0;
     padding: 0;
+    min-block-size: 44px;
     font-family: var(--font-mono);
     font-size: var(--step--1);
     letter-spacing: 0.14em;
@@ -76,6 +77,13 @@ const locale = pageLocale(Astro.url.pathname);
     cursor: pointer;
   }
   .toggle:hover { color: var(--white); }
+  .camera-status {
+    margin-block-start: 0.6rem;
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    color: var(--grey);
+  }
+  .camera-status:empty { display: none; }
   figcaption { margin-block-start: 0.6rem; }
 </style>
 

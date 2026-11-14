@@ -1,0 +1,15 @@
+---
+import { getEntry } from 'astro:content';
+import { href, pageLocale } from '../lib/i18n';
+
+interface Props {
+  slug: string;
+}
+
+const { slug } = Astro.props;
+const work = await getEntry('works', slug);
+if (!work) throw new Error(`Unknown linked work: ${slug}`);
+const locale = pageLocale(Astro.url.pathname);
+---
+
+<a href={href(`work/${work.id}`, locale)}><slot /></a>

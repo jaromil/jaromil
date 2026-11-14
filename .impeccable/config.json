@@ -1,0 +1,26 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "design-system-font",
+        "value": "literata",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-13T00:05:48.844Z",
+        "reason": "Agent: Org Plan Visual authority explicitly preserves the root Literata-led reading design; DESIGN.md governs art/"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "literata",
+        "files": [
+          "style.css"
+        ],
+        "createdAt": "2026-11-13T23:45:14.607Z",
+        "reason": "Agent: Org Plan Visual authority preserves the existing root Literata reading design; DESIGN.md governs art/"
+      }
+    ]
+  }
+}

@@ -8,7 +8,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "test:content": "node content-test.mjs"
+    "test:content": "node content-test.mjs",
+    "test:standalone": "node --test standalone-test.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.1",

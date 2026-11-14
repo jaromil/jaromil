@@ -94,6 +94,24 @@ summary:focus-visible {
   outline-offset: 0.18em;
 }
 
+.skip-link {
+  box-sizing: border-box;
+  position: fixed;
+  inset-block-start: var(--space-4);
+  inset-inline-start: var(--space-4);
+  z-index: 1;
+  max-width: calc(100% - 2rem);
+  padding: var(--space-2) var(--space-3);
+  background: var(--background);
+  transform: translateY(-200%);
+  clip-path: inset(50%);
+}
+
+.skip-link:focus {
+  transform: none;
+  clip-path: none;
+}
+
 h1,
 h2,
 h3 {
@@ -190,6 +208,21 @@ header {
   margin-bottom: var(--space-2);
 }
 
+.intro-section h2 {
+  margin-top: var(--space-12);
+  margin-bottom: var(--space-4);
+  font-family: var(--font-text);
+  font-size: var(--type-subsection);
+  line-height: 1.35;
+  letter-spacing: normal;
+}
+
+.utilities h3 {
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-2);
+  font-size: 1em;
+}
+
 code,
 kbd,
 samp,
@@ -207,6 +240,10 @@ ul {
 
 main li {
   font-variant-numeric: tabular-nums;
+}
+
+main {
+  overflow-wrap: anywhere;
 }
 
 li + li {

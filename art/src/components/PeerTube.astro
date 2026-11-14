@@ -2,6 +2,7 @@
 import { getImage } from 'astro:assets';
 import type { Media } from '../lib/media';
 import { imageAsset } from '../lib/assets';
+import { pageLocale, t } from '../lib/i18n';
 
 /**
  * PeerTube embeds are lazy and privacy-respecting: the page ships only a
@@ -15,6 +16,7 @@ interface Props {
 }
 
 const { media, class: className } = Astro.props;
+const locale = pageLocale(Astro.url.pathname);
 
 const poster = media.poster
   ? await getImage({ src: imageAsset(media.poster), format: 'webp', width: 1600 })
@@ -40,13 +42,11 @@ const watchUrl = `https://${media.host}/w/${media.uuid}`;
   data-autoplay={media.autoplay || undefined}
   data-muted={media.muted || undefined}
 >
-  <button class="surface" type="button" aria-label={`Play video: ${media.title}`}>
+  <button class="surface" type="button" aria-label={`${t(locale, 'playVideo')} ${media.title}`}>
     {poster && <img src={poster.src} alt="" loading="lazy" decoding="async" />}
     <span class="play" aria-hidden="true">▶</span>
   </button>
-  <noscript>
-    <p class="caption"><a href={watchUrl}>Watch “{media.title}” on {media.host}</a></p>
-  </noscript>
+  <p class="caption"><a href={watchUrl}>{t(locale, 'watchOn')} “{media.title}” {t(locale, 'on')} {media.host}</a></p>
   {media.caption && <figcaption class="caption">{media.caption}</figcaption>}
 </figure>
 
@@ -82,7 +82,7 @@ const watchUrl = `https://${media.host}/w/${media.uuid}`;
     transition: opacity var(--dur) var(--ease);
   }
   .surface:hover .play, .surface:focus-visible .play { opacity: 1; }
-  .peertube iframe {
+  .peertube :global(iframe) {
     inline-size: 100%;
     aspect-ratio: var(--aspect, 16 / 9);
     border: 0;
@@ -102,8 +102,10 @@ const watchUrl = `https://${media.host}/w/${media.uuid}`;
 
     function activate(el: Element) {
       if (el.classList.contains('is-active')) return;
+      if (document.hidden || el.closest('[inert], [hidden]')) return;
       // Only one primary video plays at a time.
       document.querySelectorAll('[data-peertube].is-active').forEach(deactivate);
+      document.querySelectorAll<HTMLVideoElement>('video').forEach(video => video.pause());
       const { host, uuid, params, muted } = (el as HTMLElement).dataset;
       if (!originals.has(el)) originals.set(el, el.querySelector('.surface')?.outerHTML ?? '');
       const iframe = document.createElement('iframe');
@@ -150,5 +152,12 @@ const watchUrl = `https://${media.host}/w/${media.uuid}`;
         .querySelectorAll('[data-peertube][data-autoplay="true"]')
         .forEach((el) => observer.observe(el));
     });
+    const stopAll = () => document.querySelectorAll('[data-peertube].is-active').forEach(deactivate);
+    document.addEventListener('play', event => {
+      if (event.target instanceof HTMLVideoElement) stopAll();
+    }, true);
+    document.addEventListener('astro:before-swap', () => { observer.disconnect(); stopAll(); });
+    window.addEventListener('pagehide', stopAll);
+    document.addEventListener('visibilitychange', () => { if (document.hidden) stopAll(); });
   }
 </script>

@@ -25,6 +25,7 @@ const {
 } = Astro.props;
 
 const locale = pageLocale(Astro.url.pathname);
+const canonical = new URL(Astro.url.pathname, site.url).href;
 const alternates = locales.map((l) => ({
   locale: l,
   url: new URL(altLocaleUrl(Astro.url.pathname, l), site.url).href,
@@ -44,12 +45,12 @@ const alternates = locales.map((l) => ({
           var base = (document.documentElement.dataset.base || '/').replace(/\/?$/, '/');
           var stored = null;
           try { stored = localStorage.getItem('lang'); } catch (e) {}
-          var want = stored || ((navigator.language || '').toLowerCase().indexOf('it') === 0 ? 'it' : 'en');
+          var choice = new URLSearchParams(location.search).get('lang');
+          var valid = function (value) { return value === 'en' || value === 'it'; };
+          var want = valid(choice) ? choice : valid(stored) ? stored : ((navigator.language || '').toLowerCase().indexOf('it') === 0 ? 'it' : 'en');
           var p = location.pathname;
           if (p === base || p === base.slice(0, -1)) {
             if (want === 'it') location.replace(base + 'it/');
-          } else if (p === base + 'it/' || p === base + 'it') {
-            if (want === 'en') location.replace(base);
           }
         } catch (e) {}
       })();
@@ -57,6 +58,7 @@ const alternates = locales.map((l) => ({
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
+    <link rel="canonical" href={canonical} />
     {alternates.map((a) => <link rel="alternate" hreflang={a.locale} href={a.url} />)}
     <link rel="alternate" hreflang="x-default" href={alternates[0].url} />
     <title>{title ? `${title} — ${site.name}` : site.name}</title>

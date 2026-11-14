@@ -85,21 +85,23 @@ and publishes repo root + `art/dist/` at `/art/` to GitHub Pages.
 
 Playwright smoke suites (dev-only, against `npm run preview`):
 `stage-test.mjs` (stage behaviour), `pages-test.mjs` (routes/relations),
-`a11y-test.mjs` (16 routes), `vt-test.mjs` (view transitions + reduced
+`a11y-test.mjs` (38 routes), `vt-test.mjs` (view transitions + reduced
 motion), `hasciicam-test.mjs` (live camera lifecycle with Chromium fake
-media flags). Chromium path: `~/.cache/ms-playwright/chromium_headless_shell-1228/...`
-(see any suite for `executablePath`).
+media flags), `locale-test.mjs`, `delight-test.mjs`, `polish-test.mjs`,
+and `typeset-test.mjs`. All use `tests/browser.mjs` with installed Chrome,
+the browser sandbox enabled, and no browser download. See README.md for
+the production-preview gate and optional executable/base URL overrides.
 
-## Current state (2026-09)
+## Current state (2026-11)
 
-Complete: scaffold, design system, media abstraction, content (3
-practices, 5 works, 1 exhibition, 1 text), black stage with
+Complete: scaffold, design system, media abstraction, content (6
+practices, 10 works, 18 exhibitions, 1 text), black stage with
 counter-as-control, all routes, view transitions, a11y pass, CI deploy,
 multi-language (EN default + IT at /it/ with browser-detect redirect on
 entry, header switch override, fallback to available language). Critique
 fixes applied (hover states, opaque header, prose rhythm, INDEX naming).
-Open content TODOs (marked in files): Data Portraits practice text;
-years of the three portraits (2024, inferred); year of Todos los que
+Open content TODOs (marked in files): Data Portraits practice start year and
+years of the three portraits (unconfirmed); year of Todos los que
 traes contigo; Hasciicam video/PeerTube material; la-boheme-digitale
 full text. Dowse practice/work prose deduplication was proposed, paused
 by the user.

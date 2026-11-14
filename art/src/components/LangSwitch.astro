@@ -1,5 +1,5 @@
 ---
-import { pageLocale, altLocaleUrl, locales, type Locale } from '../lib/i18n';
+import { pageLocale, altLocaleUrl, locales, t, type Locale } from '../lib/i18n';
 
 /**
  * Very small language switch: two-letter ISO codes in the header.
@@ -16,7 +16,7 @@ const urls = Object.fromEntries(
   class="lang-switch"
   data-lang-switch
   data-urls={JSON.stringify(urls)}
-  aria-label="Language / Lingua"
+  aria-label={t(locale, 'language')}
 >
   {
     locales.map((l) => (
@@ -33,6 +33,8 @@ const urls = Object.fromEntries(
     background: var(--black);
     border: 0;
     padding: 0;
+    min-inline-size: 44px;
+    min-block-size: 44px;
     font: inherit;
     letter-spacing: inherit;
     color: var(--grey);
@@ -51,11 +53,18 @@ const urls = Object.fromEntries(
     document.addEventListener('change', (event) => {
       const select = (event.target as HTMLElement).closest<HTMLSelectElement>('[data-lang-switch]');
       if (!select) return;
+      let remembered = false;
       try {
         localStorage.setItem('lang', select.value);
+        remembered = localStorage.getItem('lang') === select.value;
       } catch {}
       const urls = JSON.parse(select.dataset.urls ?? '{}');
-      if (urls[select.value]) location.href = urls[select.value];
+      if (urls[select.value]) {
+        const destination = new URL(urls[select.value], location.origin);
+        // Preserve this explicit choice even when preference storage is blocked.
+        if (!remembered) destination.searchParams.set('lang', select.value);
+        location.href = destination.href;
+      }
     });
   }
 </script>
