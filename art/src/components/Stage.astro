@@ -35,7 +35,7 @@ const locale = pageLocale(Astro.url.pathname);
     {
       states.map((state, i) => (
         <li class="state" data-state data-slug={state.slug} inert={i !== 0}>
-          <a class="visual" href={state.href} data-visual aria-label={`Enter ${state.title}`}>
+          <a class="visual" href={state.href} data-visual aria-label={`${t(locale, 'enter')} ${state.title}`}>
             <Media media={state.hero} eager={i === 0} sizes="(min-width: 768px) 60vw, 92vw" />
           </a>
           <p class="label">
@@ -159,7 +159,7 @@ const locale = pageLocale(Astro.url.pathname);
   .step:hover { color: var(--white); }
   .hint {
     font-size: 0.85em;
-    color: color-mix(in srgb, var(--grey) 70%, transparent);
+    color: var(--grey);
     transition: opacity var(--dur) var(--ease);
   }
   .hint.fading { opacity: 0; }
@@ -228,17 +228,21 @@ const locale = pageLocale(Astro.url.pathname);
     const bbContext = document.querySelector<HTMLElement>('[data-bb-context]');
     const ofLabel = stage.dataset.of ?? 'of';
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const saveData = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData === true;
     let index = 0;
 
     // One-time gesture hint: shown until the first state change, then never again.
     const HINT_KEY = 'jaromil-stage-hint-seen';
     const hint = stage.querySelector<HTMLElement>('[data-hint]');
-    if (hint && !localStorage.getItem(HINT_KEY)) hint.hidden = false;
+    let hintSeen = false;
+    try { hintSeen = localStorage.getItem(HINT_KEY) === '1'; } catch {}
+    if (hint && !hintSeen) hint.hidden = false;
     function dismissHint() {
       if (!hint || hint.hidden) return;
-      localStorage.setItem(HINT_KEY, '1');
+      try { localStorage.setItem(HINT_KEY, '1'); } catch {}
       hint.classList.add('fading');
       hint.addEventListener('transitionend', () => (hint.hidden = true), { once: true });
+      setTimeout(() => (hint.hidden = true), 500);
     }
 
     function show(next: number) {
@@ -259,7 +263,7 @@ const locale = pageLocale(Astro.url.pathname);
         state
           .querySelectorAll<HTMLVideoElement>('video[data-autoplay]')
           .forEach((video) => {
-            if (i === index && !reduced.matches) video.play().catch(() => {});
+            if (i === index && !reduced.matches && !saveData && !document.hidden) video.play().catch(() => {});
             else video.pause();
           });
         // Live HasciiCam media follow the same lifecycle: camera on when

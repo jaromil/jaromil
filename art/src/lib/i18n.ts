@@ -16,6 +16,11 @@ export const defaultLocale: Locale = 'en';
 
 const en = {
   skipLink: 'Skip to content',
+  index: 'Index',
+  siteIndex: 'Site index',
+  enter: 'Enter',
+  home: 'Jaromil — home',
+  language: 'Language',
   closeIndex: 'Close index',
   siteNav: 'Site',
   practices: 'Practices',
@@ -43,6 +48,8 @@ const en = {
   showings: 'Showings',
   forthcoming: 'forthcoming',
   watchOn: 'Watch',
+  watchVideo: 'Watch video',
+  playVideo: 'Play video:',
   on: 'on',
   startCamera: 'Start live camera',
   cameraUnavailable: 'Live camera unavailable',
@@ -61,6 +68,11 @@ export type UiKey = keyof typeof en;
 
 const it: Record<UiKey, string> = {
   skipLink: 'Salta al contenuto',
+  index: 'Indice',
+  siteIndex: 'Indice del sito',
+  enter: 'Entra in',
+  home: 'Jaromil — pagina iniziale',
+  language: 'Lingua',
   closeIndex: "Chiudi l'indice",
   siteNav: 'Sito',
   practices: 'Pratiche',
@@ -88,6 +100,8 @@ const it: Record<UiKey, string> = {
   showings: 'Presentazioni',
   forthcoming: 'in arrivo',
   watchOn: 'Guarda',
+  watchVideo: 'Guarda il video',
+  playVideo: 'Riproduci il video:',
   on: 'su',
   startCamera: 'Avvia la camera live',
   cameraUnavailable: 'Camera live non disponibile',

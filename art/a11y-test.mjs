@@ -1,4 +1,5 @@
 import { chromium } from 'playwright';
+import assert from 'node:assert/strict';
 
 const base = 'http://localhost:4323/art/';
 const routes = [
@@ -88,7 +89,6 @@ for (let i = 0; i < 8; i++) {
 console.log('tab order:', JSON.stringify(tabStops));
 
 // Focus visibility: focused element must have a visible outline.
-await page.keyboard.press('Tab');
 const outline = await page.evaluate(() => {
   const el = document.activeElement;
   if (!el) return null;
@@ -96,6 +96,49 @@ const outline = await page.evaluate(() => {
   return { outlineStyle: s.outlineStyle, outlineWidth: s.outlineWidth };
 });
 console.log('focus outline:', JSON.stringify(outline));
+assert.notEqual(outline?.outlineStyle, 'none');
+assert.ok(parseFloat(outline?.outlineWidth) > 0);
+
+for (const prefix of ['', 'it/']) for (const motion of ['no-preference', 'reduce']) {
+  await page.emulateMedia({ reducedMotion: motion });
+  await page.evaluate(value => localStorage.setItem('lang', value), prefix ? 'it' : 'en');
+  await page.goto(base + prefix, { waitUntil: 'networkidle' });
+  const overlay = page.locator('#index-overlay');
+  assert.equal(await overlay.evaluate(el => el.hidden && el.inert), true);
+  const trigger = page.locator('.site-header [data-open-index]');
+  await trigger.focus();
+  await page.keyboard.press('Enter');
+  assert.equal(await trigger.getAttribute('aria-expanded'), 'true');
+  assert.equal(await overlay.evaluate(el => el.contains(document.activeElement)), true);
+  const first = overlay.locator('a').first();
+  const last = overlay.locator('[data-close-index]');
+  await first.focus();
+  await page.keyboard.press('Shift+Tab');
+  assert.equal(await last.evaluate(el => el === document.activeElement), true);
+  await page.keyboard.press('Tab');
+  assert.equal(await first.evaluate(el => el === document.activeElement), true);
+  await page.keyboard.press('Escape');
+  assert.equal(await overlay.evaluate(el => el.inert), true);
+  assert.equal(await trigger.evaluate(el => el === document.activeElement), true);
+  assert.equal(await trigger.getAttribute('aria-expanded'), 'false');
+  // A second close must not leave an older timer able to hide a reopened Index.
+  await page.keyboard.press('Escape');
+  await trigger.click({ force: true });
+  await page.waitForTimeout(650);
+  assert.deepEqual(await overlay.evaluate(el => ({ hidden: el.hidden, inert: el.inert, open: el.classList.contains('open') })), { hidden: false, inert: false, open: true });
+  assert.equal(await page.evaluate(() => document.body.style.overflow), 'hidden');
+  await last.focus();
+  assert.equal(await last.evaluate(el => el === document.activeElement), true);
+  await page.keyboard.press('Escape');
+  await page.waitForTimeout(650);
+  assert.deepEqual(await overlay.evaluate(el => ({ hidden: el.hidden, inert: el.inert, open: el.classList.contains('open') })), { hidden: true, inert: true, open: false });
+  assert.equal(await page.evaluate(() => document.body.style.overflow), '');
+  assert.equal(await page.locator('main, .site-header, .bottom-bar, .skip-link').evaluateAll(nodes => nodes.every(el => !el.inert)), true);
+  assert.equal(await trigger.evaluate(el => el === document.activeElement), true);
+  await page.keyboard.press('Tab');
+  assert.equal(await overlay.evaluate(el => el.contains(document.activeElement)), false);
+  console.log(`keyboard dialog ${prefix || 'en'} ${motion}: open, wrap, repeated close/rapid reopen, settled cleanup, focus return, closed exclusion`);
+}
 
 console.log(failures ? `${failures} route(s) with problems` : 'all routes pass');
 await browser.close();

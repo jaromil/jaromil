@@ -44,12 +44,12 @@ const alternates = locales.map((l) => ({
           var base = (document.documentElement.dataset.base || '/').replace(/\/?$/, '/');
           var stored = null;
           try { stored = localStorage.getItem('lang'); } catch (e) {}
-          var want = stored || ((navigator.language || '').toLowerCase().indexOf('it') === 0 ? 'it' : 'en');
+          var choice = new URLSearchParams(location.search).get('lang');
+          var valid = function (value) { return value === 'en' || value === 'it'; };
+          var want = valid(choice) ? choice : valid(stored) ? stored : ((navigator.language || '').toLowerCase().indexOf('it') === 0 ? 'it' : 'en');
           var p = location.pathname;
           if (p === base || p === base.slice(0, -1)) {
             if (want === 'it') location.replace(base + 'it/');
-          } else if (p === base + 'it/' || p === base + 'it') {
-            if (want === 'en') location.replace(base);
           }
         } catch (e) {}
       })();

@@ -1,0 +1,15 @@
+---
+import Base from '../../src/layouts/Base.astro';
+import PeerTube from '../../src/components/PeerTube.astro';
+import VideoMedia from '../../src/components/VideoMedia.astro';
+const manual = { type: 'peertube' as const, host: 'video.invalid', uuid: 'fixture-one', title: 'Unpublished media test', poster: 'hasciicam-eye.png', aspect: '16 / 9', autoplay: false, muted: true, loop: false, controls: true };
+---
+<Base title="Unpublished media fixture">
+  <div class="page">
+    <h1>Unpublished media fixture</h1>
+    <PeerTube media={manual} />
+    <PeerTube media={{ ...manual, uuid: 'fixture-two' }} />
+    <VideoMedia media={{ type: 'video', sources: [{ src: 'dowse-dns-graph.webm', type: 'video/webm' }], poster: 'hasciicam-eye.png', autoplay: false, muted: true, loop: false, controls: true }} />
+    <PeerTube media={{ ...manual, uuid: 'fixture-auto', autoplay: true }} />
+  </div>
+</Base>

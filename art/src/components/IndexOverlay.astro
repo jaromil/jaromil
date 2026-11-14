@@ -13,8 +13,8 @@ const practiceGroups = practices.map((practice) => ({
 const standaloneWorks = works.filter((work) => !work.data.practice);
 ---
 
-<div class="overlay" id="index-overlay" role="dialog" aria-modal="true" aria-label="Index" hidden>
-  <nav class="panel" aria-label="Site index">
+<div class="overlay" id="index-overlay" role="dialog" aria-modal="true" aria-label={t(locale, 'index')} hidden inert>
+  <nav class="panel" aria-label={t(locale, 'siteIndex')}>
     <section class="pages">
       <h2>{t(locale, 'siteNav')}</h2>
       <ul>
@@ -92,6 +92,7 @@ const standaloneWorks = works.filter((work) => !work.data.practice);
   }
   .relationship-label {
     display: flex;
+    flex-wrap: wrap;
     gap: 0.65rem;
   }
   .practice-groups {
@@ -155,6 +156,8 @@ const standaloneWorks = works.filter((work) => !work.data.practice);
     background: none;
     border: 0;
     padding: 0;
+    min-inline-size: 44px;
+    min-block-size: 44px;
     font: inherit;
     font-size: var(--step-1);
     color: var(--grey);
@@ -169,6 +172,7 @@ const standaloneWorks = works.filter((work) => !work.data.practice);
   if (!(document.documentElement.dataset.indexInit === 'true')) {
     document.documentElement.dataset.indexInit = 'true';
     let lastTrigger: HTMLElement | null = null;
+    let closeTimer: ReturnType<typeof setTimeout> | undefined;
 
     const overlay = () => document.getElementById('index-overlay');
     const setExpanded = (value: boolean) =>
@@ -179,8 +183,11 @@ const standaloneWorks = works.filter((work) => !work.data.practice);
     function open(trigger: HTMLElement) {
       const el = overlay();
       if (!el) return;
+      clearTimeout(closeTimer);
+      closeTimer = undefined;
       lastTrigger = trigger;
       el.hidden = false;
+      el.inert = false;
       requestAnimationFrame(() => el.classList.add('open'));
       document.body.style.overflow = 'hidden';
       // Keep keyboard focus inside the dialog.
@@ -193,20 +200,20 @@ const standaloneWorks = works.filter((work) => !work.data.practice);
 
     function close() {
       const el = overlay();
-      if (!el) return;
+      if (!el || el.hidden || el.inert) return;
+      clearTimeout(closeTimer);
+      el.inert = true;
       el.classList.remove('open');
       document.body.style.overflow = '';
       document.querySelectorAll('main, .site-header, .bottom-bar, .skip-link').forEach((n) => {
         (n as HTMLElement).inert = false;
       });
       setExpanded(false);
-      const done = () => {
+      // Inert immediately excludes fading links from focus and accessibility.
+      closeTimer = setTimeout(() => {
         el.hidden = true;
-        el.removeEventListener('transitionend', done);
-      };
-      el.addEventListener('transitionend', done);
-      // Fallback if the transition does not run (reduced motion).
-      setTimeout(done, 600);
+        closeTimer = undefined;
+      }, 500);
       lastTrigger?.focus();
     }
 
@@ -214,7 +221,9 @@ const standaloneWorks = works.filter((work) => !work.data.practice);
       const target = event.target as HTMLElement;
       const opener = target.closest<HTMLElement>('[data-open-index]');
       if (opener) {
-        overlay()?.hidden ? open(opener) : close();
+        const el = overlay();
+        if (el?.hidden || el?.inert) open(opener);
+        else close();
         return;
       }
       if (target.closest('[data-close-index]')) close();
@@ -222,6 +231,18 @@ const standaloneWorks = works.filter((work) => !work.data.practice);
 
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape' && overlay() && !overlay()!.hidden) close();
+      const el = overlay();
+      if (event.key !== 'Tab' || !el || el.hidden || el.inert) return;
+      const stops = [...el.querySelectorAll<HTMLElement>('a[href], button')];
+      const first = stops[0];
+      const last = stops[stops.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last?.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first?.focus();
+      }
     });
   }
 </script>
