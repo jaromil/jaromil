@@ -1,3 +1,4 @@
+import assert from 'node:assert/strict';
 import { chromium } from 'playwright';
 
 const base = 'http://localhost:4323/art/';
@@ -64,6 +65,63 @@ const exh = await page.evaluate(() => ({
   workLink: document.querySelector('.index-list a')?.getAttribute('href'),
 }));
 console.log('exhibition:', JSON.stringify(exh));
+
+// Incomplete pages retain native reading paths and omit facts not supplied.
+let documentationCases = 0;
+let relatedLinks = 0;
+for (const locale of ['', 'it/']) {
+  for (const [route, incomplete] of [
+    ['practice/data-portraits/', true],
+    ['work/dp-lugano/', true],
+    ['text/la-boheme-digitale/', true],
+    ['work/farah/', false],
+  ]) {
+    assert.equal((await page.goto(base + locale + route, { waitUntil: 'networkidle' })).status(), 200);
+    const article = page.locator('article');
+    assert.equal(await article.locator('h1').count(), 1);
+    assert.equal(await article.locator('p.todo').count(), incomplete ? 1 : 0);
+    assert.equal(await article.locator('.meta:empty, .aside:empty').count(), 0);
+    if (route === 'practice/data-portraits/') {
+      assert.deepEqual((await article.locator('.index-list a').evaluateAll(links => links.map(a => a.getAttribute('href')))).sort(), [
+        `/art/${locale}work/dp-amsterdam/`, `/art/${locale}work/dp-lugano/`, `/art/${locale}work/dp-palermo/`,
+      ].sort());
+    }
+    if (route === 'work/dp-lugano/') {
+      assert.equal(await article.locator('header .meta').count(), 0);
+      assert.equal(await article.locator(`header a[href="/art/${locale}practice/data-portraits/"]`).count(), 1);
+      assert.deepEqual((await article.locator('.related a').evaluateAll(links => links.map(a => a.getAttribute('href')))).sort(), [
+        `/art/${locale}work/dp-amsterdam/`, `/art/${locale}work/dp-palermo/`,
+      ].sort());
+    }
+    if (route === 'text/la-boheme-digitale/') {
+      assert.equal(await article.locator(`a[href="/art/${locale}work/forkbomb/"]`).count(), 1);
+      const notice = await article.locator('p.todo').boundingBox();
+      for (const anchor of ['english', 'italiano']) {
+        const link = article.locator(`a[href="/journal/forkbomb.html#${anchor}"]`);
+        assert.equal(await link.count(), 1);
+        assert.ok((await link.boundingBox()).y < notice.y, 'available text precedes its in-site edition notice');
+      }
+    }
+    for (const target of await article.locator('a[href^="/art/"]').evaluateAll(links => links.map(a => a.getAttribute('href')))) {
+      assert.equal((await page.request.get(new URL(target, base).href)).status(), 200, target);
+      relatedLinks++;
+    }
+    documentationCases++;
+  }
+  const context = await browser.newContext({ javaScriptEnabled: false, locale: locale ? 'it' : 'en', viewport: { width: 390, height: 844 } });
+  await context.route('**/*', route => route.request().resourceType() === 'image' ? route.abort() : route.continue());
+  const fallback = await context.newPage();
+  await fallback.goto(base + locale + 'work/dp-lugano/');
+  const practice = fallback.locator(`article header a[href="/art/${locale}practice/data-portraits/"]`);
+  for (let tab = 0; tab < 30 && !(await practice.evaluate(el => el === document.activeElement)); tab++) await fallback.keyboard.press('Tab');
+  assert.ok(await practice.evaluate(el => el === document.activeElement), 'practice link remains keyboard reachable without JS or images');
+  await fallback.keyboard.press('Enter');
+  await fallback.waitForURL(base + locale + 'practice/data-portraits/');
+  assert.equal(await fallback.locator(`article a[href="/art/${locale}work/dp-lugano/"]`).count(), 1);
+  await context.close();
+  documentationCases++;
+}
+console.log(`documentation assertions: ${documentationCases} cases, ${relatedLinks} related link targets, 0 failed, 0 skipped`);
 
 // Screenshots for visual review.
 await page.goto(base, { waitUntil: 'networkidle' });

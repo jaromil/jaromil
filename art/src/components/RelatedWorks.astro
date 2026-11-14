@@ -47,7 +47,7 @@ if (practice) {
         {related.map((work) => (
           <li>
             <a href={href(`work/${work.id}`, locale)}>{work.data.title}</a>
-            <span class="aside">{work.data.year ?? ''}</span>
+            {work.data.year !== undefined && <span class="aside">{work.data.year}</span>}
           </li>
         ))}
       </ul>

@@ -9,6 +9,8 @@ npm run dev       # http://localhost:4321/art/
 npm run build     # static output in dist/
 npm run preview   # serve the build
 npm run check     # type-check
+npm run test:content     # assertions against the built authored collections
+npm run test:standalone  # isolated standalone-work rendering fixture (never published)
 ```
 
 Deploy: push to `master` — `.github/workflows/deploy.yml` builds `art/`

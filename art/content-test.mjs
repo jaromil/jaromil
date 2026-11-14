@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { readdir, readFile } from 'node:fs/promises';
+import { readdir, readFile, access } from 'node:fs/promises';
 
 const routeHtml = async (route) =>
   readFile(new URL(`dist/${route}/index.html`, import.meta.url), 'utf8');
@@ -93,6 +93,84 @@ assert.match(iLoveYou, /Copenhagen/);
 const dataPortraits = await routeHtml('exhibition/data-portraits');
 assert.match(dataPortraits, /work\/dp-palermo/);
 
+// Reconciliation must preserve every honest gap in both locale outputs.
+const unresolved = [
+  ['practice/data-portraits', 'Testo su Data Portraits'],
+  ['practice/dowsing', 'Testo completo sulla pratica'],
+  ['work/dp-amsterdam', "Testo sull[’']opera"],
+  ['work/dp-palermo', 'Primary documentation of D.P. Palermo'],
+  ['work/dp-lugano', 'Documentation forthcoming'],
+  ['work/ascii-portraits', 'Documentation forthcoming'],
+  ['work/hasciicam', 'Video documentation'],
+  ['work/making-visible-the-invisible', 'Documentation'],
+  ['text/la-boheme-digitale', 'In-site edition forthcoming'],
+  ['exhibition/codedoc-ii', 'Individual artwork title'],
+  ['exhibition/joburg-art-fair-2009', 'Individual artwork and exact project-title linkage'],
+];
+for (const locale of ['', 'it/']) {
+  for (const [route, notice] of unresolved) {
+    const html = await routeHtml(`${locale}${route}`);
+    assert.match(html, new RegExp(`<p class="todo">[^<]*(?:${notice})[^<]*</p>`), `${locale}${route} retains its unresolved notice`);
+  }
+  const practice = await routeHtml(`${locale}practice/data-portraits`);
+  assert.doesNotMatch(practice, /(?:since|dal)\s+2024/i, 'an imprint must not become a practice start year');
+  for (const work of ['dp-amsterdam', 'dp-palermo', 'dp-lugano']) {
+    assert.match(practice, new RegExp(`href="/art/${locale}work/${work}/"`));
+    assert.match(await routeHtml(`${locale}work/${work}`), new RegExp(`href="/art/${locale}practice/data-portraits/"`));
+  }
+  const palermo = await routeHtml(`${locale}work/dp-palermo`);
+  assert.match(palermo, new RegExp(`href="/art/${locale}exhibition/data-portraits/"`));
+  assert.match(palermo, /href="\/img\/dataportraits_palermo.jpg"/);
+  const text = await routeHtml(`${locale}text/la-boheme-digitale`);
+  for (const anchor of ['english', 'italiano']) assert.match(text, new RegExp(`href="/journal/forkbomb.html#${anchor}"`));
+  assert.doesNotMatch(text, /awaiting source material/);
+  const italian = await routeHtml(`${locale}work/todos-los-que-traes-contigo`);
+  assert.match(italian, /<div lang="it">/);
+
+  const lugano = await routeHtml(`${locale}work/dp-lugano`);
+  const header = lugano.match(/<article\b[^>]*>\s*<header[^>]*>([\s\S]*?)<\/header>/)?.[1];
+  assert.ok(header, 'incomplete work header is rendered');
+  assert.doesNotMatch(header, /class="meta"|forthcoming|\b20\d\d\b/, 'absent work facts must not become metadata');
+  assert.ok(lugano.indexOf('class="hero"') < lugano.indexOf('<p class="todo">'), 'media precedes the incomplete notice');
+  for (const sibling of ['dp-amsterdam', 'dp-palermo']) {
+    assert.match(lugano, new RegExp(`href="/art/${locale}work/${sibling}/"`));
+  }
+  assert.doesNotMatch(lugano, /<span class="aside">\s*<\/span>/, 'unknown related-work years are omitted');
+  assert.doesNotMatch(practice, /<span class="aside">\s*<\/span>/, 'unknown realization years are omitted');
+  assert.match(text, new RegExp(`href="/art/${locale}work/forkbomb/"`), 'the verified text/work relation follows the page locale');
+  const hasciicam = await routeHtml(`${locale}work/hasciicam`);
+  assert.ok(hasciicam.indexOf('>Artist archive</a>') < hasciicam.indexOf('<p class="todo">'), 'available context and archive precede the video gap');
+  const complete = await routeHtml(`${locale}work/farah`);
+  assert.doesNotMatch(complete, /<p class="todo">/, 'complete records do not acquire forthcoming notices');
+  assert.match(complete, /<p class="meta"[^>]*>2002<\/p>/, 'verified dates remain visible');
+}
+
+// Archive links are backed by actual local media, text and fragment targets.
+await readFile(new URL('../img/dataportraits_palermo.jpg', import.meta.url));
+const archive = await readFile(new URL('../journal/forkbomb.html', import.meta.url), 'utf8');
+for (const anchor of ['english', 'italiano']) assert.match(archive, new RegExp(`id="${anchor}"`));
+for (const [path, marker] of [
+  ['practices/data-portraits', '# TODO: confirm yearFrom'],
+  ['works/todos-los-que-traes-contigo', '# TODO: year not stated'],
+]) {
+  assert.ok((await readFile(new URL(`src/content/${path}.mdx`, import.meta.url), 'utf8')).includes(marker));
+}
+
+// Every rendered collection relation must lead to a built record, including IT.
+let checkedRelationLinks = 0;
+for (const locale of ['', 'it/']) {
+  for (const collection of ['work', 'practice', 'exhibition', 'text']) {
+    for (const slug of await readdir(new URL(`dist/${locale}${collection}/`, import.meta.url))) {
+      const html = await routeHtml(`${locale}${collection}/${slug}`);
+      for (const [, target] of html.matchAll(/href="\/art\/((?:it\/)?(?:work|practice|exhibition|text)\/[^"#?]+\/)(?:#[^"]*)?"/g)) {
+        await access(new URL(`dist/${target}index.html`, import.meta.url));
+        checkedRelationLinks++;
+      }
+    }
+  }
+}
+assert.ok(checkedRelationLinks > 0, 'relation validation must exercise links');
+
 console.log(
-  `ok: ${workRoutes.length} works, ${practiceRoutes.length} practices, ${exhibitionRoutes.length} exhibitions`,
+  `ok: ${workRoutes.length} works, ${practiceRoutes.length} practices, ${exhibitionRoutes.length} exhibitions; ${unresolved.length * 2} unresolved-notice cases; ${checkedRelationLinks} valid relation links`,
 );
